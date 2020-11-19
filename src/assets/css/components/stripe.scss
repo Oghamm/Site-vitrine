@@ -1,0 +1,127 @@
+.modali {
+  border-radius: 15px !important;
+  border: 3px solid #6f93f4;
+}
+
+.modali-body {
+  border-radius: 15px !important;
+}
+
+.form-stripe {
+  max-width: 550px;
+  margin: 0 auto;
+
+  @include bp-xs {
+    margin-top: 70px;
+  }
+
+  label {
+    @include bp-xl {
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    @include bp-xs {
+      font-size: 14px;
+      font-weight: 600;
+    }
+  }
+
+  &__title {
+    margin-bottom: 50px;
+    text-align: center;
+    @include bp-xl {
+      margin-bottom: 25px;
+    }
+  }
+
+  .form-double-element {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @include bp-xs {
+      display: block;
+    }
+  }
+
+  .form-group {
+    margin-bottom: 15px;
+
+    input,
+    textarea {
+      border: none;
+      background: $bg-grey;
+      font-size: 16px;
+      color: $secondary-color;
+
+      @include bp-xs {
+        font-size: 14px;
+        background: $white;
+      }
+    }
+
+    input {
+      height: 48px;
+
+      &[type="email"] {
+        width: 100%;
+      }
+
+      @include bp-xl {
+        width: 190px;
+      }
+
+      @include bp-xs {
+        width: 100%;
+      }
+    }
+
+    textarea {
+      height: 185px;
+    }
+  }
+
+  .button-box {
+    text-align: center;
+
+    @include bp-xl {
+      text-align: center;
+    }
+  }
+
+  button {
+    margin-top: 50px;
+    margin-bottom: 20px;
+
+    @include bp-xl {
+      margin-top: 25px;
+    }
+
+    @include bp-xs {
+      width: 100%;
+      margin-bottom: 50px;
+    }
+  }
+}
+
+.StripeElement {
+  display: block;
+  margin: 10px 0 20px 0;
+  padding: 10px 14px;
+  font-size: 1em;
+  font-family: "Montserrat", sans-serif;
+  box-shadow: rgba(50, 50, 93, 0.14902) 0px 1px 3px,
+    rgba(0, 0, 0, 0.0196078) 0px 1px 0px;
+  border: 0;
+  outline: 0;
+  border-radius: 4px;
+  background: white;
+}
+
+.StripeElement--focus {
+  box-shadow: rgba(50, 50, 93, 0.109804) 0px 4px 6px,
+    rgba(0, 0, 0, 0.0784314) 0px 1px 3px;
+  -webkit-transition: all 150ms ease;
+  transition: all 150ms ease;
+}

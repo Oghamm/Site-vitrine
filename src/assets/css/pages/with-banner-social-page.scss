@@ -1,0 +1,34 @@
+/* WITH-BANNER-SOCIAL-PAGE - PAGES */
+
+.with-banner.social {
+
+    header {
+
+        .banner {
+            background: url("/img/with-banner/social/banner.png") no-repeat 100% 100%;
+
+            @include bp-xl {
+                background: url("/img/with-banner/social/banner.png") no-repeat 0 100%;
+                background-size: cover;
+            }
+
+            @include bp-xs {
+                background: url("/img/with-banner/social/banner-responsive.png") no-repeat 0 100%;
+            }
+        }
+
+    }
+
+    .contact {
+
+        &__form {
+
+            .form-control {
+                height: 48px;
+            }
+
+        }
+
+    }
+
+}

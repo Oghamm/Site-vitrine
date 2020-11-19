@@ -1,0 +1,28 @@
+/* BADGE - COMPONENTS */
+
+.badge {
+    padding: 8px 30px;
+    background: $primary-color-50;
+    border-radius: 24px;
+    font-size: 14px;
+    color: $secondary-color;
+    font-weight: 700;
+    min-width: 120px;
+    display: inline-block;
+
+    &.badge-basic {
+        background: $cms-bg-primary;
+    }
+
+    &.badge-premium {
+        background: $brown;
+        color: $white;
+    }
+
+    &.badge-ecommerce {
+        background: $secondary-color;
+        color: $white;
+    }
+
+
+}

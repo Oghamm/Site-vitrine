@@ -1,0 +1,50 @@
+/* NAV - COMPONENTS */
+
+.nav {
+    position: relative;
+
+    .burger {
+        cursor: pointer;
+    }
+
+    .close {
+        text-align: right;
+        cursor: pointer;
+
+        @include bp-xs {
+            img {
+                width: 22px;
+            }
+        }
+    }
+
+    .nav-menu {
+        padding: 20px 30px;
+        background: $white;
+        border-radius: 10px;
+
+        display: none;
+
+        width: 285px;
+
+        position: absolute;
+        right: -27px;
+        top: -20px;
+        z-index: 10;
+
+        .nav-item {
+            margin-bottom: 15px;
+        }
+
+        .nav-link {
+            font-size: 14px;
+            font-weight: 600;
+            color: $secondary-color;
+        }
+
+        &.grey {
+            background: $nav-grey;
+        }
+    }
+
+}

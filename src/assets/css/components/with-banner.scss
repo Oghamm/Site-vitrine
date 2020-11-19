@@ -1,0 +1,256 @@
+/* WITH-BANNER - COMPONENTS */
+
+.with-banner {
+
+    main {
+        background: $bg-grey;
+
+        p {
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 32px;
+            color: $secondary-color;
+        }
+
+        h4 {
+            @include bp-xs {
+                font-size: 20px;
+            }
+        }
+
+        .intro {
+            padding: 70px 0 95px 0;
+            
+            
+            &__title {
+                @include bp-xl {
+                    font-size: 31px;
+                }
+
+                @include bp-xs {
+                    font-size: 24px;
+                }
+            }
+
+            &__text {
+                @include bp-xl {
+                    max-width: 100%;
+                    font-size: 18px;
+                }
+
+                @include bp-xs {
+                    font-size: 12px;
+                    line-height: 24px;
+                }
+            }
+        }
+
+        .section-title {
+            margin-bottom: 25px;
+
+            @include bp-xl {
+                font-size: 31px;
+            }
+        }
+
+        .form-group.input-lg {
+            
+            .form-control {
+                width: 390px;
+
+                @include bp-xl {
+                    width: 420px;
+                }
+
+                @include bp-xs {
+                    width: 100%;
+                }
+            }
+
+        }
+
+        .contact {
+            padding-bottom: 120px;
+    
+            &__title {
+                @include bp-xs {
+                    margin-bottom: 40px;
+                }
+            }
+
+            &__form {
+    
+                label {
+                    @include bp-xs {
+                        font-size: 14px;
+                        font-weight: 600;
+                    }
+                }
+
+                .form-group {
+                    margin-bottom: 12px;
+                }
+
+                .form-control {
+
+                    @include bp-xl {
+                        width: 420px;
+                    }
+
+                    @include bp-xs {
+                        height: 48px;
+                        width: 100%;
+                    }
+                }
+    
+                .btn-primary {
+                    cursor: pointer;
+                    margin-top: 65px;
+                    width: 330px;
+
+                    @include bp-xl {
+                        width: 420px;
+                        margin-bottom: 75px;
+                    }
+
+                    @include bp-xs {
+                        margin-top: 40px;
+                        width: 100%;
+                    }
+                }
+    
+            }
+    
+        }
+
+        .recap {
+            padding: 75px 0;
+
+            @include bp-xs {
+                display: none;
+            }
+    
+            &__content {
+                display: flex;
+                justify-content: space-between;
+
+                @include bp-xl {
+                    align-items: center;
+                }
+            }
+    
+            &__infos {
+
+                .white {
+                    @include bp-xl {
+                        font-size: 32px;
+                    }
+                }
+
+            }
+
+            &__resume {
+                .line {
+                    display: flex;
+                    align-items: center;
+                    margin-bottom: 7px;
+    
+                    p {
+                        font-size: 18px;
+                        font-weight: 700;
+                        color: $white;
+                        margin-bottom: 0;
+    
+                        &.title {
+                            font-size: 16px;
+                            font-weight: 500;
+                            width: 180px;
+                        }
+                    }
+                }
+    
+            }
+    
+            &__validation {
+    
+                &--price {
+                    text-align: center;
+                    font-weight: 500;
+                    font-size: 40px;
+                    color: $white;
+                    margin-bottom: 29px;
+                }
+    
+                &--valide {
+                    width: 395px;
+                    font-size: 24px;
+                    padding: 27px 40px;
+
+                    @include bp-xl {
+                        width: 315px;
+                        padding: 16px 10px;
+                        font-size: 20px;
+                    }
+                }
+    
+            }
+        }
+
+        .multiple-bar {
+            padding: 35px 0 100px 0;
+
+            @include bp-xs {
+                padding: 0 0 200px 0;
+            }
+    
+            &__content {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                @include bp-xs {
+                    display: block;
+                    text-align: center;
+                }
+            }
+    
+            &__title {
+                max-width: 55%;
+                font-weight: 600;
+
+                @include bp-xl {
+                    line-height: 48px;
+                }
+
+                @include bp-xs {
+                    max-width: none;
+                    line-height: 32px;
+                    margin-bottom: 30px;
+                }
+            }
+
+            &__btn {
+                @include bp-xl {
+                    margin-top: 15px;
+                }
+
+                @include bp-xs {
+                    width: 100%;
+                }
+            }
+    
+        }
+
+        .title-content {
+            font-size: 24px;
+            font-weight: 700;
+            color: $secondary-color-50;
+            margin-bottom: 30px;
+
+            @include bp-xs {
+                font-size: 20px;
+            }
+        }
+    }
+
+}

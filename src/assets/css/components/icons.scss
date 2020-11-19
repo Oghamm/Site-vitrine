@@ -1,0 +1,38 @@
+/* ICONS - COMPONENTS */
+
+.fa-phone {
+    transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+}
+
+.cms {
+    %svg {
+        color: $secondary-color;
+        opacity: .5;
+        font-size: 18px;
+    }
+
+    .aside {
+
+        svg {
+            @extend %svg;
+        }
+
+    }
+
+    .little-icon {
+        background: $bg-grey;
+        width: 29px;
+        height: 29px;
+        border-radius: 9px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        svg {
+            font-size: 14px;
+        }
+    }
+    
+}

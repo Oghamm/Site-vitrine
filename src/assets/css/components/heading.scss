@@ -1,0 +1,82 @@
+/* HEADING - COMPONENTS */
+
+%blue-title {
+    font-weight: 700;
+    color: $secondary-color;
+
+    &.white {
+        color: $white;
+    }
+}
+
+h1, .h1-style {
+    @extend %blue-title;
+
+    font-size: 72px;
+
+    @include bp-xl {
+        font-size: 48px;
+    }
+
+    @include bp-xs {
+        font-size: 28px;
+    }
+}
+
+h2, .h2-style {
+    @extend %blue-title;
+
+    font-size: 64px;
+
+    @include bp-xl {
+        font-size: 48px;
+    }
+
+    @include bp-xs {
+        font-size: 24px;
+    }
+}
+
+h3, .h3-style {
+    @extend %blue-title;
+
+    font-size: 48px;
+
+    @include bp-xl {
+        font-size: 32px;
+    }
+
+    @include bp-xs {
+        font-size: 18px;
+    }
+}
+
+h4, .h4-style {
+    @extend %blue-title;
+
+    font-size: 30px;
+
+    @include bp-xl {
+        font-size: 24px;
+    }
+
+    @include bp-xs {
+        font-size: 16px;
+    }
+}
+
+h5, .h5-style {
+    @extend %blue-title;
+
+    @include bp-xl {
+        font-size: 14px;
+    }
+
+    font-size: 24px;
+}
+
+h6, .h6-style {
+    @extend %blue-title;
+
+    font-size: 20px;
+}

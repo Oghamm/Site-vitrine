@@ -1,0 +1,71 @@
+/* PROFIL - COMPONENTS */
+
+.cms {
+
+    .profil {
+        margin-top: 130px;
+
+        &__title {
+
+            display: flex;
+            align-items: center;
+
+            &-avatar {
+                width: 120px;
+                height: 120px;
+                border-radius: 40px;
+                background: $cms-bg-primary;
+                margin-right: 40px;
+
+                flex: 1 0 120px;
+
+                @include bp-xl {
+                    width: 95px;
+                    height: 95px;
+                    border-radius: 27px;
+                    margin-right: 15px;
+
+                    flex: 1 0 95px;
+                }
+
+            }
+
+            &--text {
+                @include bp-xl {
+                    font-size: 18px;
+                }
+            }
+        }
+        
+        &__infos {
+            margin-top: 80px;
+
+            &-widget {
+                display: flex;
+                align-items: center;
+                margin-bottom: 15px;
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+
+                .little-icon {
+                    margin-right: 20px;
+                }
+
+                p {
+                    font-size: 14px;
+                    font-weight: 500;
+                    color: $secondary-color;
+
+                    @include bp-xl {
+                        font-size: 12px;
+                    }
+                }
+            }
+
+        }
+
+    }
+
+}

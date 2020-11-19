@@ -1,0 +1,119 @@
+/* SITE-MODELS - COMPONENTS */
+
+.site-all-models {
+
+        // display: flex;
+        // align-items: center;
+        // justify-content: space-between;
+
+        .col-lg-4 {
+            @include bp-xl {
+                -ms-flex: 0 0 50%;
+                flex: 0 0 50%;
+                max-width: 50%;
+            }
+        }
+
+        .site-model {
+            margin-bottom: 65px;
+
+            &:nth-child(3n) {
+                padding-right: 0;
+            }
+
+            svg {
+                color: $secondary-color;
+                opacity: .5;
+            }
+
+            .infos {
+                position: relative;
+                background: url("/img/cms/website-exemple.png") no-repeat center center;
+                border-radius: 15px;
+                max-width: 260px;
+                min-height: 200px;
+
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                @include bp-xl {
+                    max-width: 205px;
+                    min-height: 165px;
+                }
+
+                &--title {
+                    @include bp-xl {
+                        font-size: 32px;
+                    }
+                }
+
+                .show {
+                    cursor: pointer;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    
+                    width: 65px;
+                    height: 32px;
+                    background: $white;
+                    border-radius: 30px;
+
+                    position: absolute;
+                    bottom: 20px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    -webkit-transform: translateX(-50%);
+                    -ms-transform: translateX(-50%);
+
+                    @include bp-xl {
+                        bottom: 10px;
+                    }
+
+                    &:hover {
+
+                        svg {
+                            opacity: 1;
+                        }
+        
+                    }
+                }
+
+            }
+
+            .action-bar {
+                max-width: 260px;
+                margin-top: 10px;
+                display: flex;
+                align-items: center;
+
+                @include bp-xl {
+                    max-width: 205px;
+                }
+
+                a {
+                    display: inline-block;
+                    margin: 0 8px;
+
+                    &:first-child {
+                        margin-left: 0;
+                    }
+
+                    &:hover {
+
+                        svg {
+                            opacity: 1;
+                        }
+        
+                    }
+
+                }
+
+                .switch {
+                    margin-left: auto;
+                }
+
+            }
+        }
+
+    }

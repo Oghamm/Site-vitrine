@@ -1,0 +1,71 @@
+/* WITH-BANNER-CHOICES-PAGE - PAGES */
+
+.with-banner.choices {
+
+    header {
+
+        .banner {
+            @include bp-xl {
+                background-size: cover;
+            }
+        }
+
+    }
+
+    .intro {
+        &__text {
+            max-width: 60%;
+
+            @include bp-xl {
+                max-width: 100%;
+            }
+
+            @include bp-xs {
+                max-width: 100%;
+            }
+        }
+    }
+
+    section:not(.intro, .contact) {
+        padding-bottom: 65px;
+    }
+
+    .new-refonte {
+    
+        &__choices {
+
+            .btn-choice-unique {
+                width: 218px;
+                
+                @include bp-xl {
+                    width: 205px;
+                }
+
+                @include bp-xs {
+                    width: 146px;
+                }
+            }
+
+        }
+
+    }
+
+    .complementary {
+
+        &__choices {
+
+            .btn-choice {
+
+                width: auto;
+                padding: 0 40px;
+
+                @include bp-xs {
+                    width: 146px;
+                    padding: 0;
+                }
+            }
+
+        }
+
+    }
+}

@@ -1,0 +1,71 @@
+/* INTERNE-ABOUT-PAGE - PAGES */
+
+.interne.about {
+
+    .content {
+
+        .search-bar {
+
+            .form-group::before {
+                @include bp-xs {
+                    top: 4px;
+                    left: 20px;
+                    -webkit-transform: scale(.5);
+                    -ms-transform: scale(.5);
+                        transform: scale(.5);
+                }
+            }
+
+            input {
+                @include bp-xs {
+                    height: 32px;
+                    background: transparent;
+                    font-size: 16px;
+                    padding-left: 60px;
+                }
+            }
+        }
+
+    }
+
+    .all-about-element {
+        margin-top: 90px;
+        padding-bottom: 100px;
+
+        @include bp-xl {
+            margin-top: 50px;
+        }
+
+        @include bp-xs {
+            margin-top: 40px;
+            padding-bottom: 0;
+        }
+
+        .about-element {
+            margin-bottom: 35px;
+
+            &__title {
+                margin-bottom: 25px;
+            }
+
+            &__text {
+                font-size: 16px;
+                font-weight: 500;
+                line-height: 32px;
+                color: $secondary-color;
+
+                @include bp-xl {
+                    font-size: 12px;
+                    line-height: 32px;
+                }
+
+                @include bp-xs {
+                    font-size: 12px;
+                    line-height: 24px;
+                }
+            }
+
+        }
+    }
+
+}

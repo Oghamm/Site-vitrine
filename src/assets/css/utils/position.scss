@@ -1,0 +1,107 @@
+/* POSITION - UTILS */
+
+@for $i from 0 to 6 {
+    .mt-#{$i} {
+        margin-top: ($spacing * $i)!important;
+    }
+
+    .mb-#{$i} {
+        margin-bottom: ($spacing * $i)!important;
+    }
+
+    .ml-#{$i} {
+        margin-left: ($spacing * $i)!important;
+    }
+
+    .mr-#{$i} {
+        margin-right: ($spacing * $i)!important;
+    }
+
+    .mx-#{$i} {
+        margin-right: ($spacing * $i)!important;
+        margin-left: ($spacing * $i)!important;
+    }
+
+    .my-#{$i} {
+        margin-top: ($spacing * $i)!important;
+        margin-bottom: ($spacing * $i)!important;
+    }
+
+    
+
+    .pt-#{$i} {
+        padding-top: ($spacing * $i)!important;
+    }
+
+    .pb-#{$i} {
+        padding-bottom: ($spacing * $i)!important;
+    }
+
+    .pl-#{$i} {
+        padding-left: ($spacing * $i)!important;
+    }
+
+    .pr-#{$i} {
+        padding-right: ($spacing * $i)!important;
+    }
+
+    .px-#{$i} {
+        padding-right: ($spacing * $i)!important;
+        padding-left: ($spacing * $i)!important;
+    }
+
+    .py-#{$i} {
+        padding-top: ($spacing * $i)!important;
+        padding-bottom: ($spacing * $i)!important;
+    }
+}
+
+.mt-auto {
+    margin-top: auto!important;
+}
+
+.mb-auto {
+    margin-bottom: auto!important;
+}
+
+.ml-auto {
+    margin-left: auto!important;
+}
+
+.mr-auto {
+    margin-right: auto!important;
+}
+
+.mx-auto {
+    margin-right: auto!important;
+    margin-left: auto!important;
+}
+
+.my-auto {
+    margin-top: auto!important;
+    margin-bottom: auto!important;
+}
+
+.text-center {
+    text-align: center !important;
+}
+
+.text-left {
+    text-align: left !important;
+}
+
+.text-right {
+    text-align: right !important;
+}
+
+.p-absolute {
+    position: absolute;
+}
+
+.p-relative {
+    position: relative;
+}
+
+.p-sticky {
+    position: sticky;
+}

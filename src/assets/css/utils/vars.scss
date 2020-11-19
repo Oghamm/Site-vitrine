@@ -1,0 +1,60 @@
+// Custom
+$primary-color: #6F93F4;
+$secondary-color: #01164E;
+
+$secondary-color-50: rgba($secondary-color, .5);
+$primary-color-50: rgba($primary-color, .5);
+
+// Methamorphe
+$mm-primary-color: #6469E0;
+$mm-secondary-color: #BDE6DD;
+
+$mm-brown: #6C6C6C;
+
+$mm-card-event-image: #97CEC1;
+
+$mm-badge-primary: #AB91FF;
+$mm-badge-blue: #799FF5;
+$mm-badge-orange: #F59A79;
+
+$mm-bg-blue: #F5FBFF;
+
+// Common
+$white: #ffffff;
+$black: #000000;
+$grey: #ccd0dc;
+$light-grey: #eaeaea;
+$dark-gray: #333333;
+$blue: #6F93F4;
+$brown: #9A9A9A;
+$light-brown: #F5F2EC;
+$orange: #FCB442;
+
+$shadow-color: #6F93F41A;
+$shadow-color-2: #01164E1A;
+$shadow-color-3: #6F93F45A;
+
+// Background
+$bg-primary: $primary-color;
+$bg-secondary: $secondary-color;
+$bg-white: $white;
+$bg-light-grey: $light-grey;
+$bg-grey: #EFF1F7;
+$bg-blue: rgba($blue, .26);
+
+$bg-dark-secondary: rgba($secondary-color, .20);
+
+$cms-bg-primary: #E0E8FF;
+$cms-bg-blur: rgba($secondary-color, .60);
+
+// Nav
+$nav-grey: #fbfbfb;
+
+// Position
+$spacing: 8px;
+
+// Box shadow
+$box-shadow: 0px 15px 35px $shadow-color;
+$box-shadow-2: 0px 10px 20px $shadow-color-2;
+$box-shadow-3: 0px 15px 20px $shadow-color-3; 
+$box-shadow-4: 0px 30px 45px $shadow-color-3; 

@@ -1,0 +1,154 @@
+/* BUTTON - COMPONENTS */
+
+%btn {
+    display: inline-block;
+    width: 260px;
+    text-align: center;
+    padding: 21px 40px;
+    border: 1px solid;
+    font-size: 16px;
+    font-weight: 700;
+    border-radius: 100px;
+    -webkit-transition: all .5s;
+    -o-transition: all .5s;
+    transition: all .5s;
+}
+
+.btn-link {
+    color: $secondary-color;
+    font-size: 14px;
+    font-weight: 600;
+
+    &:hover {
+        color: $secondary-color-50;
+    }
+}
+
+.btn {
+    @extend %btn;
+    
+    &.btn-lg {
+        width: 420px;
+        padding: 36px 40px;
+        font-size: 24px;
+    }
+
+    &-primary {
+        @extend %btn;
+
+        background: $primary-color;
+        border-color: $primary-color;
+        color: $white;
+
+        &:hover {
+            background: $white;
+            color: $primary-color;
+        }
+    }
+
+    &-secondary {
+        @extend %btn;
+
+        background: $secondary-color;
+        border-color: $secondary-color;
+        color: $white;
+
+        &:hover {
+            background: $white;
+            color: $secondary-color;
+        }
+    }
+
+    &-white {
+        @extend %btn;
+
+        background: $white;
+        border-color: $white;
+        color: $primary-color;
+
+        &:hover {
+            background: transparent;
+            color: $white;
+        }
+    }
+
+    &-blue-transparent {
+        @extend %btn;
+
+        background: transparent;
+        color: $primary-color;
+        border: 3px solid $primary-color;
+        width: 340px;
+        padding: 19px 40px;
+
+        &:hover {
+            background: $primary-color;
+            color: $white;
+        }
+
+        &.secondary {
+            color: $secondary-color;
+            border-color: $secondary-color;
+
+            &:hover {
+                background: $secondary-color;
+                color: $white;
+            }
+        }
+    }
+
+    &.btn-rounded {
+        width: 32px;
+        height: 32px;
+        padding: 0;
+        border-radius: 50%;
+        position: relative;
+
+        svg {
+            color: $white;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            -webkit-transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+        }
+
+        &.add {
+            border-color: $primary-color;
+            background: $primary-color;
+        }
+    }
+
+    .btn-md {
+        width: 260px;
+    }
+
+    &.centered {
+        text-align: center;
+    }
+}
+
+.cart {
+    position: relative;
+
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: $primary-color;
+    cursor: pointer;
+
+    box-shadow: 0px 7px 15px rgba($primary-color, .3);
+
+    img {
+        opacity: 1;
+        color: $white;
+
+        position: absolute;
+        top: 50%;
+        left: calc(50% - 1px);
+        transform: translate(-50%, -50%);
+        -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+    }
+}

@@ -1,0 +1,42 @@
+/* POPIN - COMPONENTS */
+
+.popin {
+    position: relative;
+    width: 100%;
+    max-width: 670px;
+    background: $white;
+    border-radius: 40px;
+    padding: 45px 65px;
+    position: fixed;
+    z-index: 10;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+
+    .close {
+        cursor: pointer;
+        position: absolute;
+        top: 25px;
+        right: 35px;
+    }
+}
+
+.popin-payment {
+
+    &.popin {
+
+        &__content {
+
+            &--name {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+
+        }
+
+    }
+
+}

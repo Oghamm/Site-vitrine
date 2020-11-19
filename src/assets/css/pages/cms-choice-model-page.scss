@@ -1,0 +1,24 @@
+/* CMS-CHOICE-MODEL-PAGE - PAGES */
+
+.cms.choice-model {
+
+    .site-all-models a {
+        display: block;
+    }
+
+    .profil {
+
+        &__title {
+
+            h5 {
+                @include bp-xl {
+                    font-size: 18px;
+                    line-height: 40px;
+                }
+            }
+
+        }
+
+    }
+
+}

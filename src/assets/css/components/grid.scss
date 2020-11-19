@@ -1,0 +1,53 @@
+/* GRID - COMPONENTS */
+
+@include bp-min-xxl {
+    .container {
+        max-width: 1380px;
+    }
+}
+
+@include bp-slider-xxl {
+    .container {
+        max-width: 1190px;
+    }
+}
+
+@include bp-xl {
+    .container {
+        max-width: 880px;
+    }
+}
+
+@include bp-xs {
+    .container, .container-fluid {
+        padding: 0 33px;
+    }
+}
+
+.container-fluid.full-padding {
+    padding: 0 130px;
+
+    @include bp-xl {
+        padding: 0 80px;
+    }
+
+    @include bp-xs {
+        padding: 0 33px;
+    }
+}
+
+.home {
+
+    .container-fluid.full-padding {
+        padding: 0 140px;
+    
+        @include bp-xl {
+            padding: 0 80px;
+        }
+    
+        @include bp-xs {
+            padding: 0 36px;
+        }
+    }
+
+}

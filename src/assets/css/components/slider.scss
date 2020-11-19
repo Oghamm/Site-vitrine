@@ -1,0 +1,118 @@
+/* SLIDER - COMPONENTS */
+
+.slider {
+    height: calc(100vh - 130px);
+    overflow-y: hidden;
+
+    @include bp-lg {
+        height: 100vh;
+    }
+
+    .slick-slide {
+        position: relative;
+        max-height: calc(100vh - 130px);
+
+        @include bp-lg {
+            max-height: 100vh;
+        }
+    }
+
+    img {
+        max-width: 100%;
+        min-height: 100vh;
+        object-fit: cover;
+    }
+}
+
+.arrows {
+    position: absolute;
+    z-index: 2;
+    font-size: 40px;
+    color: $white;
+    bottom: 70px;
+    cursor: pointer;
+
+    @include bp-lg {
+        bottom: unset;
+        top: 50%;
+
+        transform: translateY(-50%);
+        -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+    }
+
+    &.prev {
+        right: 240px;
+
+        @include bp-lg {
+            left: 33px;
+        }
+    }
+
+    &.next {
+        right: 140px;
+
+        @include bp-lg {
+            right: 33px;
+        }
+    }
+
+    @include bp-xl {
+        font-size: 35px;
+    }
+
+    @include bp-xs {
+        display: none!important;
+        /* important is needed to override Slick library */
+    }
+}
+
+.slick-dots-c {
+    display: flex !important;
+    position: absolute;
+    z-index: 1;
+    bottom: 62px;
+    left: 140px;
+    align-items: center;
+
+    @include bp-lg {
+        margin: 0;
+        bottom: 15px;
+        left: 50%;
+
+        transform: translateX(-50%);
+        -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+    }
+
+    button {
+        display: none;
+    }
+
+    li {
+        list-style-type: none;
+        margin-left: 15px;
+
+        &:first-child {
+            margin-left: 0;
+        }
+
+        &::after {
+            @extend %icon;
+            content: "\f111";
+            color: $white;
+            font-size: 16px;
+            opacity: .5;
+        }
+
+        &.slick-active::after {
+            font-size: 24px;
+            opacity: 1;
+        }
+    }
+
+    @include bp-xs {
+        display: flex!important;
+        /* important is needed to override Slick library */
+    }
+}

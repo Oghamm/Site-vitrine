@@ -1,0 +1,543 @@
+/* INPUT - COMPONENTS */
+
+.form-group {
+
+    position: relative;
+    border: none;
+    border-radius: 50px;
+    font-weight: 500;
+    font-size: 18px;
+
+    label {
+        display: block;
+        margin-bottom: 15px;
+        color: $secondary-color;
+        font-size: 16px;
+        font-weight: 700;
+    }
+
+    input, select {
+        background: $white;
+        border: 1px solid $secondary-color;
+        border-radius: 30px;
+        height: 60px;
+        width: 260px;
+        padding: 0 20px;
+        color: $secondary-color;
+        font-family: "Montserrat", sans-serif;
+    }
+
+    select {
+        padding: 12px 23px;
+        padding-right: 60px;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        font-family: "Montserrat", sans-serif;
+
+        option {
+            color: $secondary-color;
+        }
+    }
+
+    textarea {
+        width: 100%;
+        height: 310px;
+        border: none;
+        border-radius: 15px;
+        padding: 25px 30px;
+        resize: none;
+        color: $secondary-color;
+        font-family: "Montserrat", sans-serif;
+        font-size: 18px;
+        font-weight: 500;
+    }
+
+    &.full {
+        input, select, textarea {
+            width: 100%;
+            max-width: 100%;
+        }
+    }
+
+    &.inline {
+        display: inline-block;
+    }
+
+    &.transparent {
+        background: transparent;
+        border: 2px solid $white;
+        color: $white;
+    }
+
+    &.select, &.select-transparent, &.select-blue, &.select-blue-transparent  {
+        &:after {
+            content: "\f078";
+            font-family: "Font Awesome\ 5 Free";
+            font-weight: 900;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            -webkit-transform: translateY(-50%);
+            -ms-transform: translateY(-50%);
+            right: 25px;
+            pointer-events: none;
+        }
+
+        &.language-box.blue {
+            margin: 0 50px;
+
+            select {
+                width: 75px;
+                height: 30px;
+                padding: 0;
+                font-size: 16px;
+                font-weight: 600;
+                color: $primary-color;
+
+                option {
+                    color: $primary-color;
+                }
+            }
+
+            &::after {
+                color: $primary-color;
+                right: 15px;
+            }
+        }
+    }
+
+    &.select-transparent {
+
+        .form-control {
+            border: none;
+            background: transparent;
+            color: $white;
+            font-size: 18px;
+            position: relative;
+            z-index: 1;
+        }
+    }
+    
+    &.select-blue {
+
+        .form-control {
+            border-color: $cms-bg-primary;
+            background: $cms-bg-primary;
+            color: $blue;
+        }
+        
+        &:after {
+            color: $blue;
+        }
+    }
+
+    &.select-blue-transparent {
+
+        .form-control {
+            border-color: $primary-color;
+            background: $white;
+            color: $primary-color;
+            border-width: 2px;
+        }
+        
+        option {
+            color: $primary-color;
+            font-weight: 500;
+        }
+
+        &:after {
+            color: $primary-color;
+        }
+    }
+
+    &.select-grey {
+
+        .form-control {
+            width: 226px;
+            height: 48px;
+            font-weight: 600;
+            color: $secondary-color-50;
+            background: $bg-grey;
+            border-color: $bg-grey;
+        }
+
+        &:after {
+            color: $secondary-color-50;
+        }
+    }
+
+    &.search {
+        
+        input {
+            width: 100%;
+            padding-left: 100px;
+            font-size: 24px;
+            font-weight: 500;
+            color: $secondary-color;
+        }
+
+        &::before {
+            content: url("/img/search-icon.svg");
+            position: absolute;
+            top: 20px;
+            left: 40px;
+        }
+    }
+
+    &.radio {
+        display: block;
+        position: relative;
+        padding-left: 30px;
+        margin-bottom: 15px;
+        font-size: 18px;
+
+        input {
+            position: absolute;
+            z-index: -1;
+            opacity: 0;
+        }
+
+        .marker {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 22px;
+            width: 22px;
+            background: $bg-grey;
+            border-radius: 50%;
+        }
+
+        &:hover input ~ .marker, input:focus ~ .marker {
+            background: #ccc;
+        }
+
+        input:checked ~ .marker {
+            background: $primary-color;
+        }
+
+        .marker:after {
+            content: '';
+            position: absolute;
+            display: none;
+        }
+
+        input:checked ~ .marker:after {
+            display: block;
+        }
+
+        .marker:after {
+            left: 6px;
+            top: 6px;
+            height: 10px;
+            width: 10px;
+            border-radius: 50%;
+            background: $white;
+        }
+    }
+
+    &.checkbox {
+        display: inline-block;
+        position: relative;
+        padding-left: 30px;
+        margin-bottom: 15px;
+        font-size: 18px;
+
+        input {
+            position: absolute;
+            z-index: -1;
+            opacity: 0;
+        }
+
+        .marker {
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            height: 16px;
+            width: 16px;
+            background: $bg-grey;
+            border-radius: 5px;
+        }
+
+        &:hover input ~ .marker, input:focus ~ .marker {
+            background: #ccc;
+        }
+
+        input:checked ~ .marker {
+            background: $primary-color;
+        }
+
+        .marker:after {
+            content: '\f00c';
+            font-family: "Font Awesome 5 Free";
+            font-weight: 700;
+            color: $white;
+            font-size: 11px;
+            left: 3px;
+            top: 1px;
+            position: absolute;
+            display: none;
+        }
+
+        input:checked ~ .marker:after {
+            display: block;
+        }
+    }
+
+    &.info {
+
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+
+        @include bp-xl {
+            margin-bottom: 20px;
+        }
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        &.name {
+
+            .name__title {
+                font-size: 18px;
+                font-family: "Montserrat";
+                color: $secondary-color;
+                font-weight: 600;
+            }
+
+        }
+
+        .domain {
+            color: $secondary-color;
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        .extension {
+            margin-left: 35px;
+           
+            select.form-control {
+                width: 80px;
+                padding: 3px 15px;
+                height: 32px;
+                background: $bg-grey;
+                color: $secondary-color;
+                font-size: 12px;
+                font-weight: 500;
+                border: none;
+                border-radius: 6px;
+
+            }
+            
+            &::after {
+                right: 10px;
+                font-size: 12px;
+            }
+        }
+
+        label {
+            color: $secondary-color-50;
+            font-size: 14px;
+            font-weight: 700;
+
+            display: inline-block;
+            flex: 0 1 135px;
+
+            @include bp-xl {
+                flex: 0 1 70px;
+            }
+
+            margin-bottom: 0;
+        }
+
+        .form-control {
+            width: auto;
+            height: 30px;
+            border: 0;
+            padding: 0;
+
+            max-width: 100px;
+        }
+
+    }
+
+    &.welcome {
+        margin-bottom: 16px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        .form-control {
+            width: auto;
+            height: 30px;
+            border: 0;
+            padding: 0;
+
+            &.titles {
+                font-weight: 700;
+                color: $secondary-color;
+                font-size: 24px;
+
+                @include bp-xl {
+                    font-size: 18px;
+                }
+            }
+
+            &.infos {
+                font-size: 14px;
+                font-weight: 500;
+                color: #01164E;
+
+                @include bp-xl {
+                    font-size: 12px;
+                }
+            }
+        }
+
+    }
+}
+
+.no-border {
+
+    .form-control{
+
+        border: none;
+
+    }
+    
+}
+
+select:-moz-focusring {
+    color: transparent;
+    text-shadow: 0 0 0 $white;
+}
+
+// Toggle checkbox
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 45px;
+    height: 25px;
+
+    input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+    }
+
+    .slider {
+        border-radius: 25px;
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: $bg-light-grey;
+        -webkit-transition: .4s;
+        transition: .4s;
+        width: 45px;
+        height: 25px;
+        overflow: hidden;
+
+        &:before {
+            position: absolute;
+            content: "";
+            height: 25px;
+            width: 25px;
+            border-radius: 50%;
+            background-color: $white;
+            -webkit-transition: .4s;
+            transition: .4s;
+        }
+    }
+
+    input:checked + .slider {
+        background-color: $blue;
+    }
+
+    input:focus + .slider {
+        box-shadow: 0 0 1px $blue;
+    }
+
+    input:checked + .slider:before {
+        -webkit-transform: translateX(21px);
+        -ms-transform: translateX(21px);
+        transform: translateX(21px);
+    }
+}
+
+// Custom input radio
+.input-radio {
+    display: block;
+    position: relative;
+    padding-left: 40px;
+    margin-bottom: 15px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 12px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    height: 19px;
+    display: flex;
+    align-items: center;
+
+    @include bp-xl {
+        flex-wrap: wrap;
+    }
+}
+  
+/* Hide the browser's default radio button */
+.input-radio input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+  
+/* Create a custom radio button */
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 19px;
+    width: 19px;
+    background-color: $bg-grey;
+    border-radius: 50%;
+}
+  
+/* On mouse-over, add a grey background color */
+.input-radio:hover input ~ .checkmark {
+    background-color: $bg-grey;
+}
+  
+/* When the radio button is checked, add a blue background */
+.input-radio input:checked ~ .checkmark {
+    background-color: $primary-color;
+}
+  
+  /* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+  
+/* Show the indicator (dot/circle) when checked */
+.input-radio input:checked ~ .checkmark:after {
+    display: block;
+}
+  
+/* Style the indicator (dot/circle) */
+.input-radio .checkmark:after {
+    top: 5px;
+    left: 5px;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: $white;
+}

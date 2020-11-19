@@ -1,0 +1,55 @@
+/* HELPER - UTILS */
+
+.w-100 {
+    width: 100%;
+}
+
+.w-75 {
+    width: 75%;
+}
+
+.w-50 {
+    width: 50%;
+}
+
+.bg-primary {
+    background: $bg-primary;
+}
+
+.bg-secondary {
+    background: $bg-secondary;
+}
+
+.bg-grey {
+    background: $bg-grey;
+}
+
+.bg-white {
+    background: $bg-white;
+}
+
+.bold {
+    font-weight: 700!important;
+}
+
+.box-shadow {
+    box-shadow: $box-shadow;
+}
+
+.lines {
+    border-radius: 100%;
+    border-color: $primary-color;
+    border-radius: 30px;
+}
+
+.lines.lines-border-top.lines-border-left  {
+    border-width: 3px 0 0 3px!important;
+}
+
+.lines.lines-border-bottom.lines-border-left  {
+    border-width: 0 0 3px 3px!important;
+}
+
+.hide-overflow {
+    overflow-y: hidden;
+}

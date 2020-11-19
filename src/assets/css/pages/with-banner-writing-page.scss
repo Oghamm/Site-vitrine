@@ -1,0 +1,280 @@
+/* WITH-BANNER-WRITING-PAGE - PAGES */
+
+.with-banner.writing {
+
+    header {
+
+        .banner {
+            background: url("/img/with-banner/writing/banner.png") no-repeat 100% 100%;
+
+            @include bp-xl {
+                background-size: cover;
+            }
+
+            @include bp-xs {
+                background: url("/img/with-banner/choices/banner.png") no-repeat 100% 100%;
+                background-size: cover;
+            }
+        }
+
+    }
+
+    .infos {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        @include bp-xl {
+            flex-wrap: wrap;
+        }
+
+        @include bp-xs {
+            display: block;
+        }
+
+        .intro__text {
+            max-width: 85%;
+
+            @include bp-xl {
+                max-width: 100%;
+            }
+
+            @include bp-xs {
+                color: $secondary-color;
+            }
+        }
+
+        &__image {
+            border: 3px solid $primary-color;
+            background: transparent;
+            border-radius: 23px;
+            padding: 20px 20px 20px 40px;
+            min-width: 370px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            @include bp-xl {
+                width: 100%;
+                margin-top: 60px;
+            }
+
+            @include bp-xs {
+                min-width: unset;
+                width: auto;
+
+                margin-top: 40px;
+                padding: 15px 15px 15px 25px;
+            }
+
+            &--img {
+                width: 65px;
+
+                @include bp-xl {
+                    margin: 0 80px;
+                }
+
+                @include bp-xs {
+                    width: 40px;
+                }
+            }
+
+            &--text {
+                margin-left: 30px;
+                max-width: 195px;
+                color: $primary-color;
+                line-height: 18px;
+                font-size: 12px;
+                font-weight: 500;
+
+                @include bp-xl {
+                    max-width: 450px;
+                    font-size: 16px;
+                    margin-left: 0;
+                    margin-right: auto;
+                    line-height: 22px;
+                }
+
+                @include bp-xs {
+                    font-size: 9px;
+                }
+            }
+        }
+
+    }
+
+    .setting {
+
+        .card {
+            @include bp-xl {
+                background: transparent;
+                padding: 0;
+                border-radius: 0;
+            }
+
+            @include bp-xs {
+                background: transparent;
+                padding: 0;
+                border-radius: 0;
+            }
+        }
+
+        .box-shadow {
+            @include bp-xl {
+                box-shadow: none;
+            }
+
+            @include bp-xs {
+                box-shadow: none;
+            }
+        }
+
+        &__content {
+
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+
+            @include bp-xl {
+                flex-wrap: wrap;
+            }
+
+            .arrow {
+                color: $blue;
+                
+                svg {
+                    position: relative;
+                    top: 1px;
+                }
+            }
+
+            .form-group {
+                margin-left: 50px;
+
+                @include bp-xs {
+                    margin: 0 auto;
+                    width: 85px;
+                }
+
+                .form-control {
+                    width: 125px;
+                    color: $secondary-color;
+
+                    @include bp-xl {
+                        width: 95px;
+                        padding: 5px 15px;
+                    }
+
+                    @include bp-xs {
+                        width: 85px;
+                        height: 32px;
+                        padding: 5px 15px;
+                        font-size: 12px;
+                    }
+                }
+
+                &::after {
+                    @include bp-xs {
+                        font-size: 16px;
+                        right: 15px;
+                    }
+                }
+            }
+
+            .setting__text {
+                @include bp-xs {
+                    font-size: 10px;
+                    line-height: 16px;
+                }
+            }
+        }
+        
+        &__element {
+            display: flex;
+            align-items: center;
+
+            @include bp-xl {
+                flex: 0 0 100%;
+                padding: 30px 105px;
+
+                background: $white;
+                border-radius: 15px;
+
+                box-shadow: $box-shadow;
+                margin-bottom: 30px;
+            }
+
+            @include bp-xs {
+                flex-direction: column;
+                justify-content: space-between;
+                height: 130px;
+
+                background: $white;
+                padding: 20px 20px 10px 20px;
+                border-radius: 15px;
+
+                box-shadow: $box-shadow;
+
+                flex: 0 0 50%;
+                margin-right: 10px;
+
+                &:last-child {
+                    margin-right: 0;
+                }
+            }
+        }
+        &__text {
+            @include bp-xl {
+                margin-right: auto;
+            }
+        }
+    }
+
+    .text-quality {
+
+        &__content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            @include bp-xl {
+                align-items: stretch;
+            }
+
+            @include bp-xs {
+                overflow-x: scroll;
+                align-items: stretch;
+            }
+        }
+    }
+
+    .text-option {
+
+        @include bp-xl {
+            padding-bottom: 0;
+        }
+
+        &__content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+
+            .card-choices {
+                max-width: 400px;
+                width: auto;
+
+                @include bp-xl {
+                    width: 235px;
+                    height: 280px;
+
+                    margin-bottom: 60px;
+
+                    flex: none;
+                }
+            }
+        }
+    }
+
+}

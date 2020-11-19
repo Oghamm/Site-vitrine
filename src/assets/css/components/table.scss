@@ -1,0 +1,178 @@
+/* TABLE - COMPONENTS */
+
+.table-offer {
+    border-collapse: collapse;
+    width: 100%;
+
+    @include bp-xl {
+        display: none;
+    }
+
+    .table-heading--title {
+        font-size: 30px;
+        font-weight: 700;
+        color: $secondary-color;
+
+        @include bp-xl {
+            font-size: 32px;
+        }
+
+        @include bp-xs {
+            font-size: 16px;
+        }
+    }
+
+    tr {
+
+        th {
+            text-align: center;
+
+            @include bp-xs {
+                display: none;
+            }
+    
+            &:first-child {
+                text-align: left;
+            }
+
+            &.header-select {
+                display: none;
+            }
+        }
+
+        td {
+            padding: 10px 20px;
+            -webkit-transition: all .5s;
+            -o-transition: all .5s;
+            transition: all .5s;
+            text-align: center;
+            
+            @include bp-xs {
+                padding-bottom: 5px;
+                
+                &:not(.title) {
+                    display: none;
+                }
+            }
+
+            svg {
+                font-size: 24px;
+
+                &.fa-check{
+                    color: $primary-color;
+                }
+
+                &.fa-minus{
+                    color: $grey;
+                }
+            }
+
+            &.title {
+                color: $secondary-color;
+                font-size: 18px;
+                font-weight: 600;
+                text-align: left;
+
+                @include bp-xs {
+                    text-align: center;
+                    font-size: 10px;
+                }
+            }
+
+            &:first-child {
+                border-radius: 25px 0 0 25px;
+            }
+
+            &:last-child {
+                border-radius: 0 25px 25px 0;
+            }
+        }
+
+        &:first-child {
+        
+            th {
+                padding-bottom: 60px;
+    
+                &:first-child {
+                    padding-left: 20px;
+
+                    @include bp-xs {
+                        display: block;
+                        
+                        padding: 0 0 30px 0;
+                        text-align: center;
+                        font-size: 16px;
+                        font-weight: 600;
+                    }
+                }
+            }
+        }
+
+        &:last-child {
+        
+            .btn-primary {
+                padding: 13px 15px;
+                width: 140px;
+            }
+        }
+
+        &:not(:first-child):hover {
+            
+            td {
+                background: $cms-bg-primary;
+            }
+
+        }
+
+        &.button-bar {
+            td {
+                padding: 25px 20px 0 20px;
+            }
+
+            &:hover td {
+                background: $white;
+            }
+
+        }
+
+    }
+
+    &-select {
+        display: none;
+
+        @include bp-xl {
+            display: block;
+        }
+
+        .form-group.select-blue {
+            border: 2px solid $primary-color;
+            width: 205px;
+
+            @include bp-xl {
+                width: auto;
+            }
+
+            .form-control {
+                background: $white;
+                font-size: 16px;
+
+                @include bp-xl {
+                    width: 205px;
+                }
+            }
+            
+        }
+
+        tr {
+            td.title {
+                font-size: 19px;
+                padding-left: 50px;
+            }
+
+            td:not(.title) {
+                text-align: right;
+                padding-right: 50px;
+            }
+        }
+    }
+}

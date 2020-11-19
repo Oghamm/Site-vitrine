@@ -1,0 +1,67 @@
+/* INTERNE-FAQ-PAGE - PAGES */
+
+.interne.faq {
+  .aside {
+    background: url("/img/interne/faq/banner.png") no-repeat 82% 40%;
+
+    @include bp-xs {
+      background: url("/img/interne/faq/banner-responsive.png") no-repeat 70%
+        100%;
+    }
+  }
+
+  .content {
+    @include bp-xs {
+      padding-top: 40px;
+    }
+
+    &__elements {
+      @include bp-xl {
+        padding-left: 40px;
+      }
+    }
+  }
+
+  .all-faq-element {
+    margin-top: 90px;
+    padding-bottom: 100px;
+
+    @include bp-xl {
+      margin-top: 50px;
+    }
+
+    @include bp-xs {
+      margin-top: 40px;
+      padding-bottom: 0;
+    }
+
+    .faq-element {
+      margin-bottom: 30px;
+
+      &__title {
+        margin-bottom: 25px;
+        @include bp-xs {
+          font-size: 16px;
+          text-align: center;
+        }
+      }
+
+      &__text {
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 32px;
+        color: $secondary-color;
+
+        @include bp-xl {
+          font-size: 12px;
+          line-height: 32px;
+        }
+
+        @include bp-xs {
+          font-size: 12px;
+          line-height: 24px;
+        }
+      }
+    }
+  }
+}

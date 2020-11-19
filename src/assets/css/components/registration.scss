@@ -1,0 +1,353 @@
+/* REGISTRATION - COMPONENTS */
+
+.registration {
+
+    .top-bar {
+        margin-top: 55px;
+
+        @include bp-xl {
+            margin-top: 25px;
+        }
+
+        @include bp-xs {
+            margin-top: 25px;
+        }
+
+        &__menu {
+            margin-left: 100px;
+
+            .burger {
+                @include bp-xl {
+                    width: 29px;
+                    height: 24px;
+                    margin-top: 5px;
+                }
+
+                @include bp-xs {
+                    display: none;
+                }
+
+                &--responsive {
+                    display: none;
+
+                    @include bp-xs {
+                        display: block;
+                    }
+                }
+            }
+        }
+
+        &__logo {
+            .logo {
+                @include bp-xl {
+                    width: 220px;
+                }
+
+                &--responsive {
+                    display: none;
+
+                    @include bp-xs {
+                        display: block;
+                        position: relative;
+                        top: 5px;
+                    }
+                }
+            }
+
+        }
+
+        &__account {
+            border: none;
+
+            @include bp-xl {
+                padding: 17px 10px;
+                width: 200px;
+                flex: none;
+                font-size: 12px;
+            }
+
+            @include bp-xs {
+                display: none;
+            }
+
+            &:hover {
+                background: $primary-color;
+            }
+        }
+
+        &__language {
+            @include bp-xs {
+                display: none;
+            }
+
+            &::after {
+                @include bp-xl {
+                    right: 15px;
+                }
+            }
+            
+
+            select {
+                @include bp-xl {
+                    padding: 13px 15px;
+                    padding-right: 41px;
+                    font-size: 16px;
+                }
+
+                padding: 19.5px 23px;
+                padding-right: 60px;
+                width: auto;
+                height: auto;
+                font-size: 18px;
+                font-weight: 500;
+            }
+        }
+
+    }
+
+    .aside {
+        background: $white;
+        height: 100vh;
+
+        @include bp-xl {
+            flex: 0 0 50%;
+            max-width: 50%;
+        }
+        
+        @include bp-xs {
+            height: auto;
+            order: 1;
+            margin-top: 20px;
+        }
+
+        &__container {
+            position: absolute;
+            width: 100%;
+            top: 50%;
+            transform: translateY(-50%);
+            -webkit-transform: translateY(-50%);
+            -ms-transform: translateY(-50%);
+
+            @include bp-xs {
+                position: relative;
+                top: unset;
+                transform: none;
+            }
+        }
+
+        .top-bar__logo {
+            @include bp-xs {
+                display: none;
+            }
+        }
+
+        &__content {
+
+            .form-group label {
+                font-size: 18px;
+                font-weight: 600;
+
+                @include bp-xl {
+                    font-size: 16px;
+                }
+
+                @include bp-xs {
+                    font-size: 15px;
+                }
+            }
+
+            .form-group {
+                margin-bottom: 25px;
+            }
+
+            input {
+                width: 100%;
+                max-width: 400px;
+                background: $bg-grey;
+                border: none;
+                height: 48px;
+            }
+
+            &--fields {
+                margin-bottom: 30px;
+            }
+
+            &--button-timer {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                .btn {
+                    @include bp-xl {
+                        width: 205px;
+                    }
+
+                    @include bp-xs {
+                        margin-right: 40px;
+                    }
+                }
+
+                .timer {
+                    color: $secondary-color-50;
+                    font-size: 32px;
+                    font-weight: 500;
+
+                    @include bp-xl {
+                        font-size: 24px;
+                    }
+
+                    @include bp-xs {
+                        font-size: 24px;
+                    }
+                }
+            }
+
+            &--button {
+                margin-top: 50px;
+            }
+
+            &--button-forgot {
+                .forgot-password {
+                    font-size: 18px;
+                    font-weight: 600;
+                    color: $secondary-color-50;
+                    display: block;
+                    margin-bottom: 15px;
+
+                    @include bp-xl {
+                        font-size: 16px;
+                        margin-bottom: 30px;
+                    }
+
+                    @include bp-xs {
+                        font-size: 16px;
+                        margin-bottom: 30px;
+                    }
+                }
+
+                .btn {
+                    @include bp-xl {
+                        width: 100%;
+                    }
+
+                    @include bp-xs {
+                        width: 100%;
+                        margin-top: 10px;
+                    }
+                }
+            }
+
+            .primary-link {
+                color: $primary-color;
+                font-size: 24px;
+                font-weight: 600;
+                display: block;
+                margin-top: 60px;
+
+                @include bp-xl {
+                    font-size: 16px;
+                    margin-top: 30px;
+                }
+
+                @include bp-xs {
+                    font-size: 16px;
+                    margin-top: 25px;
+                    margin-bottom: 40px;
+                }
+            }
+
+        }
+    }
+
+    .content {
+        background: url("/img/registration/banner.png") no-repeat 95% 60%;
+        height: 100vh;
+
+        @include bp-xl {
+            flex: 0 0 50%;
+            max-width: 50%;
+        }
+
+        @include bp-xs {
+            background: url("/img/registration/banner.png") no-repeat 50% 100%;
+            max-height: 225px;
+            background-size: cover;
+        }
+        .container-fluid.full-padding {
+            @include bp-xl {
+                padding-left: 0;
+            }
+        }
+
+        .p-absolute {
+            text-align: center;
+            width: 100%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            -webkit-transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+
+            @include bp-xs {
+                top: 60%;
+            }
+        }
+
+        &__title {
+            @include bp-xs {
+                font-size: 32px;
+            }
+        }
+    }
+
+    .signin {
+
+        .aside__content {
+            margin-top: 100px;
+        }
+
+    }
+
+}
+
+.registration.signup {
+
+    .aside {
+
+        &__content {
+
+            &--button {
+                .btn {
+                    @include bp-xl {
+                        width: 100%;
+                    }
+
+                    @include bp-xs {
+                        width: 100%;
+                        margin-bottom: 75px;
+                    }
+                }
+            }
+
+        }
+
+    }
+
+}
+
+.registration.sms {
+
+    .aside {
+        
+        @include bp-xs {
+            margin: 130px 0;
+        }
+
+        .top-bar {
+            @include bp-xs {
+                margin-top: 0;
+            }
+        }
+    }
+
+}

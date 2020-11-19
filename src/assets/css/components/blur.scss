@@ -1,0 +1,19 @@
+/* BLUR - COMPONENTS */
+
+.blur {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+
+    &.linear-grey {
+        background: linear-gradient(rgba($bg-grey, 1) 0%, rgba($bg-grey, .6) 30%, rgba($bg-grey, .3) 60%, rgba($bg-grey, .1) 100%);
+    }
+
+    &.blur-popin {
+        background: $cms-bg-blur;
+        z-index: 1;
+    }
+}

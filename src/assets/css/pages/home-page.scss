@@ -1,0 +1,1300 @@
+/* HOME-PAGE - PAGES */
+
+.home {
+
+    // TO CHANGE
+    header {
+
+        .top-bar {
+            height: 130px;
+            display: flex;
+            align-items: center;
+
+            position: inherit;
+            top: unset;
+            margin-top: 0;
+
+            @include bp-lg {
+                position: absolute;
+                top: 0;
+
+                height: 105px;
+            }
+
+            @include bp-xs {
+                height: 90px;
+            }
+    
+            &__logo {
+    
+                .logo {
+                    width: 246px;
+
+                    @include bp-lg {
+                        display: none;
+                    }
+    
+                    @include bp-xl {
+                        width: 220px;
+                        top: 0;
+                    }
+    
+                    @include bp-xs {
+                        width: 150px;
+                        top: 0;
+                    }
+
+                    &-white {
+                        display: none;
+
+                        @include bp-lg {
+                            display: block;
+                        }
+                    }
+                }
+    
+            }
+
+            &__account {
+                max-width: 260px;
+                font-weight: 600;
+                box-sizing: border-box;
+
+                border-width: 2px;
+                padding: 20px 40px;
+
+                @include bp-lg {
+                    padding: 15px 20px;
+                    width: 205px;
+                    font-size: 12px;
+
+                    background: $white;
+                    color: $primary-color;
+                    border-color: $white;
+
+                    &:hover {
+                        border-color: $secondary-color;
+                    }
+                }
+            }
+
+            &__language {
+
+                .form-control{
+                    font-size: 18px;
+                    font-weight: 600;
+                    height: 64px;
+
+                    @include bp-lg {
+                        font-size: 16px;
+                        height: 49px;
+                        background: transparent;
+                        color: $white;
+                        border-color: $white;
+                    }
+                }
+
+                &::after {
+                    @include bp-lg {
+                        color: $white;
+                    }
+                }
+
+            }
+
+            &__cart {
+                box-shadow: none;
+
+                margin-left: 24px;
+
+                @include bp-lg {
+                    display: none;
+                }
+            }
+
+            &__menu {
+                margin-top: 8px;
+
+                @include bp-lg {
+                    margin-top: 0;
+                }
+
+                .open-nav {
+                    @include bp-lg {
+                        display: none;
+                    }
+
+                    &.burger--responsive {
+                        @include bp-lg {
+                            display: block;
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+
+    .step {
+        background: $cms-bg-primary;
+
+        &__btn {
+
+            &--end {
+                margin-top: 15px;
+                margin-bottom: 120px;
+
+                @include bp-lg {
+                    margin-top: 0;
+                    margin-bottom: 100px;
+                }
+
+                @include bp-xs {
+                    margin-bottom: 75px;
+                }
+            }
+
+        }
+
+        &__title {
+            margin: 120px auto 110px auto;
+            color: $primary-color;
+            font-weight: 600;
+            max-width: 1150px;
+
+            @include bp-lg {
+                max-width: 830px;
+                margin: 85px auto 65px auto;
+            }
+
+            @include bp-xs {
+                font-size: 24px;
+                line-height: 32px;
+
+                margin: 45px auto 60px auto;
+            }
+        }
+
+        &__card {
+            display: flex;
+            align-items: center;
+            margin-bottom: 115px;
+
+            @include bp-xs {
+                flex-direction: column;   
+
+                margin-bottom: 65px;
+            }
+
+            &.reverse {
+                flex-direction: row-reverse;
+
+                @include bp-xs {
+                    flex-direction: column;
+                }
+            }
+
+            &:first-child {
+                margin-top: 60px;
+
+                @include bp-lg {
+                    margin-top: 75px;
+                }
+            }
+
+            &:last-child {
+                @include bp-lg {
+                    margin-bottom: 40px;
+                }
+
+                @include bp-xs {
+                    margin-bottom: 65px;
+                }
+            }
+
+            &-image {
+                margin-right: 150px;
+
+                @include bp-lg {
+                    margin-right: 65px;
+                }
+
+                @include bp-xs {
+                    margin-right: 0;
+                }
+
+                &.reverse {
+                    margin-right: 0;
+                    margin-left: 150px;
+
+                    @include bp-lg {
+                        margin-left: 15px;
+                    }
+
+                    @include bp-xs {
+                        margin-left: 0;
+                    }
+                }
+
+                img {
+                    max-width: 260px;
+                    max-height: 260px;
+
+                    @include bp-lg {
+                       max-width: 205px;
+                       max-height: 205px;
+                    }
+                    
+                    @include bp-xs {
+                        max-width: 145px;
+                        max-height: 145px;
+
+                        margin-bottom: 30px;
+                    }
+                }
+            }
+
+            &-content {
+
+                &.reverse {
+                    @include bp-lg {
+                        max-width: 530px;
+                    }
+                }
+
+                &--title {
+                    @include bp-xs {
+                        text-align: center;
+                    }
+                }
+
+                &-text {
+                    color: $secondary-color;
+                    font-size: 20px;
+                    font-weight: 500;
+                    line-height: 40px;
+                    
+                    margin-top: 50px;
+                    max-width: 675px;
+
+                    @include bp-lg {
+                        font-size: 16px;
+                        line-height: 32px;
+
+                        margin-top: 35px;
+                    }
+
+                    @include bp-xs {
+                        font-size: 14px;
+                        line-height: 24px;
+
+                        margin-top: 25px;
+                    }
+                }
+            } 
+
+        }
+
+    }
+
+    .why {
+        color: $white;
+        padding: 225px 0 260px 0;
+
+        @include bp-lg {
+            padding: 110px 0 120px 0;
+        }
+
+        @include bp-xs {
+            padding: 80px 0 130px 0;
+        }
+
+        &__content {
+            display: flex;
+
+            @include bp-lg {
+                flex-wrap: wrap;   
+
+                max-width: 680px;
+                margin: 0 auto;
+            }
+        }
+
+        &__title {
+            font-size: 48px;
+            line-height: 64px;
+            font-weight: 700;
+            max-width: 480px;
+
+            margin-right: 70px;
+
+            @include bp-lg {
+                font-size: 32px;
+                line-height: 48px;
+                max-width: 490px;
+
+                margin-bottom: 55px;
+            }
+
+            @include bp-xs {
+                font-size: 24px;
+                line-height: 48px;
+                margin-right: 0;   
+
+                margin-bottom: 45px;
+            }
+        }
+
+        &__text {
+            font-size: 20px;
+            line-height: 40px;
+            font-weight: 600;
+            max-width: 675px;
+
+            @include bp-lg {
+                font-size: 16px;
+                line-height: 32px;
+                max-width: 100%;
+            }
+
+            @include bp-xs {
+                font-size: 14px;
+            }
+        }
+    }
+
+    .template {
+        background: $cms-bg-primary;
+        padding: 115px 0 140px 0;
+        
+        @include bp-lg {
+            padding: 95px 0;   
+        }
+
+        @include bp-xs {
+            padding: 85px 0;
+        }
+
+        &__container {
+            padding: 0;
+            max-width: 1360px;
+
+            @include bp-lg {
+                max-width: 880px;
+            }
+        }
+        
+        &__title {
+            text-align: center;
+
+            @include bp-xs {
+                font-size: 24px;   
+            }
+        }
+
+        &__subtitle {
+            font-size: 20px;
+            font-weight: 500;
+            color: $secondary-color;
+            text-align: center;
+
+            margin-top: 35px;
+
+            @include bp-lg {
+                font-size: 18px;
+
+                margin-top: 15px;
+            }
+
+            @include bp-xs {
+                font-size: 16px;
+                line-height: 24px;
+
+                margin-top: 22px;
+            }
+        }
+
+        &__content {
+            margin-top: 110px;
+
+            display: flex;
+            flex-wrap: wrap;
+
+            @include bp-lg {
+                margin-top: 65px;
+            }
+        }
+
+        &__card {
+            background: $white;
+            width: 100%;
+            max-width: 398px;
+            height: 263px;
+            border-radius: 20px;
+            padding: 25px;
+
+            margin-right: 80px;
+            margin-bottom: 80px;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            position: relative;
+
+            @include bp-lg {
+                width: 252px;
+                height: 167px;
+                padding: 15px;
+
+                margin-right: 55px;
+                margin-bottom: 55px;
+            }
+
+            @include bp-xs {
+                margin: 0 auto 50px auto;   
+            }
+
+            &:nth-child(n+4) {
+                @include bp-xs {
+                    display: none;
+                }
+            }
+
+            &:nth-child(3n) {
+                margin-right: 0;
+
+                @include bp-xs {
+                    margin-right: auto;
+                    margin-bottom: 0;
+                }
+            }
+
+            &--link {
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+            }
+
+            &--price {
+                font-size: 32px;
+                font-weight: 500;
+                color: $primary-color;
+
+                margin-left: auto;
+
+                @include bp-lg {
+                    font-size: 20px;
+                }
+            }
+
+            &--exclusive {
+                display: flex;
+                align-items: center;
+
+                &-img {
+                    margin-right: 15px;
+                    flex: 1;
+                    max-width: 40px;
+
+                    @include bp-lg {
+                        margin-right: 9px;
+
+                        max-width: 21px;
+                    }
+                }
+
+                &-text {
+                    color: $secondary-color;
+
+                    @include bp-lg {
+                        font-size: 9px;
+                    }
+                }
+            }
+        }
+
+        &__btn {
+            @include bp-lg {
+                margin-top: 10px;
+            }
+
+            @include bp-xs {
+                display: none;    
+            }
+        }
+    }
+
+    .service-card {
+        background: $cms-bg-primary;
+        padding-bottom: 170px;
+
+        @include bp-lg {
+            padding-bottom: 120px;   
+        }
+
+        @include bp-xs {
+            padding: 0 36px 90px 36px;
+        }
+
+        &__container {
+            padding: 0;
+        }
+        
+        &__title {
+            text-align: center;
+
+            @include bp-xs {
+                font-size: 24px;
+            }
+        }
+
+        &__subtitle {
+            font-size: 20px;
+            font-weight: 500;
+            color: $secondary-color;
+            text-align: center;
+
+            margin-top: 35px;
+
+            @include bp-lg {
+                font-size: 18px;
+
+                margin-top: 15px;
+            }
+
+            @include bp-xs {
+                font-size: 16px;
+                line-height: 24px;
+
+                margin-top: 22px;
+            }
+        }
+
+        &__aside {
+            max-width: 685px;
+        }
+        
+        &__content {
+            margin-top: 110px;
+            
+            display: flex;
+            align-items: center;
+
+            @include bp-lg {
+                margin-top: 65px;
+            }
+
+            @include bp-xs {
+                margin-top: 50px; 
+
+                flex-direction: column;
+            }
+        }
+
+        &__img {
+            background: $white;
+            max-width: 536px;
+            height: 499px;
+            border-radius: 20px;
+            flex: 1;
+
+            margin-right: 150px;
+
+            @include bp-lg {
+                max-width: 314px;
+                height: 292px;
+
+                margin-right: 70px;
+
+                flex: 1 0 314px;
+            }
+
+            @include bp-xs {
+                max-width: none;
+                width: 146px;
+                height: 146px;
+                
+                margin: 0 auto 50px auto;
+
+                flex: 1 0 146px;
+            }
+        }
+
+        &__text {
+            font-size: 20px;
+            font-weight: 500;
+            line-height: 40px;
+            color: $secondary-color;
+
+            margin-bottom: 30px;
+
+            @include bp-lg {
+                font-size: 16px;
+                line-height: 32px;
+            }
+
+            @include bp-xs {
+                margin-bottom: 55px;
+            }
+        }
+
+        &__btn {
+            @include bp-xs {
+                display: block;
+                margin: 0 auto;   
+            }
+        }
+    }
+
+    .service {
+        background: $cms-bg-primary;
+
+        &__container {
+            padding: 0;
+        }
+
+        &__title {
+            @include bp-xs {
+                font-size: 24px;
+            }
+        }
+
+        &__subtitle {
+            font-size: 20px;
+            font-weight: 500;
+            color: $secondary-color;
+
+            margin-top: 35px;
+
+            @include bp-lg {
+                font-size: 18px;
+
+                margin-top: 15px;
+            }
+
+            @include bp-xs {
+                font-size: 16px;
+                line-height: 24px;
+
+                margin-top: 22px;
+            }
+        }
+
+        &__background {
+            background: linear-gradient(to bottom, $white, $light-brown);
+            border-radius: 90px 90px 0 0;
+            padding: 90px 0 165px 0;
+
+            @include bp-lg {
+                padding-bottom: 0;
+            }
+
+            @include bp-xs {
+                border-radius: 63px 63px 0 0;
+
+                padding-top: 65px;
+            }
+        }
+
+        &__hr {
+            margin-top: 30px;
+            background: $secondary-color;
+        }
+
+        &__cards {
+            padding: 145px 0 50px 0;
+
+            display: flex;
+            flex-wrap: wrap;
+
+            @include bp-lg {
+                padding: 100px 0 10px 0;
+            }
+
+            @include bp-xs {
+                padding: 60px 0 0 0;
+            }
+        }
+
+        &__card {
+            display: flex;
+            flex-wrap: wrap;
+            flex: 0 0 50%;
+            position: relative;
+
+            margin-bottom: 110px;
+
+            &:nth-child(even) {
+                margin-right: 0;
+            }
+            
+            @include bp-lg {
+                flex: 0 0 100%;   
+                
+                margin-bottom: 65px;
+            }
+
+            @include bp-xs {
+                align-items: center;      
+                
+                margin-bottom: 40px;
+            }
+
+            &-image {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 165px;
+                background: $blue;
+                border-radius: 50%;
+                flex: 0 0 165px;
+                margin-right: 65px;
+                box-shadow: $box-shadow-3;
+
+                @include bp-lg {
+                    margin-right: 55px;
+                }
+
+                @include bp-xs {
+                    flex: 0 0 78px;
+                    height: 78px;
+                    
+                    margin-right: 25px;
+                }
+
+                &--img {
+                    @include bp-xs {
+                        max-width: 34px;
+                    }
+                }
+            }
+
+            &-content {
+                flex: 0 0 445px;
+
+                @include bp-lg {
+                    flex: 0 0 630px;
+                }
+
+                @include bp-xs {
+                    flex: 0 0 100%;
+                }
+
+                &.little {
+                    flex: 0 0 350px;
+
+                    @include bp-lg {
+                        flex: 0 0 630px;
+                    }
+
+                    @include bp-xs {
+                        flex: 0 0 100%;
+                    }
+                }
+
+                &.small {
+                    flex: 0 0 315px;
+
+                    @include bp-lg {
+                        flex: 0 0 630px;
+                    }
+
+                    @include bp-xs {
+                        flex: 0 0 100%;
+                    }
+                }
+
+                &--title {
+                    display: table-cell;
+                    vertical-align: bottom;
+
+                    @include bp-lg {
+                        font-size: 32px;
+                    }
+
+                    @include bp-xs {
+                        display: none;
+                        
+                        font-size: 24px;
+
+                        max-width: 200px;
+                    }
+
+                    &.responsive {
+                        display: none;
+
+                        @include bp-xs {
+                            display: block;
+                        }
+                    }
+                }
+
+                &--text {
+                    color: $secondary-color;
+                    font-size: 16px;
+                    line-height: 32px;
+                    font-weight: 500;
+
+                    margin-top: 40px;
+
+                    @include bp-lg {
+                        font-size: 16px;
+                        line-height: 32px;
+
+                        margin-top: 24px;
+                    }
+
+                    @include bp-xs {
+                        font-size: 14px;
+                        line-height: 24px;
+
+                        margin-top: 40px;
+                    }
+                }
+
+                &--link {
+                    color: $primary-color;
+                    font-weight: 600;
+                    font-size: 18px;
+
+                    margin-top: 20px;
+
+                    @include bp-xs {
+                        font-size: 14px;
+
+                        margin-top: 5px;
+                    }
+                }
+
+            }
+
+        }
+    }
+
+    .migrate {
+        max-width: 1640px;
+        margin: 0 auto;
+        padding: 110px 180px 110px 140px;
+        border-radius: 53px;
+        
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+
+        box-shadow: $box-shadow-4;
+
+        @include bp-lg {
+            padding: 110px 110px 90px 110px;
+            margin: 0 80px;
+        }
+
+        @include bp-xs {
+            padding: 34px 20px 22px 20px;
+            margin: 0 36px;
+            
+            border-radius: 34px;
+        }
+
+        &__image {
+            width: 282px;
+            height: 282px;
+            border-radius: 50%;
+            background: $cms-bg-primary;
+
+            position: relative;
+
+            @include bp-lg {
+                width: 205px;
+                height: 205px;
+
+                display: none;
+            }
+
+            @include bp-xs {
+                order: 0;
+
+                width: 110px;
+                height: 110px;
+
+                margin: 0 auto;
+            }
+
+            &--responsive {
+                display: none;
+
+                @include bp-lg {
+                    display: block;
+                }
+            }
+
+            &--img {
+                position: absolute;
+                width: 246px;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                -webkit-transform: translate(-50%, -50%);
+                -ms-transform: translate(-50%, -50%);
+
+                @include bp-lg {
+                    width: 180px;
+                }
+
+                @include bp-xs {
+                    width: 93px;   
+                }
+            }
+            
+        }
+
+        &__content {
+            max-width: 810px;
+
+            @include bp-lg {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+            }
+
+            @include bp-xs {
+                padding: 0;
+                max-width: 100%;       
+            }
+        }
+
+        &__title {
+            font-size: 48px;
+            font-weight: 700;
+            line-height: 64px;
+            color: $white;
+
+            @include bp-lg {
+                font-size: 32px;
+                line-height: 48px;
+
+                max-width: 380px;
+
+                margin-top: 20px;
+            }
+
+            @include bp-xs {
+                order: 1;    
+                
+                font-size: 18px;
+                line-height: 24px;
+                padding: 0 18px;
+
+                margin-top: 30px;
+            }
+        }
+
+        &__text {
+            font-size: 24px;
+            font-weight: 500;
+            line-height: 32px;
+            color: $white;
+
+            margin-top: 45px;
+            margin-bottom: 65px;
+
+            @include bp-lg {
+                font-size: 18px;
+                line-height: 32px;
+
+                margin-top: 55px;
+                margin-bottom: 50px;
+
+                flex: 1 0 100%   
+            }
+
+            @include bp-xs {
+                order: 2;      
+                
+                font-size: 12px;
+                line-height: 16px;
+                padding: 0 18px;
+
+                margin-top: 25px;
+            }
+        }
+
+        &__btn {
+            color: $secondary-color;
+
+            &:hover {
+                background: $secondary-color;
+                border-color: $secondary-color;
+                color: $white;
+            }
+
+            @include bp-lg {
+                margin: 0 auto;
+            }
+
+            @include bp-xs {
+                order: 3;       
+            }
+        }
+
+    }
+
+    .collaborate {
+        padding-top: 130px;
+
+        @include bp-xs {
+            padding-top: 50px;
+            padding-bottom: 35px;
+        }
+
+        &__container {
+            max-width: 1420px;
+            padding: 0;
+
+            @include bp-lg {
+                padding: 0 80px;
+            }   
+
+            @include bp-xs {
+                padding: 0 36px;
+            }
+        }
+
+        &__title {
+            @include bp-xs {
+                font-size: 23px;    
+            }
+        }
+
+        &__subtitle {
+            font-size: 20px;
+            font-weight: 500;
+            color: $secondary-color;
+
+            margin-top: 35px;
+
+            @include bp-lg {
+                font-size: 18px;
+                
+                margin-top: 15px;
+            }
+
+            @include bp-xs {
+                font-size: 16px;
+                line-height: 24px;
+
+                margin-top: 22px;
+            }
+        }
+
+        &__content {
+            margin-top: 100px;
+            display: flex;
+            flex-wrap: wrap;
+
+            @include bp-xs {
+                margin-top: 65px;    
+            }
+        }
+
+        &__card {
+            flex: 0 0 50%;
+
+            @include bp-lg {
+                flex: 0 0 100%; 
+                
+                display: flex;
+                align-items: center;
+
+                margin-bottom: 90px;
+            }
+
+            @include bp-xs {
+                flex-direction: column;   
+
+                margin-bottom: 75px;
+            }
+
+            &--header {
+                text-align: center;
+                max-width: 536px;
+
+                @include bp-lg {
+                    max-width: 315px;
+
+                    margin-right: 65px;
+                }
+
+                @include bp-xs {
+                    margin-right: 0;
+                }
+            }
+
+            &--image {
+                background: $orange;
+                width: 260px;
+                height: 260px;
+                border-radius: 50%;
+
+                margin: 0 auto 25px auto;
+
+                position: relative;
+
+                @include bp-lg {
+                    width: 315px;
+                    height: 315px;
+                }
+
+                @include bp-xs {
+                    width: 146px;
+                    height: 146px;
+                }
+
+                &-img {
+                    position: absolute;
+                    width: 210px;
+                    left: 50%;
+                    top: 50%;
+                    transform: translate(-50%, -50%);
+                    -webkit-transform: translate(-50%, -50%);
+                    -ms-transform: translate(-50%, -50%);
+
+                    @include bp-lg {
+                        width: 255px;
+                    }
+
+                    @include bp-xs {
+                        width: 117px;
+                    }
+                }
+
+                &.blue {
+                    background: $cms-bg-primary;
+                }
+            }
+
+            &--title {
+                font-weight: 600;
+
+                margin-bottom: 60px;
+                max-width: 536px;
+                text-align: center;
+
+                @include bp-lg {
+                    font-size: 32px;
+                    margin-bottom: 32px;
+
+                    text-align: left;
+                }
+
+                @include bp-xs {
+                    text-align: center;
+
+                    max-width: none;
+                    margin-bottom: 25px;
+                }
+
+                &.blue {
+                    margin-left: 105px;
+
+                    @include bp-lg {
+                        margin-left: 0;
+                    }
+                }
+            }
+
+            &--text {
+                font-size: 24px;
+                font-weight: 500;
+                line-height: 48px;
+                color: $secondary-color;
+
+                max-width: 650px;
+
+                margin-bottom: 80px;
+
+                @include bp-lg {
+                    font-size: 16px;
+                    line-height: 32px;
+
+                    margin-bottom: 32px;
+                }
+
+                @include bp-xs {
+                    font-size: 14px;
+                    line-height: 24px;
+                }
+            }
+
+            &--btn {
+                margin-left: 140px;
+
+                @include bp-lg {
+                    margin-left: 0;   
+                }
+
+                @include bp-xs {
+                    display: block;
+                    margin: 0 auto;
+                }
+            }
+
+            &.card-2 {
+                
+                .collaborate__card {
+
+                    &--header {
+                        margin-left: 105px;
+
+                        @include bp-lg {
+                            margin-left: 0;
+                        }
+                    }
+
+                    &--image {
+
+                        &-img {
+                            width: 260px;
+
+                            @include bp-lg {
+                                width: 315px;
+                            }
+
+                            @include bp-xs {
+                                width: 146px;
+                            }
+                        }
+
+                    }
+
+                    &--text {
+                        margin-left: auto;
+
+                        @include bp-lg {
+                            margin-left: 0;
+                        }
+                    }
+
+                    &--btn {
+                        margin-left: 240px;
+
+                        @include bp-lg {
+                            margin-left: 0;
+                        }
+
+                        @include bp-xs {
+                            margin: 0 auto;
+                        }
+                    }
+                    
+                }
+
+            }
+
+        }
+    }
+    
+}

@@ -1,0 +1,182 @@
+/* WITH-BANNER-TRANSLATE-PAGE - PAGES */
+
+.with-banner.translate {
+
+    header {
+
+        .banner {
+            background: url("/img/with-banner/translate/banner.png") no-repeat 100% 30%;
+
+            @include bp-xl {
+                background: url("/img/with-banner/translate/banner.png") no-repeat 100% 100%;
+                background-size: cover;
+            }
+
+            @include bp-xs {
+                background-size: cover;
+            }
+        }
+
+    }
+
+    .intro {
+        @include bp-xs {
+            padding-bottom: 45px;
+        }
+    }
+
+    .setting {
+        @include bp-xs {
+            padding-bottom: 45px;
+        }
+
+        .card {
+            @include bp-xl {
+                display: none;
+            }
+
+            @include bp-xs {
+                background: transparent;
+                padding: 0;
+            }
+
+            &-responsive {
+                display: none;
+
+                @include bp-xl {
+                    display: flex;
+                    align-items: center;
+
+                    padding: 30px 105px;
+                    margin-bottom: 30px;
+                }
+
+                .form-group {
+                    @include bp-xl {
+                        margin-left: auto;
+                    }
+    
+                    select {
+                        @include bp-xl {
+                           font-size: 16px;
+                        }
+                    }
+                }
+
+                &.box-shadow {
+                    @include bp-xl {
+                        box-shadow: $box-shadow;
+                    }
+                }
+            }
+        }
+
+        .box-shadow {
+            @include bp-xl {
+                box-shadow: none;
+            }
+
+            @include bp-xs {
+                box-shadow: none;
+            }
+        }
+
+        &__content {
+
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            
+            @include bp-xs {
+                flex-wrap: wrap;
+            }
+
+            .arrow {
+                color: $blue;
+
+                @include bp-xl {
+                    display: none;
+                }
+
+                @include bp-xs {
+                    display: none;
+                }
+                
+                svg {
+                    position: relative;
+                    top: 1px;
+                }
+            }
+
+            .form-group {
+                @include bp-xl {
+                    margin-left: auto;
+                }
+
+                select {
+                    color: $secondary-color;
+    
+                    @include bp-xl {
+                       font-size: 16px;
+                    }
+
+                    @include bp-xs {
+                        background: $white;
+                        height: 32px;
+                        width: 145px;
+                        padding-right: 40px;
+                        padding: 6px 15px;
+                    }
+                }
+
+                @include bp-xs {
+                    order: 3;
+                    margin-top: 10px;
+    
+                    &:first-child {
+                        order: 2;
+                    }
+
+                    &::after {
+                        font-size: 13px;
+                    }
+                }
+            }
+        }
+
+        &__text {
+            @include bp-xs {
+                font-size: 10px;
+                line-height: 25px;
+                order: 1;
+
+                &:first-child {
+                    order: 0;
+                }
+            }
+        }
+
+        .form-group {
+            @include bp-xs {
+                order: 3;
+
+                &:first-child {
+                    order: 2;
+                }
+            }
+        }
+
+    }
+
+    .text-to-translate {
+        
+        textarea {
+            @include bp-xs {
+                font-size: 10px;
+                height: 240px;
+            }
+        }
+
+    }
+
+}
