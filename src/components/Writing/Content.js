@@ -75,9 +75,8 @@ const Content = () => {
                   </h4>
 
                   <p className="intro__text">
-                    Profitez de l’expertise de notre équipe et du savoir-faire
-                    de nos rédacteurs professionnels pour faire rédiger vos
-                    textes, rapidement et sans effort !
+                    Vous voulez que votre site apparaisse en tête des pages de résultats sur les moteurs de recherche?
+                    Pour cela, un contenu optimisé est primordial.
                   </p>
                 </div>
 
@@ -541,48 +540,6 @@ const Content = () => {
                 >
                   {getTranslation("ask_quote")}
                 </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="recap bg-primary">
-        <div className="container">
-          <div className="row">
-            <div className="col-12">
-              <div className="recap__content">
-                <div className="recap__infos">
-                  <h4 className="white bold mb-3">Récapitulatif de commande</h4>
-
-                  <div className="recap__resume">
-                    <div className="line">
-                      <p className="title">Nombre de texte</p>
-                      <p>{numberToWrite}</p>
-                    </div>
-
-                    <div className="line">
-                      <p className="title">{getTranslation("words_number")}</p>
-                      <p>{numberWordsByText}</p>
-                    </div>
-
-                    <div className="line">
-                      <p className="title">{getTranslation("options")}</p>
-                      <p>{options.join(", ")}</p>
-                    </div>
-                  </div>
-                </div>
-                <div className="recap__validation">
-                  <p className="recap__validation--price">
-                    {finalPrice.toLocaleString("fr-FR")} €
-                  </p>
-                  <button
-                    className="btn btn-white recap__validation--valide"
-                    onClick={toggleModal}
-                  >
-                    Valider
-                  </button>
-                </div>
               </div>
             </div>
           </div>

@@ -10,7 +10,7 @@ const Intro = () => {
         <div className="row">
           <div className="col-12">
             <h4 className="intro__title section-title">
-              {getTranslation("social_media_is")}
+              {getTranslation("make_yourself_known")}
             </h4>
           </div>
 
@@ -18,7 +18,6 @@ const Intro = () => {
             <p className="intro__text">
               {getTranslation("social_media_description")}
             </p>
-            <p className="intro__text mt-5">{getTranslation("seo_description")}</p>
           </div>
         </div>
       </div>

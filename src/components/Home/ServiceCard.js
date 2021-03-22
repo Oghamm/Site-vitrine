@@ -14,7 +14,7 @@ const ServiceCard = () => {
             </h2>
 
             <p className="service-card__subtitle">
-            {getTranslation("quintyss_services")}
+            {getTranslation("quintyss_services_2")}
             </p>
 
             <div className="service-card__content">
@@ -29,7 +29,7 @@ const ServiceCard = () => {
                   href="./custom.html"
                   className="service-card__btn btn btn-primary"
                 >
-                  {getTranslation("cta_1")}
+                  {getTranslation("cta_2")}
                 </a>
               </div>
             </div>

@@ -54,7 +54,7 @@ const Content = () => {
           <div className="row">
             <div className="col-12">
               <h4 className="intro__title section-title">
-                {getTranslation("writing_platform")}
+                {getTranslation("translate_platform")}
               </h4>
             </div>
 
@@ -318,50 +318,6 @@ const Content = () => {
         </div>
       </section>
 
-      <section className="recap bg-primary">
-        <div className="container">
-          <div className="row">
-            <div className="col-12">
-              <div className="recap__content">
-                <div className="recap__infos">
-                  <h4 className="white bold mb-3">
-                    {getTranslation("order_summary")}
-                  </h4>
-
-                  <div className="recap__resume">
-                    {/* <div className="line">
-                      <p className="title">{getTranslation("text_number")}</p>
-                      <p>5</p>
-                    </div> */}
-
-                    <div className="line">
-                      <p className="title">{getTranslation("words_number")}</p>
-                      <p>{getWords(text)}</p>
-                    </div>
-
-                    {/* <div className="line">
-                      <p className="title">{getTranslation("options")}</p>
-                      <p>{getTranslation("html_formating")}</p>
-                    </div> */}
-                  </div>
-                </div>
-                <div className="recap__validation">
-                  <p className="recap__validation--price">
-                    {" "}
-                    {finalPrice.toLocaleString("fr-FR")} €
-                  </p>
-                  <button
-                    className="btn btn-white recap__validation--valide"
-                    onClick={toggleModal}
-                  >
-                    Valider
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
     </>
   )
 }

@@ -4,6 +4,7 @@ import Header from "../components/Header"
 import Banner from "../components/Social/Banner"
 import Intro from "../components/Social/Intro"
 import Contact from "../components/Social/Contact"
+import Content from "../components/Social/Content";
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
       </Header>
       <main>
         <Intro/>
+        <Content/>
         <Contact/>
       </main>
     </Layout>

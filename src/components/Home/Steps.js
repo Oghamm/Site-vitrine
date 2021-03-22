@@ -10,10 +10,6 @@ const Steps = () => {
         <div className="row">
           <div className="col-12 text-center">
             <h1 className="step__title">{getTranslation("new_identity")}</h1>
-
-            <a href="./choice-model.html" className="btn btn-primary step__btn">
-              {getTranslation("cta_1")}
-            </a>
           </div>
         </div>
 

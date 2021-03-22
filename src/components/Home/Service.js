@@ -16,7 +16,7 @@ const Service = () => {
               </h2>
 
               <p className="service__subtitle">
-              {getTranslation("quintyss_services")}
+              {getTranslation("quintyss_services_2")}
 
               </p>
 
@@ -171,7 +171,7 @@ const Service = () => {
                 </h2>
 
                 <p className="collaborate__subtitle">
-                {getTranslation("quintyss_services")}
+                {getTranslation("quintyss_services_2")}
                 </p>
 
                 <div className="collaborate__content">
@@ -220,8 +220,8 @@ const Service = () => {
                         {getTranslation("developer")}
                       </h2>
                       <p className="collaborate__card--text">
-                      {getTranslation("features_4")}<br />
-                        {getTranslation("quintyss_solution")}
+                      {getTranslation("features_5")}<br />
+                        {getTranslation("features_6")}
                       </p>
 
                       <a
