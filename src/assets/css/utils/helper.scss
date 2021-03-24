@@ -18,6 +18,8 @@
 
 .bg-secondary {
     background: $bg-secondary;
+    position: relative;
+    z-index: 99;
 }
 
 .bg-grey {

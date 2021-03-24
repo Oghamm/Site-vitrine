@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, {useEffect, useState} from "react"
 import useIntlFromDocs from "../../hooks/useIntlFromDocs"
 import Modali, { useModali } from "modali"
 import Stripe from "../Stripe/Stripe"
@@ -12,6 +12,8 @@ const Content = () => {
   const [modalConfig, toggleModal] = useModali({
     large: true,
   })
+  const [open, setOpen] = useState(false);
+  const [knowMore, setKnowMore] = useState(false);
 
   const [sucessModel, toggleSucessModel] = useModali({
     animated: true,
@@ -27,6 +29,15 @@ const Content = () => {
   })
 
   const pricesOfTextQuality = [0.4, 0.6, 0.8]
+
+  const handleShop = () => {
+    setOpen(open => !open);
+  }
+
+  const handle_knowMore =() => {
+    setKnowMore(knowMore => !knowMore);
+  }
+
 
   const handleOptionsClicked = option => {
     if (options.includes(option)) {
@@ -64,15 +75,65 @@ const Content = () => {
       </Modali.Modal>
       <Modali.Modal {...sucessModel} />
 
+
+      <div className={"sticky_container"}>
+        {open &&
+        <div className={"container_shop"}>
+          <div className={"cross"} >
+            Votre commande
+            <div onClick={handleShop}>
+              <i className="fas fa-times" ></i>
+            </div>
+          </div>
+          <div className={"content"}>
+            <div><p>Nb.de mots</p></div>
+            <div className={"value"}><p>164</p></div>
+          </div>
+          <div className={"content"}>
+            <div><p>Prix par mots</p></div>
+            <div className={"value"}><p>16,90</p></div>
+          </div>
+          <div className={"content"}>
+            <div><p>Langue source</p></div>
+            <div className={"value"}><p>Français</p></div>
+          </div>
+          <div className={"content"}>
+            <div><p>Langue cible</p></div>
+            <div className={"value"}><p>Anglais</p></div>
+          </div>
+          <div className={"content"}>
+            <div><p>Livraison estimée</p></div>
+            <div className={"value"}><p>24h</p></div>
+          </div>
+
+          <div className={"validate"}>
+            Valider
+          </div>
+        </div>
+        }
+        <div className={"sticky_shop"} onClick={handleShop}>
+          <div>54,50 €</div>
+          <img src="/img/icons/cart.png" alt="cart" />
+        </div>
+      </div>
+
+
       <section className="intro">
+
         <div className="container">
           <div className="row">
             <div className="col-12">
               <div className="infos">
                 <div className="infos__text">
-                  <h4 className="intro__title section-title">
-                    Faites-vous entendre !
-                  </h4>
+                  <div className={"header_know_more"}>
+                    <h4 className="intro__title section-title">
+                      Faites-vous comprendre !
+                    </h4>
+                    <div className={"know_more"} onClick={handle_knowMore}>
+                      En savoir plus
+                      <i className="fas fa-chevron-down"></i>
+                    </div>
+                  </div>
 
                   <p className="intro__text">
                     Vous voulez que votre site apparaisse en tête des pages de résultats sur les moteurs de recherche?
@@ -88,7 +149,7 @@ const Content = () => {
                   />
                   <p className="infos__image--text">
                     <span className="bold">
-                      {getTranslation("anti_plagiarism")}
+                      Protection anti-plagiat,
                     </span>
                     ,<br /> {getTranslation("anti_plagiarism_2")}
                   </p>
@@ -98,6 +159,84 @@ const Content = () => {
           </div>
         </div>
       </section>
+
+      {knowMore &&
+      <>
+        <section className="content">
+          <div className="container">
+            <div className="row">
+              <div className="col-12">
+                <h4 className="intro__title section-title">
+                  Qu’est-ce qu’un contenu optimisé ?
+                </h4>
+
+              </div>
+
+              <div className="col-12">
+                <p className="intro__text">
+                  Il s’agit de tout l’aspect rédactionnel de votre site. On dit qu’il est optimisé lorsqu’il est
+                  conforme aux codes des algorithmes (principalement Google). Plus votre contenu est optimisé, meilleur
+                  est votre référencement dans les pages de résultats des moteurs de recherche.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="content">
+          <div className="container">
+            <div className="row">
+              <div className="col-12">
+                <h4 className="intro__title section-title">
+                  Qu’est-ce que l’expérience utilisateur ?
+                </h4>
+
+              </div>
+
+              <div className="col-12">
+                <p className="intro__text">
+                  Le temps passé sur un site est aussi une donnée prise en compte par les algorithmes pour positionner
+                  votre site. Plus l’internaute se sent bien sur votre site, plus il a envie d’y rester. Un contenu de
+                  qualité est un élément indispensable pour une expérience utilisateur optimale.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="content">
+          <div className="container">
+            <div className="row">
+              <div className="col-12">
+                <h4 className="intro__title section-title">
+                  Qu’est-ce que l’expérience utilisateur ?
+                </h4>
+
+              </div>
+
+              <div className="col-12">
+                <p className="intro__text">
+                  <ul>
+                    <br/>
+                    <li>Il a une parfaite maîtrise de la langue ;</li>
+                    <br/>
+                    <li>Il connaît les règles des algorithmes et sait comment produire du contenu optimisé;</li>
+                    <br/>
+                    <li>Il rédige un contenu original : le plagiat est monnaie courante sur le web. Il est repéré et
+                      pénalisé par les moteurs de recherche.</li>
+                    <br/>
+                  </ul>
+                </p>
+                <p className="intro__text">
+                  Quintyss met à votre disposition une équipe de rédacteurs professionnels et performants, n’hésitez
+                  pas à faire appel à eux !
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+        </>
+      }
 
       <section className="setting">
         <h2 className="d-none">Nombre texte</h2>

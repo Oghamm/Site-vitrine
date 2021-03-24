@@ -31,15 +31,9 @@ const Template = () => {
                   <p className="template__card--exclusive-text">
                     Modèle gratuit
                   </p>
-                  <div className="top-bar__language form-group inline select-blue">
-                    <select
-                        id ="free_model"
-                        className={"form__control"}
-                    >
-                      <option>
-                        2 variantes
-                      </option>
-                    </select>
+                  <div className="free__more">
+                    2 variantes
+                    <i className="fas fa-chevron-down"></i>
                   </div>
 
                 </div>

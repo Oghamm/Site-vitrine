@@ -11,6 +11,15 @@ const Content = () => {
   const [modalConfig, toggleModal] = useModali({
     large: true,
   })
+  const [open, setOpen] = useState(false);
+  const [knowMore, setKnowMore] = useState(false);
+  const handleShop = () => {
+    setOpen(open => !open);
+  }
+
+  const handle_knowMore =() => {
+    setKnowMore(knowMore => !knowMore);
+  }
 
   const [sucessModel, toggleSucessModel] = useModali({
     animated: true,
@@ -49,13 +58,62 @@ const Content = () => {
         />
       </Modali.Modal>
       <Modali.Modal {...sucessModel} />
+
+      <div className={"sticky_container"}>
+        {open &&
+        <div className={"container_shop"}>
+          <div className={"cross"} >
+            Votre commande
+            <div onClick={handleShop}>
+              <i className="fas fa-times" ></i>
+            </div>
+          </div>
+          <div className={"content"}>
+            <div><p>Nb.de mots</p></div>
+            <div className={"value"}><p>164</p></div>
+          </div>
+          <div className={"content"}>
+            <div><p>Prix par mots</p></div>
+            <div className={"value"}><p>16,90</p></div>
+          </div>
+          <div className={"content"}>
+            <div><p>Langue source</p></div>
+            <div className={"value"}><p>Français</p></div>
+          </div>
+          <div className={"content"}>
+            <div><p>Langue cible</p></div>
+            <div className={"value"}><p>Anglais</p></div>
+          </div>
+          <div className={"content"}>
+            <div><p>Livraison estimée</p></div>
+            <div className={"value"}><p>24h</p></div>
+          </div>
+
+          <div className={"validate"}>
+            Valider
+          </div>
+        </div>
+        }
+        <div className={"sticky_shop"} onClick={handleShop}>
+          <div>54,50 €</div>
+          <img src="/img/icons/cart.png" alt="cart" />
+        </div>
+      </div>
+
       <section className="intro">
         <div className="container">
           <div className="row">
             <div className="col-12">
-              <h4 className="intro__title section-title">
-                Faites-vous comprendre !
-              </h4>
+              <div className={"header_know_more"}>
+                <h4 className="intro__title section-title">
+                  Faites-vous comprendre !
+                </h4>
+                <div className={"know_more"} onClick={handle_knowMore}>
+                  En savoir plus
+                  <i className="fas fa-chevron-down"></i>
+                </div>
+              </div>
+
             </div>
 
             <div className="col-12">
@@ -69,6 +127,53 @@ const Content = () => {
         </div>
       </section>
 
+      {knowMore &&
+      <>
+        <section className="content">
+          <div className="container">
+            <div className="row">
+              <div className="col-12">
+                <h4 className="intro__title section-title">
+                  Des traducteurs natifs et spécialisés
+                </h4>
+
+              </div>
+
+              <div className="col-12">
+                <p className="intro__text">
+                  Les traducteurs professionnels des équipes Quintyss sont des professionnels chevronnés qui traduisent
+                  toujours vers leur langue maternelle. Leurs traductions sont conformes aux exigences de qualité
+                  linguistique, terminologique et technique en fonction de votre domaine professionnel.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="content">
+          <div className="container">
+            <div className="row">
+              <div className="col-12">
+                <h4 className="intro__title section-title">
+                  Une bonne traduction est un gage de confiance
+                </h4>
+
+              </div>
+
+              <div className="col-12">
+                <p className="intro__text">
+                  Vous vous êtes sans doute déjà retrouvé sur un site visiblement traduit par les seuls soins d’un
+                  traducteur automatique. Quelle expérience désagréable ! Un site bien traduit vous met en valeur,
+                  laisse une bonne impression, inspire confiance et donne envie à l’utilisateur de revenir.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </>
+      }
+
       <section className="setting">
         <h2 className="d-none">Langue source</h2>
         <div className="container">
@@ -81,8 +186,7 @@ const Content = () => {
               <div className="card box-shadow">
                 <div className="setting__content">
                   <p className="setting__text">
-                    {getTranslation("source_language")}
-                    {/* Choisir une <span className="bold">langue source</span> */}
+                     Choisir une <span className="bold">langue source</span>
                   </p>
                   <div className="form-group select select-grey">
                     <select
@@ -129,7 +233,7 @@ const Content = () => {
                     ------<i className="fas fa-chevron-right"></i>
                   </p>
                   <p className="setting__text">
-                    {getTranslation("source_language")}
+                    Choisir une <span className={"bold"}> langue cible</span>
                   </p>
                   <div className="form-group select select-grey">
                     <select
@@ -279,26 +383,70 @@ const Content = () => {
         </div>
       </section>
 
-      <section className="text-to-translate">
-        <h2 className="d-none">Texte a traduire</h2>
+      <section className="setting">
+        <h2 className="d-none">Nombre texte</h2>
         <div className="container">
           <div className="row">
             <div className="col-12">
-              <div className="form-group">
-                <label htmlFor="textToTranslate" className="title-content">
-                  {getTranslation("translation_text")}
-                </label>
-                <textarea
-                  name="textToTranslate"
-                  id="textToTranslate"
-                  className="form-control box-shadow"
-                  placeholder={getTranslation("translation_text_box")}
-                  value={text}
-                  onChange={e => {
-                    setText(e.target.value)
-                  }}
-                ></textarea>
+              <div className="card box-shadow">
+                <div className="setting__content">
+                  <p className="setting__text">
+                    Nombre de mots à traduire
+                  </p>
+
+                  <div className="form-group select select-grey">
+                    <select
+                        name="numberToWrite"
+                        id="numberToWrite"
+                        className="form-control_number_words"
+
+                    >
+                      <option value="5">50</option>
+                      <option value="10">100</option>
+                      <option value="15">150</option>
+                      <option value="20">200</option>
+                    </select>
+                  </div>
+                    <p className="setting__text">
+                      Délais de livraison estimé :{" "}
+                    </p>
+                  <p className="setting__text">
+                    <span className="bold">
+                        24 heures
+                      </span>
+                  </p>
+
+                </div>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="text-to-translate">
+        <div className="container">
+          <div className="row">
+            <div className="col-12">
+              <div className={"text_to_translate_container"}>
+                <div className={"import_files_container"}>
+                  <img src="/img/with-banner/translate/upload.svg" alt="" />
+                  <p>Glissez votre fichier <br/>ou parcourir vos fichiers<br/>
+                    <span className={"bold"}>( .doc .docx .xls )</span></p>
+                </div>
+                <div className="form-group">
+                <textarea
+                    name="textToTranslate"
+                    id="textToTranslate"
+                    className="form-control box-shadow"
+                    placeholder="Copier/coller ou taper votre texte"
+                    value={text}
+                    onChange={e => {
+                      setText(e.target.value)
+                    }}
+                />
+                </div>
+              </div>
+
             </div>
           </div>
         </div>

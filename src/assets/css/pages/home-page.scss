@@ -442,6 +442,23 @@
 
             position: relative;
 
+
+            .free__more {
+                padding:0 10px;
+                font-family: "Montserrat", sans-serif;
+                font-weight: 500;
+                font-size: 10px;
+                color: #01164E;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                width: 150px;
+                height: 32px;
+                margin-left: 20px;
+                border-radius: 50px;
+                background: #EFF1F7;
+            }
+
             .form__control {
                 margin-left: 15%;
                 font-weight: 600;
