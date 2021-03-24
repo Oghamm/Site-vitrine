@@ -16,7 +16,7 @@ const Service = () => {
               </h2>
 
               <p className="service__subtitle">
-              {getTranslation("quintyss_services_2")}
+                  Tous les services Quintyss sont à votre disposition indépendamment les uns des autres.
 
               </p>
 
@@ -171,7 +171,7 @@ const Service = () => {
                 </h2>
 
                 <p className="collaborate__subtitle">
-                {getTranslation("quintyss_services_2")}
+                Tous les services Quintyss sont à votre disposition indépendamment les uns des autres.
                 </p>
 
                 <div className="collaborate__content">
@@ -220,8 +220,9 @@ const Service = () => {
                         {getTranslation("developer")}
                       </h2>
                       <p className="collaborate__card--text">
-                      {getTranslation("features_5")}<br />
-                        {getTranslation("features_6")}
+                      Vous êtes développeur freelance, inscrivez-vous sur Quintyss et proposer vos compétences.
+                        Notre plateforme recrute, met en relation...<br />
+                        Elle est votre vitrine, avec le potentiel client d'un outil de gestion de contenu grand public.
                       </p>
 
                       <a

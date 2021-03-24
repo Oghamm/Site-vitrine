@@ -7,7 +7,7 @@ const Banner = () => {
         <div className="container">
           <div className="row">
             <div className="col-12">
-              <h1 className="banner__title white">Traducation</h1>
+              <h1 className="banner__title white">Traduction</h1>
             </div>
           </div>
         </div>

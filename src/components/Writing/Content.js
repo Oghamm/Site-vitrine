@@ -71,7 +71,7 @@ const Content = () => {
               <div className="infos">
                 <div className="infos__text">
                   <h4 className="intro__title section-title">
-                    {getTranslation("writing_platform")}
+                    Faites-vous entendre !
                   </h4>
 
                   <p className="intro__text">

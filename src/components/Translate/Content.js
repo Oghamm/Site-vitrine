@@ -54,13 +54,15 @@ const Content = () => {
           <div className="row">
             <div className="col-12">
               <h4 className="intro__title section-title">
-                {getTranslation("translate_platform")}
+                Faites-vous comprendre !
               </h4>
             </div>
 
             <div className="col-12">
               <p className="intro__text">
-                {getTranslation("writing_expertise")}
+                Saviez-vous que le web influence 50% des ventes mondiales? Si vous souhaitez être accessible à
+                l'international, il vous faut traduire votre site. En anglais, en allemand, en espagnol, en chinois
+                ou en russe, quelle que soit votre cible, l'approximation linguistique n'est pas envisageable.
               </p>
             </div>
           </div>
@@ -72,6 +74,10 @@ const Content = () => {
         <div className="container">
           <div className="row">
             <div className="col-12">
+              <h4 className="functionnality__title section-title">
+                Sélectionnez vos besoins
+
+              </h4>
               <div className="card box-shadow">
                 <div className="setting__content">
                   <p className="setting__text">

@@ -16,27 +16,12 @@ const Content = () => {
   })
 
   const featuresList = [
-    "news",
-    "agenda",
-    "book",
-    "catalog",
-    "search",
-    "contact_form",
-    "gallery",
-    "survey",
-    "newsletter",
-    "video_gallery",
-    "rss_feed",
-    "comments",
-    "map",
-    "social_plugins",
-    "member_area",
-    "forum",
-    "animations",
-    "import_export",
+    "Création de logo",
+    "Webdesign",
+    "Graphisme",
   ]
 
-  const servicesList = ["writing", "translate", "seo"]
+
 
   const handleFeaturesClicked = feature => {
     const index = features.indexOf(feature)
@@ -107,12 +92,12 @@ const Content = () => {
 
   return (
     <>
-      <section className="intro">
+      <section className="intro_graphisme">
         <div className="container">
           <div className="row">
             <div className="col-12">
               <h4 className="intro__title section-title">
-                {getTranslation("design_platform")}
+                Faites-vous remarquer !
               </h4>
             </div>
 
@@ -128,7 +113,7 @@ const Content = () => {
           <div className="row">
             <div className="col-12">
               <h4 className="intro__title section-title">
-                {getTranslation("design_identity")}
+                Pourquoi l'identité visuelle est-elle si importante?
               </h4>
             </div>
 
@@ -140,12 +125,12 @@ const Content = () => {
           </div>
         </div>
       </section>
-      <section className="visuel_identity_2">
+      <section className="visuel_identity">
         <div className="container">
           <div className="row">
             <div className="col-12">
               <h4 className="intro__title section-title">
-                {getTranslation("design_identity_2")}
+                Puis-je créer moi-même mon identité visuelle ?
               </h4>
             </div>
 
@@ -158,12 +143,12 @@ const Content = () => {
           </div>
         </div>
       </section>
-      <section className="design_professional">
+      <section className="visuel_identity">
         <div className="container">
           <div className="row">
             <div className="col-12">
               <h4 className="intro__title section-title">
-                {getTranslation("design_professional")}
+                Pourquoi faire appel à un designer professionnel?
               </h4>
             </div>
 
@@ -194,12 +179,13 @@ const Content = () => {
 
 
 
-      <section className="functionnality">
+      <section className="visuel_identity">
         <div className="container">
           <div className="row">
             <div className="col-12">
               <h4 className="functionnality__title section-title">
-                {getTranslation("choice_features")}
+                Quels sont vos besoins?
+
               </h4>
             </div>
 
@@ -215,7 +201,7 @@ const Content = () => {
                         handleFeaturesClicked(feature)
                       }}
                     >
-                      {getTranslation(feature)}
+                      {feature}
                     </button>
                   )
                 })}
@@ -225,35 +211,158 @@ const Content = () => {
         </div>
       </section>
 
-      <section className="complementary">
-        <div className="container">
-          <div className="row">
+      <section className={"visuel_identity"}>
+        <div className={"container"}>
+          <div className={"row"}>
             <div className="col-12">
-              <h4 className="complementary__title section-title">
-                {getTranslation("additional_services")}
+              <h4 className="functionnality__title section-title">
+                Quel est votre délais ? <em> (En mois)</em>
               </h4>
             </div>
             <div className="col-12">
-              <div className="all-btn-choices complementary__choices">
-                {servicesList.map(service => {
-                  return (
-                    <button
-                      className={`btn-choice ${
-                        isActive(services, service) ? "selected" : ""
-                      }`}
-                      onClick={() => {
-                        handleServicesClicked(service)
-                      }}
-                    >
-                      {getTranslation(service)}
-                    </button>
-                  )
-                })}
+              <div className={"delay_choice"}>
+                <label className={"label_container"}>
+                  <input type={"radio"} name={"radio"}/>
+                  <span className={"checkmark"}>1</span>
+                </label>
+                <label className={"label_container"}>
+                  <input type={"radio"} name={"radio"}/>
+                  <span className={"checkmark"}>2</span>
+                </label>
+                <label className={"label_container"}>
+                  <input type={"radio"} name={"radio"}/>
+                  <span className={"checkmark"}>3</span>
+                </label>
+                <label className={"label_container"}>
+                  <input type={"radio"} name={"radio"}/>
+                  <span className={"checkmark"}>4</span>
+                </label>
+                <label className={"label_container"}>
+                  <input type={"radio"} name={"radio"}/>
+                  <span className={"checkmark"}>5</span>
+                </label>
+                <label className={"label_container"}>
+                  <input type={"radio"} name={"radio"}/>
+                  <span className={"checkmark"}>6</span>
+                </label>
+                <label className={"label_container"}>
+                  <input type={"radio"} name={"radio"}/>
+                  <span className={"checkmark"}>7</span>
+                </label>
+                <label className={"label_container"}>
+                  <input type={"radio"} name={"radio"}/>
+                  <span className={"checkmark"}>8</span>
+                </label>
+                <label className={"label_container"}>
+                  <input type={"radio"} name={"radio"}/>
+                  <span className={"checkmark"}>9</span>
+                </label>
+                <label className={"label_container"}>
+                  <input type={"radio"} name={"radio"}/>
+                  <span className={"checkmark"}>10</span>
+                </label>
+                <label className={"label_container"}>
+                  <input type={"radio"} name={"radio"}/>
+                  <span className={"checkmark"}>11</span>
+                </label>
+                <label className={"label_container"}>
+                  <input type={"radio"} name={"radio"}/>
+                  <span className={"checkmark"}>12</span>
+                </label>
               </div>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+      <section className={"visuel_identity"}>
+        <div className={"container"}>
+          <div className={"row"}>
+            <div className="col-12">
+              <h4 className="functionnality__title section-title">
+                Avez-vous un site existant ?
+              </h4>
+            </div>
+            <div className="col-12">
+              <div className="contact__form no-border">
+                <form>
+                  <div className="form-group">
+                    <label htmlFor="lastName">Lien du site</label>
+                    <input
+                        type="text"
+                        id="link"
+                        name="lien_du_site"
+                        required={true}
+                        className="form-control"
+                    />
+                  </div>
+                </form>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+      <section className={"visuel_identity"}>
+        <div className={"container"}>
+          <div className={"row"}>
+            <div className="col-12">
+              <h4 className="functionnality__title section-title">
+                Spécificité de votre projet
+              </h4>
+            </div>
+            <div className="col-12">
+              <div className="contact__form no-border">
+                <form>
+                  <div className="form-group">
+                    <label htmlFor="lastName">Décrivez vos besoins en quelques mots</label>
+                    <textarea
+                        id="link"
+                        name="lien_du_site"
+                        required={true}
+                        className="form-control_description"
+                    />
+                  </div>
+                </form>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+      <section className="visuel_identity">
+        <div className="container">
+          <div className="row">
+            <div className="col-12">
+              <h4 className="functionnality__title section-title">
+                Intégrer notre outil de gestion de contenu Quintyss Business à votre projet
+
+              </h4>
+            </div>
+
+            <div className="col-12">
+              <div className={"gestion_button_container"}>
+                <input type="radio" id="oui" name="select_tools"/>
+                <input type="radio" id="non" name="select_tools"/>
+                <div>
+                  <label htmlFor="oui">Oui</label>
+                  <label htmlFor="non">Non</label>
+                </div>
+              </div>
+
             </div>
           </div>
         </div>
       </section>
+
+
 
       <section className="contact">
         <div className="container">

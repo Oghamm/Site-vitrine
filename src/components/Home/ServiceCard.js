@@ -14,11 +14,13 @@ const ServiceCard = () => {
             </h2>
 
             <p className="service-card__subtitle">
-            {getTranslation("quintyss_services_2")}
+                Tous les services Quintyss sont à votre disposition indépendamment les uns des autres.
             </p>
 
             <div className="service-card__content">
-              <div className="service-card__img"></div>
+              <div className="service-card__img">
+                <img src="/img/home/service/to-do-list.svg" alt="" />
+              </div>
 
               <div className="service-card__aside">
                 <p className="service-card__text">
@@ -29,7 +31,7 @@ const ServiceCard = () => {
                   href="./custom.html"
                   className="service-card__btn btn btn-primary"
                 >
-                  {getTranslation("cta_2")}
+                  Je commence !
                 </a>
               </div>
             </div>

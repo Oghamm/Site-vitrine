@@ -70,7 +70,7 @@ const HeroSlider = () => {
           href="./choice-model.html"
           className="btn btn-primary slider__btn btn-video"
         >
-          {getTranslation('cta_1')}
+          En savoir plus
         </a>
       </div>
       <div className="slide-2">
@@ -92,7 +92,7 @@ const HeroSlider = () => {
                   href="./choice-model.html"
                   className="btn btn-primary slider__btn"
                 >
-                  {getTranslation('cta_1')}
+                  En savoir plus
                 </a>
               </div>
             </div>
@@ -118,7 +118,7 @@ const HeroSlider = () => {
                   href="./choice-model.html"
                   className="btn btn-primary slider__btn"
                 >
-                  {getTranslation('cta_1')}
+                  En savoir plus
                 </a>
               </div>
             </div>
@@ -146,7 +146,7 @@ const HeroSlider = () => {
                   href="./choice-model.html"
                   className="btn btn-primary slider__btn"
                 >
-                  {getTranslation("cta_1")}
+                  En savoir plus
                 </a>
               </div>
             </div>

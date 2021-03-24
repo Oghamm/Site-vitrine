@@ -6,7 +6,7 @@ import Content from "../components/Graphisme/Content"
 
 export default function Graphisme() {
   return (
-    <Layout className="with-banner translate choices">
+    <Layout className="with-banner graphisme">
       <Header black>
         <Banner />
       </Header>
