@@ -95,10 +95,10 @@ const Footer = () => {
                     <a href="">{getTranslation("infos")}</a>
                   </li>
                   <li>
-                    <a href="">{getTranslation("terms")}</a>
+                    <Link to="/terms">{getTranslation("terms")}</Link>
                   </li>
                   <li>
-                    <a href="">{getTranslation("privacy_policy")}</a>
+                    <Link to="privacy">{getTranslation("privacy_policy")}</Link>
                   </li>
                 </ul>
               </div>

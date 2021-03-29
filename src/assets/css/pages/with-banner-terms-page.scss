@@ -1,0 +1,24 @@
+/* WITH-BANNER-TERMS-PAGE - PAGES */
+
+.with-banner.terms {
+  header {
+    .banner {
+      background: url("/img/with-banner/translate/banner_graphisme.png") no-repeat 100 100%;
+
+      @include bp-xl {
+        background: url("/img/with-banner/translate/banner_graphisme.png") no-repeat 0 100%;
+        background-size: cover;
+      }
+
+      @include bp-xs {
+        background: url("/img/with-banner/social/banner-responsive.png") no-repeat 0 100%;
+      }
+    }
+  }
+
+
+  .intro_terms {
+    padding:70px 0 110px 0;
+  }
+
+}
