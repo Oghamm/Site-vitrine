@@ -286,6 +286,20 @@
                 }
 
             }
+            &-2 {
+                .slider {
+                    &__btn {
+                        background: #ffffff;
+                        color: #6F93F4;
+                        margin-top: 40px;
+                    }
+                    &__btn:hover {
+                        background: #6F93F4;
+                        color: #ffffff;
+                    }
+                }
+
+            }
         }
 
         &__btn {

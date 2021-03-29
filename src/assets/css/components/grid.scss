@@ -37,9 +37,14 @@
 }
 
 .home {
+    .slide-2 {
+        .container-fluid.full-padding{
+            padding: 0 90px;
+        }
+    }
 
     .container-fluid.full-padding {
-        padding: 0 140px;
+        padding: 0 130px;
     
         @include bp-xl {
             padding: 0 80px;

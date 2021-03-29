@@ -85,9 +85,11 @@ const HeroSlider = () => {
             <div className="row">
               <div className="col-12 slider__content">
                 <h2 className="slider__title white">
-                {getTranslation('slide-text-2')}
+                  Designer &<br/> développeur
                 </h2>
-                <p className="slider__text">{getTranslation("video-title-1")}</p>
+                <p className="slider__text">Pour l’optimiser au jour le jour, nos équipes assurent la publication,
+                  le suivi et le renouvellement de vos contenus. Si vous la souhaitez, Quintyss prend en charge
+                  l’intégralité de votre communication.</p>
                 <a
                   href="./choice-model.html"
                   className="btn btn-primary slider__btn"
