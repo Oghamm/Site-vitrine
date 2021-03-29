@@ -148,9 +148,9 @@ const Service = () => {
               {getTranslation("contact_team")}
             </p>
 
-            <a href="./migrate.html" className="migrate__btn btn btn-white">
+            <Link to="/migrate" className="migrate__btn btn btn-white">
               {getTranslation("go")}
-            </a>
+            </Link>
           </div>
 
           <div className="migrate__image">
