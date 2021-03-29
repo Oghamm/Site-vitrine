@@ -98,7 +98,7 @@ const Footer = () => {
                     <Link to="/terms">{getTranslation("terms")}</Link>
                   </li>
                   <li>
-                    <Link to="privacy">{getTranslation("privacy_policy")}</Link>
+                    <Link to="/privacy">{getTranslation("privacy_policy")}</Link>
                   </li>
                 </ul>
               </div>
