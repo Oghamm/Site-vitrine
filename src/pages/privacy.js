@@ -4,9 +4,9 @@ import Header from "../components/Header"
 import Banner from "../components/Privacy/Banner"
 import Content from "../components/Privacy/Content"
 
-function Privacy(){
+export default function Privacy(){
     return (
-        <Layout className="with-banner privacy">
+        <Layout className="with-banner terms">
             <Header black>
                 <Banner />
             </Header>
