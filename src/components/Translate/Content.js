@@ -2,6 +2,7 @@ import React, { useState } from "react"
 import useIntlFromDocs from "../../hooks/useIntlFromDocs"
 import Modali, { useModali } from "modali"
 import Stripe from "../Stripe/Stripe"
+import { Link } from "gatsby"
 
 const Content = () => {
   const { getTranslation } = useIntlFromDocs()
@@ -460,12 +461,11 @@ const Content = () => {
                 <h4 className="multiple-bar__title">
                   {getTranslation("volume_translation")}
                 </h4>
-                <a
-                  href=""
+                <Link to={"/quoteT"}
                   className="btn btn-blue-transparent multiple-bar__btn"
                 >
                   Obtenir un devis !
-                </a>
+                </Link>
               </div>
             </div>
           </div>

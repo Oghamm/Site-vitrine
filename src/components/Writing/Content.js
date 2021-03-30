@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from "react"
 import useIntlFromDocs from "../../hooks/useIntlFromDocs"
 import Modali, { useModali } from "modali"
+import { Link } from "gatsby"
 import Stripe from "../Stripe/Stripe"
 
 const Content = () => {
@@ -673,12 +674,9 @@ const Content = () => {
                 <h4 className="multiple-bar__title">
                   {getTranslation("volume_writing")}
                 </h4>
-                <a
-                  href=""
-                  className="btn btn-blue-transparent multiple-bar__btn"
-                >
+                <Link to={"/quoteW"} className="btn btn-blue-transparent multiple-bar__btn">
                   {getTranslation("ask_quote")}
-                </a>
+                </Link>
               </div>
             </div>
           </div>
