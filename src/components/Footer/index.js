@@ -92,7 +92,7 @@ const Footer = () => {
 
                 <ul className="footer__nav-menu">
                   <li>
-                    <a href="">{getTranslation("infos")}</a>
+                    <Link to="/partner">Programme partenaire</Link>
                   </li>
                   <li>
                     <Link to="/terms">{getTranslation("terms")}</Link>
