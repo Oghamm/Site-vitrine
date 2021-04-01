@@ -195,12 +195,11 @@ const Service = () => {
                         {getTranslation("quintyss_solution")}
                       </p>
 
-                      <a
-                        href=""
+                      <Link to={"/developer"}
                         className="collaborate__card--btn btn btn-primary"
                       >
                         {getTranslation("go")}
-                      </a>
+                      </Link>
                     </div>
                   </div>
 
@@ -225,12 +224,11 @@ const Service = () => {
                         Elle est votre vitrine, avec le potentiel client d'un outil de gestion de contenu grand public.
                       </p>
 
-                      <a
-                        href=""
+                      <Link to={"/developer"}
                         className="collaborate__card--btn btn btn-primary"
                       >
                         {getTranslation("go")}
-                      </a>
+                      </Link>
                     </div>
                   </div>
                 </div>

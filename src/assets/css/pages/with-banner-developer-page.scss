@@ -1,0 +1,314 @@
+/* WITH-BANNER-DEVELOPER-PAGE - PAGES */
+
+.with-banner.developer {
+  header {
+    height: 120px;
+    .banner {
+      background: #EFF1F7;
+    }
+    .top-bar__account {
+        color: #01164E;
+    }
+  }
+  /*Slide button*/
+
+  .slide__button{
+    display: flex;
+    justify-content: center;
+    padding: 50px 0 50px;
+
+    *
+    {
+      user-select: none;
+      -webkit-tap-highlight-color:transparent;
+    }
+
+    input[type="checkbox"] {
+      display: none;
+    }
+
+    #button {
+      position: relative;
+      display: block;
+      width: 674px;
+      height: 64px;
+      background-color: #E0E8FF;
+      border-radius: 350px;
+      cursor: pointer;
+    }
+
+    #knob {
+      width: 337px;
+      height: 64px;
+      background-size: 700px;
+      background: #ffffff;
+      position: relative;
+      left: 0;
+      border-radius: 290px;
+      transition: 0.4s ease left, 0.4s ease background-position;
+      z-index: 2;
+    }
+
+    #subscribe,
+    #alright {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #01164E;
+      font-family: "Montserrat", sans-serif;
+      font-size: 16px;
+      font-weight: 600;
+      margin-left: 448px;
+      z-index: 3;
+    }
+    #subscribe {
+      opacity: 50%;
+    }
+
+    #alright {
+      margin-left: 110px;
+    }
+
+    #lol-checkbox:checked + #button #knob {
+      left: 337px;
+      background-position: -350px 0;
+    }
+    #lol-checkbox:checked + #button #alright{
+      opacity: 50%;
+    }
+    #lol-checkbox:checked + #button #subscribe{
+      opacity: 100%;
+    }
+
+  }
+
+  /*dev card*/
+  .bloc-text__title{
+    margin-bottom: 25px;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 64px;
+    color: #01164E;
+  }
+  .projects__content {
+    margin: 50px 0;
+    display: flex;
+    width: 1620px;
+    overflow-x: hidden;
+    padding: 20px 0;
+    z-index: 0;
+    position: relative;
+  }
+  .project {
+    background: #ffffff;
+    flex: 0 0 400px;
+    height: 260px;
+    border-radius: 12px;
+    margin-right: 85px;
+  }
+  .project__link {
+    display: block;
+    height: 100%;
+    padding: 24px;
+    cursor: pointer;
+  }
+  .project__top-bar {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+  .project__img {
+    width: 79px;
+  }
+  .project__badges {
+    display: flex;
+    align-items: center;
+    max-width: 130px;
+  }
+  .project__badge {
+    width: 57px;
+    height: 20px;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: 500;
+    color: #ffffff;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 16px;
+    margin-bottom: 8px;
+  }
+  .project__badge.secondary {
+    background: #01164E;
+  }
+  .project__badge.primary {
+    background: #6F93F4;
+  }
+  .project__content {
+    margin-top: 25px;
+  }
+  .project__text {
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 500;
+    color: #01164E;
+    margin-top: 15px;
+  }
+
+  .input-radio-box {
+    display: flex;
+    align-items: center;
+    margin: 15px 0 30px 0;
+  }
+  .input-radio {
+    font-size: 18px;
+    font-weight: 500;
+    color: #01164E;
+    margin-bottom: 0;
+  }
+  .input-radio:first-child {
+    margin-right: 80px;
+  }
+  .input-radio input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+  }
+  .designer-price .section__title {
+    margin-bottom: 10px;
+  }
+  .designer-price .form-group {
+    position: relative;
+    margin-bottom: 25px;
+    max-width: 400px;
+  }
+  .designer-price .form-control {
+    font-size: 16px;
+    font-weight: 500;
+    color: #01164E;
+    border: none;
+    width: 400px;
+    height: 48px;
+  }
+  .designer-price .form-group::after {
+    content: "eur";
+    font-size: 16px;
+    font-weight: 500;
+    color: rgba(1, 22, 78, 0.5);
+    text-transform: uppercase;
+    position: absolute;
+    top: 50%;
+    right: 25px;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+  }
+
+  .model-developped {
+    display: flex;
+    overflow: hidden;
+    width: 260px;
+    justify-content: space-between;
+    margin-top: 25px;
+    margin-bottom: 50px;
+  }
+  .switch-field input {
+    position: absolute !important;
+    clip: rect(0, 0, 0, 0);
+    height: 1px;
+    width: 1px;
+    border: 0;
+    overflow: hidden;
+  }
+  .switch-field label {
+    cursor: pointer;
+    width: 50%;
+    height: 64px;
+    display: block;
+    font-size: 16px;
+    background: transparent;
+    margin-right: -1px;
+    transition: all 0.1s ease-in-out;
+    font-weight: 600;
+    color: rgba(1, 22, 78, 0.5);
+    border-radius: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .switch-field input:checked + label {
+    color: #01164E;
+    background: #ffffff;
+  }
+  .model-developped label {
+    width: calc(50% - 8px);
+    height: 48px;
+    background: #ffffff;
+    color: #01164E;
+    font-size: 18px;
+    font-weight: 600;
+  }
+  .form label {
+    font-size: 18px;
+    font-weight: 500;
+  }
+  .model-developped input:checked + label {
+    color: #ffffff;
+    background: #6F93F4;
+  }
+
+
+  .contact {
+    padding-bottom: 50px;
+
+    .btn-primary{
+      margin-top: 45px;
+    }
+  }
+  .img_footer {
+    padding: 0 0 70px;
+  }
+
+  .title_developer {
+    display: flex;
+    justify-content: space-between;
+
+    label {
+      font-weight: 500;
+    }
+  }
+  .title_developer_model {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 50px;
+    padding-bottom: 50px;
+
+    label {
+      font-weight: 500;
+    }
+  }
+
+  .logo__subscription {
+    width: 500px;
+    height: 400px;
+    position: relative;
+    top: -60px;
+  }
+  .logo__develop {
+    width: 500px;
+    height: 400px;
+    position: relative;
+    top: 20px;
+    left: 260px;
+  }
+
+
+  .intro_developer {
+    padding:70px 0 30px 0;
+  }
+  .content {
+    padding-bottom: 30px;
+  }
+
+}
