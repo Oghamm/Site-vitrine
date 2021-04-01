@@ -90,12 +90,12 @@ const Header = ({ children, black }) => {
             </Link>
           </div>
 
-          <a
-            href="./signin.html"
+          <Link
+            to="/signIn"
             className="btn btn-blue-transparent secondary top-bar__account mr-2"
           >
             Se connecter
-          </a>
+          </Link>
 
           <div className="top-bar__language form-group inline select-blue-transparent">
             <select
