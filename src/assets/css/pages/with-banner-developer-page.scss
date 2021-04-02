@@ -62,7 +62,7 @@
       z-index: 3;
     }
     #subscribe {
-      opacity: 50%;
+      opacity: 45%;
     }
 
     #alright {
@@ -74,10 +74,10 @@
       background-position: -350px 0;
     }
     #lol-checkbox:checked + #button #alright{
-      opacity: 50%;
+      opacity: 45%;
     }
     #lol-checkbox:checked + #button #subscribe{
-      opacity: 100%;
+      opacity: 99%;
     }
 
   }
