@@ -21,6 +21,7 @@ const NextArrow = ({ onClick }) => {
 const HeroSlider = () => {
   const { getTranslation } = useIntlFromDocs()
   const settings = {
+    infinite: true,
     autoplay: true,
     autoplaySpeed: 10000,
     slidesToShow: 1,
@@ -28,6 +29,7 @@ const HeroSlider = () => {
     dots: true,
     arrows: true,
     dotsClass: "slick-dots-c",
+    focusOnSelect: true,
     prevArrow: <PreviousArrow />,
     nextArrow: <NextArrow />,
   }
@@ -72,34 +74,6 @@ const HeroSlider = () => {
         >
           En savoir plus
         </a>
-      </div>
-      <div className="slide-2">
-        <img
-          className="slider__img"
-          src="/img/home/slider/slider-2.png"
-          alt=""
-        />
-
-        <div className="p-absolute">
-          <div className="container-fluid full-padding">
-            <div className="row">
-              <div className="col-12 slider__content">
-                <h2 className="slider__title white">
-                  Designer &<br/> développeur
-                </h2>
-                <p className="slider__text">Pour l’optimiser au jour le jour, nos équipes assurent la publication,
-                  le suivi et le renouvellement de vos contenus. Si vous la souhaitez, Quintyss prend en charge
-                  l’intégralité de votre communication.</p>
-                <a
-                  href="./choice-model.html"
-                  className="btn btn-primary slider__btn"
-                >
-                  En savoir plus
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
       <div className="slide-3">
         <img
@@ -147,6 +121,34 @@ const HeroSlider = () => {
                 <a
                   href="./choice-model.html"
                   className="btn btn-primary slider__btn"
+                >
+                  En savoir plus
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="slide-2">
+        <img
+            className="slider__img"
+            src="/img/home/slider/slider-2.png"
+            alt=""
+        />
+
+        <div className="p-absolute">
+          <div className="container-fluid full-padding">
+            <div className="row">
+              <div className="col-12 slider__content">
+                <h2 className="slider__title white">
+                  Designer &<br/> développeur
+                </h2>
+                <p className="slider__text">Pour l’optimiser au jour le jour, nos équipes assurent la publication,
+                  le suivi et le renouvellement de vos contenus. Si vous la souhaitez, Quintyss prend en charge
+                  l’intégralité de votre communication.</p>
+                <a
+                    href="./choice-model.html"
+                    className="btn btn-primary slider__btn"
                 >
                   En savoir plus
                 </a>

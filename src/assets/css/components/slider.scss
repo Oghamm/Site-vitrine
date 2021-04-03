@@ -85,9 +85,6 @@
         -ms-transform: translateX(-50%);
     }
 
-    button {
-        display: none;
-    }
 
     li {
         list-style-type: none;
@@ -95,6 +92,20 @@
 
         &:first-child {
             margin-left: 0;
+        }
+        button{
+            padding: 0;
+            font-size: 0;
+            line-height: 0;
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+            color: transparent;
+            border: 0;
+            z-index: 99;
+            outline: none;
+            background: transparent;
+            position: absolute;
         }
 
         &::after {

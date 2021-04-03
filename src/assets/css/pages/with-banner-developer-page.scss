@@ -61,6 +61,9 @@
       margin-left: 448px;
       z-index: 3;
     }
+    #subscribe {
+      opacity: 45%;
+    }
 
     #alright {
       margin-left: 110px;
@@ -69,6 +72,12 @@
     #lol-checkbox:checked + #button #knob {
       left: 337px;
       background-position: -350px 0;
+    }
+    #lol-checkbox:checked + #button #alright{
+      opacity: 45%;
+    }
+    #lol-checkbox:checked + #button #subscribe{
+      opacity: 99%;
     }
 
   }
