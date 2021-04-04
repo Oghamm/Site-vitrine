@@ -16,6 +16,15 @@
     }
   }
 
+  h4 {
+    font-size: 32px;
+  }
+
+  p {
+    font-weight: 400;
+    font-size: 18px;
+  }
+
   .visuel_identity {
     padding-bottom: 40px;
   }
@@ -155,6 +164,9 @@
 
   .form-group input#link {
     width: 400px;
+  }
+  .form-group label {
+    font-weight: 600;
   }
 
 }

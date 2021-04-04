@@ -118,7 +118,7 @@ const Content = () => {
             </div>
 
             <div className="col-12">
-              <p className="intro__text">
+              <p >
                 Saviez-vous que le web influence 50% des ventes mondiales? Si vous souhaitez être accessible à
                 l'international, il vous faut traduire votre site. En anglais, en allemand, en espagnol, en chinois
                 ou en russe, quelle que soit votre cible, l'approximation linguistique n'est pas envisageable.
@@ -180,10 +180,10 @@ const Content = () => {
         <div className="container">
           <div className="row">
             <div className="col-12">
-              <h4 className="functionnality__title section-title">
+              <h5 className="functionnality__title section-title">
                 Sélectionnez vos besoins
 
-              </h4>
+              </h5>
               <div className="card box-shadow">
                 <div className="setting__content">
                   <p className="setting__text">
@@ -431,7 +431,7 @@ const Content = () => {
               <div className={"text_to_translate_container"}>
                 <div className={"import_files_container"}>
                   <img src="/img/with-banner/translate/upload.svg" alt="" />
-                  <p>Glissez votre fichier <br/>ou parcourir vos fichiers<br/>
+                  <p className={"text_import"}>Glissez votre fichier <br/>ou parcourir vos fichiers<br/>
                     <span className={"bold"}>( .doc .docx .xls )</span></p>
                 </div>
                 <div className="form-group">

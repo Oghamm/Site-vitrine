@@ -128,7 +128,7 @@ const Content = () => {
                 <div className="infos__text">
                   <div className={"header_know_more"}>
                     <h4 className="intro__title section-title">
-                      Faites-vous comprendre !
+                      Faites-vous entendre !
                     </h4>
                     <div className={"know_more"} onClick={handle_knowMore}>
                       En savoir plus
