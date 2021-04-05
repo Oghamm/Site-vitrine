@@ -215,6 +215,10 @@
                         font-size: 10px;
                     }
                 }
+
+                i {
+                    margin-left: 20px;
+                }
             }
 
         }
@@ -301,6 +305,16 @@
 
             }
 
+        }
+
+        .footer__location {
+            width: 200px;
+
+            p {
+                font-weight: 400;
+                margin-bottom: 10px;
+                font-size: 14px;
+            }
         }
     }
 

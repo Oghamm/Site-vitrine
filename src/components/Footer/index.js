@@ -35,9 +35,9 @@ const Footer = () => {
                 </div>
 
                 <div className="footer__newsletter-location footer__newsletter-location--responsive">
-                  <i className="fas fa-map-marker-alt"></i>
 
                   <p>Paris, France</p>
+                  <i className="fas fa-map-marker-alt"></i>
                 </div>
               </div>
 
@@ -140,9 +140,11 @@ const Footer = () => {
             </div>
 
             <div className="footer__newsletter-location footer__newsletter-location--hide-responsive">
+              <div className={"footer__location"}>
+                <p>Paris, France</p>
+                <hr/>
+              </div>
               <i className="fas fa-map-marker-alt"></i>
-
-              <p>Paris, France</p>
             </div>
           </div>
         </div>
