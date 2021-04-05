@@ -345,7 +345,7 @@
 
 
             .form-control_number_words{
-                width: 380px;
+                width: 350px;
                 height: 48px;
                 font-weight: 600;
                 background: #EFF1F7;
@@ -368,6 +368,7 @@
         .text_to_translate_container {
             display: flex;
             flex-direction: row;
+            height: 234px;
             .import_files_container {
                 width: 35%;
                 box-shadow: 0 15px 35px #6f93f41a;
@@ -387,13 +388,14 @@
             .form-group {
                 background: #ffffff;
                 width: 63%;
+                border-radius: 15px;
             }
         }
         
         textarea {
             color: #9A9A9A;
             font-weight: 400;
-            opacity: 50%;
+            height: 240px;
             @include bp-xs {
                 font-size: 10px;
                 height: 240px;
