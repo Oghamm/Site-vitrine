@@ -138,6 +138,10 @@
             padding-bottom: 45px;
         }
 
+        p {
+            font-size: 16px;
+        }
+
         .card {
             @include bp-xl {
                 display: none;
@@ -277,7 +281,7 @@
 
 
             .form-control_number_words{
-                width: 340px;
+                width: 430px;
                 height: 48px;
                 font-weight: 600;
                 background: #EFF1F7;
