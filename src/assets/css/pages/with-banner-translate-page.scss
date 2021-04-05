@@ -393,13 +393,15 @@
         }
         
         textarea {
-            color: #9A9A9A;
             font-weight: 400;
             height: 240px;
             @include bp-xs {
                 font-size: 10px;
                 height: 240px;
             }
+        }
+        textarea::placeholder {
+            color: #9A9A9A;
         }
 
 
