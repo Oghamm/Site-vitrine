@@ -390,7 +390,7 @@ const Content = () => {
           <div className="row">
             <div className="col-12">
               <div className="card box-shadow">
-                <div className="setting__content">
+                <div className="setting__content2">
                   <p className="setting__text">
                     Nombre de mots à traduire
                   </p>

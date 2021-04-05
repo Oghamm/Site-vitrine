@@ -134,6 +134,7 @@
     }
 
     .setting {
+        padding-bottom: 20px;
         @include bp-xs {
             padding-bottom: 45px;
         }
@@ -255,6 +256,69 @@
                 }
             }
         }
+        &__content2 {
+
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            padding-right: 130px;
+
+            @include bp-xs {
+                flex-wrap: wrap;
+            }
+
+            .arrow {
+                color: $blue;
+
+                @include bp-xl {
+                    display: none;
+                }
+
+                @include bp-xs {
+                    display: none;
+                }
+
+                svg {
+                    position: relative;
+                    top: 1px;
+                }
+            }
+
+            .form-group {
+                @include bp-xl {
+                    margin-left: auto;
+                }
+
+                select {
+                    color: $secondary-color;
+
+                    @include bp-xl {
+                        font-size: 16px;
+                    }
+
+                    @include bp-xs {
+                        background: $white;
+                        height: 32px;
+                        width: 145px;
+                        padding-right: 40px;
+                        padding: 6px 15px;
+                    }
+                }
+
+                @include bp-xs {
+                    order: 3;
+                    margin-top: 10px;
+
+                    &:first-child {
+                        order: 2;
+                    }
+
+                    &::after {
+                        font-size: 13px;
+                    }
+                }
+            }
+        }
 
         &__text {
             @include bp-xs {
@@ -281,7 +345,7 @@
 
 
             .form-control_number_words{
-                width: 430px;
+                width: 380px;
                 height: 48px;
                 font-weight: 600;
                 background: #EFF1F7;
