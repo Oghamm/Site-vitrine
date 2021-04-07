@@ -6,7 +6,7 @@ const Content = () => {
     const {getTranslation} = useIntlFromDocs()
 
     return (
-        <section className={"contact"}>
+        <section className={"content"}>
             <div className={"container"}>
                 <div className="row">
                     <div className="col-12">
@@ -47,7 +47,7 @@ const Content = () => {
                             Quintyss, nous vous proposons les compétences d'un community manager professionnel. Il faut
                             avoir de la visibilité pour obtenir des clients et plus vous avez de clients, plus votre
                             notoriété augmente et plus vous gagnez en visibilité. Le jeu en vaut la chandelle : le
-                            retour sur investissement est garanti!
+                            retour sur investissement est garanti !
                         </p>
                     </div>
                 </div>
