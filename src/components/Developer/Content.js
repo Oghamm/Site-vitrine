@@ -129,8 +129,8 @@ const Content = () => {
                                 </h4>
                             </div>
                             <div className={"col-12"}>
-                                <p className="intro__text">Texte de norme pour l’intégration du modèle Profitez de
-                                    l’expertise de notre équipe et du savoir-faire de nos<br/> rédacteurs professionnels
+                                <p className="integrate_p">Texte de norme pour l’intégration du modèle Profitez de
+                                    l’expertise de notre équipe et du savoir-faire de nos rédacteurs professionnels
                                     pour faire rédiger vos textes, rapidement et sans effort ! </p>
                             </div>
                         </div>
