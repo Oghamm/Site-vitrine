@@ -40,7 +40,8 @@
     margin-bottom: 25px;
   }
   .aside__content .form-group label {
-    font-weight: 500;
+    font-size: 18px;
+    font-weight: 600;
   }
   .aside__content input {
     width: 100%;
@@ -63,7 +64,7 @@
   }
 
   .content {
-    background: url("/img/with-banner/translate/banner_graphisme.png") no-repeat 95% 60%;
+    background: url("/img/with-banner/choices/banner.png") no-repeat 95% 60%;
     height: 100vh;
   }
 
@@ -98,13 +99,14 @@
   .forgot-password__text {
     color: #01164E;
     margin-right: 35px;
+    font-weight: 600;
   }
   .forgot-password__btn {
     color: #01164E;
   }
   .password-box__icon {
     position: absolute;
-    right: 20px;
+    right: 180px;
     bottom: 15px;
     cursor: pointer;
   }

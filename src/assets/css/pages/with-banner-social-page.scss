@@ -18,15 +18,31 @@
         }
 
     }
+    main {
 
-    h4 {
-        font-size: 32px;
+        .intro {
+            padding: 70px 0 65px;
+        }
+
+        ul {
+            padding-inline-start: 75px;
+        }
+
+        li {
+            padding-left: 30px;
+        }
+
+        h4 {
+            font-size: 32px;
+        }
+
+        p {
+            font-weight: 400;
+            font-size: 18px;
+        }
     }
 
-    p {
-        font-weight: 400;
-        font-size: 18px;
-    }
+
 
     .contact {
 

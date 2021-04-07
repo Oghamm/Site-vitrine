@@ -18,6 +18,10 @@
         }
 
     }
+    .multiple-bar {
+        background: #ffffff;
+    }
+
     h4 {
         font-size: 32px;
     }
@@ -113,7 +117,7 @@
             justify-content: space-between;
 
             .know_more {
-                margin-right: 20px;
+                margin-right: 90px;
                 cursor: pointer;
                 font-family: "Montserrat", sans-serif;
                 color: #6F93F4;
@@ -133,7 +137,7 @@
         }
 
         .intro__text {
-            max-width: 85%;
+            max-width: 95%;
 
             @include bp-xl {
                 max-width: 100%;
@@ -351,6 +355,7 @@
     }
 
     .text-option {
+        padding-bottom: 90px;
 
         @include bp-xl {
             padding-bottom: 0;
