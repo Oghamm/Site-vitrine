@@ -24,30 +24,30 @@ const Content = () => {
                             <p>
                                 <ul>
                                     <br/>
-                                    <li>Maîtriser tous les réseaux sociaux et leurs particularités, en connaitre
-                                    les usages et les changements.</li>
+                                    <li>Maîtriser tous les réseaux sociaux et leurs particularités, en connaître les
+                                        usages et les changements.</li>
                                     <br/>
-                                    <li>Produire du contenu pour les alimenter : rédaction, création d'images,
-                                    infographie, vidéos, podcasts, etc.</li>
+                                    <li>Produire du contenu pour les alimenter : rédaction, création d’images,
+                                        infographie, vidéos, podcasts, etc.</li>
                                     <br/>
-                                    <li>Animer votre communauté: fédérer, fidéliser, créer des intéractions, informer,
-                                    répondre, modérer, etc.</li>
+                                    <li>Animer votre communauté : fédérer, fidéliser, créer des interactions, informer,
+                                        répondre, modérer, etc.</li>
                                     <br/>
-                                    <li>Assurer une veille concurentille : surveiller l'e-réputation de votre entreprise
-                                    , vous tenir informé des actions de vos concurents pour vous adapter aux
-                                    évolutions.</li>
+                                    <li>Assurer une veille concurrentielle : surveiller l’e-réputation de votre
+                                        entreprise, vous tenir informé des actions de vos concurrents pour vous adapter
+                                        aux évolutions.</li>
                                     <br/>
                                 </ul>
                             </p>
                         </div>
 
                         <p className="intro__text">
-                            Si vous êtes très à l'aise avec les médias sociaux et que vous disposez de suffisament
-                            de temps, vous pouvez envisager de gérer cet aspect seul. Dans le cas contraire, chez
-                            Quintyss, nous vous proposons les compétences d'un community manager professionnel. Il faut
-                            avoir de la visibilité pour obtenir des clients et plus vous avez de clients, plus votre
-                            notoriété augmente et plus vous gagnez en visibilité. Le jeu en vaut la chandelle : le
-                            retour sur investissement est garanti !
+                            Si vous êtes très à l’aise avec les médias sociaux et que vous disposez de suffisamment de
+                            temps, vous pouvez envisager de gérer cet aspect seul. Dans le cas contraire, chez Quintyss,
+                            nous vous proposons les compétences d’un community manager professionnel. Il faut avoir de
+                            la visibilité pour obtenir des clients et plus vous avez de clients, plus votre notoriété
+                            augmente et plus vous gagnez en visibilité. Le jeu en vaut la chandelle : le retour sur
+                            investissement est garanti !
                         </p>
                     </div>
                 </div>
