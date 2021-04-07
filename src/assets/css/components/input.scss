@@ -474,7 +474,6 @@ select:-moz-focusring {
 .input-radio {
     display: block;
     position: relative;
-    padding-left: 40px;
     margin-bottom: 15px;
     cursor: pointer;
     font-weight: 600;
@@ -503,10 +502,10 @@ select:-moz-focusring {
 .checkmark {
     position: absolute;
     top: 0;
-    left: 0;
+    left: 70px;
     height: 19px;
     width: 19px;
-    background-color: $bg-grey;
+    background-color: #ffffff;
     border-radius: 50%;
 }
   

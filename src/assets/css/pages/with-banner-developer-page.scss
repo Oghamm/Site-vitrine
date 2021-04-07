@@ -10,6 +10,13 @@
         color: #01164E;
     }
   }
+
+  .form-group.input-lg {
+    .form-control {
+      width: 398px;
+      height: 48px;
+    }
+  }
   /*Slide button*/
 
   .slide__button{
@@ -60,6 +67,15 @@
       font-weight: 600;
       margin-left: 448px;
       z-index: 3;
+    }
+    #subscribe {
+      color: rgba(1, 22, 78, 0.5);
+    }
+    #lol-checkbox:checked + #button #subscribe {
+      color: #01164E;
+    }
+    #lol-checkbox:checked + #button #alright{
+      color: rgba(1, 22, 78, 0.5);
     }
 
     #alright {
@@ -159,13 +175,20 @@
     margin-bottom: 0;
   }
   .input-radio:first-child {
-    margin-right: 80px;
+    margin-right: 100px;
   }
   .input-radio input {
     position: absolute;
     opacity: 0;
     cursor: pointer;
   }
+
+  /*.input-radio {
+    .checkmark {
+      background-color: #ffffff;
+    }
+  }*/
+
   .designer-price .section__title {
     margin-bottom: 10px;
   }
@@ -181,6 +204,7 @@
     border: none;
     width: 400px;
     height: 48px;
+
   }
   .designer-price .form-group::after {
     content: "eur";
@@ -255,6 +279,9 @@
 
     .btn-primary{
       margin-top: 45px;
+      width: 260px;
+      height: 54px;
+      padding: 0;
     }
   }
   .img_footer {
@@ -273,7 +300,7 @@
     display: flex;
     justify-content: space-between;
     padding-top: 50px;
-    padding-bottom: 50px;
+    padding-bottom: 20px;
 
     label {
       font-weight: 500;
@@ -287,11 +314,17 @@
     top: -60px;
   }
   .logo__develop {
-    width: 500px;
-    height: 400px;
-    position: relative;
-    top: 20px;
-    left: 260px;
+    width: 580px;
+    height: 580px;
+    position: absolute;
+    top: 856px;
+    left: 968px;
+  }
+  .integrate__container {
+    padding-bottom: 40px;
+  }
+  .integrate_p {
+    width: 682px;
   }
 
 

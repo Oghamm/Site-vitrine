@@ -55,12 +55,18 @@ const Content = () => {
     function handleChecked() {
         setOpen(open => !open);
     }
-    function handleDeveloped() {
-        setIsDeveloped(isDeveloped => !isDeveloped);
+    function handleIsDeveloped() {
+        setIsDeveloped(true);
+    }
+    function handleNotDeveloped() {
+        setIsDeveloped(false);
     }
 
     return(
         <>
+            <img className={"logo__develop"}
+                 src={"/img/with-banner/developer/background-2.svg"}
+                 alt={"Logo Quintyss"}/>
             <div className={"slide__button"}>
                 <input type="checkbox" id="lol-checkbox" onChange={handleChecked}/>
 
@@ -163,7 +169,7 @@ const Content = () => {
                                                         className="form-control"
                                                     />
                                                 </div>
-                                                <div className={"col-12"}>
+                                                <div>
                                                     <div className={"title_developer_model"}>
                                                         <div>
                                                             <h4 className={"intro__title section-title"}>
@@ -178,7 +184,7 @@ const Content = () => {
                                                                     id="modele-yes"
                                                                     name="model-developped"
                                                                     value="yes"
-                                                                    onClick={handleDeveloped}
+                                                                    onClick={handleIsDeveloped}
                                                                 />
                                                                 <label
                                                                     htmlFor="modele-yes"
@@ -190,7 +196,7 @@ const Content = () => {
                                                                     id="modele-no"
                                                                     name="model-developped"
                                                                     value="no"
-                                                                    onClick={handleDeveloped}
+                                                                    onClick={handleNotDeveloped}
                                                                 />
                                                                 <label
                                                                     htmlFor="modele-no"
@@ -199,17 +205,20 @@ const Content = () => {
                                                                 >
                                                             </div>
                                                             {isDeveloped ?
-                                                                <div className={"col-12"}>
-                                                                    <h4 className={"intro__title section-title"}>
-                                                                        Informations intégration
-                                                                    </h4>
-                                                                    <p>
-                                                                        Texte de norme pour l’intégration du modèle
-                                                                        Profitez de l’expertise de notre équipe et du
-                                                                        savoir-faire de nos
-                                                                        rédacteurs professionnels pour faire rédiger vos
-                                                                        textes, rapidement et sans effort !
-                                                                    </p>
+                                                                <div >
+                                                                    <div className={"integrate__container"}>
+                                                                        <h4 className={"intro__title section-title"}>
+                                                                            Informations intégration
+                                                                        </h4>
+                                                                        <p className={"integrate_p"}>
+                                                                            Texte de norme pour l’intégration du modèle
+                                                                            Profitez de l’expertise de notre équipe et du
+                                                                            savoir-faire de nos
+                                                                            rédacteurs professionnels pour faire rédiger vos
+                                                                            textes, rapidement et sans effort !
+                                                                        </p>
+                                                                    </div>
+
                                                                     <div className="form-group input-lg">
                                                                         <label htmlFor="email">Lien du modèle</label>
                                                                         <input
@@ -258,15 +267,10 @@ const Content = () => {
                                                                     </div>
                                                                 </div>}
                                                         </div>
-                                                        <div>
-                                                            <img className={"logo__develop"}
-                                                                 src={"/img/with-banner/developer/background-2.svg"}
-                                                                 alt={"Logo Quintyss"}/>
-                                                        </div>
                                                     </div>
                                                 </div>
 
-                                                <div className={"col-12"}>
+                                                <div className={"integrate__container"}>
                                                     <h4 className={"intro__title section-title"}>
                                                         Option de publication
                                                     </h4>
@@ -287,12 +291,13 @@ const Content = () => {
                                                         </label>
                                                     </div>
                                                 </div>
-                                                <div className={"col-12"}>
+                                                <div >
                                                     <div className="designer-price">
                                                         <h4 className={"intro__title section-title"}>Tarif du modèle
                                                         </h4>
                                                         <div className="form-group">
-                                                            <input type="text" className="form-control"/>
+                                                            <input type="text" className="form-control"
+                                                                   placeholder={"500"}/>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -491,7 +496,7 @@ const Content = () => {
                                             </div>
 
                                             <button type="submit" className="btn btn-primary">
-                                                S'inscrire
+                                                Publier
                                             </button>
                                         </div>
                                         {open &&
