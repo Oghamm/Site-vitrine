@@ -114,7 +114,7 @@ const Content = () => {
 
     return (
         <>
-            <section className="intro_graphisme">
+            <section className="intro_migrate">
                 <div className="container">
                     <div className="row">
                         <div className="col-12">
@@ -317,7 +317,7 @@ const Content = () => {
                                     </div>
 
                                     <button type="submit" className="btn btn-primary">
-                                        {getTranslation("validate")}
+                                        Envoyer
                                     </button>
                                 </form>
                             </div>

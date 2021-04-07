@@ -187,7 +187,7 @@ const Content = () => {
                                     </div>
 
                                     <button type="submit" className="btn btn-primary">
-                                        {getTranslation("validate")}
+                                        Envoyer
                                     </button>
                                 </form>
                             </div>

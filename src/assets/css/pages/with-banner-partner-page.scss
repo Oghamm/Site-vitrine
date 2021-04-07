@@ -17,6 +17,21 @@
     }
 
   }
+
+
+
+  .form-group {
+    input {
+      width: 705px;
+      height: 48px;
+    }
+  }
+  .form-group.input-lg {
+    .form-control {
+      width: 705px;
+    }
+  }
+
   .intro_partner {
     padding:70px 0 70px 0;
   }
@@ -56,19 +71,28 @@
   }
 
   .contact {
+    padding-bottom: 176px;
+
+    &__form {
+      .btn-primary {
+        width: 712px;
+      }
+    }
     .radio_btn {
       font-family: "Montserrat", sans-serif;
       font-weight: 600;
       color: #01164E;
       display: flex;
       margin-bottom: 40px;
+      margin-top: 20px;
+      width: 705px;
       .checkmark {
         position: absolute;
-        top: 0;
+        top: -5px;
         left: 0;
-        height: 25px;
-        width: 25px;
-        background-color: #eee;
+        height: 22px;
+        width: 22px;
+        background-color: #ffffff;
         border-radius: 50%;
       }
       .container:hover input ~ .checkmark {
@@ -81,7 +105,7 @@
         padding-left: 35px;
         margin-bottom: 12px;
         cursor: pointer;
-        font-size: 20px;
+        font-size: 16px;
         -webkit-user-select: none;
         -moz-user-select: none;
         -ms-user-select: none;
@@ -104,10 +128,10 @@
         display: block;
       }
       .container .checkmark:after {
-        top: 9px;
-        left: 9px;
-        width: 8px;
-        height: 8px;
+        top: 7px;
+        left: 7px;
+        width: 9px;
+        height: 9px;
         border-radius: 50%;
         background: white;
       }

@@ -39,148 +39,155 @@
     }
   }
 
-.visuel_identity {
-padding-bottom: 40px;
-}
-
-.form-control_description {
-width: 840px;
-height: 220px;
-border: none;
-overflow-y: auto;
-}
-
-.intro_graphisme {
-padding:70px 0 40px 0;
-}
-
-.delay_choice {
-width: 900px;
-height: 64px;
-background: #ffffff;
-border-radius: 60px;
-display: flex;
-flex-direction: row;
-align-items: center;
-
-.label_container {
-  margin-left: 20px;
-  width:50px;
-  height:50px;
-  display: block;
-  position: relative;
-  cursor: pointer;
-  font-size: 20px;
-  font-weight: 500;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-
-  input {
-    position: absolute;
-    opacity: 0;
-    cursor: pointer;
-    width: 50px;
-    height: 50px;
+  .visuel_identity {
+    padding-bottom: 40px;
   }
-  .checkmark {
-    text-align:center;
-    padding-top: 10px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 50px;
-    width: 50px;
-    border-radius: 50%;
+
+  .form-control_description {
+    width: 840px;
+    height: 220px;
+    border: none;
+    overflow-y: auto;
+  }
+
+  .intro_graphisme {
+    padding:70px 0 40px 0;
+  }
+  .intro_migrate {
+    padding: 70px 0 70px 0;
+
+    p {
+      font-weight: 500;
+    }
+  }
+
+  .delay_choice {
+    width: 900px;
+    height: 64px;
     background: #ffffff;
-  }
-
-}
-.label_container:hover input ~ .checkmark {
-  background-color: #ccc;
-}
-.label_container input:checked ~ .checkmark {
-  background-color: #6F93F4;
-  color: #ffffff;
-}
-.checkmark:after {
-  position: absolute;
-  display: none;
-}
-
-.label_container .checkmark:after {
-  top: 9px;
-  left: 9px;
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: white;
-}
-
-
-}
-.gestion_button_container {
-
-input {
-  display: none;
-
-  + div {
+    border-radius: 60px;
     display: flex;
+    flex-direction: row;
+    align-items: center;
 
-    label {
-      margin-right: 10px;
-      width: 260px;
+    .label_container {
+      margin-left: 20px;
+      width:50px;
+      height:50px;
+      display: block;
+      position: relative;
       cursor: pointer;
-      background: #ffffff;
-      color: #01164E;
-      display: inline-block;
-      text-align: center;
-      padding: 21px 40px;
-      border: 1px solid #ffffff;
-      font-size: 16px;
-      font-weight: 700;
-      border-radius: 100px;
-      transition: all .5s;
+      font-size: 20px;
+      font-weight: 500;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
 
-      &:first-child {
-        background: #6F93F4;
-        color: #ffffff;
+      input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        width: 50px;
+        height: 50px;
+      }
+      .checkmark {
+        text-align:center;
+        padding-top: 10px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 50px;
+        width: 50px;
+        border-radius: 50%;
+        background: #ffffff;
+      }
+
+    }
+    .label_container:hover input ~ .checkmark {
+      background-color: #ccc;
+    }
+    .label_container input:checked ~ .checkmark {
+      background-color: #6F93F4;
+      color: #ffffff;
+    }
+    .checkmark:after {
+      position: absolute;
+      display: none;
+    }
+
+    .label_container .checkmark:after {
+      top: 9px;
+      left: 9px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: white;
+    }
+
+
+  }
+  .gestion_button_container {
+
+    input {
+      display: none;
+
+      + div {
+        display: flex;
+
+        label {
+          margin-right: 10px;
+          width: 260px;
+          cursor: pointer;
+          background: #ffffff;
+          color: #01164E;
+          display: inline-block;
+          text-align: center;
+          padding: 21px 40px;
+          border: 1px solid #ffffff;
+          font-size: 16px;
+          font-weight: 700;
+          border-radius: 100px;
+          transition: all .5s;
+
+          &:first-child {
+            background: #6F93F4;
+            color: #ffffff;
+          }
+        }
+      }
+
+      &#oui:checked + div label {
+        &:first-child {
+          background: #6F93F4;
+          color: #ffffff;
+        }
+
+        &:last-child {
+          background: #ffffff;
+          color: #01164E;
+        }
+      }
+
+      &#non:checked + div label {
+        &:first-child {
+          background: #ffffff;
+          color: #01164E;
+        }
+
+        &:last-child {
+          background: #6F93F4;
+          color: #ffffff;
+        }
       }
     }
   }
 
-  &#oui:checked + div label {
-    &:first-child {
-      background: #6F93F4;
-      color: #ffffff;
-    }
-
-    &:last-child {
-      background: #ffffff;
-      color: #01164E;
-    }
+  .form-group input#link {
+    width: 400px;
   }
-
-  &#non:checked + div label {
-    &:first-child {
-      background: #ffffff;
-      color: #01164E;
-    }
-
-    &:last-child {
-      background: #6F93F4;
-      color: #ffffff;
-    }
+  .form-group label {
+    font-weight: 600;
   }
-}
-}
-
-.form-group input#link {
-width: 400px;
-}
-.form-group label {
-font-weight: 600;
-}
 
 }
