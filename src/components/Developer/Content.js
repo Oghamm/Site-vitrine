@@ -64,9 +64,11 @@ const Content = () => {
 
     return(
         <>
-            <img className={"logo__develop"}
-                 src={"/img/with-banner/developer/background-2.svg"}
-                 alt={"Logo Quintyss"}/>
+            {!open && <img className={"logo__develop"}
+                          src={"/img/with-banner/developer/background-2.svg"}
+                          alt={"Logo Quintyss"}/>
+            }
+
             <div className={"slide__button"}>
                 <input type="checkbox" id="lol-checkbox" onChange={handleChecked}/>
 
@@ -450,7 +452,7 @@ const Content = () => {
                 </div>
             </div>
             }
-            <section className="contact">
+            <section className="contact__footer">
                 <div className="container">
                     <div className="row">
                         <div className="col-12">
