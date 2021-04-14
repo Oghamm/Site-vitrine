@@ -1,5 +1,6 @@
 import React from "react"
 import useIntlFromDocs from "../../hooks/useIntlFromDocs"
+import Link from "gatsby-link";
 
 const Steps = () => {
   const { getTranslation } = useIntlFromDocs()
@@ -59,12 +60,11 @@ const Steps = () => {
           </div>
 
           <div className="col-12 text-center">
-            <a
-              href="./choice-model.html"
+            <Link to={"/models"}
               className="step__btn step__btn--end btn btn-primary"
             >
               {getTranslation("cta_1")}
-            </a>
+            </Link>
           </div>
         </div>
       </div>

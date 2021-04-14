@@ -6,13 +6,13 @@ import Content from "../components/Writing/Content"
 
 export default function Writing() {
   return (
-    <Layout className="with-banner writing choices">
-      <Header black>
-        <Banner />
-      </Header>
-      <main>
-        <Content/>
-      </main>
-    </Layout>
+      <Layout className="with-banner writing choices">
+          <Header black>
+              <Banner />
+          </Header>
+          <main>
+              <Content/>
+          </main>
+      </Layout>
   )
 }
