@@ -6,10 +6,10 @@ const Content = () => {
     const [Open, setOpen] = useState(false);
 
     const handleClickRegister =() => {
-        setOpen(true);
+        setOpen(false);
     }
     const handleClickEdit =() => {
-        setOpen(false);
+        setOpen(true);
     }
 
     return(
@@ -79,7 +79,66 @@ const Content = () => {
                 <div class="container">
                     <div class="row main-content">
                         <div class="col-lg-12 content">
-                            {Open ?
+                            {!Open ?
+                                <>
+                                    <div className={"personal-open"}>
+                                        <div className={"edit"} onClick={handleClickEdit}>
+                                            <i className="far fa-edit"></i>
+                                        </div>
+                                        <div className={"infos"}>
+                                            <div className={"first"}>
+                                                <div className={"title"}>
+                                                    Henri Mistral
+                                                </div>
+                                                <div className={"line"}>
+                                                    <img src={"/img/with-banner/models/email-2.svg"}/>
+                                                    <p>florent@gmail.com</p>
+                                                </div>
+                                                <div className={"line"}>
+                                                    <img src={"/img/with-banner/models/phone-call.svg"}/>
+                                                    <p>0676315397</p>
+                                                </div>
+                                                <div className={"line"}>
+                                                    <i className="fas fa-map-marker-alt"></i>
+                                                    <p>94 rue des noyers, Savigny-sur-orge<br/> 91600 France</p>
+                                                </div>
+
+                                            </div>
+                                            <div className={"second"}>
+                                                <div
+                                                    className="projects-and-models__choice form-group select"
+                                                >
+                                                    <select className="form-control">
+                                                        <option selected disabled
+                                                        >Starter
+                                                        </option
+                                                        >
+                                                    </select>
+                                                </div>
+                                                <div className={"information-bloc"}>
+                                                    <div className={"info-logo"}>
+                                                        <img src={"/img/with-banner/models/check.svg"}/>
+                                                    </div>
+                                                    <div className={"info-text"}>
+                                                        Fonctionnalités de base<br/> 10 pages<br/> Domaine gratuit pendant
+                                                        1 an*<br/>
+                                                        2 Go d’espace disque<br/> 2 Go de bande passante<br/> 2 boîtes
+                                                        e-mail*<br/>
+                                                        Propulsé par WebSelf
+                                                    </div>
+
+                                                </div>
+
+                                            </div>
+                                            <div className={"third"}>
+                                                <div>
+                                                    <p>Mot de passe</p>
+                                                </div>
+                                                <img src={"/img/with-banner/models/password.svg"}/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </> :
                                 <>
                                     <div className={"personal"}>
                                         <div className={"edit"} onClick={handleClickEdit}>
@@ -228,65 +287,7 @@ const Content = () => {
                                         </div>
 
                                     </div>
-                                </> :
-                                <>
-                                    <div className={"personal-open"}>
-                                        <div className={"edit"} onClick={handleClickEdit}>
-                                            <i className="far fa-edit"></i>
-                                        </div>
-                                        <div className={"infos"}>
-                                            <div className={"first"}>
-                                                <div className={"title"}>
-                                                    Henri Mistral
-                                                </div>
-                                                <div className={"line"}>
-                                                    <img src={"/img/with-banner/models/email-2.svg"}/>
-                                                    <p>florent@gmail.com</p>
-                                                </div>
-                                                <div className={"line"}>
-                                                    <img src={"/img/with-banner/models/phone-call.svg"}/>
-                                                    <p>0676315397</p>
-                                                </div>
-                                                <div className={"line"}>
-                                                    <i className="fas fa-map-marker-alt"></i>
-                                                    <p>94 rue des noyers, Savigny-sur-orge<br/> 91600 France</p>
-                                                </div>
-                                                
-                                            </div>
-                                            <div className={"second"}>
-                                                <div
-                                                    className="projects-and-models__choice form-group select"
-                                                >
-                                                    <select className="form-control">
-                                                        <option selected disabled
-                                                        >Starter
-                                                        </option
-                                                        >
-                                                    </select>
-                                                </div>
-                                                <div className={"information-bloc"}>
-                                                    <div className={"info-logo"}>
-                                                        <img src={"/img/with-banner/models/check.svg"}/>
-                                                    </div>
-                                                    <div className={"info-text"}>
-                                                        Fonctionnalités de base<br/> 10 pages<br/> Domaine gratuit pendant
-                                                        1 an*<br/>
-                                                        2 Go d’espace disque<br/> 2 Go de bande passante<br/> 2 boîtes
-                                                        e-mail*<br/>
-                                                        Propulsé par WebSelf
-                                                    </div>
 
-                                                </div>
-
-                                            </div>
-                                            <div className={"third"}>
-                                                <div>
-                                                    <p>Mot de passe</p>
-                                                </div>
-                                                <img src={"/img/with-banner/models/password.svg"}/>
-                                            </div>
-                                        </div>
-                                    </div>
                                 </>
                             }
 
