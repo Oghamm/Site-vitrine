@@ -79,7 +79,7 @@ const Content = () => {
                 <div class="container">
                     <div class="row main-content">
                         <div class="col-lg-12 content">
-                            {!Open ?
+                            {Open ?
                                 <>
                                     <div className={"personal"}>
                                         <div className={"edit"} onClick={handleClickEdit}>
