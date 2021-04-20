@@ -97,10 +97,9 @@ const Content = () => {
                                             Vous avez choisi le modèle
                                             <span className="banner__title"> Uxagone</span>
                                         </p>
-                                        <a
-                                            href="./structure.html"
+                                        <Link   to={"/dashboard"}
                                             className="banner__btn btn btn-primary"
-                                        >Démarrer la personnalisation</a
+                                        >Démarrer la personnalisation</Link
                                         >
                                     </div>
                                 </div>
