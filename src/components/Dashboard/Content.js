@@ -1322,7 +1322,7 @@ const Content = () => {
                                             <a href="">
                                                 <div className="site-item__add">
                                                     <img
-                                                        src="./assets/img/cms/site-item-add.svg"
+                                                        src="/img/with-banner/dashboard/site-item-add.svg"
                                                         className="site-item__add--img"
                                                     />
                                                 </div>
@@ -1348,13 +1348,13 @@ const Content = () => {
                                             <a href="">
                                                 <img
                                                     className="site-item__edit--img"
-                                                    src="./assets/img/cms/site-item-edit.svg"
+                                                    src="/img/with-banner/dashboard/site-item-edit.svg"
                                                 />
                                             </a>
                                             <a href="">
                                                 <div className="site-item__add">
                                                     <img
-                                                        src="./assets/img/cms/site-item-add.svg"
+                                                        src="/img/with-banner/dashboard/site-item-add.svg"
                                                         className="site-item__add--img"
                                                     />
                                                 </div>
@@ -1381,13 +1381,13 @@ const Content = () => {
                                                 <a href="">
                                                     <img
                                                         className="site-item__edit--img"
-                                                        src="./assets/img/cms/site-item-edit.svg"
+                                                        src="/img/with-banner/dashboard/site-item-edit.svg"
                                                     />
                                                 </a>
                                                 <a href="">
                                                     <div className="site-item__add">
                                                         <img
-                                                            src="./assets/img/cms/site-item-add.svg"
+                                                            src="/img/with-banner/dashboard/site-item-add.svg"
                                                             className="site-item__add--img"
                                                         />
                                                     </div>
@@ -1407,7 +1407,7 @@ const Content = () => {
                                                     <a href="">
                                                         <img
                                                             className="site-item__edit--img"
-                                                            src="./assets/img/cms/site-item-edit.svg"
+                                                            src="/img/with-banner/dashboard/site-item-edit.svg"
                                                         />
                                                     </a>
                                                     <a href="">
@@ -1415,7 +1415,7 @@ const Content = () => {
                                                             className="site-item__add"
                                                         >
                                                             <img
-                                                                src="./assets/img/cms/site-item-add.svg"
+                                                                src="/img/with-banner/dashboard/site-item-add.svg"
                                                                 className="site-item__add--img"
                                                             />
                                                         </div>
@@ -1434,7 +1434,7 @@ const Content = () => {
                                                     <a href="">
                                                         <img
                                                             className="site-item__edit--img"
-                                                            src="./assets/img/cms/site-item-edit.svg"
+                                                            src="/img/with-banner/dashboard/site-item-edit.svg"
                                                         />
                                                     </a>
                                                     <a href="">
@@ -1442,7 +1442,7 @@ const Content = () => {
                                                             className="site-item__add"
                                                         >
                                                             <img
-                                                                src="./assets/img/cms/site-item-add.svg"
+                                                                src="/img/with-banner/dashboard/site-item-add.svg"
                                                                 className="site-item__add--img"
                                                             />
                                                         </div>
@@ -1468,13 +1468,13 @@ const Content = () => {
                                             <a href="">
                                                 <img
                                                     className="site-item__edit--img"
-                                                    src="./assets/img/cms/site-item-edit.svg"
+                                                    src="/img/with-banner/dashboard/site-item-edit.svg"
                                                 />
                                             </a>
                                             <a href="">
                                                 <div className="site-item__add">
                                                     <img
-                                                        src="./assets/img/cms/site-item-add.svg"
+                                                        src="/img/with-banner/dashboard/site-item-add.svg"
                                                         className="site-item__add--img"
                                                     />
                                                 </div>
@@ -1498,13 +1498,13 @@ const Content = () => {
                                             <a href="">
                                                 <img
                                                     className="site-item__edit--img"
-                                                    src="./assets/img/cms/site-item-edit.svg"
+                                                    src="/img/with-banner/dashboard/site-item-edit.svg"
                                                 />
                                             </a>
                                             <a href="">
                                                 <div className="site-item__add">
                                                     <img
-                                                        src="./assets/img/cms/site-item-add.svg"
+                                                        src="/img/with-banner/dashboard/site-item-add.svg"
                                                         className="site-item__add--img"
                                                     />
                                                 </div>
