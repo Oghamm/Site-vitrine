@@ -4,6 +4,15 @@ import Link from "gatsby-link";
 const Content = () => {
 
     const [Open, setOpen] = useState(false);
+    const [banner, setBanner] = useState(false);
+
+    const handleClickUxagone =() => {
+        setBanner(true);
+    }
+
+    const handleClickCross =() => {
+        setBanner(false);
+    }
 
     const handleClickRegister =() => {
         setOpen(false);
@@ -75,6 +84,30 @@ const Content = () => {
                         </div>
                     </div>
                 </div>
+                {
+                    banner &&
+                        <>
+                            <div className="banner" id="banner">
+                                <div className="close close-banner" onClick={handleClickCross}>
+                                    <img src="/img/close.svg" alt=""/>
+                                </div>
+                                <div className="container">
+                                    <div className="banner__content">
+                                        <p className="banner__text">
+                                            Vous avez choisi le modèle
+                                            <span className="banner__title"> Uxagone</span>
+                                        </p>
+                                        <a
+                                            href="./structure.html"
+                                            className="banner__btn btn btn-primary"
+                                        >Démarrer la personnalisation</a
+                                        >
+                                    </div>
+                                </div>
+                            </div>
+                        </>
+                }
+
 
                 <div class="container">
                     <div class="row main-content">
@@ -455,7 +488,7 @@ const Content = () => {
                             <div className="all-models">
                                 <div className="model">
                                     <a className="model__link open-banner" data-target="#banner">
-                                        <div className="model__header">
+                                        <div className="model__header" onClick={handleClickUxagone}>
                                             <h4 className="model__title">
                                                 Uxagone
                                             </h4>
@@ -483,7 +516,7 @@ const Content = () => {
                                 </div>
                                 <div className="model">
                                     <a className="model__link open-mockup" data-target="#mockup">
-                                        <div className="model__header">
+                                        <div className="model__header" onClick={handleClickUxagone}>
                                             <h4 className="model__title">
                                                 Uxagone
                                             </h4>
@@ -511,7 +544,7 @@ const Content = () => {
                                 </div>
                                 <div className="model">
                                     <a className="model__link open-mockup" data-target="#mockup">
-                                        <div className="model__header">
+                                        <div className="model__header" onClick={handleClickUxagone}>
                                             <h4 className="model__title">
                                                 Uxagone
                                             </h4>
@@ -540,7 +573,7 @@ const Content = () => {
 
                                 <div className="model">
                                     <a className="model__link open-banner" data-target="#banner">
-                                        <div className="model__header">
+                                        <div className="model__header" onClick={handleClickUxagone}>
                                             <h4 className="model__title">
                                                 Uxagone
                                             </h4>
@@ -568,7 +601,7 @@ const Content = () => {
                                 </div>
                                 <div className="model">
                                     <a className="model__link open-mockup" data-target="#mockup">
-                                        <div className="model__header">
+                                        <div className="model__header" onClick={handleClickUxagone}>
                                             <h4 className="model__title">
                                                 Uxagone
                                             </h4>
@@ -596,7 +629,7 @@ const Content = () => {
                                 </div>
                                 <div className="model">
                                     <a className="model__link open-mockup" data-target="#mockup">
-                                        <div className="model__header">
+                                        <div className="model__header" onClick={handleClickUxagone}>
                                             <h4 className="model__title">
                                                 Uxagone
                                             </h4>
@@ -625,7 +658,7 @@ const Content = () => {
 
                                 <div className="model">
                                     <a className="model__link open-mockup" data-target="#mockup">
-                                        <div className="model__header">
+                                        <div className="model__header" onClick={handleClickUxagone}>
                                             <h4 className="model__title">
                                                 Uxagone
                                             </h4>
@@ -653,7 +686,7 @@ const Content = () => {
                                 </div>
                                 <div className="model">
                                     <a className="model__link open-mockup" data-target="#mockup">
-                                        <div className="model__header">
+                                        <div className="model__header" onClick={handleClickUxagone}>
                                             <h4 className="model__title">
                                                 Uxagone
                                             </h4>
@@ -681,7 +714,7 @@ const Content = () => {
                                 </div>
                                 <div className="model">
                                     <a className="model__link open-mockup" data-target="#mockup">
-                                        <div className="model__header">
+                                        <div className="model__header" onClick={handleClickUxagone}>
                                             <h4 className="model__title">
                                                 Uxagone
                                             </h4>
