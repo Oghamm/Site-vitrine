@@ -2,6 +2,45 @@ import React, {useState} from "react";
 import Link from "gatsby-link";
 
 const Content = () => {
+    const [multilangue, setMultilangue] = useState(false);
+    const [theme, setTheme] = useState(false);
+    const [help, setHelp] = useState(false);
+    const [shop, setShop] = useState(false);
+    const [graph, setGraph] = useState(true);
+    const [write, setWrite] = useState(false);
+    const [migrate, setMigrate] = useState(false);
+    const [translate, setTranslate] = useState(false);
+
+
+    const handleMultilangue =() => {
+        setMultilangue(multilangue => !multilangue);
+    }
+    const handleTheme =() => {
+        setTheme(theme => !theme);
+    }
+    const handleHelp =() => {
+        setHelp(help => !help);
+    }
+    const handleCross =() => {
+        setShop(false);
+    }
+    const handleShop =() => {
+        setShop(true);
+    }
+
+    const handleClickGraph =() => {
+        setGraph(graph=> !graph);
+    }
+    const handleClickWrite =() => {
+        setWrite(write=> !write);
+    }
+    const handleClickMigrate =() => {
+        setMigrate(migrate=> !migrate);
+    }
+    const handleClickTranslate =() => {
+        setTranslate(translate=> !translate);
+    }
+
     return (
         <>
             <div className="container-fluid">
@@ -579,8 +618,9 @@ const Content = () => {
 
                             <div className="all-btn-choices">
                                 <div
-                                    className="btn-choice rounded selected"
+                                    className={graph ?"btn-choice rounded selected" : "btn-choice rounded"}
                                     data-target="#c-graphism"
+                                    onClick={handleClickGraph}
                                 >
                                     <svg
                                         xmlns="http://www.w3.org/2000/svg"
@@ -675,8 +715,9 @@ const Content = () => {
                                 </div>
 
                                 <div
-                                    className="btn-choice rounded"
+                                    className={migrate ?"btn-choice rounded selected":"btn-choice rounded"}
                                     data-target="#c-migrate"
+                                    onClick={handleClickMigrate}
                                 >
                                     <svg
                                         xmlns="http://www.w3.org/2000/svg"
@@ -736,8 +777,9 @@ const Content = () => {
                                 </div>
 
                                 <div
-                                    className="btn-choice rounded"
+                                    className={write ?"btn-choice rounded selected":"btn-choice rounded"}
                                     data-target="#c-writing"
+                                    onClick={handleClickWrite}
                                 >
                                     <svg
                                         xmlns="http://www.w3.org/2000/svg"
@@ -807,8 +849,9 @@ const Content = () => {
                                 </div>
 
                                 <div
-                                    className="btn-choice rounded"
+                                    className={translate ?"btn-choice rounded selected":"btn-choice rounded"}
                                     data-target="#c-translate"
+                                    onClick={handleClickTranslate}
                                 >
                                     <svg
                                         xmlns="http://www.w3.org/2000/svg"
@@ -842,58 +885,76 @@ const Content = () => {
                             </div>
 
                             <div className="complementary-box__all">
-                                <div
-                                    className="complementary-box__bloc show"
-                                    id="c-graphism"
-                                >
-                                    <p className="complementary-box__title">
-                                        Graphisme
-                                    </p>
-                                    <p className="complementary-box__text">
-                                        Texte de norme pour l’intégration du
-                                        modèle Profitez de l’expertise de notre
-                                        équipe.
-                                    </p>
-                                </div>
-                                <div
-                                    className="complementary-box__bloc"
-                                    id="c-migrate"
-                                >
-                                    <p className="complementary-box__title">
-                                        Migration
-                                    </p>
-                                    <p className="complementary-box__text">
-                                        Texte de norme pour l’intégration du
-                                        modèle Profitez de l’expertise de notre
-                                        équipe.
-                                    </p>
-                                </div>
-                                <div
-                                    className="complementary-box__bloc"
-                                    id="c-writing"
-                                >
-                                    <p className="complementary-box__title">
-                                        Rédaction
-                                    </p>
-                                    <p className="complementary-box__text">
-                                        Texte de norme pour l’intégration du
-                                        modèle Profitez de l’expertise de notre
-                                        équipe.
-                                    </p>
-                                </div>
-                                <div
-                                    className="complementary-box__bloc"
-                                    id="c-translate"
-                                >
-                                    <p className="complementary-box__title">
-                                        Traduction
-                                    </p>
-                                    <p className="complementary-box__text">
-                                        Texte de norme pour l’intégration du
-                                        modèle Profitez de l’expertise de notre
-                                        équipe.
-                                    </p>
-                                </div>
+                                {graph &&
+                                <>
+                                    <div
+                                        className="complementary-box__bloc show"
+                                        id="c-graphism"
+                                    >
+                                        <p className="complementary-box__title">
+                                            Graphisme
+                                        </p>
+                                        <p className="complementary-box__text">
+                                            Texte de norme pour l’intégration du
+                                            modèle Profitez de l’expertise de notre
+                                            équipe.
+                                        </p>
+                                    </div>
+                                </>}
+                                {migrate &&
+                                    <>
+                                        <div
+                                            className="complementary-box__bloc"
+                                            id="c-migrate"
+                                        >
+                                            <p className="complementary-box__title">
+                                                Migration
+                                            </p>
+                                            <p className="complementary-box__text">
+                                                Texte de norme pour l’intégration du
+                                                modèle Profitez de l’expertise de notre
+                                                équipe.
+                                            </p>
+                                        </div>
+                                    </>
+                                }
+                                {
+                                    write &&
+                                        <>
+                                            <div
+                                                className="complementary-box__bloc"
+                                                id="c-writing"
+                                            >
+                                                <p className="complementary-box__title">
+                                                    Rédaction
+                                                </p>
+                                                <p className="complementary-box__text">
+                                                    Texte de norme pour l’intégration du
+                                                    modèle Profitez de l’expertise de notre
+                                                    équipe.
+                                                </p>
+                                            </div>
+                                        </>
+                                }
+                                {
+                                    translate &&
+                                        <>
+                                            <div
+                                                className="complementary-box__bloc"
+                                                id="c-translate"
+                                            >
+                                                <p className="complementary-box__title">
+                                                    Traduction
+                                                </p>
+                                                <p className="complementary-box__text">
+                                                    Texte de norme pour l’intégration du
+                                                    modèle Profitez de l’expertise de notre
+                                                    équipe.
+                                                </p>
+                                            </div>
+                                        </>
+                                }
+
                             </div>
                         </div>
 
@@ -908,94 +969,259 @@ const Content = () => {
                     </div>
 
                     <div className="col-lg-8 col-md-7 bg-grey content">
-                        <div className="content__top-bar">
-                            <div className="website-info">
-                                <div className="website-info__edit">
-                                    <a href="" className="website-info__edit--link">
-                                        <img
-                                            src="/img/with-banner/dashboard/edit-website.svg"
-                                            className="website-info__edit--img"
-                                        />
-                                    </a>
-                                </div>
-
-                                <p className="website-info__title">Titre du site</p>
-                                <div className="website-info__content">
-                                    <p className="website-info__url">
-                                        www.titredusite
-                                    </p>
-                                    <div
-                                        className="form-group select select-grey website-info__extension"
-                                    >
-                                        <select className="form-control">
-                                            <option value="com">.com</option>
-                                            <option value="fr">.fr</option>
-                                        </select>
+                        <div className={"shop"} onClick={handleShop}>
+                            <img src={"/img/icons/cart.png"}/>
+                        </div>
+                        {shop &&
+                        <>
+                            <div className={"container-shop"}>
+                                <div className={"cross"}>
+                                    Récapitulatif
+                                    <div onClick={handleCross}>
+                                        <i className={"fas fa-times"}></i>
                                     </div>
                                 </div>
+                                <div className={"content-line"}>
+                                    <div>
+                                        <p>
+                                            Application 1
+                                        </p>
+                                    </div>
+                                    <div className={"value"}>
+                                        16.90
+                                    </div>
+                                </div>
+                                <div className={"content-line"}>
+                                    <div>
+                                        <p>
+                                            Application 2
+                                        </p>
+                                    </div>
+                                    <div className={"value"}>
+                                        16.90
+                                    </div>
+                                </div>
+                                <div className={"content-line"}>
+                                    <div>
+                                        <p>
+                                            Application 3
+                                        </p>
+                                    </div>
+                                    <div className={"value"}>
+                                        16.90
+                                    </div>
+                                </div>
+                                <div className={"validate"}>
+                                    Valider
+                                </div>
+                            </div>
+                        </>
+                        }
+
+                        <div className="content__top-bar">
+                            <div className="website-info">
+                                <div className={"first-line"}>
+                                    <p className="website-info__title">Titre du site</p>
+                                    <div className="website-info__content">
+                                        <p className="website-info__url">
+                                            www.titredusite
+                                        </p>
+                                        <div
+                                            className="form-group select select-grey website-info__extension"
+                                        >
+                                            <select className="form-control">
+                                                <option value="com">.com</option>
+                                                <option value="fr">.fr</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr className={"separator"}/>
+                                <div className={"second-line"}>
+                                    {
+                                        multilangue ?
+                                            <>
+                                                <div className={"little-box"}>
+                                                    <div className={"title"}>
+                                                        Multilingue
+                                                        <img src={"/img/with-banner/dashboard/tab-2.svg"}
+                                                             className={"tab"}
+                                                             onClick={handleMultilangue}
+                                                        />
+                                                    </div>
+                                                </div>
+                                            </>
+                                            :
+                                            <>
+                                                <div className={"box"}>
+                                                    <div className={"title"}>
+                                                        Multilingue
+                                                        <img src={"/img/with-banner/dashboard/tab.svg"}
+                                                             className={"tab"}
+                                                             onClick={handleMultilangue}
+                                                        />
+                                                    </div>
+                                                    <div className="form-group">
+                                                        <img src={"/img/with-banner/dashboard/loupe.svg"}/>
+                                                        <input
+                                                            type="text"
+                                                            id="link"
+                                                            name="search"
+                                                            required={true}
+                                                            className="form-control"
+                                                            placeholder={"Rechercher"}
+                                                        />
+                                                    </div>
+                                                    <div>
+                                                        <label className="language">Français
+                                                            <input type="checkbox" />
+                                                            <span className="checkmark"></span>
+                                                        </label>
+                                                        <label className="language">Anglais
+                                                            <input type="checkbox" />
+                                                            <span className="checkmark"></span>
+                                                        </label>
+                                                        <label className="language">Allemand
+                                                            <input type="checkbox" />
+                                                            <span className="checkmark"></span>
+                                                        </label>
+                                                        <label className="language">Espagnol
+                                                            <input type="checkbox" />
+                                                            <span className="checkmark"></span>
+                                                        </label>
+                                                        <label className="language">Italien
+                                                            <input type="checkbox" />
+                                                            <span className="checkmark"></span>
+                                                        </label>
+                                                        <label className="language">Portugais
+                                                            <input type="checkbox" />
+                                                            <span className="checkmark"></span>
+                                                        </label>
+
+                                                    </div>
+                                                </div>
+                                            </>
+                                    }
+                                    {
+                                        theme ?
+                                            <>
+                                                <div className={"little-box"}>
+                                                    <div className={"title"}>
+                                                        Thème
+                                                        <img src={"/img/with-banner/dashboard/tab-2.svg"}
+                                                             className={"tab"}
+                                                             onClick={handleTheme}
+                                                        />
+                                                    </div>
+                                                </div>
+                                            </>
+                                            :
+                                            <>
+                                                <div className={"box"}>
+                                                    <div className={"title"}>
+                                                        Thème
+                                                        <img src={"/img/with-banner/dashboard/tab.svg"}
+                                                             className={"tab"}
+                                                             onClick={handleTheme}
+                                                        />
+                                                    </div>
+                                                    <div className={"variant"}>
+                                                        <div className={"grey-box"}/>
+                                                        Variante 1
+                                                    </div>
+                                                    <div className={"variant"}>
+                                                        <div className={"grey-box"}/>
+                                                        Variante 1
+                                                    </div>
+                                                    <div className={"variant"}>
+                                                        <div className={"grey-box"}/>
+                                                        Variante 1
+                                                    </div>
+                                                    <div className={"variant"}>
+                                                        <div className={"grey-box"}/>
+                                                        Variante 1
+                                                    </div>
+                                                    <div className={"variant"}>
+                                                        <div className={"grey-box"}/>
+                                                        Variante 1
+                                                    </div>
+                                                </div>
+                                            </>
+                                    }
+
+
+                                </div>
+
+
                             </div>
 
                             <div className="content__right-part">
                                 <div className="help">
-                                    <button type="button" className="help__btn">
+                                    <button type="button" className="help__btn" onClick={handleHelp}>
                                         ?
                                     </button>
+                                    {
+                                        help &&
+                                            <>
+                                                <div className="help__modal">
+                                                    <div className="help__part">
+                                                        <p className="help__number">1</p>
+                                                        <div className="help__content">
+                                                            <p className="help__text">
+                                                                Texte de norme pour
+                                                                l’intégration du modèle
+                                                                Profitez de l’expertise de
+                                                                notre équipe et du
+                                                                savoir-faire de nos
+                                                                rédacteurs professionnels
+                                                                pour faire rédiger vos
+                                                                textes, rapidement et sans
+                                                                effort norme
+                                                            </p>
+                                                            <hr className="help__separator"/>
+                                                        </div>
+                                                    </div>
 
-                                    <div className="help__modal">
-                                        <div className="help__part">
-                                            <p className="help__number">1</p>
-                                            <div className="help__content">
-                                                <p className="help__text">
-                                                    Texte de norme pour
-                                                    l’intégration du modèle
-                                                    Profitez de l’expertise de
-                                                    notre équipe et du
-                                                    savoir-faire de nos
-                                                    rédacteurs professionnels
-                                                    pour faire rédiger vos
-                                                    textes, rapidement et sans
-                                                    effort norme
-                                                </p>
-                                                <hr className="help__separator"/>
-                                            </div>
-                                        </div>
+                                                    <div className="help__part">
+                                                        <p className="help__number">2</p>
+                                                        <div className="help__content">
+                                                            <p className="help__text">
+                                                                Texte de norme pour
+                                                                l’intégration du modèle
+                                                                Profitez de l’expertise de
+                                                                notre équipe et du
+                                                                savoir-faire de nos
+                                                                rédacteurs professionnels
+                                                                pour faire rédiger vos
+                                                                textes, rapidement et sans
+                                                                effort norme
+                                                            </p>
+                                                            <hr className="help__separator"/>
+                                                        </div>
+                                                    </div>
 
-                                        <div className="help__part">
-                                            <p className="help__number">2</p>
-                                            <div className="help__content">
-                                                <p className="help__text">
-                                                    Texte de norme pour
-                                                    l’intégration du modèle
-                                                    Profitez de l’expertise de
-                                                    notre équipe et du
-                                                    savoir-faire de nos
-                                                    rédacteurs professionnels
-                                                    pour faire rédiger vos
-                                                    textes, rapidement et sans
-                                                    effort norme
-                                                </p>
-                                                <hr className="help__separator"/>
-                                            </div>
-                                        </div>
+                                                    <div className="help__part">
+                                                        <p className="help__number">3</p>
+                                                        <div className="help__content">
+                                                            <p className="help__text">
+                                                                Texte de norme pour
+                                                                l’intégration du modèle
+                                                                Profitez de l’expertise de
+                                                                notre équipe et du
+                                                                savoir-faire de nos
+                                                                rédacteurs professionnels
+                                                                pour faire rédiger vos
+                                                                textes, rapidement et sans
+                                                                effort norme
+                                                            </p>
+                                                            <hr className="help__separator"/>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </>
+                                    }
 
-                                        <div className="help__part">
-                                            <p className="help__number">3</p>
-                                            <div className="help__content">
-                                                <p className="help__text">
-                                                    Texte de norme pour
-                                                    l’intégration du modèle
-                                                    Profitez de l’expertise de
-                                                    notre équipe et du
-                                                    savoir-faire de nos
-                                                    rédacteurs professionnels
-                                                    pour faire rédiger vos
-                                                    textes, rapidement et sans
-                                                    effort norme
-                                                </p>
-                                                <hr className="help__separator"/>
-                                            </div>
-                                        </div>
-                                    </div>
+
                                 </div>
 
                                 <div className="content__menu nav">

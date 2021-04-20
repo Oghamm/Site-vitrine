@@ -306,17 +306,18 @@ const Content = () => {
 
                             <div class="site-all-models">
                                 <div class="site-model--box">
-                                    <a href="./structure.html">
                                         <div class="site-model">
-                                            <div class="infos">
-                                                <h4 class="infos--title">
-                                                    Uxagone
-                                                </h4>
+                                            <Link to={"/dashboard"}>
+                                                <div className="infos">
+                                                    <h4 className="infos--title">
+                                                        Uxagone
+                                                    </h4>
 
-                                                <div class="show">
-                                                    <i class="fas fa-eye"></i>
+                                                    <div className="show">
+                                                        <i className="fas fa-eye"></i>
+                                                    </div>
                                                 </div>
-                                            </div>
+                                            </Link>
                                             <div className="action-bar">
                                                 <button type="button" className="action-bar--btn">
                                                     <i className="fas fa-edit"></i>
@@ -341,7 +342,6 @@ const Content = () => {
                                                 </label>
                                             </div>
                                         </div>
-                                    </a>
 
                                 </div>
                                 <div className="site-model--box">
