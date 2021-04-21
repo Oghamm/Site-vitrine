@@ -1298,82 +1298,19 @@ const Content = () => {
                         </div>
 
                         <div className="row top-gap">
-                            <div className="content__all-site-items">
-                                <div className="site-items-root">
-                                    <div className="site-item">
-                                        <a
-                                            href="./personnalisation.html"
-                                            className="site-content-link"
-                                        >
-                                            <div
-                                                className="site-content root-level-1"
-                                            >
-                                                <p className="">Index</p>
-                                            </div>
-                                        </a>
 
-                                        <div className="action-bar">
-                                            <a href="">
-                                                <img
-                                                    className="site-item__edit--img"
-                                                    src="/img/with-banner/dashboard/site-item-edit.svg"
-                                                />
-                                            </a>
-                                            <a href="">
-                                                <div className="site-item__add">
-                                                    <img
-                                                        src="/img/with-banner/dashboard/site-item-add.svg"
-                                                        className="site-item__add--img"
-                                                    />
-                                                </div>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div className="site-items-children">
-                                    <div className="site-item">
-                                        <a
-                                            href="./personnalisation.html"
-                                            className="site-content-link"
-                                        >
-                                            <div
-                                                className="site-content child-level-1"
-                                            >
-                                                <p className="">À propos</p>
-                                            </div>
-                                        </a>
-
-                                        <div className="action-bar">
-                                            <a href="">
-                                                <img
-                                                    className="site-item__edit--img"
-                                                    src="/img/with-banner/dashboard/site-item-edit.svg"
-                                                />
-                                            </a>
-                                            <a href="">
-                                                <div className="site-item__add">
-                                                    <img
-                                                        src="/img/with-banner/dashboard/site-item-add.svg"
-                                                        className="site-item__add--img"
-                                                    />
-                                                </div>
-                                            </a>
-                                        </div>
-                                    </div>
-
-                                    <div
-                                        className="all-site-items-next-level d-flex"
-                                    >
+                            <div className={"content__all-site-items"}>
+                                <ul className="tree horizontal">
+                                    <li>
                                         <div className="site-item">
                                             <a
                                                 href="./personnalisation.html"
                                                 className="site-content-link"
                                             >
                                                 <div
-                                                    className="site-content child-level-1 root-level-2"
+                                                    className="site-content root-level-1"
                                                 >
-                                                    <p className="">Services</p>
+                                                    <p className="">Index</p>
                                                 </div>
                                             </a>
 
@@ -1394,124 +1331,423 @@ const Content = () => {
                                                 </a>
                                             </div>
                                         </div>
-
-                                        <div className="site-items-children">
-                                            <div className="site-item">
-                                                <div
-                                                    className="site-content child-level-2"
-                                                >
-                                                    <p className="">À propos 2</p>
-                                                </div>
-
-                                                <div className="action-bar">
-                                                    <a href="">
-                                                        <img
-                                                            className="site-item__edit--img"
-                                                            src="/img/with-banner/dashboard/site-item-edit.svg"
-                                                        />
-                                                    </a>
-                                                    <a href="">
+                                        <ul>
+                                            <li>
+                                                <div className="site-item">
+                                                    <a
+                                                        href="./personnalisation.html"
+                                                        className="site-content-link"
+                                                    >
                                                         <div
-                                                            className="site-item__add"
+                                                            className="site-content child-level-1"
                                                         >
-                                                            <img
-                                                                src="/img/with-banner/dashboard/site-item-add.svg"
-                                                                className="site-item__add--img"
-                                                            />
+                                                            <p className="">À propos</p>
                                                         </div>
                                                     </a>
-                                                </div>
-                                            </div>
 
-                                            <div className="site-item">
-                                                <div
-                                                    className="site-content child-level-2"
-                                                >
-                                                    <p className="">Services 2</p>
-                                                </div>
-
-                                                <div className="action-bar">
-                                                    <a href="">
-                                                        <img
-                                                            className="site-item__edit--img"
-                                                            src="/img/with-banner/dashboard/site-item-edit.svg"
-                                                        />
-                                                    </a>
-                                                    <a href="">
-                                                        <div
-                                                            className="site-item__add"
-                                                        >
+                                                    <div className="action-bar">
+                                                        <a href="">
                                                             <img
-                                                                src="/img/with-banner/dashboard/site-item-add.svg"
-                                                                className="site-item__add--img"
+                                                                className="site-item__edit--img"
+                                                                src="/img/with-banner/dashboard/site-item-edit.svg"
                                                             />
+                                                        </a>
+                                                        <a href="">
+                                                            <div className="site-item__add">
+                                                                <img
+                                                                    src="/img/with-banner/dashboard/site-item-add.svg"
+                                                                    className="site-item__add--img"
+                                                                />
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <ul>
+                                                    <li>
+                                                        <div className="site-item">
+                                                            <a
+                                                                href="./personnalisation.html"
+                                                                className="site-content-link"
+                                                            >
+                                                                <div
+                                                                    className="site-content child-level-1"
+                                                                >
+                                                                    <p className="">Contact</p>
+                                                                </div>
+                                                            </a>
+
+                                                            <div className="action-bar">
+                                                                <a href="">
+                                                                    <img
+                                                                        className="site-item__edit--img"
+                                                                        src="/img/with-banner/dashboard/site-item-edit.svg"
+                                                                    />
+                                                                </a>
+                                                                <a href="">
+                                                                    <div className="site-item__add">
+                                                                        <img
+                                                                            src="/img/with-banner/dashboard/site-item-add.svg"
+                                                                            className="site-item__add--img"
+                                                                        />
+                                                                    </div>
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <div className="site-item">
+                                                            <a
+                                                                href="./personnalisation.html"
+                                                                className="site-content-link"
+                                                            >
+                                                                <div
+                                                                    className="site-content child-level-1"
+                                                                >
+                                                                    <p className="">Contact</p>
+                                                                </div>
+                                                            </a>
+
+                                                            <div className="action-bar">
+                                                                <a href="">
+                                                                    <img
+                                                                        className="site-item__edit--img"
+                                                                        src="/img/with-banner/dashboard/site-item-edit.svg"
+                                                                    />
+                                                                </a>
+                                                                <a href="">
+                                                                    <div className="site-item__add">
+                                                                        <img
+                                                                            src="/img/with-banner/dashboard/site-item-add.svg"
+                                                                            className="site-item__add--img"
+                                                                        />
+                                                                    </div>
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <div className="site-item">
+                                                    <a
+                                                        href="./personnalisation.html"
+                                                        className="site-content-link"
+                                                    >
+                                                        <div
+                                                            className="site-content child-level-1 root-level-2"
+                                                        >
+                                                            <p className="">Services</p>
                                                         </div>
                                                     </a>
+
+                                                    <div className="action-bar">
+                                                        <a href="">
+                                                            <img
+                                                                className="site-item__edit--img"
+                                                                src="/img/with-banner/dashboard/site-item-edit.svg"
+                                                            />
+                                                        </a>
+                                                        <a href="">
+                                                            <div className="site-item__add">
+                                                                <img
+                                                                    src="/img/with-banner/dashboard/site-item-add.svg"
+                                                                    className="site-item__add--img"
+                                                                />
+                                                            </div>
+                                                        </a>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                                <ul>
+                                                    <li>
+                                                        <div className="site-item">
+                                                            <a
+                                                                href="./personnalisation.html"
+                                                                className="site-content-link"
+                                                            >
+                                                                <div
+                                                                    className="site-content child-level-1"
+                                                                >
+                                                                    <p className="">Contact</p>
+                                                                </div>
+                                                            </a>
 
-                                    <div className="site-item">
-                                        <a
-                                            href="./personnalisation.html"
-                                            className="site-content-link"
-                                        >
-                                            <div
-                                                className="site-content child-level-1"
-                                            >
-                                                <p className="">Contact</p>
-                                            </div>
-                                        </a>
+                                                            <div className="action-bar">
+                                                                <a href="">
+                                                                    <img
+                                                                        className="site-item__edit--img"
+                                                                        src="/img/with-banner/dashboard/site-item-edit.svg"
+                                                                    />
+                                                                </a>
+                                                                <a href="">
+                                                                    <div className="site-item__add">
+                                                                        <img
+                                                                            src="/img/with-banner/dashboard/site-item-add.svg"
+                                                                            className="site-item__add--img"
+                                                                        />
+                                                                    </div>
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <div className="site-item">
+                                                            <a
+                                                                href="./personnalisation.html"
+                                                                className="site-content-link"
+                                                            >
+                                                                <div
+                                                                    className="site-content child-level-1"
+                                                                >
+                                                                    <p className="">Contact</p>
+                                                                </div>
+                                                            </a>
 
-                                        <div className="action-bar">
-                                            <a href="">
-                                                <img
-                                                    className="site-item__edit--img"
-                                                    src="/img/with-banner/dashboard/site-item-edit.svg"
-                                                />
-                                            </a>
-                                            <a href="">
-                                                <div className="site-item__add">
-                                                    <img
-                                                        src="/img/with-banner/dashboard/site-item-add.svg"
-                                                        className="site-item__add--img"
-                                                    />
+                                                            <div className="action-bar">
+                                                                <a href="">
+                                                                    <img
+                                                                        className="site-item__edit--img"
+                                                                        src="/img/with-banner/dashboard/site-item-edit.svg"
+                                                                    />
+                                                                </a>
+                                                                <a href="">
+                                                                    <div className="site-item__add">
+                                                                        <img
+                                                                            src="/img/with-banner/dashboard/site-item-add.svg"
+                                                                            className="site-item__add--img"
+                                                                        />
+                                                                    </div>
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <div className="site-item">
+                                                    <a
+                                                        href="./personnalisation.html"
+                                                        className="site-content-link"
+                                                    >
+                                                        <div
+                                                            className="site-content child-level-1"
+                                                        >
+                                                            <p className="">Contact</p>
+                                                        </div>
+                                                    </a>
+
+                                                    <div className="action-bar">
+                                                        <a href="">
+                                                            <img
+                                                                className="site-item__edit--img"
+                                                                src="/img/with-banner/dashboard/site-item-edit.svg"
+                                                            />
+                                                        </a>
+                                                        <a href="">
+                                                            <div className="site-item__add">
+                                                                <img
+                                                                    src="/img/with-banner/dashboard/site-item-add.svg"
+                                                                    className="site-item__add--img"
+                                                                />
+                                                            </div>
+                                                        </a>
+                                                    </div>
                                                 </div>
-                                            </a>
-                                        </div>
-                                    </div>
+                                                <ul>
+                                                    <li>
+                                                        <div className="site-item">
+                                                            <a
+                                                                href="./personnalisation.html"
+                                                                className="site-content-link"
+                                                            >
+                                                                <div
+                                                                    className="site-content child-level-1"
+                                                                >
+                                                                    <p className="">Contact</p>
+                                                                </div>
+                                                            </a>
 
-                                    <div className="site-item">
-                                        <a
-                                            href="./personnalisation.html"
-                                            className="site-content-link"
-                                        >
-                                            <div
-                                                className="site-content child-level-1"
-                                            >
-                                                <p className="">Article</p>
-                                            </div>
-                                        </a>
+                                                            <div className="action-bar">
+                                                                <a href="">
+                                                                    <img
+                                                                        className="site-item__edit--img"
+                                                                        src="/img/with-banner/dashboard/site-item-edit.svg"
+                                                                    />
+                                                                </a>
+                                                                <a href="">
+                                                                    <div className="site-item__add">
+                                                                        <img
+                                                                            src="/img/with-banner/dashboard/site-item-add.svg"
+                                                                            className="site-item__add--img"
+                                                                        />
+                                                                    </div>
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                        <ul>
+                                                            <li>
+                                                                <div className="site-item">
+                                                                    <a
+                                                                        href="./personnalisation.html"
+                                                                        className="site-content-link"
+                                                                    >
+                                                                        <div
+                                                                            className="site-content child-level-1"
+                                                                        >
+                                                                            <p className="">Contact</p>
+                                                                        </div>
+                                                                    </a>
 
-                                        <div className="action-bar">
-                                            <a href="">
-                                                <img
-                                                    className="site-item__edit--img"
-                                                    src="/img/with-banner/dashboard/site-item-edit.svg"
-                                                />
-                                            </a>
-                                            <a href="">
-                                                <div className="site-item__add">
-                                                    <img
-                                                        src="/img/with-banner/dashboard/site-item-add.svg"
-                                                        className="site-item__add--img"
-                                                    />
+                                                                    <div className="action-bar">
+                                                                        <a href="">
+                                                                            <img
+                                                                                className="site-item__edit--img"
+                                                                                src="/img/with-banner/dashboard/site-item-edit.svg"
+                                                                            />
+                                                                        </a>
+                                                                        <a href="">
+                                                                            <div className="site-item__add">
+                                                                                <img
+                                                                                    src="/img/with-banner/dashboard/site-item-add.svg"
+                                                                                    className="site-item__add--img"
+                                                                                />
+                                                                            </div>
+                                                                        </a>
+                                                                    </div>
+                                                                </div>
+                                                            </li>
+                                                        </ul>
+                                                    </li>
+                                                    <li>
+                                                        <div className="site-item">
+                                                            <a
+                                                                href="./personnalisation.html"
+                                                                className="site-content-link"
+                                                            >
+                                                                <div
+                                                                    className="site-content child-level-1"
+                                                                >
+                                                                    <p className="">Contact</p>
+                                                                </div>
+                                                            </a>
+
+                                                            <div className="action-bar">
+                                                                <a href="">
+                                                                    <img
+                                                                        className="site-item__edit--img"
+                                                                        src="/img/with-banner/dashboard/site-item-edit.svg"
+                                                                    />
+                                                                </a>
+                                                                <a href="">
+                                                                    <div className="site-item__add">
+                                                                        <img
+                                                                            src="/img/with-banner/dashboard/site-item-add.svg"
+                                                                            className="site-item__add--img"
+                                                                        />
+                                                                    </div>
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <div className="site-item">
+                                                    <a
+                                                        href="./personnalisation.html"
+                                                        className="site-content-link"
+                                                    >
+                                                        <div
+                                                            className="site-content child-level-1"
+                                                        >
+                                                            <p className="">Article</p>
+                                                        </div>
+                                                    </a>
+
+                                                    <div className="action-bar">
+                                                        <a href="">
+                                                            <img
+                                                                className="site-item__edit--img"
+                                                                src="/img/with-banner/dashboard/site-item-edit.svg"
+                                                            />
+                                                        </a>
+                                                        <a href="">
+                                                            <div className="site-item__add">
+                                                                <img
+                                                                    src="/img/with-banner/dashboard/site-item-add.svg"
+                                                                    className="site-item__add--img"
+                                                                />
+                                                            </div>
+                                                        </a>
+                                                    </div>
                                                 </div>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
+                                                <ul>
+                                                    <li>
+                                                        <div className="site-item">
+                                                            <a
+                                                                href="./personnalisation.html"
+                                                                className="site-content-link"
+                                                            >
+                                                                <div
+                                                                    className="site-content child-level-1"
+                                                                >
+                                                                    <p className="">Contact</p>
+                                                                </div>
+                                                            </a>
+
+                                                            <div className="action-bar">
+                                                                <a href="">
+                                                                    <img
+                                                                        className="site-item__edit--img"
+                                                                        src="/img/with-banner/dashboard/site-item-edit.svg"
+                                                                    />
+                                                                </a>
+                                                                <a href="">
+                                                                    <div className="site-item__add">
+                                                                        <img
+                                                                            src="/img/with-banner/dashboard/site-item-add.svg"
+                                                                            className="site-item__add--img"
+                                                                        />
+                                                                    </div>
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <div className="site-item">
+                                                            <a
+                                                                href="./personnalisation.html"
+                                                                className="site-content-link"
+                                                            >
+                                                                <div
+                                                                    className="site-content child-level-1"
+                                                                >
+                                                                    <p className="">Contact</p>
+                                                                </div>
+                                                            </a>
+
+                                                            <div className="action-bar">
+                                                                <a href="">
+                                                                    <img
+                                                                        className="site-item__edit--img"
+                                                                        src="/img/with-banner/dashboard/site-item-edit.svg"
+                                                                    />
+                                                                </a>
+                                                                <a href="">
+                                                                    <div className="site-item__add">
+                                                                        <img
+                                                                            src="/img/with-banner/dashboard/site-item-add.svg"
+                                                                            className="site-item__add--img"
+                                                                        />
+                                                                    </div>
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
                             </div>
                         </div>
                     </div>
