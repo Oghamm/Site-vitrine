@@ -571,11 +571,12 @@
         height: 396px;
         border-radius: 22px;
         background-color: #ffffff;
-        position: absolute;
+        position: fixed;
         bottom: 186px;
         right: 90px;
         display: flex;
         flex-direction: column;
+        z-index: 99;
 
         .cross {
           font-size: 20px;
@@ -617,7 +618,7 @@
 
       .shop {
         background-color: #6F93F4;
-        position: absolute;
+        position: fixed;
         bottom: 64px;
         right: 140px;
         width: 64px;
