@@ -195,7 +195,7 @@ const Service = () => {
                         {getTranslation("quintyss_solution")}
                       </p>
 
-                      <Link to={"/developer"}
+                      <Link to={"/designer"}
                         className="collaborate__card--btn btn btn-primary"
                       >
                         {getTranslation("go")}

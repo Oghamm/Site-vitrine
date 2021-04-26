@@ -1,4 +1,4 @@
-/* WITH-BANNER-DEVELOPER-PAGE - PAGES */
+/* WITH-BANNER-DESIGNER-PAGE - PAGES */
 
 .with-banner.developer {
   header {
@@ -7,7 +7,7 @@
       background: #EFF1F7;
     }
     .top-bar__account {
-        color: #01164E;
+      color: #01164E;
     }
   }
 
@@ -50,7 +50,7 @@
       background-size: 700px;
       background: #ffffff;
       position: relative;
-      left: 0;
+      left: 336px;
       border-radius: 290px;
       transition: 0.4s ease left, 0.4s ease background-position;
       z-index: 2;
@@ -60,7 +60,7 @@
     #alright {
       position: absolute;
       top: 65%;
-      transform: translateY(-50%);
+      transform: translateY(-100%);
       color: #01164E;
       font-family: "Montserrat", sans-serif;
       font-size: 16px;
@@ -68,13 +68,13 @@
       margin-left: 448px;
       z-index: 3;
     }
-    #subscribe {
+    #alright {
       color: rgba(1, 22, 78, 0.5);
     }
-    #lol-checkbox:checked + #button #subscribe {
+    #lol-checkbox:checked + #button #alright {
       color: #01164E;
     }
-    #lol-checkbox:checked + #button #alright{
+    #lol-checkbox:checked + #button #subscribe{
       color: rgba(1, 22, 78, 0.5);
     }
 
@@ -83,7 +83,7 @@
     }
 
     #lol-checkbox:checked + #button #knob {
-      left: 337px;
+      left: 0;
       background-position: -350px 0;
     }
 
