@@ -6,7 +6,7 @@ import Content from "../components/Designer/Content"
 
 export default function Designer() {
     return (
-        <Layout className="with-banner developer">
+        <Layout className="with-banner designer">
             <Header black>
                 <Banner />
             </Header>
