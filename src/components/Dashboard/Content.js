@@ -643,7 +643,7 @@ const Content = () => {
 
                             <div className="all-btn-choices">
                                 <div
-                                    className={graph ?"btn-choice rounded selected" : "btn-choice rounded"}
+                                    className={graph ?"btn-choice rounded selected graph" : "btn-choice rounded graph"}
                                     data-target="#c-graphism"
                                     onClick={handleClickGraph}
                                 >
@@ -740,7 +740,7 @@ const Content = () => {
                                 </div>
 
                                 <div
-                                    className={migrate ?"btn-choice rounded selected":"btn-choice rounded"}
+                                    className={migrate ?"btn-choice rounded selected migr":"btn-choice rounded migr"}
                                     data-target="#c-migrate"
                                     onClick={handleClickMigrate}
                                 >
@@ -802,7 +802,7 @@ const Content = () => {
                                 </div>
 
                                 <div
-                                    className={write ?"btn-choice rounded selected":"btn-choice rounded"}
+                                    className={write ?"btn-choice rounded selected redac":"btn-choice rounded redac"}
                                     data-target="#c-writing"
                                     onClick={handleClickWrite}
                                 >
@@ -874,7 +874,7 @@ const Content = () => {
                                 </div>
 
                                 <div
-                                    className={translate ?"btn-choice rounded selected":"btn-choice rounded"}
+                                    className={translate ?"btn-choice rounded selected trad":"btn-choice rounded trad"}
                                     data-target="#c-translate"
                                     onClick={handleClickTranslate}
                                 >
@@ -907,89 +907,62 @@ const Content = () => {
                                         />
                                     </svg>
                                 </div>
+                                <div
+                                    className="complementary-box__bloc graph"
+                                >
+                                    <p className="complementary-box__title">
+                                        Graphisme
+                                    </p>
+                                    <p className="complementary-box__text">
+                                        Texte de norme pour l’intégration du
+                                        modèle Profitez de l’expertise de notre
+                                        équipe.
+                                    </p>
+                                </div>
+                                <div
+                                    className="complementary-box__bloc migr"
+                                >
+                                    <p className="complementary-box__title">
+                                        Migration
+                                    </p>
+                                    <p className="complementary-box__text">
+                                        Texte de norme pour l’intégration du
+                                        modèle Profitez de l’expertise de notre
+                                        équipe.
+                                    </p>
+                                </div>
+                                <div
+                                    className="complementary-box__bloc redac"
+                                >
+                                    <p className="complementary-box__title">
+                                        Rédaction
+                                    </p>
+                                    <p className="complementary-box__text">
+                                        Texte de norme pour l’intégration du
+                                        modèle Profitez de l’expertise de notre
+                                        équipe.
+                                    </p>
+                                </div>
+                                <div
+                                    className="complementary-box__bloc trad"
+                                >
+                                    <p className="complementary-box__title">
+                                        Traduction
+                                    </p>
+                                    <p className="complementary-box__text">
+                                        Texte de norme pour l’intégration du
+                                        modèle Profitez de l’expertise de notre
+                                        équipe.
+                                    </p>
+                                </div>
                             </div>
 
-                            <div className="complementary-box__all">
-                                {graph &&
-                                <>
-                                    <div
-                                        className="complementary-box__bloc show"
-                                        id="c-graphism"
-                                    >
-                                        <p className="complementary-box__title">
-                                            Graphisme
-                                        </p>
-                                        <p className="complementary-box__text">
-                                            Texte de norme pour l’intégration du
-                                            modèle Profitez de l’expertise de notre
-                                            équipe.
-                                        </p>
-                                    </div>
-                                </>}
-                                {migrate &&
-                                    <>
-                                        <div
-                                            className="complementary-box__bloc"
-                                            id="c-migrate"
-                                        >
-                                            <p className="complementary-box__title">
-                                                Migration
-                                            </p>
-                                            <p className="complementary-box__text">
-                                                Texte de norme pour l’intégration du
-                                                modèle Profitez de l’expertise de notre
-                                                équipe.
-                                            </p>
-                                        </div>
-                                    </>
-                                }
-                                {
-                                    write &&
-                                        <>
-                                            <div
-                                                className="complementary-box__bloc"
-                                                id="c-writing"
-                                            >
-                                                <p className="complementary-box__title">
-                                                    Rédaction
-                                                </p>
-                                                <p className="complementary-box__text">
-                                                    Texte de norme pour l’intégration du
-                                                    modèle Profitez de l’expertise de notre
-                                                    équipe.
-                                                </p>
-                                            </div>
-                                        </>
-                                }
-                                {
-                                    translate &&
-                                        <>
-                                            <div
-                                                className="complementary-box__bloc"
-                                                id="c-translate"
-                                            >
-                                                <p className="complementary-box__title">
-                                                    Traduction
-                                                </p>
-                                                <p className="complementary-box__text">
-                                                    Texte de norme pour l’intégration du
-                                                    modèle Profitez de l’expertise de notre
-                                                    équipe.
-                                                </p>
-                                            </div>
-                                        </>
-                                }
-
-                            </div>
                         </div>
 
                         <div className="aside__logout">
                             <a href="">
                                 <img src="/img/cms/logout.svg" alt=""/>
                             </a>
-
-                            <a href="" className="btn-link ml-auto">Enregistrer</a>
-                            <a href="" className="btn btn-primary ml-3">Publier</a>
                         </div>
                     </div>
 

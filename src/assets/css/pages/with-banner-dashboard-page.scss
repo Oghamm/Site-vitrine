@@ -200,11 +200,11 @@
       &__complementary {
         margin-top: 65px;
 
-        .all-btn-choices .btn-choice.selected, .all-btn-choices .btn-choice-unique.selected {
+        .all-btn-choices .btn-choice.selected {
           background: rgba(111, 147, 244, 0.26);
           color: #6F93F4;
         }
-        .all-btn-choices .btn-choice.rounded, .all-btn-choices .btn-choice-unique.rounded {
+        .all-btn-choices .btn-choice.rounded {
           position: relative;
           width: 65px;
           height: 65px;
@@ -222,7 +222,24 @@
           cursor: pointer;
         }
 
+        .all-btn-choices .btn-choice.rounded.graph:hover ~  .complementary-box__bloc.graph {
+          display: block;
+        }
+        .all-btn-choices .btn-choice.rounded.migr:hover ~  .complementary-box__bloc.migr {
+          display: block;
+        }
+        .all-btn-choices .btn-choice.rounded.redac:hover ~  .complementary-box__bloc.redac {
+          display: block;
+        }
+        .all-btn-choices .btn-choice.rounded.trad:hover ~  .complementary-box__bloc.trad {
+          display: block;
+        }
+
         .complementary-box {
+          &__bloc {
+            display: none;
+            position: absolute;
+          }
           &__title {
             font-size: 16px;
             font-weight: 600;
