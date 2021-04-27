@@ -10,6 +10,11 @@ const Content = () => {
     const [write, setWrite] = useState(false);
     const [migrate, setMigrate] = useState(false);
     const [translate, setTranslate] = useState(false);
+    const [isOpen, setIsOpen] = useState(false)
+
+    const toggleMenuOpen = () => {
+        setIsOpen(!isOpen)
+    }
 
 
     const handleMultilangue =() => {
@@ -72,10 +77,12 @@ const Content = () => {
                 <div className="row main-content">
                     <div className="col-lg-4 col-md-5 bg-white aside">
                         <div className="aside__title">
-                            <img
-                                src="/img/cms/logo-title-aside.svg"
-                                alt=""
-                            />
+                            <Link to={"/"}>
+                                <img
+                                    src="/img/cms/logo-title-aside.svg"
+                                    alt=""
+                                />
+                            </Link>
                         </div>
 
                         <div className={"aside__offer"}>
@@ -1222,71 +1229,72 @@ const Content = () => {
 
                                 </div>
 
-                                <div className="content__menu nav">
+                                <div className="top-bar__menu nav">
                                     <img
                                         className="open-nav burger"
-                                        src="/img/menu-black-responsive.png"
+                                        src="/img/menu-black.svg"
                                         alt=""
+                                        onClick={toggleMenuOpen}
                                     />
 
-                                    <div className="nav-menu">
+                                    <div
+                                        className="nav-menu"
+                                        style={{ display: isOpen ? "block" : "none" }}
+                                    >
                                         <div className="close">
-                                            <img
-                                                src="./assets/img/close.svg"
-                                                alt=""
-                                            />
+                                            <img src="/img/close.svg" alt="" onClick={toggleMenuOpen} />
                                         </div>
                                         <div className="nav-content">
                                             <ul>
                                                 <li className="nav-item">
-                                                    <a className="nav-link" href=""
-                                                    >Lien 1</a
-                                                    >
+                                                    <a className="nav-link" href="">
+                                                        Lien 1
+                                                    </a>
                                                 </li>
                                                 <li className="nav-item">
-                                                    <a className="nav-link" href=""
-                                                    >Lien 2</a
-                                                    >
+                                                    <a className="nav-link" href="">
+                                                        Lien 2
+                                                    </a>
                                                 </li>
                                                 <li className="nav-item">
-                                                    <a className="nav-link" href=""
-                                                    >Lien 3</a
-                                                    >
+                                                    <a className="nav-link" href="">
+                                                        Lien 3
+                                                    </a>
                                                 </li>
                                                 <li className="nav-item">
-                                                    <a className="nav-link" href=""
-                                                    >Lien 4</a
-                                                    >
+                                                    <a className="nav-link" href="">
+                                                        Lien 4
+                                                    </a>
                                                 </li>
                                                 <li className="nav-item">
-                                                    <a className="nav-link" href=""
-                                                    >Lien 5</a
-                                                    >
+                                                    <a className="nav-link" href="">
+                                                        Lien 5
+                                                    </a>
                                                 </li>
                                                 <li className="nav-item">
-                                                    <a className="nav-link" href=""
-                                                    >Lien 6</a
-                                                    >
+                                                    <a className="nav-link" href="">
+                                                        Lien 6
+                                                    </a>
                                                 </li>
                                                 <li className="nav-item">
-                                                    <a className="nav-link" href=""
-                                                    >Lien 7</a
-                                                    >
+                                                    <a className="nav-link" href="">
+                                                        Lien 7
+                                                    </a>
                                                 </li>
                                                 <li className="nav-item">
-                                                    <a className="nav-link" href=""
-                                                    >Lien 8</a
-                                                    >
+                                                    <a className="nav-link" href="">
+                                                        Lien 8
+                                                    </a>
                                                 </li>
                                                 <li className="nav-item">
-                                                    <a className="nav-link" href=""
-                                                    >Lien 9</a
-                                                    >
+                                                    <a className="nav-link" href="">
+                                                        Lien 9
+                                                    </a>
                                                 </li>
                                                 <li className="nav-item">
-                                                    <a className="nav-link" href=""
-                                                    >Lien 10</a
-                                                    >
+                                                    <a className="nav-link" href="">
+                                                        Lien 10
+                                                    </a>
                                                 </li>
                                             </ul>
                                         </div>
