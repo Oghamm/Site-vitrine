@@ -6,6 +6,12 @@ const Content = () => {
     const [Open, setOpen] = useState(false);
     const [banner, setBanner] = useState(false);
 
+    const [isOpen, setIsOpen] = useState(false)
+
+    const toggleMenuOpen = () => {
+        setIsOpen(!isOpen)
+    }
+
     const handleClickUxagone =() => {
         setBanner(true);
     }
@@ -40,11 +46,14 @@ const Content = () => {
                                 class="open-nav burger"
                                 src="/img/menu-black.svg"
                                 alt=""
+                                onClick={toggleMenuOpen}
                             />
 
-                            <div class="nav-menu">
+                            <div class="nav-menu"
+                                 style={{ display: isOpen ? "block" : "none" }}>
                                 <div class="close">
-                                    <img src="./assets/img/close.svg" alt="" />
+                                    <img src="/img/close.svg" alt=""
+                                    onClick={toggleMenuOpen}/>
                                 </div>
                                 <div class="nav-content">
                                     <ul>
