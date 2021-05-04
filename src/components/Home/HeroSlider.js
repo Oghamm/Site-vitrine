@@ -1,6 +1,17 @@
-import React from "react"
+import React, {useEffect, useState} from "react"
 import Slider from "react-slick"
 import useIntlFromDocs from "../../hooks/useIntlFromDocs"
+
+
+const TitleVideo = (props) => {
+
+  return (
+      <span className="slide-video-text" id={"video-title-" + props.title}
+            style={{display: (props.title === props.titleSelected ? "block": "none")}}>
+            {props.children}
+          </span>
+  )
+}
 
 const PreviousArrow = ({ onClick }) => {
   return (
@@ -33,40 +44,76 @@ const HeroSlider = () => {
     prevArrow: <PreviousArrow />,
     nextArrow: <NextArrow />,
   }
+
+
+
+  const handleVideoMounted = (element) => {
+
+    if (element !== null) {
+        element.addEventListener("timeupdate",function () {
+            if(element.currentTime > 3 && element.currentTime < 5.75) {
+              setIdTitleSelected(2);
+            }
+            else if(element.currentTime > 5.94 && element.currentTime < 8.9) {
+              setIdTitleSelected(3);
+            }
+            else if(element.currentTime > 9 && element.currentTime < 11.75) {
+              setIdTitleSelected(4);
+            }
+            else if(element.currentTime > 12 && element.currentTime < 17.7) {
+              setIdTitleSelected(5);
+            }
+            else if(element.currentTime > 17.9 && element.currentTime < 20.6) {
+              setIdTitleSelected(6);
+            }
+            else if(element.currentTime > 21 && element.currentTime < 23.95) {
+              setIdTitleSelected(7);
+            }
+            else if(element.currentTime > 23.95 && element.currentTime < 29.8) {
+              setIdTitleSelected(8);
+            }
+        })
+    }
+  }
+  const [idTitleSelected, setIdTitleSelected] = useState(1);
+
+
+
   return (
     <Slider {...settings} className="slider">
       <div className="slide-1">
-        <video controls muted className="slider__video" id="home-video">
+        <video controls muted className="slider__video" id="home-video"
+               ref={handleVideoMounted}>
           <source src="/img/home/slider/slider-1.mp4" type="video/mp4" />
         </video>
 
         <h2 className="slider__title white">
-          <span className="slide-video-text" id="video-title-1">
-            {getTranslation("slide-text-2")}
-          </span>
-          <span className="slide-video-text" id="video-title-2">
+          <TitleVideo title={1} titleSelected={idTitleSelected}>
+            Développez votre activité sur le Web
+          </TitleVideo>
+          <TitleVideo title={2} titleSelected={idTitleSelected}>
             Entrepreneur
-          </span>
-          <span className="slide-video-text" id="video-title-3">
+          </TitleVideo>
+          <TitleVideo title={3} titleSelected={idTitleSelected}>
             Indépendant
-          </span>
-          <span className="slide-video-text" id="video-title-4">
+          </TitleVideo>
+          <TitleVideo title={4} titleSelected={idTitleSelected}>
             Artiste ou créateur ?
-          </span>
-          <span className="slide-video-text" id="video-title-5">
+          </TitleVideo>
+          <TitleVideo title={5} titleSelected={idTitleSelected}>
             Confiez votre identité digitale à nos équipes <br /> et restez
             concentré sur votre activité
-          </span>
-          <span className="slide-video-text" id="video-title-6">
+          </TitleVideo>
+          <TitleVideo title={6} titleSelected={idTitleSelected}>
             Rédactions <br /> Articles de blogs
-          </span>
-          <span className="slide-video-text" id="video-title-7">
+          </TitleVideo>
+          <TitleVideo title={7} titleSelected={idTitleSelected}>
             Vidéos
-          </span>
-          <span className="slide-video-text" id="video-title-8">
+          </TitleVideo>
+          <TitleVideo title={8} titleSelected={idTitleSelected}>
             Nos professionnels assurent la création <br /> et le partage de
             contenus pertinents <br /> qui vous ressemblent
-          </span>
+          </TitleVideo>
         </h2>
         <a
           href="./choice-model.html"
