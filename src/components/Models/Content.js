@@ -5,7 +5,6 @@ const Content = () => {
 
     const [Open, setOpen] = useState(false);
     const [banner, setBanner] = useState(false);
-
     const [isOpen, setIsOpen] = useState(false)
 
     const toggleMenuOpen = () => {

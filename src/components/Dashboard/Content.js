@@ -2,8 +2,8 @@ import React, {useEffect, useState} from "react";
 import Link from "gatsby-link";
 
 const Content = () => {
-    const [multilangue, setMultilangue] = useState(false);
-    const [theme, setTheme] = useState(false);
+    const [multilangue, setMultilangue] = useState(true);
+    const [theme, setTheme] = useState(true);
     const [help, setHelp] = useState(false);
     const [shop, setShop] = useState(false);
     const [graph, setGraph] = useState(true);
@@ -11,6 +11,7 @@ const Content = () => {
     const [migrate, setMigrate] = useState(false);
     const [translate, setTranslate] = useState(false);
     const [isOpen, setIsOpen] = useState(false)
+    const [data,setData]=useState([]);
 
     const toggleMenuOpen = () => {
         setIsOpen(!isOpen)
@@ -19,9 +20,50 @@ const Content = () => {
 
     const handleMultilangue =() => {
         setMultilangue(multilangue => !multilangue);
+
     }
+
+    const addFirstChildren = () => {
+        const tablength = data.first_children.length;
+
+        setData({
+            ...data,
+            first_children: [
+                ...data.first_children, {name:"Contact",id:tablength, second_children:[]}
+            ],
+        });
+    }
+
+    const addSecondChildren = (id) => {
+        const newData = data.first_children;
+        const newDataChildren = newData[id].second_children;
+        newDataChildren.push({name:"Contact", id:newDataChildren.length, third_children:[]});
+        newData[id].second_children = newDataChildren;
+        setData({
+            ...data,
+            first_children:
+            newData
+        });
+    }
+
+    const addThirdChildren = (id, secondId) => {
+        console.log(id)
+        const newData = data.first_children;
+        const newDataChildren = newData[id].second_children;
+        const newDataSecondChildren = newDataChildren[secondId];
+        newDataSecondChildren.third_children.push({name:"Contact"});
+        setData({
+            ...data,
+            first_children:
+            newData
+        });
+    }
+
+
     const handleTheme =() => {
         setTheme(theme => !theme);
+        console.log(data);
+        console.log(data.first_children.length);
     }
     const handleHelp =() => {
         setHelp(help => !help);
@@ -69,7 +111,6 @@ const Content = () => {
         getData()
     },[])
 
-    const [data,setData]=useState([]);
 
     return (
         <>
@@ -1309,16 +1350,11 @@ const Content = () => {
                                 <ul className="tree horizontal">
                                     <li>
                                         <div className="site-item">
-                                            <a
-                                                href="./personnalisation.html"
-                                                className="site-content-link"
-                                            >
                                                 <div
                                                     className="site-content root-level-1"
                                                 >
                                                     <p className="">{data && data.parent}</p>
                                                 </div>
-                                            </a>
 
                                             <div className="action-bar">
                                                 <a href="">
@@ -1327,8 +1363,8 @@ const Content = () => {
                                                         src="/img/with-banner/dashboard/site-item-edit.svg"
                                                     />
                                                 </a>
-                                                <a href="">
-                                                    <div className="site-item__add">
+                                                <a >
+                                                    <div className="site-item__add" onClick={addFirstChildren}>
                                                         <img
                                                             src="/img/with-banner/dashboard/site-item-add.svg"
                                                             className="site-item__add--img"
@@ -1344,7 +1380,7 @@ const Content = () => {
                                                     <li>
                                                         <div className="site-item">
                                                             <a
-                                                                href="./personnalisation.html"
+
                                                                 className="site-content-link"
                                                             >
                                                                 <div
@@ -1355,14 +1391,14 @@ const Content = () => {
                                                             </a>
 
                                                             <div className="action-bar">
-                                                                <a href="">
+                                                                <a >
                                                                     <img
                                                                         className="site-item__edit--img"
                                                                         src="/img/with-banner/dashboard/site-item-edit.svg"
                                                                     />
                                                                 </a>
-                                                                <a href="">
-                                                                    <div className="site-item__add">
+                                                                <a >
+                                                                    <div className="site-item__add" onClick={()=>addSecondChildren(item.id)}>
                                                                         <img
                                                                             src="/img/with-banner/dashboard/site-item-add.svg"
                                                                             className="site-item__add--img"
@@ -1378,7 +1414,6 @@ const Content = () => {
                                                                     <li>
                                                                         <div className="site-item">
                                                                             <a
-                                                                                href="./personnalisation.html"
                                                                                 className="site-content-link"
                                                                             >
                                                                                 <div
@@ -1389,14 +1424,14 @@ const Content = () => {
                                                                             </a>
 
                                                                             <div className="action-bar">
-                                                                                <a href="">
+                                                                                <a >
                                                                                     <img
                                                                                         className="site-item__edit--img"
                                                                                         src="/img/with-banner/dashboard/site-item-edit.svg"
                                                                                     />
                                                                                 </a>
-                                                                                <a href="">
-                                                                                    <div className="site-item__add">
+                                                                                <a >
+                                                                                    <div className="site-item__add" onClick={()=>addThirdChildren(item.id, item2.id)}>
                                                                                         <img
                                                                                             src="/img/with-banner/dashboard/site-item-add.svg"
                                                                                             className="site-item__add--img"
@@ -1412,7 +1447,6 @@ const Content = () => {
                                                                                     <li>
                                                                                         <div className="site-item">
                                                                                             <a
-                                                                                                href="./personnalisation.html"
                                                                                                 className="site-content-link"
                                                                                             >
                                                                                                 <div
@@ -1423,20 +1457,13 @@ const Content = () => {
                                                                                             </a>
 
                                                                                             <div className="action-bar">
-                                                                                                <a href="">
+                                                                                                <a >
                                                                                                     <img
                                                                                                         className="site-item__edit--img"
                                                                                                         src="/img/with-banner/dashboard/site-item-edit.svg"
                                                                                                     />
                                                                                                 </a>
-                                                                                                <a href="">
-                                                                                                    <div className="site-item__add">
-                                                                                                        <img
-                                                                                                            src="/img/with-banner/dashboard/site-item-add.svg"
-                                                                                                            className="site-item__add--img"
-                                                                                                        />
-                                                                                                    </div>
-                                                                                                </a>
+
                                                                                             </div>
                                                                                         </div>
                                                                                     </li>)
