@@ -1,8 +1,6 @@
 import React from "react"
-import useIntlFromDocs from "../../hooks/useIntlFromDocs"
 
 const Banner = () => {
-  const { getTranslation } = useIntlFromDocs()
 
   return (
     <div className="banner">
@@ -10,7 +8,7 @@ const Banner = () => {
         <div className="container">
           <div className="row">
             <div className="col-12">
-              <h1 className="banner__title white">{getTranslation("graphism")}</h1>
+              <h1 className="banner__title white">Graphisme</h1>
             </div>
           </div>
         </div>

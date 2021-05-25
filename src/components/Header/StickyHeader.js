@@ -1,12 +1,10 @@
 import React, { useState } from "react"
 import { Link } from "gatsby"
-import { changeLocale, useIntl } from "gatsby-plugin-intl"
 
 const StickyHeader = ({ children, asideContent }) => {
   const [isOpen, setIsOpen] = useState(false)
   const [isOpenMobile, setIsOpenMobile] = useState(false)
 
-  const intl = useIntl()
 
   const toggleMenuOpen = () => {
     setIsOpen(!isOpen)
@@ -136,23 +134,20 @@ const StickyHeader = ({ children, asideContent }) => {
                       <select
                         id="language_header"
                         className="form-control"
-                        onChange={e => {
-                          changeLocale(e.target.value.toLowerCase())
-                        }}
                       >
-                        <option value="FR" selected={intl.locale === "fr"}>
+                        <option value="FR" >
                           FR
                         </option>
-                        <option value="EN" selected={intl.locale === "en"}>
+                        <option value="EN" >
                           EN
                         </option>
-                        <option value="ES" selected={intl.locale === "es"}>
+                        <option value="ES" >
                           ES
                         </option>
-                        <option value="IT" selected={intl.locale === "it"}>
+                        <option value="IT" >
                           IT
                         </option>
-                        <option value="PT" selected={intl.locale === "pt"}>
+                        <option value="PT" >
                           PT
                         </option>
                       </select>

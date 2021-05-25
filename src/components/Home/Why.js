@@ -1,8 +1,6 @@
 import React from "react"
-import useIntlFromDocs from "../../hooks/useIntlFromDocs"
 
 const Why = () => {
-  const { getTranslation } = useIntlFromDocs()
 
   return (
     <section className="why bg-primary">
@@ -11,10 +9,15 @@ const Why = () => {
           <div className="col-12">
             <div className="why__content">
               <p className="why__title">
-                {getTranslation("quintyss_business")}
+                Pourquoi Quintyss Business répond le plus à vos attentes
               </p>
               <p className="why__text">
-                {getTranslation("quintyss_business_solution")}
+                Notre solution Quintyss Business s’appuie sur la technologie AWS (Amazon Web Services). Tout en restant
+                proche de vous, avec une écoute personnalisée, notre solution profite de la puissance, de la
+                performance, de la fiabilité du géant Amazon. Nous mettons ainsi à votre disposition une technologie
+                réservée aux professionnels de l’Internet. Avec des serveurs localisés dans le monde entier, AWS
+                dispose de data centers toujours proches de votre activité, dont le dimensionnement vous préserve de
+                toute surcharge.
               </p>
             </div>
           </div>

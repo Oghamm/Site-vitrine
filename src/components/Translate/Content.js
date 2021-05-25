@@ -1,11 +1,9 @@
 import React, { useState } from "react"
-import useIntlFromDocs from "../../hooks/useIntlFromDocs"
 import Modali, { useModali } from "modali"
 import Stripe from "../Stripe/Stripe"
-import { Link } from "gatsby"
+import Link from "gatsby-link";
 
 const Content = () => {
-  const { getTranslation } = useIntlFromDocs()
   const [text, setText] = useState("")
   const [fromLanguage, setFromLanguage] = useState("Français")
   const [toLanguage, setToLanguage] = useState("Anglais")
@@ -282,7 +280,7 @@ const Content = () => {
 
               <div className="card box-shadow card-responsive">
                 <p className="setting__text">
-                  {getTranslation("source_language")}
+                  Choisir une langue source
                 </p>
                 <div className="form-group select select-grey">
                   <select
@@ -459,7 +457,7 @@ const Content = () => {
             <div className="col-12">
               <div className="multiple-bar__content">
                 <h4 className="multiple-bar__title">
-                  {getTranslation("volume_translation")}
+                  Je souhaite faire traduire des volumes importants et/ou récurrents
                 </h4>
                 <Link to={"/quoteT"}
                   className="btn btn-blue-transparent multiple-bar__btn"

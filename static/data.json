@@ -3,72 +3,19 @@
   "first_children": [
     {
       "name": "A propos",
-      "id": 0,
-      "second_children": [
-        {
-          "name": "Contact",
-          "id": 0,
-          "third_children" : []
-        },
-        {
-          "name" : "Test",
-          "id": 1,
-          "third_children" : []
-        }
-      ]
+      "id": 0
     },
     {
       "name" : "Services",
-      "id": 1,
-      "second_children": [
-        {
-          "name": "Contact",
-          "id": 0,
-          "third_children" : []
-        },
-        {
-          "name" : "Test",
-          "id": 1,
-          "third_children" : []
-        }
-      ]
+      "id": 1
     },
     {
       "name" : "Contact",
-      "id": 2,
-      "second_children": [
-        {
-          "name": "Deeper",
-          "id": 0,
-          "third_children": [
-            {
-              "name": "Test2"
-            }
-          ]
-        },
-        {
-          "name" : "Test",
-          "id": 1,
-          "third_children" : []
-        }
-      ]
+      "id": 2
     },
     {
       "name" : "Article",
-      "id": 3,
-      "second_children": [
-        {
-          "name": "Contact",
-          "id": 0,
-          "third_children" : []
-        },
-        {
-          "name" : "Test",
-          "id": 1,
-          "third_children" : []
-        }
-      ]
+      "id": 3
     }
-
   ]
 }

@@ -1,9 +1,7 @@
 import React,{useState} from "react"
-import useIntlFromDocs from "../../hooks/useIntlFromDocs"
 import { request, gql } from "graphql-request"
 
 const Contact = ({fomValueReason}) => {
-  const { getTranslation } = useIntlFromDocs()
 
   const [formValue, setFormValue] = useState({
     raison:fomValueReason,
@@ -27,7 +25,7 @@ const Contact = ({fomValueReason}) => {
     setFormValue({
       ...formValue,
       [e.target.name]: e.target.value,
-    }) 
+    })
   }
 
   const handleFormSubmit = e => {
@@ -59,7 +57,7 @@ const Contact = ({fomValueReason}) => {
       <form onSubmit={handleFormSubmit}>
         <div className="form-double-element">
           <div className="form-group">
-            <label htmlFor="lastName">{getTranslation("last_name")}</label>
+            <label htmlFor="lastName">Nom</label>
             <input
               type="text"
               name="nom"
@@ -71,7 +69,7 @@ const Contact = ({fomValueReason}) => {
           </div>
 
           <div className="form-group">
-            <label htmlFor="firstName">{getTranslation("first_name")}</label>
+            <label htmlFor="firstName">Prénom</label>
             <input
               type="text"
               name="prenom"
@@ -84,7 +82,7 @@ const Contact = ({fomValueReason}) => {
         </div>
 
         <div className="form-group">
-          <label htmlFor="email">{getTranslation("email")}</label>
+          <label htmlFor="email">E-mail</label>
           <input
             type="email"
             name="email"

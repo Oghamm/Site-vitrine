@@ -1,6 +1,5 @@
 import React, { useState } from "react"
 import { CardElement, injectStripe } from "react-stripe-elements-universal"
-import useIntlFromDocs from "../../hooks/useIntlFromDocs"
 import axios from "axios"
 
 const CheckoutForm = ({stripe,finalPrice,toggleModal,toggleSucessModel,metaData,type}) => {
@@ -34,15 +33,14 @@ const CheckoutForm = ({stripe,finalPrice,toggleModal,toggleSucessModel,metaData,
         })
     })
   }
-  const { getTranslation } = useIntlFromDocs()
   return (
     <>
     <div className="col-12">
       <div className="form-stripe">
-        <h2 className="form-stripe__title">{getTranslation("payment")}</h2>
+        <h2 className="form-stripe__title">Paiment</h2>
         <form onSubmit={handleSubmit}>
           <div className="form-group">
-            <label htmlFor="email">{getTranslation("email_address")}</label>
+            <label htmlFor="email">E-Mail</label>
             <input
               type="email"
               name="email"
@@ -65,7 +63,7 @@ const CheckoutForm = ({stripe,finalPrice,toggleModal,toggleSucessModel,metaData,
 
           <div className="button-box">
             <button type="submit" className="btn btn-primary">
-            {getTranslation("pay")} {finalPrice.toLocaleString("fr-FR")} €
+            Prix {finalPrice.toLocaleString("fr-FR")} €
             </button>
           </div>
         </form>

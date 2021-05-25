@@ -1397,14 +1397,6 @@ const Content = () => {
                                                                         src="/img/with-banner/dashboard/site-item-edit.svg"
                                                                     />
                                                                 </a>
-                                                                <a >
-                                                                    <div className="site-item__add" onClick={()=>addSecondChildren(item.id)}>
-                                                                        <img
-                                                                            src="/img/with-banner/dashboard/site-item-add.svg"
-                                                                            className="site-item__add--img"
-                                                                        />
-                                                                    </div>
-                                                                </a>
                                                             </div>
                                                         </div>
                                                         <ul>

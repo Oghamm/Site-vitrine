@@ -1,16 +1,14 @@
 import React from "react"
-import useIntlFromDocs from "../../hooks/useIntlFromDocs"
 import Link from "gatsby-link";
 
 const Steps = () => {
-  const { getTranslation } = useIntlFromDocs()
 
   return (
     <section className="step">
       <div className="container">
         <div className="row">
           <div className="col-12 text-center">
-            <h1 className="step__title">{getTranslation("new_identity")}</h1>
+            <h1 className="step__title">Votre nouvelle identité visuelle en 3 étapes !</h1>
           </div>
         </div>
 
@@ -22,10 +20,12 @@ const Steps = () => {
               </div>
               <div className="step__card-content">
                 <h3 className="step__card-content--title">
-                  {getTranslation("catalogue")}
+                  Un catalogue prêt à l’emploi…
                 </h3>
                 <p className="step__card-content-text">
-                  {getTranslation("choice_model")}
+                  Choisissez le modèle qui correspond à vos besoins. Quelle que soit votre activité, votre solution se
+                  trouve dans notre catalogue. Vous pouvez également migrer un site existant vers la plateforme. Tout
+                  est possible avec Quintyss Business !
                 </p>
               </div>
             </div>
@@ -36,10 +36,12 @@ const Steps = () => {
               </div>
               <div className="step__card-content reverse">
                 <h3 className="step__card-content--title">
-                  {getTranslation("unique_design")}
+                  Un design unique
                 </h3>
                 <p className="step__card-content-text">
-                  {getTranslation("features_1")}
+                  Modifiez l’apparence, adaptez l’ergonomie aux besoins de vos visiteurs. Sélectionnez les
+                  fonctionnalités qui correspondent à votre activité. Demandez des services personnalisés, nos experts
+                  vous accompagnent (graphisme, rédaction, traduction, média sociaux).
                 </p>
               </div>
             </div>
@@ -50,10 +52,13 @@ const Steps = () => {
               </div>
               <div className="step__card-content">
                 <h3 className="step__card-content--title">
-                  {getTranslation("publish_share")}
+                  Publiez & partagez !
                 </h3>
                 <p className="step__card-content-text">
-                  {getTranslation("features_2")}
+                  Votre portail est finalisé, nos équipes de spécialistes en stratégie médias et réseaux sociaux vous
+                  accompagnent pour un maximum de visibilité.
+                  Vous avez un savoir-faire… Nous allons le faire savoir !
+
                 </p>
               </div>
             </div>
@@ -63,7 +68,7 @@ const Steps = () => {
             <Link to={"/models"}
               className="step__btn step__btn--end btn btn-primary"
             >
-              {getTranslation("cta_1")}
+              Je commence !
             </Link>
           </div>
         </div>

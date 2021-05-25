@@ -1,40 +1,12 @@
 import React, { useState } from "react"
-import { graphql, useStaticQuery } from "gatsby"
-import { useIntl } from "gatsby-plugin-intl"
 import Fuse from "fuse.js"
 
 const About = () => {
-  const { locale } = useIntl()
   const [searchTerm, setSearchTerm] = useState("")
-  const data = useStaticQuery(
-    graphql`
-      query AboutPageQuery {
-        about_page {
-          get {
-            titleFR
-            titleEN
-            contentFR
-            contentEN
-          }
-        }
-      }
-    `
-  )
+
 
   let sections = []
 
-  data.about_page.get.forEach(row => {
-    const titleKey = `title${locale.toUpperCase()}`
-    const contentKey = `content${locale.toUpperCase()}`
-    console.log({row,titleKey,contentKey})
-
-    if (row[titleKey] && row[contentKey]) {
-      sections.push({
-        title: row[titleKey],
-        content: row[contentKey],
-      })
-    }
-  })
 
   const options = {
     includeScore: true,

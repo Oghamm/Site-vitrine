@@ -1,8 +1,6 @@
 import React from "react"
-import useIntlFromDocs from "../../hooks/useIntlFromDocs"
 
 const ServiceCard = () => {
-  const { getTranslation } = useIntlFromDocs()
 
   return (
     <section className="service-card">
@@ -10,7 +8,7 @@ const ServiceCard = () => {
         <div className="row">
           <div className="col-12">
             <h2 className="h1-style service-card__title">
-              {getTranslation("our_services")}
+              Nos services à la carte
             </h2>
 
             <p className="service-card__subtitle">
@@ -24,7 +22,9 @@ const ServiceCard = () => {
 
               <div className="service-card__aside">
                 <p className="service-card__text">
-                  {getTranslation("features_3")}
+                  Vous souhaitez être autonome ou soutenu par nos experts, Quintyss est à votre disposition.
+                  Sélectionnez les fonctionnalités, les options, les services complémentaires… Et n’utilisez que ce
+                  dont vous avez besoin !
                 </p>
 
                 <a

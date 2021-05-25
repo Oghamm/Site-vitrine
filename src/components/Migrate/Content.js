@@ -1,9 +1,7 @@
 import React, { useState } from "react"
-import useIntlFromDocs from "../../hooks/useIntlFromDocs"
 import { request, gql } from "graphql-request"
 
 const Content = () => {
-    const { getTranslation } = useIntlFromDocs()
 
     const [refonte, setRefonte] = useState("yes")
     const [features, setFeatures] = useState([])
@@ -255,7 +253,7 @@ const Content = () => {
                     <div className="row">
                         <div className="col-12">
                             <h4 className="contact__title section-title">
-                                {getTranslation("contact_infos")}
+                                Informations de contact
                             </h4>
                         </div>
 
@@ -263,7 +261,7 @@ const Content = () => {
                             <div className="contact__form no-border">
                                 <form onSubmit={handleFormSubmit}>
                                     <div className="form-group">
-                                        <label htmlFor="lastName">{getTranslation("last_name")}</label>
+                                        <label htmlFor="lastName">Nom</label>
                                         <input
                                             type="text"
                                             id="lastName"
@@ -277,7 +275,7 @@ const Content = () => {
 
                                     <div className="form-group">
                                         <label htmlFor="firstName">
-                                            {getTranslation("first_name")}
+                                            Prénom
                                         </label>
                                         <input
                                             type="text"
@@ -291,7 +289,7 @@ const Content = () => {
                                     </div>
 
                                     <div className="form-group input-lg">
-                                        <label htmlFor="email">{getTranslation("email")}</label>
+                                        <label htmlFor="email">E-Mail</label>
                                         <input
                                             type="email"
                                             id="email"
@@ -304,7 +302,7 @@ const Content = () => {
                                     </div>
 
                                     <div className="form-group input-lg">
-                                        <label htmlFor="phone">{getTranslation("phone_number")}</label>
+                                        <label htmlFor="phone">Numéro de téléphone</label>
                                         <input
                                             type="text"
                                             id="phone"

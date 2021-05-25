@@ -1,9 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
-import useIntlFromDocs from "../../hooks/useIntlFromDocs"
 
 const Service = () => {
-  const { getTranslation } = useIntlFromDocs()
 
   return (
     <section className="service">
@@ -12,7 +10,7 @@ const Service = () => {
           <div className="row">
             <div className="col-12">
               <h2 className="h1-style service__title">
-                {getTranslation("expertise")}
+                Vous bénéficiez de notre expertise
               </h2>
 
               <p className="service__subtitle">
@@ -35,15 +33,17 @@ const Service = () => {
                     Graphisme
                   </h4>
                   <div className="service__card-content little">
-                    <h4 className="service__card-content--title">{getTranslation("graphism")}</h4>
+                    <h4 className="service__card-content--title">Graphisme</h4>
                     <p className="service__card-content--text">
-                      {getTranslation("graphism_pool")}
+                      Notre pool de graphistes propose un catalogue adapté à tous les types d’activités. Vous pouvez
+                      faire appel à eux pour personnaliser votre site, adapter un modèle importé, le créer
+                      intégralement… Pour que votre site vous ressemble.
                     </p>
                     <Link
                       to="/graphisme"
                       className="service__card-content--link"
                     >
-                      {getTranslation("more")}
+                      En savoir plus
                       {`>`}
                     </Link>
                   </div>
@@ -62,13 +62,15 @@ const Service = () => {
                   </h4>
                   <div className="service__card-content little">
                     <h4 className="service__card-content--title">
-                      {getTranslation("writing")}
+                      Rédaction
                     </h4>
                     <p className="service__card-content--text">
-                      {getTranslation("writing_details")}
+                      Le rédactionnel est l’essence de votre site. Pages d’accueil, articles de blog, textes techniques,
+                      fiches produits ou billets d’humeur… L’équipe de rédaction sont des professionnels spécialisés,
+                      aux plumes affûtées. Exposez votre besoin, nous sélectionnons le rédacteur qu’il vous faut.
                     </p>
                     <Link to="/writing" className="service__card-content--link">
-                      {getTranslation("more")}
+                      En savoir plus
                       {`>`}
                     </Link>
                   </div>
@@ -83,18 +85,20 @@ const Service = () => {
                     />
                   </div>
                   <h4 className="service__card-content--title responsive">
-                  {getTranslation("translate")}
+                    Traduction
                   </h4>
                   <div className="service__card-content little">
-                    <h4 className="service__card-content--title">{getTranslation("translate")}</h4>
+                    <h4 className="service__card-content--title">Traduction</h4>
                     <p className="service__card-content--text">
-                      {getTranslation("translate_details")}
+                      Notre équipe de traducteurs certifiés transpose vos contenus dans la langue de votre choix.
+                      Toujours de langue maternelle, ils garantissent non seulement la fidélité de la traduction,
+                      mais aussi la qualité rédactionnelle des textes pour une lecture agréable.
                     </p>
                     <Link
                       to="/translate"
                       className="service__card-content--link"
                     >
-                      {getTranslation("more")}
+                      En savoir plus
                       {`>`}
                     </Link>
                   </div>
@@ -109,17 +113,19 @@ const Service = () => {
                     />
                   </div>
                   <h4 className="service__card-content--title responsive">
-                    {getTranslation("social")}
+                    Stratégie & médias sociaux
                   </h4>
                   <div className="service__card-content small">
                     <h4 className="service__card-content--title">
-                      {getTranslation("social")}
+                      Stratégie & médias sociaux
                     </h4>
                     <p className="service__card-content--text">
-                      {getTranslation("social_details")}
+                      Pour gagner en visibilité, notre équipe média-stratégie vous conseille et prend en charge
+                      l’intégralité de votre communication sur les réseaux sociaux : rédaction de contenu, vidéos à
+                      poster, articles de blog…
                     </p>
                     <Link to="/social" className="service__card-content--link">
-                      {getTranslation("more")}
+                      En savoir plus
                       {`>`}
                     </Link>
                   </div>
@@ -131,7 +137,7 @@ const Service = () => {
 
         <div className="migrate bg-primary">
           <div className="migrate__content">
-            <h2 className="migrate__title">{getTranslation("migrate_site")}</h2>
+            <h2 className="migrate__title">Migrer un site existant</h2>
 
             <div className="migrate__image migrate__image--responsive">
               <img
@@ -142,14 +148,15 @@ const Service = () => {
             </div>
 
             <p className="migrate__text">
-              {getTranslation("features_4")}
+              Vous souhaitez présenter sur votre site les dernières innovations graphiques et technologiques ?
+              Maîtriser sans effort le contenu, proposer de nouvelles applications à vos visiteurs ?
               <br />
               <br />
-              {getTranslation("contact_team")}
+              Contactez notre équipe projet pour une étude sans engagement.
             </p>
 
             <Link to="/migrate" className="migrate__btn btn btn-white">
-              {getTranslation("go")}
+              Je me lance !
             </Link>
           </div>
 
@@ -167,7 +174,7 @@ const Service = () => {
             <div className="row">
               <div className="col-12">
                 <h2 className="h1-style collaborate__title">
-                  {getTranslation("collaborate")}
+                  Collaborer avec Quintyss
                 </h2>
 
                 <p className="collaborate__subtitle">
@@ -188,17 +195,18 @@ const Service = () => {
 
                     <div className="collaborate__card--content">
                       <h2 className="collaborate__card--title">
-                        {getTranslation("designer")}
+                        Designer
                       </h2>
                       <p className="collaborate__card--text">
-                      {getTranslation("features_4")}<br />
-                        {getTranslation("quintyss_solution")}
+                        Vous souhaitez présenter sur votre site les dernières innovations graphiques et technologiques
+                        ? Maîtriser sans effort le contenu, proposer de nouvelles applications à vos visiteurs ?<br />
+                        Notre solution Quintyss Business est pour vous.
                       </p>
 
                       <Link to={"/designer"}
                         className="collaborate__card--btn btn btn-primary"
                       >
-                        {getTranslation("go")}
+                        Je me lance !
                       </Link>
                     </div>
                   </div>
@@ -216,7 +224,7 @@ const Service = () => {
 
                     <div className="collaborate__card--content">
                       <h2 className="collaborate__card--title blue">
-                        {getTranslation("developer")}
+                        Développeur
                       </h2>
                       <p className="collaborate__card--text">
                       Vous êtes développeur freelance, inscrivez-vous sur Quintyss et proposer vos compétences.
@@ -227,7 +235,7 @@ const Service = () => {
                       <Link to={"/developer"}
                         className="collaborate__card--btn btn btn-primary"
                       >
-                        {getTranslation("go")}
+                        Je me lance !
                       </Link>
                     </div>
                   </div>

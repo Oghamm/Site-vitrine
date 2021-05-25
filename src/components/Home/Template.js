@@ -1,8 +1,6 @@
 import React from "react"
-import useIntlFromDocs from "../../hooks/useIntlFromDocs"
 
 const Template = () => {
-  const { getTranslation } = useIntlFromDocs()
 
   return (
     <section className="template">
@@ -10,7 +8,7 @@ const Template = () => {
         <div className="row">
           <div className="col-12">
             <h2 className="h1-style template__title">
-              {getTranslation("custom_models")}
+              Modèles personnalisables
             </h2>
 
             <p className="template__subtitle">
@@ -64,7 +62,7 @@ const Template = () => {
                     className="template__card--exclusive-img"
                   />
                   <p className="template__card--exclusive-text">
-                    {getTranslation("exclusive_model")}
+                    Modèle exclusif
                   </p>
                 </div>
               </div>
@@ -79,7 +77,7 @@ const Template = () => {
                     className="template__card--exclusive-img"
                   />
                   <p className="template__card--exclusive-text">
-                    {getTranslation("exclusive_model")}
+                    Modèle exclusif
                   </p>
                 </div>
               </div>
@@ -94,7 +92,7 @@ const Template = () => {
                     className="template__card--exclusive-img"
                   />
                   <p className="template__card--exclusive-text">
-                    {getTranslation("exclusive_model")}
+                    Modèle exclusif
                   </p>
                 </div>
               </div>
@@ -121,7 +119,7 @@ const Template = () => {
               href="./choice-model.html"
               className="template__btn btn btn-primary"
             >
-              {getTranslation("see_more")}
+              En voir plus
             </a>
           </div>
         </div>

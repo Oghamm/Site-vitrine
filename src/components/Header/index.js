@@ -1,6 +1,5 @@
 import React, { useState } from "react"
 import { Link } from "gatsby"
-import { changeLocale, useIntl } from "gatsby-plugin-intl"
 
 const Header = ({ children, black }) => {
   const [isOpen, setIsOpen] = useState(false)
@@ -8,8 +7,6 @@ const Header = ({ children, black }) => {
   const toggleMenuOpen = () => {
     setIsOpen(!isOpen)
   }
-
-  const intl = useIntl()
 
   return (
     <header>
@@ -39,23 +36,20 @@ const Header = ({ children, black }) => {
               <select
                 id="language_header"
                 className="form-control"
-                onChange={e => {
-                  changeLocale(e.target.value.toLowerCase())
-                }}
               >
-                <option value="FR" selected={intl.locale === "fr"}>
+                <option value="FR" >
                   FR
                 </option>
-                <option value="EN" selected={intl.locale === "en"}>
+                <option value="EN" >
                   EN
                 </option>
-                <option value="ES" selected={intl.locale === "es"}>
+                <option value="ES" >
                   ES
                 </option>
-                <option value="IT" selected={intl.locale === "it"}>
+                <option value="IT" >
                   IT
                 </option>
-                <option value="PT" selected={intl.locale === "pt"}>
+                <option value="PT" >
                   PT
                 </option>
               </select>
@@ -163,23 +157,20 @@ const Header = ({ children, black }) => {
             <select
               id="language_header"
               className="form-control"
-              onChange={e => {
-                changeLocale(e.target.value.toLowerCase())
-              }}
             >
-              <option value="FR" selected={intl.locale === "fr"}>
+              <option value="FR">
                 FR
               </option>
-              <option value="EN" selected={intl.locale === "en"}>
+              <option value="EN" >
                 EN
               </option>
-              <option value="ES" selected={intl.locale === "es"}>
+              <option value="ES">
                 ES
               </option>
-              <option value="IT" selected={intl.locale === "it"}>
+              <option value="IT" >
                 IT
               </option>
-              <option value="PT" selected={intl.locale === "pt"}>
+              <option value="PT">
                 PT
               </option>
             </select>

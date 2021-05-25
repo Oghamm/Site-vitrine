@@ -1,9 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
-import useIntlFromDocs from "../../hooks/useIntlFromDocs"
 
 const Footer = () => {
-  const { getTranslation } = useIntlFromDocs()
 
   return (
     <footer className="footer bg-secondary">
@@ -13,7 +11,7 @@ const Footer = () => {
             <div className="row no-gutters">
               <div className="col-lg-4 footer__newsletter footer__newsletter--responsive">
                 <p className="footer__title">
-                  {getTranslation("newsletter_subscribe")}
+                  Inscrivez-vous à la newsletter!
                 </p>
 
                 <div className="form-group footer__newsletter-content footer__newsletter-content--responsive">
@@ -22,7 +20,7 @@ const Footer = () => {
                       type="email"
                       className="form-control"
                       name="newsletterEmail"
-                      placeholder={getTranslation("email_address")}
+                      placeholder="Adresse e-mail"
                     />
 
                     <button
@@ -53,52 +51,52 @@ const Footer = () => {
               </div>
 
               <div className="col-lg-4">
-                <p className="footer__title">{getTranslation("offers")}</p>
+                <p className="footer__title">Nos offres</p>
 
                 <ul className="footer__nav-menu">
                   <li>
-                    <a href="./offer.html">{getTranslation("starter")}</a>
+                    <a href="./offer.html">Starter</a>
                   </li>
                   <li>
-                    <a href="./offer.html">{getTranslation("basic")}</a>
+                    <a href="./offer.html">Basic</a>
                   </li>
                   <li>
-                    <a href="./offer.html">{getTranslation("premium")}</a>
+                    <a href="./offer.html">Premium</a>
                   </li>
                   <li>
-                    <a href="./offer.html">{getTranslation("ecommerce")}</a>
+                    <a href="./offer.html">E-Commerce</a>
                   </li>
                 </ul>
               </div>
 
               <div className="col-lg-4 no-gutters">
-                <p className="footer__title">{getTranslation("support")}</p>
+                <p className="footer__title">Support</p>
 
                 <ul className="footer__nav-menu">
                   <li>
-                    <Link to="/faq">{getTranslation("faq")}</Link>
+                    <Link to="/faq">FAQ</Link>
                   </li>
                   <li>
-                    <Link to="/contact">{getTranslation("contact")}</Link>
+                    <Link to="/contact">Contact</Link>
                   </li>
                   <li>
-                    <Link to="/about">{getTranslation("about")}</Link>
+                    <Link to="/about">à propos</Link>
                   </li>
                 </ul>
               </div>
 
               <div className="col-lg-4 no-gutters">
-                <p className="footer__title">{getTranslation("company")}</p>
+                <p className="footer__title">Société</p>
 
                 <ul className="footer__nav-menu">
                   <li>
                     <Link to="/partner">Programme partenaire</Link>
                   </li>
                   <li>
-                    <Link to="/terms">{getTranslation("terms")}</Link>
+                    <Link to="/terms">Termes et conditions</Link>
                   </li>
                   <li>
-                    <Link to="/privacy">{getTranslation("privacy_policy")}</Link>
+                    <Link to="/privacy">Politique de confidentialité</Link>
                   </li>
                 </ul>
               </div>
@@ -118,7 +116,7 @@ const Footer = () => {
 
           <div className="col-lg-4 footer__newsletter footer__newsletter--hide-responsive">
             <p className="footer__title">
-              {getTranslation("newsletter_subscribe")}
+              Inscrivez-vous à la newsletter!
             </p>
 
             <div className="form-group footer__newsletter-content footer__newsletter-content--hide-responsive">
@@ -127,7 +125,7 @@ const Footer = () => {
                   type="email"
                   className="form-control"
                   name="newsletterEmail"
-                  placeholder={getTranslation("email_address")}
+                  placeholder="Adress e-mail"
                 />
 
                 <button

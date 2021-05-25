@@ -1,9 +1,7 @@
 import React, { useState } from "react"
-import useIntlFromDocs from "../../hooks/useIntlFromDocs"
 import { request, gql } from "graphql-request"
 
 const Content = () => {
-    const { getTranslation } = useIntlFromDocs()
 
     const [refonte, setRefonte] = useState("yes")
     const [features, setFeatures] = useState([])
@@ -132,7 +130,7 @@ const Content = () => {
 
                                         <div className="form-group">
                                             <label htmlFor="firstName">
-                                                {getTranslation("phone_number")}
+                                                Numéro de téléphone
                                             </label>
                                             <input
                                                 type="text"

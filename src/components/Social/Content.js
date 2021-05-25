@@ -1,9 +1,7 @@
 import React from "react"
-import useIntlFromDocs from "../../hooks/useIntlFromDocs"
 import Intro from "./Intro";
 
 const Content = () => {
-    const {getTranslation} = useIntlFromDocs()
 
     return (
         <section className={"content"}>

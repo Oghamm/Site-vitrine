@@ -1,11 +1,9 @@
 import React, {useEffect, useState} from "react"
-import useIntlFromDocs from "../../hooks/useIntlFromDocs"
 import Modali, { useModali } from "modali"
-import { Link } from "gatsby"
+import Link from "gatsby-link";
 import Stripe from "../Stripe/Stripe"
 
 const Content = () => {
-  const { getTranslation } = useIntlFromDocs()
   const [numberToWrite, setNumberToWrite] = useState("5")
   const [numberWordsByText, setNumberWordsByText] = useState("240")
   const [textQuality, setTextQuality] = useState(0)
@@ -152,7 +150,8 @@ const Content = () => {
                     <span className="bold">
                       Protection anti-plagiat,
                     </span>
-                    ,<br /> {getTranslation("anti_plagiarism_2")}
+                    <br /> Chaque texte fait l’objet d’une vérification copyscape contre le plagiat. Le rapport d’audit
+                    copyscape vous est fourni.
                   </p>
                 </div>
               </div>
@@ -249,7 +248,7 @@ const Content = () => {
                   <div className="setting__element">
                     <p className="setting__text">
                       <span className="bold">Nombre de textes</span>{" "}
-                      {getTranslation("text_writing")}
+                      que souhaitez faire rédiger
                     </p>
 
                     <div className="form-group select select-grey">
@@ -272,9 +271,9 @@ const Content = () => {
                   <div className="setting__element">
                     <p className="setting__text">
                       <span className="bold">
-                        {getTranslation("words_number")}
+                        Nombre de mots
                       </span>{" "}
-                      {getTranslation("per_text")}
+                      par texte
                     </p>
 
                     <div className="form-group select select-grey">
@@ -305,7 +304,7 @@ const Content = () => {
         <div className="container">
           <div className="row">
             <div className="col-12">
-              <p className="title-content">{getTranslation("text_quality")}</p>
+              <p className="title-content">Qualité des textes</p>
             </div>
 
             <div className="col-12">
@@ -329,16 +328,16 @@ const Content = () => {
                       <div className="marker"></div>
                     </div>
                     <label htmlFor="textQuality-1">
-                      {getTranslation("first_price")}
+                      Premier prix
                     </label>
                   </div>
 
                   <div className="card-content">
-                    <p>{getTranslation("first_price_description")}</p>
+                    <p>Textes de qualité basique destinés à des descriptions simples et des rédactions de remplissage.</p>
                   </div>
 
                   <div className="card-price">
-                    <p>{getTranslation("first_price_price")}</p>
+                    <p>0,04€ / mot</p>
                   </div>
                 </div>
 
@@ -361,7 +360,7 @@ const Content = () => {
                       <div className="marker"></div>
                     </div>
                     <label className="card-title" htmlFor="textQuality-2">
-                      {getTranslation("second_price")}
+                      Standard
                     </label>
                     <label
                       className="card-title--responsive"
@@ -372,11 +371,12 @@ const Content = () => {
                   </div>
 
                   <div className="card-content">
-                    <p>{getTranslation("second_price_description")}</p>
+                    <p>Textes de qualité standard pour les lecteurs humains et les moteurs de recherche : billets de
+                      blog, fiches articles, descriptions etc.</p>
                   </div>
 
                   <div className="card-price">
-                    <p>{getTranslation("second_price_price")}</p>
+                    <p>0,06€ / mot</p>
                   </div>
                 </div>
 
@@ -399,7 +399,7 @@ const Content = () => {
                       <div className="marker"></div>
                     </div>
                     <label className="card-title" htmlFor="textQuality-3">
-                      {getTranslation("third_price_price")}
+                      Professionnelle
                     </label>
                     <label
                       className="card-title--responsive"
@@ -410,11 +410,12 @@ const Content = () => {
                   </div>
 
                   <div className="card-content">
-                    <p>{getTranslation("third_price_description")}</p>
+                    <p>Textes de qualité supérieure pour lecteurs professionnels : billets de blog, textes marketing,
+                      textes d’actualité, rapports etc.</p>
                   </div>
 
                   <div className="card-price">
-                    <p>{getTranslation("third_price_price")}</p>
+                    <p>0,08€ / mot</p>
                   </div>
                 </div>
               </div>
@@ -429,7 +430,7 @@ const Content = () => {
           <div className="row">
             <div className="col-12">
               <p className="title-content">
-                {getTranslation("options_choice")}
+                Choisissez vos options
               </p>
             </div>
 
@@ -463,18 +464,19 @@ const Content = () => {
                   </div>
 
                   <div className="card-content">
-                    <p>{getTranslation("html_formating_description")}</p>
+                    <p>Votre texte sera formaté en HTML avec les balises de titre (H1, H2 etc.), des paragraphes (P),
+                      et si vous le souhaitez du gras ou de l’italique.</p>
                   </div>
                 </div>
 
                 <div
                   className={`card card-choices ${
-                    options.includes(getTranslation("seo_optimization"))
+                    options.includes("Optimisation SEO")
                       ? "selected"
                       : ""
                   }`}
                   onClick={() => {
-                    handleOptionsClicked(getTranslation("seo_optimization"))
+                    handleOptionsClicked("Optimisation SEO")
                   }}
                 >
                   <div className="card-top">
@@ -485,13 +487,13 @@ const Content = () => {
                           name="textOption"
                           id="textOption-2"
                           checked={options.includes(
-                            getTranslation("seo_optimization")
+                            "Optimisation SEO"
                           )}
                         />
                         <div className="marker"></div>
                       </div>
                       <label htmlFor="textOption-2">
-                        {getTranslation("seo_optimization")}
+                        Optimisation SEO
                       </label>
                     </div>
 
@@ -501,18 +503,19 @@ const Content = () => {
                   </div>
 
                   <div className="card-content">
-                    <p>{getTranslation("seo_optimization_description")}</p>
+                    <p>Votre texte sera optimisé pour le référencement. Précisez jusqu’à 3 mots-clés ou champs lexicaux
+                      dans la description de chaque texte.</p>
                   </div>
                 </div>
 
                 <div
                   className={`card card-choices ${
-                    options.includes(getTranslation("hidden_order"))
+                    options.includes("Commande cachée")
                       ? "selected"
                       : ""
                   }`}
                   onClick={() => {
-                    handleOptionsClicked(getTranslation("hidden_order"))
+                    handleOptionsClicked("Commande cachée")
                   }}
                 >
                   <div className="card-top">
@@ -523,13 +526,13 @@ const Content = () => {
                           name="textOption"
                           id="textOption-3"
                           checked={options.includes(
-                            getTranslation("hidden_order")
+                            "Commande cachée"
                           )}
                         />
                         <div className="marker"></div>
                       </div>
                       <label htmlFor="textOption-3">
-                        {getTranslation("hidden_order")}
+                        Commande cachée
                       </label>
                     </div>
 
@@ -539,19 +542,20 @@ const Content = () => {
                   </div>
 
                   <div className="card-content">
-                    <p>{getTranslation("hidden_order_description")}</p>
+                    <p>La commande sera réservée aux membres de Redacteur.com. Elle ne sera pas visible par les moteurs
+                      de recherche.</p>
                   </div>
                 </div>
 
                 <div
                   className={`card card-choices ${
-                    options.includes(getTranslation("research_documentation"))
+                    options.includes("Recherche et documentation")
                       ? "selected"
                       : ""
                   }`}
                   onClick={() => {
                     handleOptionsClicked(
-                      getTranslation("research_documentation")
+                      "Recherche et documentation"
                     )
                   }}
                 >
@@ -563,13 +567,13 @@ const Content = () => {
                           name="textOption"
                           id="textOption-4"
                           checked={options.includes(
-                            getTranslation("research_documentation")
+                            "Recherche et documentation"
                           )}
                         />
                         <div className="marker"></div>
                       </div>
                       <label htmlFor="textOption-4">
-                        {getTranslation("research_documentation")}
+                        Recherche et documentation
                       </label>
                     </div>
 
@@ -580,19 +584,20 @@ const Content = () => {
 
                   <div className="card-content">
                     <p>
-                      {getTranslation("research_documentation_description")}
+                      À choisir si le rédacteur doit effectuer une recherche documentaire approfondie pour rédiger
+                      vos textes.
                     </p>
                   </div>
                 </div>
 
                 <div
                   className={`card card-choices ${
-                    options.includes(getTranslation("proofreading"))
+                    options.includes("Relecture")
                       ? "selected"
                       : ""
                   }`}
                   onClick={() => {
-                    handleOptionsClicked(getTranslation("proofreading"))
+                    handleOptionsClicked("Relecture")
                   }}
                 >
                   <div className="card-top">
@@ -603,13 +608,13 @@ const Content = () => {
                           name="textOption"
                           id="textOption-5"
                           checked={options.includes(
-                            getTranslation("proofreading")
+                            "Relecture"
                           )}
                         />
                         <div className="marker"></div>
                       </div>
                       <label htmlFor="textOption-5">
-                        {getTranslation("proofreading")}
+                        Relecture
                       </label>
                     </div>
 
@@ -619,18 +624,19 @@ const Content = () => {
                   </div>
 
                   <div className="card-content">
-                    <p>{getTranslation("proofreading_description")}</p>
+                    <p>Nos équipes assurent une relecture de votre/vos texte(s) afin de faire un point sur la cohérence
+                      globale avec vos consignes et éliminer d’éventuelles inattentions.</p>
                   </div>
                 </div>
 
                 <div
                   className={`card card-choices ${
-                    options.includes(getTranslation("done_with_you"))
+                    options.includes("Accompagnement personnalisé")
                       ? "selected"
                       : ""
                   }`}
                   onClick={() => {
-                    handleOptionsClicked(getTranslation("done_with_you"))
+                    handleOptionsClicked("Accompagnement personnalisé")
                   }}
                 >
                   <div className="card-top">
@@ -641,13 +647,13 @@ const Content = () => {
                           name="textOption"
                           id="textOption-6"
                           checked={options.includes(
-                            getTranslation("done_with_you")
+                            "Accompagnement personnalisé"
                           )}
                         />
                         <div className="marker"></div>
                       </div>
                       <label htmlFor="textOption-6">
-                        {getTranslation("done_with_you")}
+                        Accompagnement personnalisé
                       </label>
                     </div>
 
@@ -657,7 +663,8 @@ const Content = () => {
                   </div>
 
                   <div className="card-content">
-                    <p>{getTranslation("done_with_you_description")}</p>
+                    <p>Camille (notre chargée de relation client) vous accompagnera et vous aidera tout au long de
+                      votre commande, du choix de vos rédacteurs jusqu’à la livraison des textes.</p>
                   </div>
                 </div>
               </div>
@@ -672,10 +679,10 @@ const Content = () => {
             <div className="col-12">
               <div className="multiple-bar__content">
                 <h4 className="multiple-bar__title">
-                  {getTranslation("volume_writing")}
+                  Je souhaite faire rédiger des volumes importants et/ou récurrents
                 </h4>
                 <Link to={"/quoteW"} className="btn btn-blue-transparent multiple-bar__btn">
-                  {getTranslation("ask_quote")}
+                  Obtenir un devis !
                 </Link>
               </div>
             </div>

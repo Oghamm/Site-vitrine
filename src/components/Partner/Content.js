@@ -1,10 +1,8 @@
 import React, { useState } from "react"
-import useIntlFromDocs from "../../hooks/useIntlFromDocs"
 import { request, gql } from "graphql-request"
 import {Link} from "gatsby";
 
 const Content = () => {
-    const { getTranslation } = useIntlFromDocs()
 
     const [refonte, setRefonte] = useState("yes")
     const [features, setFeatures] = useState([])
@@ -154,13 +152,16 @@ const Content = () => {
                                     </div>
                                     <div className="service__card-content little">
                                         <h4 className="service__card-content--title">
-                                            {getTranslation("writing")}
+                                            Rédaction
                                         </h4>
                                         <p className="service__card-content--text">
-                                            {getTranslation("writing_details")}
+                                            Le rédactionnel est l’essence de votre site. Pages d’accueil, articles de
+                                            blog, textes techniques, fiches produits ou billets d’humeur… L’équipe de
+                                            rédaction sont des professionnels spécialisés, aux plumes affûtées. Exposez
+                                            votre besoin, nous sélectionnons le rédacteur qu’il vous faut.
                                         </p>
                                         <Link to="/writing" className="service__card-content--link">
-                                            {getTranslation("more")}
+                                            En savoir plus
                                             {`>`}
                                         </Link>
                                     </div>
@@ -175,15 +176,18 @@ const Content = () => {
                                         />
                                     </div>
                                     <div className="service__card-content little">
-                                        <h4 className="service__card-content--title">{getTranslation("translate")}</h4>
+                                        <h4 className="service__card-content--title">Traduction</h4>
                                         <p className="service__card-content--text">
-                                            {getTranslation("translate_details")}
+                                            Notre équipe de traducteurs certifiés transpose vos contenus dans la langue
+                                            de votre choix. Toujours de langue maternelle, ils garantissent non
+                                            seulement la fidélité de la traduction, mais aussi la qualité rédactionnelle
+                                            des textes pour une lecture agréable.
                                         </p>
                                         <Link
                                             to="/translate"
                                             className="service__card-content--link"
                                         >
-                                            {getTranslation("more")}
+                                            En savoir plus
                                             {`>`}
                                         </Link>
                                     </div>
@@ -199,13 +203,15 @@ const Content = () => {
                                     </div>
                                     <div className="service__card-content small">
                                         <h4 className="service__card-content--title">
-                                            {getTranslation("social")}
+                                            Stratégie & médias sociaux
                                         </h4>
                                         <p className="service__card-content--text">
-                                            {getTranslation("social_details")}
+                                            Pour gagner en visibilité, notre équipe média-stratégie vous conseille et
+                                            prend en charge l’intégralité de votre communication sur les réseaux sociaux
+                                            : rédaction de contenu, vidéos à poster, articles de blog…
                                         </p>
                                         <Link to="/social" className="service__card-content--link">
-                                            {getTranslation("more")}
+                                            En savoir plus
                                             {`>`}
                                         </Link>
                                     </div>
@@ -244,7 +250,7 @@ const Content = () => {
                             <div className="contact__form no-border">
                                 <form onSubmit={handleFormSubmit}>
                                     <div className="form-group">
-                                        <label htmlFor="lastName">{getTranslation("last_name")}</label>
+                                        <label htmlFor="lastName">Nom</label>
                                         <input
                                             type="text"
                                             id="lastName"
@@ -258,7 +264,7 @@ const Content = () => {
 
                                     <div className="form-group">
                                         <label htmlFor="firstName">
-                                            {getTranslation("first_name")}
+                                            Prénom
                                         </label>
                                         <input
                                             type="text"
@@ -272,7 +278,7 @@ const Content = () => {
                                     </div>
 
                                     <div className="form-group input-lg">
-                                        <label htmlFor="email">{getTranslation("email")}</label>
+                                        <label htmlFor="email">E-Mail</label>
                                         <input
                                             type="email"
                                             id="email"
@@ -285,7 +291,7 @@ const Content = () => {
                                     </div>
 
                                     <div className="form-group input-lg">
-                                        <label htmlFor="phone">{getTranslation("phone_number")}</label>
+                                        <label htmlFor="phone">Numéro de téléphone</label>
                                         <input
                                             type="text"
                                             id="phone"
@@ -298,7 +304,7 @@ const Content = () => {
                                     </div>
 
                                     <button type="submit" className="btn btn-primary">
-                                        {getTranslation("validate")}
+                                        Valider
                                     </button>
                                 </form>
                             </div>

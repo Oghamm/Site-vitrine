@@ -1,6 +1,5 @@
 import React, {useEffect, useState} from "react"
 import Slider from "react-slick"
-import useIntlFromDocs from "../../hooks/useIntlFromDocs"
 
 
 const TitleVideo = (props) => {
@@ -30,7 +29,6 @@ const NextArrow = ({ onClick }) => {
 }
 
 const HeroSlider = () => {
-  const { getTranslation } = useIntlFromDocs()
   const settings = {
     infinite: true,
     autoplay: true,
@@ -133,9 +131,10 @@ const HeroSlider = () => {
           <div className="container-fluid full-padding">
             <div className="row">
               <div className="col-12 slider__content">
-                <h2 className="slider__title white">{getTranslation("video_title_3")}</h2>
+                <h2 className="slider__title white">Créez vos pages web</h2>
                 <p className="slider__text">
-                {getTranslation("slide_text_3")}
+                  Des fonctionnalités simples, intuitives, accessibles à tous… Quintyss Business la solution pour vous
+                  guider dans la création de votre site Internet, quel que soit votre corps de métier.
                 </p>
                 <a
                   href="./choice-model.html"
@@ -160,10 +159,11 @@ const HeroSlider = () => {
             <div className="row">
               <div className="col-12 slider__content">
                 <h2 className="slider__title white">
-                {getTranslation("video_title_4")}
+                  Boostez votre visibilité
                 </h2>
                 <p className="slider__text">
-                {getTranslation("slide_text_4")}
+                  Pour l’optimiser au jour le jour, nos équipes assurent la publication, le suivi et le renouvellement
+                  de vos contenus. Si vous la souhaitez, Quintyss prend en charge l’intégralité de votre communication.
                 </p>
                 <a
                   href="./choice-model.html"
