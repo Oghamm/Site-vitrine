@@ -14,8 +14,6 @@ const Content = () => {
     const [translate, setTranslate] = useState(false);
     const [isOpen, setIsOpen] = useState(false)
     const [data,setData]=useState([]);
-    const [home, setHome] = useState("");
-    const [pages, setPages] = useState([]);
     let API = API_ENDPOINT;
     let templateId = "f9adebb1-6bb8-4adf-806a-9585905f4793";
 
@@ -26,8 +24,6 @@ const Content = () => {
 
     const handleMultilangue =() => {
         setMultilangue(multilangue => !multilangue);
-        buildDashboard();
-        console.log(pages);
 
     }
 
@@ -93,22 +89,6 @@ const Content = () => {
         getData();
     },[])
 
-    useEffect(()=>{
-        buildDashboard();
-    },[])
-
-
-    const buildDashboard = () => {
-        for (const i in data) {
-            if (data[i].path === "/") {
-                setHome(data[i].name.en)
-                console.log(data[i].name.en);
-            }
-            else {
-                setPages([...pages, data[i].name.en]);
-            }
-        }
-    }
 
 
     return (
@@ -1348,63 +1328,63 @@ const Content = () => {
                             <div className={"content__all-site-items"}>
                                 <ul className="tree horizontal">
                                     <li>
-                                        {data && data.map((item)=>
-                                            {
-                                                if (item.path === '/') {
-
-                                                }
-                                            }
-                                        )}
-                                        <div className="site-item">
+                                        {data && data.filter(item => item.path === "/").map((item) =>
+                                            <div className="site-item">
                                                 <div
                                                     className="site-content root-level-1"
                                                 >
-                                                    <p className="">{ home }</p>
+                                                    <p className="">{ item.name.en }</p>
                                                 </div>
 
-                                            <div className="action-bar">
-                                                <a href="">
-                                                    <img
-                                                        className="site-item__edit--img"
-                                                        src="/img/with-banner/dashboard/site-item-edit.svg"
-                                                    />
-                                                </a>
-                                                <a >
-                                                    <div className="site-item__add" onClick={addFirstChildren}>
+                                                <div className="action-bar">
+                                                    <a href="">
                                                         <img
-                                                            src="/img/with-banner/dashboard/site-item-add.svg"
-                                                            className="site-item__add--img"
+                                                            className="site-item__edit--img"
+                                                            src="/img/with-banner/dashboard/site-item-edit.svg"
                                                         />
-                                                    </div>
-                                                </a>
+                                                    </a>
+                                                    <a >
+                                                        <div className="site-item__add" onClick={addFirstChildren}>
+                                                            <img
+                                                                src="/img/with-banner/dashboard/site-item-add.svg"
+                                                                className="site-item__add--img"
+                                                            />
+                                                        </div>
+                                                    </a>
+                                                </div>
                                             </div>
-                                        </div>
+
+                                        )}
+
                                         <ul>
                                             {
-                                                data && data.map((item)=>
-                                                    <li>
-                                                        <div className="site-item">
-                                                            <a
+                                                data && data.filter(item => item.path !== "/").map((item) =>
 
-                                                                className="site-content-link"
-                                                            >
-                                                                <div
-                                                                    className="site-content child-level-1"
-                                                                >
-                                                                    <p className="">{item.name.en}</p>
+                                                            <li>
+                                                                <div className="site-item">
+                                                                    <a
+
+                                                                        className="site-content-link"
+                                                                    >
+                                                                        <div
+                                                                            className="site-content child-level-1"
+                                                                        >
+                                                                            <p className="">{item.name.en}</p>
+                                                                        </div>
+                                                                    </a>
+
+                                                                    <div className="action-bar">
+                                                                        <a >
+                                                                            <img
+                                                                                className="site-item__edit--img"
+                                                                                src="/img/with-banner/dashboard/site-item-edit.svg"
+                                                                            />
+                                                                        </a>
+                                                                    </div>
                                                                 </div>
-                                                            </a>
+                                                            </li>
 
-                                                            <div className="action-bar">
-                                                                <a >
-                                                                    <img
-                                                                        className="site-item__edit--img"
-                                                                        src="/img/with-banner/dashboard/site-item-edit.svg"
-                                                                    />
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                    </li>
+
                                                 )
                                             }
 
