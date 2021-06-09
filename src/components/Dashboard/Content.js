@@ -1,5 +1,7 @@
 import React, {useEffect, useState} from "react";
 import Link from "gatsby-link";
+import {AxiosInstance as axios} from "axios";
+import { API_ENDPOINT } from '../../config/index';
 
 const Content = () => {
     const [multilangue, setMultilangue] = useState(true);
@@ -12,6 +14,10 @@ const Content = () => {
     const [translate, setTranslate] = useState(false);
     const [isOpen, setIsOpen] = useState(false)
     const [data,setData]=useState([]);
+    const [home, setHome] = useState("");
+    const [pages, setPages] = useState([]);
+    let API = API_ENDPOINT;
+    let templateId = "f9adebb1-6bb8-4adf-806a-9585905f4793";
 
     const toggleMenuOpen = () => {
         setIsOpen(!isOpen)
@@ -20,6 +26,8 @@ const Content = () => {
 
     const handleMultilangue =() => {
         setMultilangue(multilangue => !multilangue);
+        buildDashboard();
+        console.log(pages);
 
     }
 
@@ -33,32 +41,6 @@ const Content = () => {
             ],
         });
     }
-
-    const addSecondChildren = (id) => {
-        const newData = data.first_children;
-        const newDataChildren = newData[id].second_children;
-        newDataChildren.push({name:"Contact", id:newDataChildren.length, third_children:[]});
-        newData[id].second_children = newDataChildren;
-        setData({
-            ...data,
-            first_children:
-            newData
-        });
-    }
-
-    const addThirdChildren = (id, secondId) => {
-        console.log(id)
-        const newData = data.first_children;
-        const newDataChildren = newData[id].second_children;
-        const newDataSecondChildren = newDataChildren[secondId];
-        newDataSecondChildren.third_children.push({name:"Contact"});
-        setData({
-            ...data,
-            first_children:
-            newData
-        });
-    }
-
 
     const handleTheme =() => {
         setTheme(theme => !theme);
@@ -89,7 +71,7 @@ const Content = () => {
     }
 
     const getData=()=>{
-        fetch('/data.json'
+        fetch(`${API}/template/${templateId}/pages`
             ,{
                 headers : {
                     'Content-Type': 'application/json',
@@ -108,8 +90,25 @@ const Content = () => {
     }
 
     useEffect(()=>{
-        getData()
+        getData();
     },[])
+
+    useEffect(()=>{
+        buildDashboard();
+    },[])
+
+
+    const buildDashboard = () => {
+        for (const i in data) {
+            if (data[i].path === "/") {
+                setHome(data[i].name.en)
+                console.log(data[i].name.en);
+            }
+            else {
+                setPages([...pages, data[i].name.en]);
+            }
+        }
+    }
 
 
     return (
@@ -173,18 +172,18 @@ const Content = () => {
                                     type="radio"
                                     name="host"
                                 />
-                                <span className="checkmark"></span>
+                                <span className="checkmark"/>
                             </label>
 
                             <label className="input-radio"
                             >Enregistrer nom de domaine
                                 <input type="radio" name="host"/>
-                                <span className="checkmark"></span>
+                                <span className="checkmark"/>
                             </label>
                             <label className="input-radio"
                             >Transférer nom de domaine
                                 <input type="radio" name="host"/>
-                                <span className="checkmark"></span>
+                                <span className="checkmark"/>
                             </label>
                             <form>
                                 <div className={"flex-container"}>
@@ -1349,11 +1348,18 @@ const Content = () => {
                             <div className={"content__all-site-items"}>
                                 <ul className="tree horizontal">
                                     <li>
+                                        {data && data.map((item)=>
+                                            {
+                                                if (item.path === '/') {
+
+                                                }
+                                            }
+                                        )}
                                         <div className="site-item">
                                                 <div
                                                     className="site-content root-level-1"
                                                 >
-                                                    <p className="">{data && data.parent}</p>
+                                                    <p className="">{ home }</p>
                                                 </div>
 
                                             <div className="action-bar">
@@ -1375,8 +1381,7 @@ const Content = () => {
                                         </div>
                                         <ul>
                                             {
-                                                data.first_children  && data.first_children.length > 0 &&
-                                                data.first_children.map((item)=>
+                                                data && data.map((item)=>
                                                     <li>
                                                         <div className="site-item">
                                                             <a
@@ -1386,7 +1391,7 @@ const Content = () => {
                                                                 <div
                                                                     className="site-content child-level-1"
                                                                 >
-                                                                    <p className="">{item.name}</p>
+                                                                    <p className="">{item.name.en}</p>
                                                                 </div>
                                                             </a>
 
@@ -1399,74 +1404,6 @@ const Content = () => {
                                                                 </a>
                                                             </div>
                                                         </div>
-                                                        <ul>
-                                                            {
-                                                                item.second_children  && item.second_children.length > 0 &&
-                                                                item.second_children.map((item2)=>
-                                                                    <li>
-                                                                        <div className="site-item">
-                                                                            <a
-                                                                                className="site-content-link"
-                                                                            >
-                                                                                <div
-                                                                                    className="site-content child-level-1"
-                                                                                >
-                                                                                    <p className="">{item2.name}</p>
-                                                                                </div>
-                                                                            </a>
-
-                                                                            <div className="action-bar">
-                                                                                <a >
-                                                                                    <img
-                                                                                        className="site-item__edit--img"
-                                                                                        src="/img/with-banner/dashboard/site-item-edit.svg"
-                                                                                    />
-                                                                                </a>
-                                                                                <a >
-                                                                                    <div className="site-item__add" onClick={()=>addThirdChildren(item.id, item2.id)}>
-                                                                                        <img
-                                                                                            src="/img/with-banner/dashboard/site-item-add.svg"
-                                                                                            className="site-item__add--img"
-                                                                                        />
-                                                                                    </div>
-                                                                                </a>
-                                                                            </div>
-                                                                        </div>
-                                                                        <ul>
-                                                                            {
-                                                                                item2.third_children  && item2.third_children.length > 0 &&
-                                                                                item2.third_children.map((item3)=>
-                                                                                    <li>
-                                                                                        <div className="site-item">
-                                                                                            <a
-                                                                                                className="site-content-link"
-                                                                                            >
-                                                                                                <div
-                                                                                                    className="site-content child-level-1"
-                                                                                                >
-                                                                                                    <p className="">{item3.name}</p>
-                                                                                                </div>
-                                                                                            </a>
-
-                                                                                            <div className="action-bar">
-                                                                                                <a >
-                                                                                                    <img
-                                                                                                        className="site-item__edit--img"
-                                                                                                        src="/img/with-banner/dashboard/site-item-edit.svg"
-                                                                                                    />
-                                                                                                </a>
-
-                                                                                            </div>
-                                                                                        </div>
-                                                                                    </li>)
-
-                                                                            }
-                                                                        </ul>
-                                                                    </li>)
-
-                                                            }
-
-                                                        </ul>
                                                     </li>
                                                 )
                                             }
