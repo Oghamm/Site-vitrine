@@ -980,6 +980,29 @@
               font-size: 12px;
               font-weight: 600;
             }
+            input {
+              position: relative;
+              border: none;
+              border-radius: 50px;
+              height: 32px;
+              background-color: #EFF1F7;
+              margin: 21px 10px 5px 15px;
+            }
+            button {
+              margin-left: 37px;
+              display: inline-block;
+              text-align: center;
+              border-radius: 100px;
+              transition: all .5s;
+              padding: 6px;
+              font-size: 14px;
+              font-weight: 600;
+              width: 107px;
+              height: 32px;
+              background: #6F93F4;
+              border: 1px solid #6F93F4;
+              color: #ffffff;
+            }
           }
 
           .action-bar {

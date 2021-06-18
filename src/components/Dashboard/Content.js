@@ -3,6 +3,106 @@ import Link from "gatsby-link";
 import {AxiosInstance as axios} from "axios";
 import { API_ENDPOINT } from '../../config/index';
 
+const Card = (props) => {
+    const [edit, setEdit] = useState(false);
+    const [name, setName] = useState("");
+
+    const handleEdit = () => {
+        setEdit(edit => !edit);
+    }
+    const handleSubmit = (e,item) => {
+        e.preventDefault();
+        props.changeName(name, item.id);
+        props.putPageData(item.id, name);
+        handleEdit();
+    }
+
+    const handleChange = (e) => {
+        e.preventDefault();
+        setName(e.target.value);
+    }
+
+
+     return (
+         <>
+             {props.add ?
+                 <div className="site-item" key={props.id}>
+                     <div
+                         className="site-content root-level-1"
+                     >
+                         {
+                             !edit ?
+                                 <p className="">{ props.name }</p>
+                                 :
+                                 <div>
+                                     <form >
+                                         <input value={name} type="text" name="namepage" onChange={handleChange}/>
+                                         <button type="submit"  onClick={e=> handleSubmit(e, props.item)}>
+                                             Valider
+                                         </button>
+                                     </form>
+                                 </div>
+                         }
+
+                     </div>
+
+                     <div className="action-bar">
+                         <a onClick={handleEdit}>
+                             <img
+                                 className="site-item__edit--img"
+                                 src="/img/with-banner/dashboard/site-item-edit.svg"
+                             />
+                         </a>
+                         <a >
+                             <div className="site-item__add" >
+                                 <img
+                                     src="/img/with-banner/dashboard/site-item-add.svg"
+                                     className="site-item__add--img"
+                                 />
+                             </div>
+                         </a>
+                     </div>
+                 </div>
+             :
+                 <li key={props.id}>
+                     <div className="site-item">
+                         <a
+
+                             className="site-content-link"
+                         >
+                             <div
+                                 className="site-content child-level-1"
+                             >
+                                 {
+                                     !edit ?
+                                         <p className="">{ props.name }</p>
+                                         :
+                                         <div>
+                                             <form >
+                                                 <input value={name} type="text" name="namepage" onChange={handleChange}/>
+                                                 <button type="submit"  onClick={e=> handleSubmit(e, props.item)}>
+                                                     Valider
+                                                 </button>
+                                             </form>
+                                         </div>
+                                 }
+                             </div>
+                         </a>
+
+                         <div className="action-bar">
+                             <a onClick={handleEdit}>
+                                 <img
+                                     className="site-item__edit--img"
+                                     src="/img/with-banner/dashboard/site-item-edit.svg"
+                                 />
+                             </a>
+                         </div>
+                     </div>
+                 </li>}
+             </>
+    )
+}
+
 const Content = () => {
     const [multilangue, setMultilangue] = useState(true);
     const [theme, setTheme] = useState(true);
@@ -14,13 +114,14 @@ const Content = () => {
     const [translate, setTranslate] = useState(false);
     const [isOpen, setIsOpen] = useState(false)
     const [data,setData]=useState([]);
+
     let API = API_ENDPOINT;
-    let templateId = "f9adebb1-6bb8-4adf-806a-9585905f4793";
+    let templateId = "9baf9a1c-4344-48a2-b694-760ded75a7e8";
+    let pageId = "6cd83ca4-322c-43f4-a59e-bf74cdefd26d";
 
     const toggleMenuOpen = () => {
         setIsOpen(!isOpen)
     }
-
 
     const handleMultilangue =() => {
         setMultilangue(multilangue => !multilangue);
@@ -28,20 +129,12 @@ const Content = () => {
     }
 
     const addFirstChildren = () => {
-        const tablength = data.first_children.length;
+        postPageData()
 
-        setData({
-            ...data,
-            first_children: [
-                ...data.first_children, {name:"Contact",id:tablength, second_children:[]}
-            ],
-        });
     }
 
     const handleTheme =() => {
         setTheme(theme => !theme);
-        console.log(data);
-        console.log(data.first_children.length);
     }
     const handleHelp =() => {
         setHelp(help => !help);
@@ -65,8 +158,13 @@ const Content = () => {
     const handleClickTranslate =() => {
         setTranslate(translate=> !translate);
     }
+    const changeName = (name, id) => {
+        let index = data.findIndex((element)=> element.id === id);
+        data[index].name.en = name;
+    }
 
-    const getData=()=>{
+
+    const getPageData=()=>{
         fetch(`${API}/template/${templateId}/pages`
             ,{
                 headers : {
@@ -85,8 +183,125 @@ const Content = () => {
             });
     }
 
+    const deletePageData=()=>{
+        fetch(`${API}/page/${pageId}`
+            ,{
+                headers : {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                method: "DELETE"
+            }
+        )
+            .then(function(response){
+                console.log(response)
+                return response.json();
+            })
+            .then(function(myJson) {
+                console.log(myJson);
+                setData(myJson)
+            });
+    }
+
+    const postPageData = () => {
+        fetch(`${API}/page/`
+            ,{
+                method:"POST",
+                headers : {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify( {
+                        createdAt: 1616514273355,
+                        currentState: "ACTIVE",
+                        currentVersion: 139,
+                        id: "6cd83ca4-322c-43f4-a59e-bf74cdefd26d",
+                        model: "a9764d28-7519-42b4-bdef-4f5d6c565a9a",
+                        name: {
+                            en: "Test"
+                        },
+                        parentTemplate: "f9adebb1-6bb8-4adf-806a-9585905f4793",
+                        path: "/events",
+                        publishedVersion: 0,
+                        updatedAt: 1622050196017
+
+                    }
+
+                )
+            }
+        )
+            .then(function(response){
+                console.log(response)
+                return response.json();
+            })
+            .then(function(myJson) {
+                console.log(myJson);
+            });
+    }
+
+    const putPageData = (id, name) => {
+        let index = data.findIndex((element)=> element.path === "/");
+        if (data[index].id === id) {
+            fetch(`${API}/page`
+                ,{
+                    method:"PUT",
+                    headers : {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    },
+                    body: JSON.stringify( {
+                            id: id,
+                            name: {
+                                "en": name
+                            },
+                            path : `/`
+
+                        }
+
+                    )
+                }
+            )
+                .then(function(response){
+                    console.log(response)
+                    return response.json();
+                })
+                .then(function(myJson) {
+                    console.log(myJson);
+                });
+        }
+        else {
+            fetch(`${API}/page`
+                ,{
+                    method:"PUT",
+                    headers : {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    },
+                    body: JSON.stringify( {
+                            id: id,
+                            name: {
+                                "en": name
+                            },
+                            path : `/${name}`
+
+                        }
+
+                    )
+                }
+            )
+                .then(function(response){
+                    console.log(response)
+                    return response.json();
+                })
+                .then(function(myJson) {
+                    console.log(myJson);
+                });
+        }
+
+    }
+
     useEffect(()=>{
-        getData();
+        getPageData();
     },[])
 
 
@@ -1329,30 +1544,9 @@ const Content = () => {
                                 <ul className="tree horizontal">
                                     <li>
                                         {data && data.filter(item => item.path === "/").map((item) =>
-                                            <div className="site-item">
-                                                <div
-                                                    className="site-content root-level-1"
-                                                >
-                                                    <p className="">{ item.name.en }</p>
-                                                </div>
-
-                                                <div className="action-bar">
-                                                    <a href="">
-                                                        <img
-                                                            className="site-item__edit--img"
-                                                            src="/img/with-banner/dashboard/site-item-edit.svg"
-                                                        />
-                                                    </a>
-                                                    <a >
-                                                        <div className="site-item__add" onClick={addFirstChildren}>
-                                                            <img
-                                                                src="/img/with-banner/dashboard/site-item-add.svg"
-                                                                className="site-item__add--img"
-                                                            />
-                                                        </div>
-                                                    </a>
-                                                </div>
-                                            </div>
+                                            <Card key={item.id} id={item.id} name={item.name.en}
+                                                   item={item} data={data} putPageData={putPageData}
+                                                   add={true} changeName={changeName}/>
 
                                         )}
 
@@ -1360,29 +1554,10 @@ const Content = () => {
                                             {
                                                 data && data.filter(item => item.path !== "/").map((item) =>
 
-                                                            <li>
-                                                                <div className="site-item">
-                                                                    <a
-
-                                                                        className="site-content-link"
-                                                                    >
-                                                                        <div
-                                                                            className="site-content child-level-1"
-                                                                        >
-                                                                            <p className="">{item.name.en}</p>
-                                                                        </div>
-                                                                    </a>
-
-                                                                    <div className="action-bar">
-                                                                        <a >
-                                                                            <img
-                                                                                className="site-item__edit--img"
-                                                                                src="/img/with-banner/dashboard/site-item-edit.svg"
-                                                                            />
-                                                                        </a>
-                                                                    </div>
-                                                                </div>
-                                                            </li>
+                                                            <Card key={item.id} id={item.id} name={item.name.en}
+                                                             item={item} data={data} putPageData={putPageData}
+                                                                  changeName={changeName}
+                                                            />
 
 
                                                 )
