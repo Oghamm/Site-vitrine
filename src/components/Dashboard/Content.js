@@ -2,6 +2,8 @@ import React, {useEffect, useState} from "react";
 import Link from "gatsby-link";
 import {AxiosInstance as axios} from "axios";
 import { API_ENDPOINT } from '../../config/index';
+import _ from   "lodash";
+
 
 const Card = (props) => {
     const [edit, setEdit] = useState(false);
@@ -53,14 +55,16 @@ const Card = (props) => {
                                  src="/img/with-banner/dashboard/site-item-edit.svg"
                              />
                          </a>
+                         {!edit &&
                          <a >
-                             <div className="site-item__add" >
+                             <div className="site-item__add" onClick={props.handleAddPage}>
                                  <img
                                      src="/img/with-banner/dashboard/site-item-add.svg"
                                      className="site-item__add--img"
                                  />
                              </div>
-                         </a>
+                         </a>}
+
                      </div>
                  </div>
              :
@@ -96,6 +100,12 @@ const Card = (props) => {
                                      src="/img/with-banner/dashboard/site-item-edit.svg"
                                  />
                              </a>
+                             {!edit &&
+                             <a onClick={()=> props.deletePageData(props.id)}>
+                                 <i className="fas fa-trash-alt"></i>
+                             </a>
+                             }
+
                          </div>
                      </div>
                  </li>}
@@ -114,6 +124,7 @@ const Content = () => {
     const [translate, setTranslate] = useState(false);
     const [isOpen, setIsOpen] = useState(false)
     const [data,setData]=useState([]);
+    const[addOpen, setAddOpen] = useState(false);
 
     let API = API_ENDPOINT;
     let templateId = "9baf9a1c-4344-48a2-b694-760ded75a7e8";
@@ -126,6 +137,10 @@ const Content = () => {
     const handleMultilangue =() => {
         setMultilangue(multilangue => !multilangue);
 
+    }
+
+    const handleAddPage =() => {
+        setAddOpen(addOpen=>!addOpen);
     }
 
     const addFirstChildren = () => {
@@ -160,7 +175,9 @@ const Content = () => {
     }
     const changeName = (name, id) => {
         let index = data.findIndex((element)=> element.id === id);
-        data[index].name.en = name;
+        let newData = _.cloneDeep(data);
+        newData[index].name.en = name;
+        setData(newData);
     }
 
 
@@ -183,7 +200,11 @@ const Content = () => {
             });
     }
 
-    const deletePageData=()=>{
+    const deletePageData=(pageId)=>{
+        let index = data.findIndex((element)=> element.id === pageId);
+        let newData = _.cloneDeep(data);
+        newData[index].currentState = "REMOVED";
+        setData(newData);
         fetch(`${API}/page/${pageId}`
             ,{
                 headers : {
@@ -193,14 +214,7 @@ const Content = () => {
                 method: "DELETE"
             }
         )
-            .then(function(response){
-                console.log(response)
-                return response.json();
-            })
-            .then(function(myJson) {
-                console.log(myJson);
-                setData(myJson)
-            });
+
     }
 
     const postPageData = () => {
@@ -1543,25 +1557,53 @@ const Content = () => {
                             <div className={"content__all-site-items"}>
                                 <ul className="tree horizontal">
                                     <li>
-                                        {data && data.filter(item => item.path === "/").map((item) =>
+                                        {data && data.filter(item => item.path === "/").filter(item=>item.currentState !=="REMOVED").map((item) =>
                                             <Card key={item.id} id={item.id} name={item.name.en}
-                                                   item={item} data={data} putPageData={putPageData}
-                                                   add={true} changeName={changeName}/>
+                                                   item={item}  putPageData={putPageData}
+                                                   add={true} changeName={changeName} handleAddPage={handleAddPage}/>
 
                                         )}
 
                                         <ul>
                                             {
-                                                data && data.filter(item => item.path !== "/").map((item) =>
+                                                data && data.filter(item => item.path !== "/").filter(item=>item.currentState !=="REMOVED").map((item) =>
 
                                                             <Card key={item.id} id={item.id} name={item.name.en}
-                                                             item={item} data={data} putPageData={putPageData}
-                                                                  changeName={changeName}
+                                                             item={item} putPageData={putPageData}
+                                                                  changeName={changeName} deletePageData={deletePageData}
                                                             />
 
 
                                                 )
                                             }
+                                            {
+                                                addOpen &&
+                                                <li>
+                                                    <div className={"site-item"}>
+                                                        <div className={"site-content child-level-1"}>
+                                                            <div>
+                                                                <form className={"add_children"}>
+                                                                    <input  type="text" name="newnamepage" />
+                                                                    <div
+                                                                        className="projects-and-models__choice form-group select"
+                                                                    >
+                                                                        <select className="form-control">
+                                                                            <option selected disabled
+                                                                            >Starter
+                                                                            </option
+                                                                            >
+                                                                        </select>
+                                                                    </div>
+                                                                    <button type="submit"  >
+                                                                        Valider
+                                                                    </button>
+                                                                </form>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            }
+
 
                                         </ul>
                                     </li>
