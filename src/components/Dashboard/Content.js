@@ -9,11 +9,17 @@ const Card = (props) => {
     const [edit, setEdit] = useState(false);
     const [name, setName] = useState("");
 
+    useEffect(()=> {
+        setName(props.name);
+    },[])
+
     const handleEdit = () => {
         setEdit(edit => !edit);
     }
     const handleSubmit = (e,item) => {
         e.preventDefault();
+        if (name === "" || name === props.name)
+            return
         props.changeName(name, item.id);
         props.putPageData(item.id, name);
         handleEdit();
@@ -38,7 +44,7 @@ const Card = (props) => {
                                  :
                                  <div>
                                      <form >
-                                         <input value={name} type="text" name="namepage" onChange={handleChange} placeholder={"Nom de la page"}/>
+                                         <input value={name} type="text" name="namepage" onChange={handleChange} placeholder={props.name}/>
                                          <button type="submit"  onClick={e=> handleSubmit(e, props.item)}>
                                              Valider
                                          </button>
@@ -83,7 +89,7 @@ const Card = (props) => {
                                          :
                                          <div>
                                              <form >
-                                                 <input value={name} type="text" name="namepage" onChange={handleChange} placeholder={"Nom de la page"}/>
+                                                 <input value={name} type="text" name="namepage" onChange={handleChange} placeholder={props.name}/>
                                                  <button type="submit"  onClick={e=> handleSubmit(e, props.item)}>
                                                      Valider
                                                  </button>
@@ -285,6 +291,8 @@ const Content = () => {
     }
 
     const putPageData = (id, name) => {
+        if (name === "")
+            return
         let index = data.findIndex((element)=> element.path === "/");
         if (data[index].id === id) {
             fetch(`${API}/page`
