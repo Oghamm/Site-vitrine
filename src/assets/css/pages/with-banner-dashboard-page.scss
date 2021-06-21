@@ -995,10 +995,11 @@
                   font-weight: 500;
                   border: none;
                   padding: 5px 60px 5px 23px;
-                  margin-left: 14px;
+                  margin-left: 21px;
                 }
               }
               input {
+                padding-left: 10px;
                 position: relative;
                 border: none;
                 border-radius: 50px;
@@ -1007,17 +1008,21 @@
                 margin: 27px 15px 10px 19px;
               }
               button {
-                margin-left: 47px;
+                margin-left: 53px;
               }
 
             }
             input {
+              padding-left: 10px;
               position: relative;
               border: none;
               border-radius: 50px;
               height: 32px;
               background-color: #EFF1F7;
               margin: 27px 15px 10px 15px;
+            }
+            input::placeholder {
+              color: #9A9A9A;
             }
             button {
               margin-left: 47px;
