@@ -38,7 +38,7 @@ const Card = (props) => {
                                  :
                                  <div>
                                      <form >
-                                         <input value={name} type="text" name="namepage" onChange={handleChange}/>
+                                         <input value={name} type="text" name="namepage" onChange={handleChange} placeholder={"Nom de la page"}/>
                                          <button type="submit"  onClick={e=> handleSubmit(e, props.item)}>
                                              Valider
                                          </button>
@@ -83,7 +83,7 @@ const Card = (props) => {
                                          :
                                          <div>
                                              <form >
-                                                 <input value={name} type="text" name="namepage" onChange={handleChange}/>
+                                                 <input value={name} type="text" name="namepage" onChange={handleChange} placeholder={"Nom de la page"}/>
                                                  <button type="submit"  onClick={e=> handleSubmit(e, props.item)}>
                                                      Valider
                                                  </button>
@@ -114,6 +114,7 @@ const Card = (props) => {
 }
 
 const Content = () => {
+    const axios = require('axios');
     const [multilangue, setMultilangue] = useState(true);
     const [theme, setTheme] = useState(true);
     const [help, setHelp] = useState(false);
@@ -125,10 +126,11 @@ const Content = () => {
     const [isOpen, setIsOpen] = useState(false)
     const [data,setData]=useState([]);
     const[addOpen, setAddOpen] = useState(false);
+    const [name, setName] = useState("");
+    const [model, setModel] = useState("");
 
     let API = API_ENDPOINT;
     let templateId = "9baf9a1c-4344-48a2-b694-760ded75a7e8";
-    let pageId = "6cd83ca4-322c-43f4-a59e-bf74cdefd26d";
 
     const toggleMenuOpen = () => {
         setIsOpen(!isOpen)
@@ -141,11 +143,7 @@ const Content = () => {
 
     const handleAddPage =() => {
         setAddOpen(addOpen=>!addOpen);
-    }
-
-    const addFirstChildren = () => {
-        postPageData()
-
+        setName("");
     }
 
     const handleTheme =() => {
@@ -178,6 +176,30 @@ const Content = () => {
         let newData = _.cloneDeep(data);
         newData[index].name.en = name;
         setData(newData);
+    }
+
+    const handleChange = (e) => {
+        e.preventDefault();
+        setName(e.target.value);
+    }
+    const handleChangeModel = (e) => {
+        e.preventDefault();
+        setModel(e.target.value);
+    }
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        console.log(model, name);
+        /*let data = JSON.stringify( {
+            model:model,
+            name: {
+                en:name
+            },
+            parentTemplate:templateId,
+            path:`/${name}`
+
+        });*/
+        postPageData();
+        handleAddPage();
     }
 
 
@@ -217,27 +239,35 @@ const Content = () => {
 
     }
 
+    /*const postPageData = async data => {
+        try {
+            const response = await axios.post(`${API}/page/`, data, {
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+            return response.data;
+
+        } catch (e) {
+            console.error(e);
+            throw e;
+        }
+    }*/
+
     const postPageData = () => {
-        fetch(`${API}/page/`
+        fetch(`${API}/page`
             ,{
                 method:"POST",
                 headers : {
                     'Content-Type': 'application/json',
-                    'Accept': 'application/json'
                 },
                 body: JSON.stringify( {
-                        createdAt: 1616514273355,
-                        currentState: "ACTIVE",
-                        currentVersion: 139,
-                        id: "6cd83ca4-322c-43f4-a59e-bf74cdefd26d",
-                        model: "a9764d28-7519-42b4-bdef-4f5d6c565a9a",
+                       model:model,
                         name: {
-                            en: "Test"
+                           en:name
                         },
-                        parentTemplate: "f9adebb1-6bb8-4adf-806a-9585905f4793",
-                        path: "/events",
-                        publishedVersion: 0,
-                        updatedAt: 1622050196017
+                        parentTemplate:templateId,
+                        path:`/${name}`
 
                     }
 
@@ -250,6 +280,7 @@ const Content = () => {
             })
             .then(function(myJson) {
                 console.log(myJson);
+                setData([...data, myJson]);
             });
     }
 
@@ -1583,18 +1614,33 @@ const Content = () => {
                                                         <div className={"site-content child-level-1"}>
                                                             <div>
                                                                 <form className={"add_children"}>
-                                                                    <input  type="text" name="newnamepage" />
+                                                                    <input  type="text" name="newnamepage" value={name} onChange={handleChange} placeholder={"Nom de la page"}/>
                                                                     <div
                                                                         className="projects-and-models__choice form-group select"
                                                                     >
-                                                                        <select className="form-control">
-                                                                            <option selected disabled
-                                                                            >Starter
+                                                                        <select className="form-control" onChange={handleChangeModel}>
+                                                                            <option selected value={"7bcfeb0d-ecd3-4d78-be2a-8125f1b9361d"}
+                                                                            >About
                                                                             </option
                                                                             >
+                                                                            <option value={"a9764d28-7519-42b4-bdef-4f5d6c565a9a"}>
+                                                                                Events
+                                                                            </option>
+                                                                            <option value={"694dc3ea-26c6-4151-b5a0-c9ae319265b9"}>
+                                                                                Contact
+                                                                            </option>
+                                                                            <option value={"700e32e4-3fce-4af8-acd4-8b0d308bfac1"}>
+                                                                                Legal
+                                                                            </option>
+                                                                            <option value={"85405841-a951-48fb-993f-5229d2f28c26"}>
+                                                                                Privacy
+                                                                            </option>
+                                                                            <option value={"f6a7d1ee-b29a-4176-84f8-6acaba557d10"}>
+                                                                                Pro
+                                                                            </option>
                                                                         </select>
                                                                     </div>
-                                                                    <button type="submit"  >
+                                                                    <button type="submit"  onClick={handleSubmit}>
                                                                         Valider
                                                                     </button>
                                                                 </form>
