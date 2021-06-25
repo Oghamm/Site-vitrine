@@ -981,6 +981,9 @@
               font-size: 12px;
               font-weight: 600;
             }
+            .removed {
+              color:#EFF1F7;
+            }
 
             .add_children {
               .form-group {
@@ -1068,6 +1071,11 @@
               }
               .fa-trash-alt {
                 color: #6F93F4;
+              }
+              .switch {
+                .slider {
+                  left: -10px;
+                }
               }
             }
           }

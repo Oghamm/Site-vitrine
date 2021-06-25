@@ -8,13 +8,26 @@ import _ from   "lodash";
 const Card = (props) => {
     const [edit, setEdit] = useState(false);
     const [name, setName] = useState("");
+    const [currentState, setCurrentState] = useState("");
 
     useEffect(()=> {
         setName(props.name);
+        setCurrentState(props.item.currentState);
     },[])
 
     const handleEdit = () => {
         setEdit(edit => !edit);
+    }
+    const handleSwitch = () => {
+        console.log(currentState);
+        if (currentState === "ACTIVE") {
+            props.deletePageData(props.id);
+            setCurrentState("REMOVED");
+        }
+        else {
+            props.activePageData(props.id);
+            setCurrentState("ACTIVE");
+        }
     }
 
 
@@ -36,6 +49,7 @@ const Card = (props) => {
         e.preventDefault();
         setName(e.target.value);
     }
+
 
 
      return (
@@ -99,7 +113,7 @@ const Card = (props) => {
                              >
                                  {
                                      !edit ?
-                                         <p className="" onClick={handleEdit}>{ props.name }</p>
+                                         <p className={currentState==="REMOVED" && "removed"} onClick={handleEdit}>{ props.name }</p>
                                          :
                                          <div>
                                              <form onSubmit={e=> handleSubmit(e, props.item)}>
@@ -114,15 +128,39 @@ const Card = (props) => {
                          <div className="action-bar">
                              {!edit ?
                                  <>
-                                     <a >
-                                         <img
-                                             className="site-item__edit--img"
-                                             src="/img/with-banner/dashboard/site-item-edit.svg"
-                                         />
-                                     </a>
+                                     {
+                                         currentState === "ACTIVE" ?
+                                             <a >
+                                                 <img
+                                                     className="site-item__edit--img"
+                                                     src="/img/with-banner/dashboard/site-item-edit.svg"
+                                                 />
+                                             </a>
+                                             :
+                                             <a >
+                                                 <img
+                                                     className="site-item__edit--img"
+                                                     src="/img/with-banner/dashboard/site-item-edit-grey.svg"
+                                                 />
+                                             </a>
+                                     }
 
-                                     <a onClick={()=> props.deletePageData(props.id)}>
-                                         <i className="fas fa-trash-alt"></i>
+
+                                     <a >
+                                         <label className="switch">
+                                             {currentState === "ACTIVE" ?
+                                                 <>
+                                                     <input type="checkbox" checked onClick={handleSwitch}/>
+                                                     <span className="slider round"></span>
+                                                 </>
+                                                 :
+                                                 <>
+                                                     <input type="checkbox"  onClick={handleSwitch}/>
+                                                     <span className="slider round"></span>
+                                                 </>
+                                             }
+
+                                         </label>
                                      </a>
                                  </>
                                  :
@@ -162,6 +200,7 @@ const Content = () => {
 
     let API = API_ENDPOINT;
     let templateId = "9baf9a1c-4344-48a2-b694-760ded75a7e8";
+    let sideId = "4f4fc83d-f3e1-4607-9362-ff70ef5ec07e";
 
     const handleOffer = () => {
         setIsOffer(isOffer => ! isOffer);
@@ -278,6 +317,7 @@ const Content = () => {
 
     }
 
+
     const postPageData = () => {
         fetch(`${API}/page`
             ,{
@@ -304,6 +344,36 @@ const Content = () => {
             .then(function(myJson) {
                 setData([...data, myJson]);
             });
+    }
+    const activePageData = (id) => {
+        let index = data.findIndex((element)=> element.id === id);
+        let newData = _.cloneDeep(data);
+        newData[index].currentState = "ACTIVE";
+        setData(newData);
+        fetch(`${API}/page`
+            ,{
+                method:"PUT",
+                headers : {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify( {
+                        id: id,
+                        currentState: "ACTIVE"
+
+                    }
+
+                )
+            }
+        )
+            .then(function(response){
+                return response.json();
+            })
+            .then(function(myJson) {
+            });
+
+
+
     }
 
     const putPageData = (id, name) => {
@@ -1682,12 +1752,12 @@ const Content = () => {
 
                                         <ul>
                                             {
-                                                data && data.filter(item => item.path !== "/").filter(item=>item.currentState !=="REMOVED").map((item) =>
+                                                data && data.filter(item => item.path !== "/").map((item) =>
 
                                                             <Card key={item.id} id={item.id} name={item.name.en}
                                                              item={item} putPageData={putPageData}
                                                                   changeName={changeName} deletePageData={deletePageData}
-                                                                  data={data}
+                                                                  data={data} activePageData={activePageData}
                                                             />
 
 
