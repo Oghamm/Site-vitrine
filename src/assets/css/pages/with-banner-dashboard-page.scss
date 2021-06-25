@@ -43,6 +43,7 @@
       .tab {
         position: absolute;
         right: 100px;
+        cursor:pointer;
       }
 
       &__title {
@@ -994,7 +995,7 @@
                   font-size: 14px;
                   font-weight: 500;
                   border: none;
-                  padding: 5px 60px 5px 23px;
+                  padding: 5px 40px 5px 23px;
                   margin-left: 21px;
                 }
               }
