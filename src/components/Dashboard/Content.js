@@ -25,7 +25,6 @@ const Card = (props) => {
         if (name === "" || name === props.name)
             return
         if(props.data.filter(item => item.name.en === name).length >= 1) {
-            console.log(props.data.filter(item => item.name.en === name));
             return;
         }
         props.changeName(name, item.id);
@@ -142,7 +141,6 @@ const Card = (props) => {
 }
 
 const Content = () => {
-    const axios = require('axios');
     const [multilangue, setMultilangue] = useState(true);
     const [theme, setTheme] = useState(true);
     const [help, setHelp] = useState(false);
@@ -238,16 +236,9 @@ const Content = () => {
     }
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log(model, name);
-        /*let data = JSON.stringify( {
-            model:model,
-            name: {
-                en:name
-            },
-            parentTemplate:templateId,
-            path:`/${name}`
-
-        });*/
+        if(data.filter(item => item.name.en === name).length >= 1 || model === "") {
+            return;
+        }
         postPageData();
         handleAddPage();
     }
@@ -263,11 +254,9 @@ const Content = () => {
             }
         )
             .then(function(response){
-                console.log(response)
                 return response.json();
             })
             .then(function(myJson) {
-                console.log(myJson);
                 setData(myJson)
             });
     }
@@ -288,21 +277,6 @@ const Content = () => {
         )
 
     }
-
-    /*const postPageData = async data => {
-        try {
-            const response = await axios.post(`${API}/page/`, data, {
-                headers: {
-                    'Content-Type': 'application/json'
-                }
-            })
-            return response.data;
-
-        } catch (e) {
-            console.error(e);
-            throw e;
-        }
-    }*/
 
     const postPageData = () => {
         fetch(`${API}/page`
@@ -325,11 +299,9 @@ const Content = () => {
             }
         )
             .then(function(response){
-                console.log(response)
                 return response.json();
             })
             .then(function(myJson) {
-                console.log(myJson);
                 setData([...data, myJson]);
             });
     }
@@ -359,11 +331,9 @@ const Content = () => {
                 }
             )
                 .then(function(response){
-                    console.log(response)
                     return response.json();
                 })
                 .then(function(myJson) {
-                    console.log(myJson);
                 });
         }
         else {
@@ -387,11 +357,9 @@ const Content = () => {
                 }
             )
                 .then(function(response){
-                    console.log(response)
                     return response.json();
                 })
                 .then(function(myJson) {
-                    console.log(myJson);
                 });
         }
 
