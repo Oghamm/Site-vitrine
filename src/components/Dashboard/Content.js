@@ -16,10 +16,18 @@ const Card = (props) => {
     const handleEdit = () => {
         setEdit(edit => !edit);
     }
+
+
+
+
     const handleSubmit = (e,item) => {
         e.preventDefault();
         if (name === "" || name === props.name)
             return
+        if(props.data.filter(item => item.name.en === name).length >= 1) {
+            console.log(props.data.filter(item => item.name.en === name));
+            return;
+        }
         props.changeName(name, item.id);
         props.putPageData(item.id, name);
         handleEdit();
@@ -40,14 +48,13 @@ const Card = (props) => {
                      >
                          {
                              !edit ?
-                                 <p className="">{ props.name }</p>
+                                 <p className=""
+                                    onClick={handleEdit}>{ props.name }</p>
                                  :
                                  <div>
-                                     <form >
+                                     <form onSubmit={e=> handleSubmit(e, props.item)}>
                                          <input value={name} type="text" name="namepage" onChange={handleChange} placeholder={props.name}/>
-                                         <button type="submit"  onClick={e=> handleSubmit(e, props.item)}>
-                                             Valider
-                                         </button>
+                                         <input type="submit" hidden={true}/>
                                      </form>
                                  </div>
                          }
@@ -55,27 +62,35 @@ const Card = (props) => {
                      </div>
 
                      <div className="action-bar">
-                         <a onClick={handleEdit}>
-                             <img
-                                 className="site-item__edit--img"
-                                 src="/img/with-banner/dashboard/site-item-edit.svg"
-                             />
-                         </a>
-                         {!edit &&
-                         <a >
-                             <div className="site-item__add" onClick={props.handleAddPage}>
-                                 <img
-                                     src="/img/with-banner/dashboard/site-item-add.svg"
-                                     className="site-item__add--img"
-                                 />
-                             </div>
-                         </a>}
+                         {!edit ?
+                             <>
+                                 <a >
+                                     <img
+                                         className="site-item__edit--img"
+                                         src="/img/with-banner/dashboard/site-item-edit.svg"
+                                     />
+                                 </a>
+
+                                 <a >
+                                     <div className="site-item__add" onClick={props.handleAddPage}>
+                                         <img
+                                             src="/img/with-banner/dashboard/site-item-add.svg"
+                                             className="site-item__add--img"
+                                         />
+                                     </div>
+                                 </a>
+                             </>
+                             :
+                             <a>
+                                 <i className="fas fa-times" onClick={handleEdit}></i>
+                             </a>
+                        }
 
                      </div>
                  </div>
              :
                  <li key={props.id}>
-                     <div className="site-item">
+                     <div className="site-item" >
                          <a
 
                              className="site-content-link"
@@ -85,14 +100,12 @@ const Card = (props) => {
                              >
                                  {
                                      !edit ?
-                                         <p className="">{ props.name }</p>
+                                         <p className="" onClick={handleEdit}>{ props.name }</p>
                                          :
                                          <div>
-                                             <form >
+                                             <form onSubmit={e=> handleSubmit(e, props.item)}>
                                                  <input value={name} type="text" name="namepage" onChange={handleChange} placeholder={props.name}/>
-                                                 <button type="submit"  onClick={e=> handleSubmit(e, props.item)}>
-                                                     Valider
-                                                 </button>
+                                                 <input type="submit" hidden={true}/>
                                              </form>
                                          </div>
                                  }
@@ -100,16 +113,25 @@ const Card = (props) => {
                          </a>
 
                          <div className="action-bar">
-                             <a onClick={handleEdit}>
-                                 <img
-                                     className="site-item__edit--img"
-                                     src="/img/with-banner/dashboard/site-item-edit.svg"
-                                 />
-                             </a>
-                             {!edit &&
-                             <a onClick={()=> props.deletePageData(props.id)}>
-                                 <i className="fas fa-trash-alt"></i>
-                             </a>
+                             {!edit ?
+                                 <>
+                                     <a >
+                                         <img
+                                             className="site-item__edit--img"
+                                             src="/img/with-banner/dashboard/site-item-edit.svg"
+                                         />
+                                     </a>
+
+                                     <a onClick={()=> props.deletePageData(props.id)}>
+                                         <i className="fas fa-trash-alt"></i>
+                                     </a>
+                                 </>
+                                 :
+                                 <a >
+                                     <i className="fas fa-times" onClick={handleEdit}></i>
+                                 </a>
+
+
                              }
 
                          </div>
@@ -1685,7 +1707,8 @@ const Content = () => {
                                         {data && data.filter(item => item.path === "/").filter(item=>item.currentState !=="REMOVED").map((item) =>
                                             <Card key={item.id} id={item.id} name={item.name.en}
                                                    item={item}  putPageData={putPageData}
-                                                   add={true} changeName={changeName} handleAddPage={handleAddPage}/>
+                                                   add={true} changeName={changeName} handleAddPage={handleAddPage}
+                                            data={data}/>
 
                                         )}
 
@@ -1696,6 +1719,7 @@ const Content = () => {
                                                             <Card key={item.id} id={item.id} name={item.name.en}
                                                              item={item} putPageData={putPageData}
                                                                   changeName={changeName} deletePageData={deletePageData}
+                                                                  data={data}
                                                             />
 
 
