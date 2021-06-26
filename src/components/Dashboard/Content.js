@@ -31,8 +31,6 @@ const Card = (props) => {
     }
 
 
-
-
     const handleSubmit = (e,item) => {
         e.preventDefault();
         if (name === "" || name === props.name)
@@ -77,7 +75,7 @@ const Card = (props) => {
                      <div className="action-bar">
                          {!edit ?
                              <>
-                                 <a >
+                                 <a href={`https://d2652zttv6bt8h.cloudfront.net/courses/${props.siteID}`}>
                                      <img
                                          className="site-item__edit--img"
                                          src="/img/with-banner/dashboard/site-item-edit.svg"
@@ -130,7 +128,7 @@ const Card = (props) => {
                                  <>
                                      {
                                          currentState === "ACTIVE" ?
-                                             <a >
+                                             <a href={`https://d2652zttv6bt8h.cloudfront.net/courses/${props.siteID}${props.item.path}`}>
                                                  <img
                                                      className="site-item__edit--img"
                                                      src="/img/with-banner/dashboard/site-item-edit.svg"
@@ -200,7 +198,7 @@ const Content = () => {
 
     let API = API_ENDPOINT;
     let templateId = "9baf9a1c-4344-48a2-b694-760ded75a7e8";
-    let sideId = "4f4fc83d-f3e1-4607-9362-ff70ef5ec07e";
+    let siteId = "4f4fc83d-f3e1-4607-9362-ff70ef5ec07e";
 
     const handleOffer = () => {
         setIsOffer(isOffer => ! isOffer);
@@ -282,6 +280,22 @@ const Content = () => {
         handleAddPage();
     }
 
+
+    const getTemplateId = () => {
+        fetch(`${API}/site/${siteId}`
+            ,{
+                headers : {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                }
+            }
+        )
+            .then(function(response){
+                return response.json();
+            })
+            .then(function(myJson) {
+            });
+    }
 
     const getPageData=()=>{
         fetch(`${API}/template/${templateId}/pages`
@@ -1746,7 +1760,7 @@ const Content = () => {
                                             <Card key={item.id} id={item.id} name={item.name.en}
                                                    item={item}  putPageData={putPageData}
                                                    add={true} changeName={changeName} handleAddPage={handleAddPage}
-                                            data={data}/>
+                                            data={data} siteID={siteId}/>
 
                                         )}
 
@@ -1757,7 +1771,7 @@ const Content = () => {
                                                             <Card key={item.id} id={item.id} name={item.name.en}
                                                              item={item} putPageData={putPageData}
                                                                   changeName={changeName} deletePageData={deletePageData}
-                                                                  data={data} activePageData={activePageData}
+                                                                  data={data} activePageData={activePageData} siteID={siteId}
                                                             />
 
 
