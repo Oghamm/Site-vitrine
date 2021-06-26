@@ -105,7 +105,7 @@ const Content = () => {
                                             Vous avez choisi le modèle
                                             <span className="banner__title"> Uxagone</span>
                                         </p>
-                                        <Link   to={"/dashboard"}
+                                        <Link   to={"/dashboard?siteId=4f4fc83d-f3e1-4607-9362-ff70ef5ec07e"}
                                             className="banner__btn btn btn-primary"
                                         >Démarrer la personnalisation</Link
                                         >
@@ -347,7 +347,7 @@ const Content = () => {
                             <div class="site-all-models">
                                 <div class="site-model--box">
                                         <div class="site-model">
-                                            <Link to={"/dashboard"}>
+                                            <Link to={"/dashboard?siteId=4f4fc83d-f3e1-4607-9362-ff70ef5ec07e"}>
                                                 <div className="infos">
                                                     <h4 className="infos--title">
                                                         Uxagone
