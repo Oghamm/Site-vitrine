@@ -19,7 +19,6 @@ const Card = (props) => {
         setEdit(edit => !edit);
     }
     const handleSwitch = () => {
-        console.log(currentState);
         if (currentState === "ACTIVE") {
             props.deletePageData(props.id);
             setCurrentState("REMOVED");
@@ -199,13 +198,12 @@ const Content = () => {
     // siteId = "4f4fc83d-f3e1-4607-9362-ff70ef5ec07e"
 
     let API = API_ENDPOINT;
-    const [templateId, setTemplateId] = useState("9baf9a1c-4344-48a2-b694-760ded75a7e8");
-    const [siteId, setSiteId] = useState("4f4fc83d-f3e1-4607-9362-ff70ef5ec07e");
+    const [templateId, setTemplateId] = useState("");
+    const [siteId, setSiteId] = useState("");
     let params = new URLSearchParams(document.location.search.substring(1));
 
     const handleOffer = () => {
         setIsOffer(isOffer => ! isOffer);
-        console.log(test);
     }
 
     const handleHosting = () => {
@@ -286,7 +284,9 @@ const Content = () => {
 
 
     const getTemplateId = () => {
-        fetch(`${API}/site/${siteId}`
+        setSiteId(params.get("siteId"));
+        let ID = params.get("siteId");
+        fetch(`${API}/site/${ID}`
             ,{
                 headers : {
                     'Content-Type': 'application/json',
@@ -299,12 +299,13 @@ const Content = () => {
             })
             .then(function(myJson) {
                 setTemplateId(myJson.activeTemplate);
-                console.log(myJson);
+                let template = myJson.activeTemplate;
+                getPageData(template);
             });
     }
 
-    const getPageData=()=>{
-        fetch(`${API}/template/${templateId}/pages`
+    const getPageData=(template)=>{
+        fetch(`${API}/template/${template}/pages`
             ,{
                 headers : {
                     'Content-Type': 'application/json',
@@ -456,10 +457,10 @@ const Content = () => {
     }
 
     useEffect(()=>{
-        setSiteId(params.get("siteId"));
         getTemplateId()
-        getPageData();
     },[])
+
+
 
 
 
@@ -1764,7 +1765,7 @@ const Content = () => {
                             <div className={"content__all-site-items"}>
                                 <ul className="tree horizontal">
                                     <li>
-                                        {data && data.filter(item => item.path === "/").filter(item=>item.currentState !=="REMOVED").map((item) =>
+                                        {data && data.filter(item => item.path === "/").map((item) =>
                                             <Card key={item.id} id={item.id} name={item.name.en}
                                                    item={item}  putPageData={putPageData}
                                                    add={true} changeName={changeName} handleAddPage={handleAddPage}
