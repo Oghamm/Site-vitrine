@@ -1705,53 +1705,43 @@ const Content = () => {
                                             <ul>
                                                 <li className="nav-item">
                                                     <a className="nav-link" href="">
-                                                        Lien 1
+                                                        Nos offres
                                                     </a>
                                                 </li>
                                                 <li className="nav-item">
-                                                    <a className="nav-link" href="">
-                                                        Lien 2
-                                                    </a>
+                                                    <Link  to={"/models"} className="nav-link" href="">
+                                                        Les modèles
+                                                    </Link>
                                                 </li>
                                                 <li className="nav-item">
-                                                    <a className="nav-link" href="">
-                                                        Lien 3
-                                                    </a>
+                                                    <Link to={"/about"} className="nav-link" href="">
+                                                        À propos
+                                                    </Link>
                                                 </li>
                                                 <li className="nav-item">
-                                                    <a className="nav-link" href="">
-                                                        Lien 4
-                                                    </a>
+                                                    <Link to={"/graphisme"} className="nav-link" href="">
+                                                        Graphisme
+                                                    </Link>
                                                 </li>
                                                 <li className="nav-item">
-                                                    <a className="nav-link" href="">
-                                                        Lien 5
-                                                    </a>
+                                                    <Link to={"/translate"} className="nav-link" href="">
+                                                        Traduction
+                                                    </Link>
                                                 </li>
                                                 <li className="nav-item">
-                                                    <a className="nav-link" href="">
-                                                        Lien 6
-                                                    </a>
+                                                    <Link to={"/writing"} className="nav-link" href="">
+                                                        Rédaction
+                                                    </Link>
                                                 </li>
                                                 <li className="nav-item">
-                                                    <a className="nav-link" href="">
-                                                        Lien 7
-                                                    </a>
+                                                    <Link to={"/developer"} className="nav-link" href="">
+                                                        Collaborer avec Quintyss
+                                                    </Link>
                                                 </li>
                                                 <li className="nav-item">
-                                                    <a className="nav-link" href="">
-                                                        Lien 8
-                                                    </a>
-                                                </li>
-                                                <li className="nav-item">
-                                                    <a className="nav-link" href="">
-                                                        Lien 9
-                                                    </a>
-                                                </li>
-                                                <li className="nav-item">
-                                                    <a className="nav-link" href="">
-                                                        Lien 10
-                                                    </a>
+                                                    <Link to={"/contact"} className="nav-link" href="">
+                                                        Contactez-nous
+                                                    </Link>
                                                 </li>
                                             </ul>
                                         </div>
