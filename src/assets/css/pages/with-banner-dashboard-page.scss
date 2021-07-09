@@ -1064,17 +1064,27 @@
                 display: flex;
 
                 .cross {
-                  margin-left: 10px;
                   color: #6F93F4;
+
+                  i {
+                    top: 117px;
+                    left: 167px;
+                  }
+                }
+
+                i {
+                  position: absolute;
+                  left: 92px;
+                  top: 121px;
                 }
               }
               .form-group {
-                color: #ffffff;
+                color: #01164E;
                 max-width: 260px;
 
                 .form-control {
-                  color: #ffffff;
-                  background-color: #6F93F4;
+                  color: #01164E;
+                  background-color: #ffffff;
                   width: 173px;
                   height: 32px;
                   font-size: 14px;
@@ -1094,7 +1104,9 @@
                 margin: 11px 15px 10px 19px;
               }
               button {
-                margin-left: 53px;
+                margin-left: 92px;
+                width: 24px;
+                height: 24px;
               }
 
             }
