@@ -1044,6 +1044,12 @@
             justify-content: center;
             z-index: 1;
 
+            .cross__edit {
+              color: #6F93F4;
+              display: flex;
+              justify-content: center;
+            }
+
             p {
               color: rgba(1, 22, 78, 0.5);
               font-size: 12px;

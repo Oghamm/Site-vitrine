@@ -66,13 +66,16 @@ const Card = (props) => {
                                          <input value={name} type="text" name="namepage" onChange={handleChange} placeholder={props.name}/>
                                          <input type="submit" hidden={true}/>
                                      </form>
+                                     <a className={"cross__edit"}>
+                                         <i className="fas fa-times" onClick={handleEdit}></i>
+                                     </a>
                                  </div>
                          }
 
                      </div>
 
                      <div className="action-bar">
-                         {!edit ?
+                         {!edit &&
                              <>
                                  <a href={`https://d2652zttv6bt8h.cloudfront.net/courses/${props.siteID}`}>
                                      <img
@@ -90,10 +93,6 @@ const Card = (props) => {
                                      </div>
                                  </a>
                              </>
-                             :
-                             <a>
-                                 <i className="fas fa-times" onClick={handleEdit}></i>
-                             </a>
                         }
 
                      </div>
@@ -117,13 +116,16 @@ const Card = (props) => {
                                                  <input value={name} type="text" name="namepage" onChange={handleChange} placeholder={props.name}/>
                                                  <input type="submit" hidden={true}/>
                                              </form>
+                                             <a className={"cross__edit"}>
+                                                 <i className="fas fa-times" onClick={handleEdit}></i>
+                                             </a>
                                          </div>
                                  }
                              </div>
                          </a>
 
                          <div className="action-bar">
-                             {!edit ?
+                             {!edit &&
                                  <>
                                      {
                                          currentState === "ACTIVE" ?
@@ -160,10 +162,6 @@ const Card = (props) => {
                                          </label>
                                      </a>
                                  </>
-                                 :
-                                 <a >
-                                     <i className="fas fa-times" onClick={handleEdit}></i>
-                                 </a>
 
 
                              }
