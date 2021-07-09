@@ -194,6 +194,7 @@ const Content = () => {
     const [isApplications, setIsApplications] = useState(true);
     const [isIntegrations, setIsIntegrations] = useState(true);
     const [isServices, setIsServices] = useState(true);
+    const [isDeco, setIsDeco] = useState(false);
     // templateId = "9baf9a1c-4344-48a2-b694-760ded75a7e8"
     // siteId = "4f4fc83d-f3e1-4607-9362-ff70ef5ec07e"
 
@@ -201,6 +202,10 @@ const Content = () => {
     const [templateId, setTemplateId] = useState("");
     const [siteId, setSiteId] = useState("");
     let params = new URLSearchParams(document.location.search.substring(1));
+
+    const handleDeco = () => {
+        setIsDeco(isDeco => !isDeco);
+    }
 
     const handleOffer = () => {
         setIsOffer(isOffer => ! isOffer);
@@ -465,8 +470,22 @@ const Content = () => {
 
 
     return (
-        <>
-            <div className="container-fluid">
+        <> {
+            isDeco &&
+            <div className={"disconnection"}>
+                <div className={"pop-up"}>
+                    <div className={"title__deco"}>
+                        Voulez-vous vraiment vous déconnecter ?
+                    </div>
+                    <div className={"btn__div"}>
+                        <Link to={"/"} className={"btn__yes"}>Oui</Link>
+                        <button className={"btn__no"} onClick={handleDeco}>Non, rester sur la page</button>
+                    </div>
+                </div>
+            </div>
+        }
+
+            <div className={isDeco ? "container-fluid__opacity":"container-fluid"}>
                 <div className="row main-content">
                     <div className="col-lg-4 col-md-5 bg-white aside">
                         <div className="aside__title">
@@ -1424,7 +1443,7 @@ const Content = () => {
                         </div>
 
                         <div className="aside__logout">
-                            <a href="">
+                            <a onClick={handleDeco}>
                                 <img src="/img/cms/logout.svg" alt=""/>
                             </a>
                         </div>
