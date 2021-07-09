@@ -1054,6 +1054,14 @@
             }
 
             .add_children {
+              .flex_btn {
+                display: flex;
+
+                .cross {
+                  margin-left: 10px;
+                  color: #6F93F4;
+                }
+              }
               .form-group {
                 color: #ffffff;
                 max-width: 260px;

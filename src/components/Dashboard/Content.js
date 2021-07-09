@@ -1831,9 +1831,14 @@ const Content = () => {
                                                                             </option>
                                                                         </select>
                                                                     </div>
-                                                                    <button type="submit"  onClick={handleSubmit}>
-                                                                        Valider
-                                                                    </button>
+                                                                    <div className={"flex_btn"}>
+                                                                        <button type="submit"  onClick={handleSubmit}>
+                                                                            Valider
+                                                                        </button>
+                                                                        <div className={"cross"} onClick={handleAddPage}>
+                                                                            <i className="fas fa-times"></i>
+                                                                        </div>
+                                                                    </div>
                                                                 </form>
                                                             </div>
                                                         </div>
