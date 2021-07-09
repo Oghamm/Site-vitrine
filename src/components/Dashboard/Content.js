@@ -649,7 +649,7 @@ const Content = () => {
                                         <label
                                             className="btn-application--title"
                                             htmlFor="application-1"
-                                        >Application</label
+                                        >Reservation</label
                                         >
                                         <span className="btn-application--price"
                                         >4,90</span
@@ -666,7 +666,7 @@ const Content = () => {
                                         <label
                                             className="btn-application--title"
                                             htmlFor="application-2"
-                                        >Application</label
+                                        >Membres</label
                                         >
                                         <span className="btn-application--price"
                                         >Offert</span
@@ -683,7 +683,7 @@ const Content = () => {
                                         <label
                                             className="btn-application--title"
                                             htmlFor="application-3"
-                                        >Application</label
+                                        >Formulaires</label
                                         >
                                         <span className="btn-application--price"
                                         >Offert</span
@@ -700,7 +700,7 @@ const Content = () => {
                                         <label
                                             className="btn-application--title"
                                             htmlFor="application-4"
-                                        >Application</label
+                                        >Chat</label
                                         >
                                         <span className="btn-application--price"
                                         >Offert</span
@@ -717,7 +717,7 @@ const Content = () => {
                                         <label
                                             className="btn-application--title"
                                             htmlFor="application-5"
-                                        >Application</label
+                                        >Newsletter</label
                                         >
                                         <span className="btn-application--price"
                                         >Offert</span
@@ -734,7 +734,7 @@ const Content = () => {
                                         <label
                                             className="btn-application--title"
                                             htmlFor="application-6"
-                                        >Application</label
+                                        >Devis</label
                                         >
                                         <span className="btn-application--price"
                                         >4,90</span
@@ -751,7 +751,7 @@ const Content = () => {
                                         <label
                                             className="btn-application--title"
                                             htmlFor="application-7"
-                                        >Application</label
+                                        >Facture</label
                                         >
                                         <span className="btn-application--price"
                                         >4,90</span
@@ -768,7 +768,7 @@ const Content = () => {
                                         <label
                                             className="btn-application--title"
                                             htmlFor="application-8"
-                                        >Application</label
+                                        >Blog</label
                                         >
                                         <span className="btn-application--price"
                                         >Offert</span
@@ -785,7 +785,7 @@ const Content = () => {
                                         <label
                                             className="btn-application--title"
                                             htmlFor="application-9"
-                                        >Application</label
+                                        >Restaurant</label
                                         >
                                         <span className="btn-application--price"
                                         >Offert</span
@@ -802,7 +802,7 @@ const Content = () => {
                                         <label
                                             className="btn-application--title"
                                             htmlFor="application-10"
-                                        >Application</label
+                                        >Quintyss-event</label
                                         >
                                         <span className="btn-application--price"
                                         >Offert</span
@@ -988,7 +988,7 @@ const Content = () => {
                                                     />
                                                 </div>
                                                 <p className="btn-more-inte--title">
-                                                    Application
+                                                    Stripe
                                                 </p>
                                                 <p className="btn-more-inte--price">+16,00</p>
                                             </div>
@@ -1001,7 +1001,7 @@ const Content = () => {
                                                     />
                                                 </div>
                                                 <p className="btn-more-inte--title">
-                                                    Application
+                                                    Paypal
                                                 </p>
                                                 <p className="btn-more-inte--price">+16,00</p>
                                             </div>
@@ -1014,7 +1014,7 @@ const Content = () => {
                                                     />
                                                 </div>
                                                 <p className="btn-more-inte--title">
-                                                    Application
+                                                    Code Verif Google
                                                 </p>
                                                 <p className="btn-more-inte--price">+16,00</p>
                                             </div>
@@ -1027,7 +1027,7 @@ const Content = () => {
                                                     />
                                                 </div>
                                                 <p className="btn-more-inte--title">
-                                                    Application
+                                                    Google Analytique
                                                 </p>
                                                 <p className="btn-more-inte--price">+16,00</p>
                                             </div>
@@ -1039,20 +1039,7 @@ const Content = () => {
                                                     />
                                                 </div>
                                                 <p className="btn-more-inte--title">
-                                                    Application
-                                                </p>
-                                                <p className="btn-more-inte--price">+16,00</p>
-                                            </div>
-
-                                            <div className="btn-more-inte">
-                                                <div className="btn-more-inte--img">
-                                                    <img
-                                                        src="/img/with-banner/dashboard/internet.png"
-                                                        alt=""
-                                                    />
-                                                </div>
-                                                <p className="btn-more-inte--title">
-                                                    Application
+                                                    Pixel ID Facebook
                                                 </p>
                                                 <p className="btn-more-inte--price">+16,00</p>
                                             </div>
@@ -1065,7 +1052,7 @@ const Content = () => {
                                                     />
                                                 </div>
                                                 <p className="btn-more-inte--title">
-                                                    Application
+                                                    Google Adsense
                                                 </p>
                                                 <p className="btn-more-inte--price">+16,00</p>
                                             </div>
@@ -1078,7 +1065,20 @@ const Content = () => {
                                                     />
                                                 </div>
                                                 <p className="btn-more-inte--title">
-                                                    Application
+                                                    Sitemap
+                                                </p>
+                                                <p className="btn-more-inte--price">+16,00</p>
+                                            </div>
+
+                                            <div className="btn-more-inte">
+                                                <div className="btn-more-inte--img">
+                                                    <img
+                                                        src="/img/with-banner/dashboard/internet.png"
+                                                        alt=""
+                                                    />
+                                                </div>
+                                                <p className="btn-more-inte--title">
+                                                    Robots.txt
                                                 </p>
                                                 <p className="btn-more-inte--price">+16,00</p>
                                             </div>
