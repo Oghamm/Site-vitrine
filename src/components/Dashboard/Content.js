@@ -3,6 +3,7 @@ import Link from "gatsby-link";
 import {AxiosInstance as axios} from "axios";
 import { API_ENDPOINT } from '../../config/index';
 import _ from   "lodash";
+import { useLocation } from "@reach/router";
 
 
 const Card = (props) => {
@@ -173,7 +174,7 @@ const Card = (props) => {
     )
 }
 
-const Content = () => {
+const Content = (props) => {
     const [multilangue, setMultilangue] = useState(true);
     const [theme, setTheme] = useState(true);
     const [help, setHelp] = useState(false);
@@ -199,7 +200,9 @@ const Content = () => {
     let API = API_ENDPOINT;
     const [templateId, setTemplateId] = useState("");
     const [siteId, setSiteId] = useState("");
-    let params = new URLSearchParams(document.location.search.substring(1));
+
+    const location = useLocation();
+    const params = new URLSearchParams(location.search);
 
     const handleDeco = () => {
         setIsDeco(isDeco => !isDeco);
