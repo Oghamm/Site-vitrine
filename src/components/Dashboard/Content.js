@@ -75,7 +75,7 @@ const Card = (props) => {
 
                      </div>
 
-                     <div className="action-bar">
+                     <div className="action-bar__first">
                          {!edit &&
                              <>
                                  <a href={`https://d2652zttv6bt8h.cloudfront.net/courses/${props.siteID}`}>
@@ -128,40 +128,55 @@ const Card = (props) => {
                          <div className="action-bar">
                              {!edit &&
                                  <>
+
                                      {
                                          currentState === "ACTIVE" ?
-                                             <a href={`https://d2652zttv6bt8h.cloudfront.net/courses/${props.siteID}${props.item.path}`}>
-                                                 <img
-                                                     className="site-item__edit--img"
-                                                     src="/img/with-banner/dashboard/site-item-edit.svg"
-                                                 />
+                                             <a className={"trash"}>
+                                                 <i className="fas fa-trash-alt"></i>
                                              </a>
                                              :
-                                             <a >
-                                                 <img
-                                                     className="site-item__edit--img"
-                                                     src="/img/with-banner/dashboard/site-item-edit-grey.svg"
-                                                 />
+                                             <a className={"trash__grey"}>
+                                                 <i className="fas fa-trash-alt"></i>
                                              </a>
                                      }
-
-
-                                     <a >
-                                         <label className="switch">
-                                             {currentState === "ACTIVE" ?
-                                                 <>
-                                                     <input type="checkbox" checked onClick={handleSwitch}/>
-                                                     <span className="slider round"></span>
-                                                 </>
+                                     <div className={"flex"}>
+                                         {
+                                             currentState === "ACTIVE" ?
+                                                 <a href={`https://d2652zttv6bt8h.cloudfront.net/courses/${props.siteID}${props.item.path}`}>
+                                                     <img
+                                                         className="site-item__edit--img"
+                                                         src="/img/with-banner/dashboard/site-item-edit.svg"
+                                                     />
+                                                 </a>
                                                  :
-                                                 <>
-                                                     <input type="checkbox"  onClick={handleSwitch}/>
-                                                     <span className="slider round"></span>
-                                                 </>
-                                             }
+                                                 <a >
+                                                     <img
+                                                         className="site-item__edit--img"
+                                                         src="/img/with-banner/dashboard/site-item-edit-grey.svg"
+                                                     />
+                                                 </a>
+                                         }
 
-                                         </label>
-                                     </a>
+
+                                         <a >
+                                             <label className="switch">
+                                                 {currentState === "ACTIVE" ?
+                                                     <>
+                                                         <input type="checkbox" checked onClick={handleSwitch}/>
+                                                         <span className="slider round"></span>
+                                                     </>
+                                                     :
+                                                     <>
+                                                         <input type="checkbox"  onClick={handleSwitch}/>
+                                                         <span className="slider round"></span>
+                                                     </>
+                                                 }
+
+                                             </label>
+                                         </a>
+                                     </div>
+
+
                                  </>
 
 
