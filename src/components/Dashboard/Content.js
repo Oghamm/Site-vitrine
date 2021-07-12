@@ -125,8 +125,9 @@ const Card = (props) => {
                              </div>
                          </a>
 
-                         <div className="action-bar">
-                             {!edit &&
+                         {!edit &&
+                         <>
+                             <div className="action-bar">
                                  <>
 
                                      {
@@ -179,10 +180,10 @@ const Card = (props) => {
 
                                  </>
 
+                             </div>
+                         </>
+                         }
 
-                             }
-
-                         </div>
                      </div>
                  </li>}
              </>
