@@ -396,7 +396,6 @@
         }
 
         li>div {
-          background-color:$background-color;
           color:$color;
           padding:5px;
           display:inline-block;
@@ -1141,16 +1140,30 @@
 
           .action-bar {
             position: absolute;
-            left: 135px;
-            height: 120px;
-            top: 50%;
+            left: 110px;
+            height: 48px;
+            top: 108px;
             z-index: 1;
             display: flex;
-            flex-direction: column;
+            flex-direction: row;
             justify-content: space-between;
             transform: translateY(-50%);
-            -webkit-transform: translateY(-50%);
-            -ms-transform: translateY(-50%);
+
+            .switch {
+              input:checked + .slider:before {
+                -webkit-transform: translateX(15px);
+                -ms-transform: translateX(15px);
+                transform: translateX(15px);
+              }
+              .slider {
+                width: 30px;
+                height: 16px;
+              }
+              .slider:before {
+                width: 16px;
+                height: 16px;
+              }
+            }
 
             i {
               color: #6F93F4;
@@ -1159,9 +1172,10 @@
             a {
               cursor: pointer;
               display: block;
-              margin: 10px 15px;
+              margin-top: 15px;
+              margin-left: 20px;
               img {
-                width: 12px;
+                width: 16px;
               }
               .fa-trash-alt {
                 color: #6F93F4;
