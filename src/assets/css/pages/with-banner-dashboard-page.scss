@@ -1149,6 +1149,11 @@
             justify-content: space-between;
             transform: translateY(-50%);
 
+            .add__btn {
+              margin-top: 10px;
+              margin-left: 14px;
+            }
+
             .switch {
               input:checked + .slider:before {
                 -webkit-transform: translateX(15px);

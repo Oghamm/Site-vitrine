@@ -85,7 +85,7 @@ const Card = (props) => {
                                      />
                                  </a>
 
-                                 <a >
+                                 <a className={"add__btn"}>
                                      <div className="site-item__add" onClick={props.handleAddPage}>
                                          <img
                                              src="/img/with-banner/dashboard/site-item-add.svg"
