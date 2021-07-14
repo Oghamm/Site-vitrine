@@ -220,6 +220,11 @@ const Content = (props) => {
     const location = useLocation();
     const params = new URLSearchParams(location.search);
 
+    const handleShut = () => {
+        console.log("test ferme help");
+        setHelp(false);
+    }
+
     const handleDeco = () => {
         setIsDeco(isDeco => !isDeco);
     }
@@ -527,7 +532,7 @@ const Content = (props) => {
             </div>
         }
 
-            <div className={isDeco ? "container-fluid__opacity":"container-fluid"}>
+            <div className={isDeco ? "container-fluid__opacity":"container-fluid"} >
                 <div className="row main-content">
                     <div className="col-lg-4 col-md-5 bg-white aside">
                         <div className="aside__title">
@@ -1491,7 +1496,7 @@ const Content = (props) => {
                         </div>
                     </div>
 
-                    <div className="col-lg-8 col-md-7 bg-grey content">
+                    <div className="col-lg-8 col-md-7 bg-grey content" >
                         <div className={"shop"} onClick={handleShop}>
                             <img src={"/img/icons/cart.png"}/>
                         </div>
@@ -1811,7 +1816,7 @@ const Content = (props) => {
                             </div>
                         </div>
 
-                        <div className="row top-gap">
+                        <div className="row top-gap" onClick={handleShut}>
 
                             <div className={"content__all-site-items"}>
                                 <ul className="tree horizontal">
