@@ -236,6 +236,9 @@
           margin-bottom: 10px;
           .btn-application {
             position: relative;
+            .hidden:checked + span {
+              color: #ffffff;
+            }
 
             &--price {
               font-size: 8px;
@@ -269,7 +272,7 @@
       &__complementary {
         margin-top: 65px;
 
-        .all-btn-choices .btn-choice.selected {
+        .all-btn-choices .btn-choice.rounded.selected {
           background: rgba(111, 147, 244, 0.26);
           color: #6F93F4;
         }
