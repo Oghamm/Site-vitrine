@@ -21,8 +21,8 @@ const Card = (props) => {
     }
     const handleSwitch = () => {
         if (currentState === "ACTIVE") {
-            props.deletePageData(props.id);
-            setCurrentState("REMOVED");
+            props.maskPageData(props.id);
+            setCurrentState("MASKED");
         }
         else {
             props.activePageData(props.id);
@@ -110,7 +110,7 @@ const Card = (props) => {
                              >
                                  {
                                      !edit ?
-                                         <p className={currentState==="REMOVED" && "removed"} onClick={handleEdit}>{ props.name }</p>
+                                         <p className={currentState==="REMOVED" ? "removed":""} onClick={handleEdit}>{ props.name }</p>
                                          :
                                          <div>
                                              <form onSubmit={e=> handleSubmit(e, props.item)}>
@@ -132,7 +132,7 @@ const Card = (props) => {
 
                                      {
                                          currentState === "ACTIVE" ?
-                                             <a className={"trash"}>
+                                             <a className={"trash"} onClick={()=>props.deletePageData(props.id)}>
                                                  <i className="fas fa-trash-alt"></i>
                                              </a>
                                              :
@@ -414,9 +414,34 @@ const Content = (props) => {
             })
             .then(function(myJson) {
             });
+    }
 
+    const maskPageData = (id) => {
+        let index = data.findIndex((element)=> element.id === id);
+        let newData = _.cloneDeep(data);
+        newData[index].currentState = "MASKED";
+        setData(newData);
+        fetch(`${API}/page`
+            ,{
+                method:"PUT",
+                headers : {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify( {
+                        id: id,
+                        currentState: "MASKED"
 
+                    }
 
+                )
+            }
+        )
+            .then(function(response){
+                return response.json();
+            })
+            .then(function(myJson) {
+            });
     }
 
     const putPageData = (id, name) => {
@@ -1801,12 +1826,13 @@ const Content = (props) => {
 
                                         <ul>
                                             {
-                                                data && data.filter(item => item.path !== "/").map((item) =>
+                                                data && data.filter(item => item.path !== "/").filter(item=>item.currentState !== "REMOVED").map((item) =>
 
                                                             <Card key={item.id} id={item.id} name={item.name.en}
                                                              item={item} putPageData={putPageData}
                                                                   changeName={changeName} deletePageData={deletePageData}
                                                                   data={data} activePageData={activePageData} siteID={siteId}
+                                                                  maskPageData={maskPageData}
                                                             />
 
 
