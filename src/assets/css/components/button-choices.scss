@@ -74,7 +74,9 @@
         }
 
         .hidden:checked + label{
-            color: $primary-color;
+            color: #ffffff;
+            background-color: #6F93F4;
+            border-radius: 5px;
         }
 
         &--title {

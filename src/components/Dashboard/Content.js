@@ -6,6 +6,29 @@ import _ from   "lodash";
 import { useLocation } from "@reach/router";
 
 
+const Integration = (props) => {
+    const [isSelected, setIsSelected] = useState(props.isSelected);
+
+    const handleSelected = () => {
+        setIsSelected(!isSelected);
+    }
+    return (
+        <div className={isSelected ? "btn-more-inte selected" :"btn-more-inte"} onClick={handleSelected}>
+            <div className="btn-more-inte--img">
+                <img
+                    src="/img/with-banner/dashboard/internet.png"
+                    alt=""
+                />
+            </div>
+            <p className="btn-more-inte--title">
+                {props.name}
+            </p>
+            <p className="btn-more-inte--price">+16,00</p>
+        </div>
+    )
+}
+
+
 const Card = (props) => {
     const [edit, setEdit] = useState(false);
     const [name, setName] = useState("");
@@ -1027,108 +1050,14 @@ const Content = (props) => {
                                 isIntegrations &&
                                     <>
                                         <div className="all-btn-more-inte">
-                                            <div className="btn-more-inte selected">
-                                                <div className="btn-more-inte--img">
-                                                    <img
-                                                        src="/img/with-banner/dashboard/internet.png"
-                                                        alt=""
-                                                    />
-                                                </div>
-                                                <p className="btn-more-inte--title">
-                                                    Stripe
-                                                </p>
-                                                <p className="btn-more-inte--price">+16,00</p>
-                                            </div>
-
-                                            <div className="btn-more-inte">
-                                                <div className="btn-more-inte--img">
-                                                    <img
-                                                        src="/img/with-banner/dashboard/internet.png"
-                                                        alt=""
-                                                    />
-                                                </div>
-                                                <p className="btn-more-inte--title">
-                                                    Paypal
-                                                </p>
-                                                <p className="btn-more-inte--price">+16,00</p>
-                                            </div>
-
-                                            <div className="btn-more-inte">
-                                                <div className="btn-more-inte--img">
-                                                    <img
-                                                        src="/img/with-banner/dashboard/internet.png"
-                                                        alt=""
-                                                    />
-                                                </div>
-                                                <p className="btn-more-inte--title">
-                                                    Code Verif Google
-                                                </p>
-                                                <p className="btn-more-inte--price">+16,00</p>
-                                            </div>
-
-                                            <div className="btn-more-inte selected">
-                                                <div className="btn-more-inte--img">
-                                                    <img
-                                                        src="/img/with-banner/dashboard/internet.png"
-                                                        alt=""
-                                                    />
-                                                </div>
-                                                <p className="btn-more-inte--title">
-                                                    Google Analytique
-                                                </p>
-                                                <p className="btn-more-inte--price">+16,00</p>
-                                            </div>
-                                            <div className="btn-more-inte">
-                                                <div className="btn-more-inte--img">
-                                                    <img
-                                                        src="/img/with-banner/dashboard/internet.png"
-                                                        alt=""
-                                                    />
-                                                </div>
-                                                <p className="btn-more-inte--title">
-                                                    Pixel ID Facebook
-                                                </p>
-                                                <p className="btn-more-inte--price">+16,00</p>
-                                            </div>
-
-                                            <div className="btn-more-inte">
-                                                <div className="btn-more-inte--img">
-                                                    <img
-                                                        src="/img/with-banner/dashboard/internet.png"
-                                                        alt=""
-                                                    />
-                                                </div>
-                                                <p className="btn-more-inte--title">
-                                                    Google Adsense
-                                                </p>
-                                                <p className="btn-more-inte--price">+16,00</p>
-                                            </div>
-
-                                            <div className="btn-more-inte">
-                                                <div className="btn-more-inte--img">
-                                                    <img
-                                                        src="/img/with-banner/dashboard/internet.png"
-                                                        alt=""
-                                                    />
-                                                </div>
-                                                <p className="btn-more-inte--title">
-                                                    Sitemap
-                                                </p>
-                                                <p className="btn-more-inte--price">+16,00</p>
-                                            </div>
-
-                                            <div className="btn-more-inte">
-                                                <div className="btn-more-inte--img">
-                                                    <img
-                                                        src="/img/with-banner/dashboard/internet.png"
-                                                        alt=""
-                                                    />
-                                                </div>
-                                                <p className="btn-more-inte--title">
-                                                    Robots.txt
-                                                </p>
-                                                <p className="btn-more-inte--price">+16,00</p>
-                                            </div>
+                                            <Integration isSelected={true} name={"Stripe"}/>
+                                            <Integration isSelected={false} name={"Paypal"}/>
+                                            <Integration isSelected={true} name={"Code Verif Google"}/>
+                                            <Integration isSelected={false} name={"Google Analytique"}/>
+                                            <Integration isSelected={false} name={"Pixel ID Facebook"}/>
+                                            <Integration isSelected={false} name={"Google Adsense"}/>
+                                            <Integration isSelected={false} name={"Sitemap"}/>
+                                            <Integration isSelected={false} name={"Robots.txt"}/>
                                         </div>
                                         <div className={"information-bloc"}>
                                             <div className={"info-logo"}>
