@@ -57,7 +57,9 @@
 
 }
 
-.all-btn-application {
+
+
+.with-banner.dashboard .main-content .aside__application .all-btn-application {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -73,10 +75,13 @@
             display: none;
         }
 
-        .hidden:checked + label{
+        .hidden:checked + .btn-application--title{
             color: #ffffff;
             background-color: #6F93F4;
             border-radius: 5px;
+        }
+        .hidden:checked ~ .btn-application--price {
+            color: #ffffff;
         }
 
         &--title {

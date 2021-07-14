@@ -250,13 +250,13 @@
               transform: translateY(-50%);
               -webkit-transform: translateY(-50%);
               -ms-transform: translateY(-50%);
+              transition: 0.3s ease;
             }
 
             &--title {
               padding-left: 15px;
               text-align: left;
-
-
+              transition: 0.3s ease;
             }
           }
         }
