@@ -45,7 +45,7 @@ const Card = (props) => {
     const handleSwitch = () => {
         if (currentState === "ACTIVE") {
             props.maskPageData(props.id);
-            setCurrentState("MASKED");
+            setCurrentState("DISABLED");
         }
         else {
             props.activePageData(props.id);
@@ -244,7 +244,6 @@ const Content = (props) => {
     const params = new URLSearchParams(location.search);
 
     const handleShut = () => {
-        console.log("test ferme help");
         setHelp(false);
     }
 
@@ -447,7 +446,7 @@ const Content = (props) => {
     const maskPageData = (id) => {
         let index = data.findIndex((element)=> element.id === id);
         let newData = _.cloneDeep(data);
-        newData[index].currentState = "MASKED";
+        newData[index].currentState = "DISABLED";
         setData(newData);
         fetch(`${API}/page`
             ,{
@@ -458,7 +457,7 @@ const Content = (props) => {
                 },
                 body: JSON.stringify( {
                         id: id,
-                        currentState: "MASKED"
+                        currentState: "DISABLED"
 
                     }
 
