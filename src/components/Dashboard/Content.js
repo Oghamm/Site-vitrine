@@ -1,10 +1,31 @@
 import React, {useEffect, useState} from "react";
 import Link from "gatsby-link";
-import {AxiosInstance as axios} from "axios";
 import { API_ENDPOINT } from '../../config/index';
 import _ from   "lodash";
 import { useLocation } from "@reach/router";
 
+
+const Application = (props) => {
+
+    return(
+        <div className={"btn-application "+props.title} onMouseEnter={()=>props.handleHover(props.index)} onMouseLeave={()=>props.handleHover(-1)}>
+            <input
+                type="checkbox"
+                className="hidden"
+                name="application-btn"
+                id={"application-"+ props.title}
+            />
+            <label
+                className="btn-application--title"
+                htmlFor={"application-"+ props.title}
+            >{props.title}</label
+            >
+            <span className="btn-application--price"
+            >{props.price}</span
+            >
+        </div>
+    )
+}
 
 const Integration = (props) => {
     const [isSelected, setIsSelected] = useState(props.isSelected);
@@ -23,7 +44,7 @@ const Integration = (props) => {
             <p className="btn-more-inte--title">
                 {props.name}
             </p>
-            <p className="btn-more-inte--price">+16,00</p>
+            <p className="btn-more-inte--price">+ {props.price}</p>
         </div>
     )
 }
@@ -213,6 +234,7 @@ const Card = (props) => {
     )
 }
 
+
 const Content = (props) => {
     const [multilangue, setMultilangue] = useState(true);
     const [theme, setTheme] = useState(true);
@@ -224,6 +246,7 @@ const Content = (props) => {
     const [translate, setTranslate] = useState(false);
     const [isOpen, setIsOpen] = useState(false)
     const [data,setData]=useState([]);
+    const [dataOptions, setDataOptions] = useState([]);
     const[addOpen, setAddOpen] = useState(false);
     const [name, setName] = useState("");
     const [model, setModel] = useState("");
@@ -233,6 +256,8 @@ const Content = (props) => {
     const [isIntegrations, setIsIntegrations] = useState(true);
     const [isServices, setIsServices] = useState(true);
     const [isDeco, setIsDeco] = useState(false);
+    const [applicationHover, setApplicationHover] = useState(-1);
+    const [offerSelected, setOfferSelected] = useState("Starter");
     // templateId = "9baf9a1c-4344-48a2-b694-760ded75a7e8"
     // siteId = "4f4fc83d-f3e1-4607-9362-ff70ef5ec07e"
 
@@ -242,6 +267,10 @@ const Content = (props) => {
 
     const location = useLocation();
     const params = new URLSearchParams(location.search);
+
+    const handleOfferSelected = (e) => {
+        setOfferSelected(e.target.value);
+    }
 
     const handleShut = () => {
         setHelp(false);
@@ -253,6 +282,7 @@ const Content = (props) => {
 
     const handleOffer = () => {
         setIsOffer(isOffer => ! isOffer);
+        console.log(dataOptions["additional-services"]);
     }
 
     const handleHosting = () => {
@@ -330,6 +360,18 @@ const Content = (props) => {
         postPageData();
         handleAddPage();
     }
+
+    const getOptionsData = () => {
+        fetch('https://d2aj77ctwlp2w6.cloudfront.net/FR/dashboard.json')
+            .then(function (response) {
+                return response.json();
+            })
+            .then(function (myJson) {
+                setDataOptions(myJson);
+                console.log(myJson);
+            })
+    }
+
 
 
     const getTemplateId = () => {
@@ -531,7 +573,8 @@ const Content = (props) => {
     }
 
     useEffect(()=>{
-        getTemplateId()
+        getOptionsData();
+        getTemplateId();
     },[])
 
 
@@ -587,16 +630,16 @@ const Content = (props) => {
                                     <div
                                         className="projects-and-models__choice form-group select"
                                     >
-                                        <select className="form-control">
-                                            <option selected
-                                            >Starter
+                                        <select className="form-control" value={offerSelected} onChange={(e)=>handleOfferSelected(e)}>
+                                            <option selected value={dataOptions.offers && dataOptions.offers[0].title}
+                                            >{dataOptions.offers && dataOptions.offers[0].title}
                                             </option
                                             >
-                                            <option>
-                                                Basic
+                                            <option value={dataOptions.offers && dataOptions.offers[1].title}>
+                                                {dataOptions.offers && dataOptions.offers[1].title}
                                             </option>
-                                            <option>
-                                                Premium
+                                            <option value={dataOptions.offers && dataOptions.offers[2].title}>
+                                                {dataOptions.offers && dataOptions.offers[2].title}
                                             </option>
                                         </select>
                                     </div>
@@ -604,10 +647,34 @@ const Content = (props) => {
                                         <div className={"info-logo"}>
                                             <img src={"/img/with-banner/models/info.svg"}/>
                                         </div>
+                                        {dataOptions.offers &&  offerSelected ===  dataOptions.offers[0].title &&
                                         <div className={"info-text"}>
-                                            Bloc information sur le service choisis Bloc information sur le service
-                                            Information sur le service choisis Bloc information
-                                        </div>
+                                            {dataOptions.offers[0].description.map((item)=>(
+                                                <>
+                                                    {item}
+                                                    <br/>
+                                                </>
+                                                )
+                                            )}
+                                        </div>}
+                                        {dataOptions.offers &&  offerSelected ===  dataOptions.offers[1].title &&
+                                        <div className={"info-text"}>
+                                            {dataOptions.offers[1].description.map((item)=>(
+                                                <>
+                                                    {item}
+                                                    <br/>
+                                                </>
+                                            ))}
+                                        </div>}
+                                        {dataOptions.offers &&  offerSelected ===  dataOptions.offers[2].title &&
+                                        <div className={"info-text"}>
+                                            {dataOptions.offers[2].description.map((item)=>(
+                                                <>
+                                                    {item}
+                                                    <br/>
+                                                </>
+                                            ))}
+                                        </div>}
 
                                     </div>
                                 </>
@@ -708,319 +775,25 @@ const Content = (props) => {
                             {isApplications &&
                             <>
                                 <div className="all-btn-application">
-                                    <div className="btn-application">
-                                        <input
-                                            type="checkbox"
-                                            className="hidden"
-                                            name="application-btn"
-                                            id="application-1"
-                                        />
-                                        <label
-                                            className="btn-application--title"
-                                            htmlFor="application-1"
-                                        >Reservation</label
-                                        >
-                                        <span className="btn-application--price"
-                                        >4,90</span
-                                        >
-                                    </div>
+                                    {dataOptions.applications && dataOptions.applications.map((item, index)=>
+                                        <Application title={item.title} price={item.price} key={item.key} handleHover={setApplicationHover}
+                                        index={index}/>
 
-                                    <div className="btn-application">
-                                        <input
-                                            type="checkbox"
-                                            className="hidden"
-                                            name="application-btn"
-                                            id="application-2"
-                                        />
-                                        <label
-                                            className="btn-application--title"
-                                            htmlFor="application-2"
-                                        >Membres</label
-                                        >
-                                        <span className="btn-application--price"
-                                        >Offert</span
-                                        >
-                                    </div>
+                                    )}
 
-                                    <div className="btn-application">
-                                        <input
-                                            type="checkbox"
-                                            className="hidden"
-                                            name="application-btn"
-                                            id="application-3"
-                                        />
-                                        <label
-                                            className="btn-application--title"
-                                            htmlFor="application-3"
-                                        >Formulaires</label
-                                        >
-                                        <span className="btn-application--price"
-                                        >Offert</span
-                                        >
-                                    </div>
 
-                                    <div className="btn-application">
-                                        <input
-                                            type="checkbox"
-                                            className="hidden"
-                                            name="application-btn"
-                                            id="application-4"
-                                        />
-                                        <label
-                                            className="btn-application--title"
-                                            htmlFor="application-4"
-                                        >Chat</label
-                                        >
-                                        <span className="btn-application--price"
-                                        >Offert</span
-                                        >
-                                    </div>
-
-                                    <div className="btn-application">
-                                        <input
-                                            type="checkbox"
-                                            className="hidden"
-                                            name="application-btn"
-                                            id="application-5"
-                                        />
-                                        <label
-                                            className="btn-application--title"
-                                            htmlFor="application-5"
-                                        >Newsletter</label
-                                        >
-                                        <span className="btn-application--price"
-                                        >Offert</span
-                                        >
-                                    </div>
-
-                                    <div className="btn-application">
-                                        <input
-                                            type="checkbox"
-                                            className="hidden"
-                                            name="application-btn"
-                                            id="application-6"
-                                        />
-                                        <label
-                                            className="btn-application--title"
-                                            htmlFor="application-6"
-                                        >Devis</label
-                                        >
-                                        <span className="btn-application--price"
-                                        >4,90</span
-                                        >
-                                    </div>
-
-                                    <div className="btn-application">
-                                        <input
-                                            type="checkbox"
-                                            className="hidden"
-                                            name="application-btn"
-                                            id="application-7"
-                                        />
-                                        <label
-                                            className="btn-application--title"
-                                            htmlFor="application-7"
-                                        >Facture</label
-                                        >
-                                        <span className="btn-application--price"
-                                        >4,90</span
-                                        >
-                                    </div>
-
-                                    <div className="btn-application">
-                                        <input
-                                            type="checkbox"
-                                            className="hidden"
-                                            name="application-btn"
-                                            id="application-8"
-                                        />
-                                        <label
-                                            className="btn-application--title"
-                                            htmlFor="application-8"
-                                        >Blog</label
-                                        >
-                                        <span className="btn-application--price"
-                                        >Offert</span
-                                        >
-                                    </div>
-
-                                    <div className="btn-application">
-                                        <input
-                                            type="checkbox"
-                                            className="hidden"
-                                            name="application-btn"
-                                            id="application-9"
-                                        />
-                                        <label
-                                            className="btn-application--title"
-                                            htmlFor="application-9"
-                                        >Restaurant</label
-                                        >
-                                        <span className="btn-application--price"
-                                        >Offert</span
-                                        >
-                                    </div>
-
-                                    <div className="btn-application">
-                                        <input
-                                            type="checkbox"
-                                            className="hidden"
-                                            name="application-btn"
-                                            id="application-10"
-                                        />
-                                        <label
-                                            className="btn-application--title"
-                                            htmlFor="application-10"
-                                        >Quintyss-event</label
-                                        >
-                                        <span className="btn-application--price"
-                                        >Offert</span
-                                        >
-                                    </div>
-
-                                    <div className="btn-application">
-                                        <input
-                                            type="checkbox"
-                                            className="hidden"
-                                            name="application-btn"
-                                            id="application-11"
-                                        />
-                                        <label
-                                            className="btn-application--title"
-                                            htmlFor="application-11"
-                                        >Application</label
-                                        >
-                                        <span className="btn-application--price"
-                                        >Offert</span
-                                        >
-                                    </div>
-
-                                    <div className="btn-application">
-                                        <input
-                                            type="checkbox"
-                                            className="hidden"
-                                            name="application-btn"
-                                            id="application-12"
-                                        />
-                                        <label
-                                            className="btn-application--title"
-                                            htmlFor="application-12"
-                                        >Application</label
-                                        >
-                                        <span className="btn-application--price"
-                                        >Offert</span
-                                        >
-                                    </div>
-
-                                    <div className="btn-application">
-                                        <input
-                                            type="checkbox"
-                                            className="hidden"
-                                            name="application-btn"
-                                            id="application-13"
-                                        />
-                                        <label
-                                            className="btn-application--title"
-                                            htmlFor="application-13"
-                                        >Application</label
-                                        >
-                                        <span className="btn-application--price"
-                                        >4,90</span
-                                        >
-                                    </div>
-
-                                    <div className="btn-application">
-                                        <input
-                                            type="checkbox"
-                                            className="hidden"
-                                            name="application-btn"
-                                            id="application-14"
-                                        />
-                                        <label
-                                            className="btn-application--title"
-                                            htmlFor="application-14"
-                                        >Application</label
-                                        >
-                                        <span className="btn-application--price"
-                                        >4,90</span
-                                        >
-                                    </div>
-
-                                    <div className="btn-application">
-                                        <input
-                                            type="checkbox"
-                                            className="hidden"
-                                            name="application-btn"
-                                            id="application-15"
-                                        />
-                                        <label
-                                            className="btn-application--title"
-                                            htmlFor="application-15"
-                                        >Application</label
-                                        >
-                                        <span className="btn-application--price"
-                                        >Offert</span
-                                        >
-                                    </div>
-
-                                    <div className="btn-application">
-                                        <input
-                                            type="checkbox"
-                                            className="hidden"
-                                            name="application-btn"
-                                            id="application-16"
-                                        />
-                                        <label
-                                            className="btn-application--title"
-                                            htmlFor="application-16"
-                                        >Application</label
-                                        >
-                                        <span className="btn-application--price"
-                                        >4,90</span
-                                        >
-                                    </div>
-
-                                    <div className="btn-application">
-                                        <input
-                                            type="checkbox"
-                                            className="hidden"
-                                            name="application-btn"
-                                            id="application-17"
-                                        />
-                                        <label
-                                            className="btn-application--title"
-                                            htmlFor="application-17"
-                                        >Application</label
-                                        >
-                                        <span className="btn-application--price"
-                                        >4,90</span
-                                        >
-                                    </div>
-
-                                    <div className="btn-application">
-                                        <input
-                                            type="checkbox"
-                                            className="hidden"
-                                            name="application-btn"
-                                            id="application-18"
-                                        />
-                                        <label
-                                            className="btn-application--title"
-                                            htmlFor="application-18"
-                                        >Application</label
-                                        >
-                                        <span className="btn-application--price"
-                                        >Offert</span
-                                        >
-                                    </div>
                                 </div>
                                 <div className={"information-bloc"}>
                                     <div className={"info-logo"}>
                                         <img src={"/img/with-banner/models/info.svg"}/>
                                     </div>
                                     <div className={"info-text"}>
-                                        Bloc information sur le service choisis Bloc information sur le service
-                                        Information sur le service choisis Bloc information
+                                        {dataOptions.applications && dataOptions.applications.map((item, index)=>
+
+                                            <p className={"complementary-box " +item.title} style={{display : (applicationHover=== index ? "block" : "none")}}>
+                                                {item.description}
+                                            </p>
+                                        )}
                                     </div>
 
                                 </div>
@@ -1049,14 +822,9 @@ const Content = (props) => {
                                 isIntegrations &&
                                     <>
                                         <div className="all-btn-more-inte">
-                                            <Integration isSelected={true} name={"Stripe"}/>
-                                            <Integration isSelected={false} name={"Paypal"}/>
-                                            <Integration isSelected={true} name={"Code Verif Google"}/>
-                                            <Integration isSelected={false} name={"Google Analytique"}/>
-                                            <Integration isSelected={false} name={"Pixel ID Facebook"}/>
-                                            <Integration isSelected={false} name={"Google Adsense"}/>
-                                            <Integration isSelected={false} name={"Sitemap"}/>
-                                            <Integration isSelected={false} name={"Robots.txt"}/>
+                                            {dataOptions["additional-integrations"] && dataOptions["additional-integrations"].map((item)=>
+                                                <Integration isSelected={false} name={item.title} price={item.price}/>
+                                            )}
                                         </div>
                                         <div className={"information-bloc"}>
                                             <div className={"info-logo"}>
@@ -1365,48 +1133,40 @@ const Content = (props) => {
                                                 className="complementary-box__bloc graph"
                                             >
                                                 <p className="complementary-box__title">
-                                                    Graphisme
+                                                    {dataOptions["additional-services"] && dataOptions["additional-services"][0].title}
                                                 </p>
                                                 <p className="complementary-box__text">
-                                                    Texte de norme pour l’intégration du
-                                                    modèle Profitez de l’expertise de notre
-                                                    équipe.
+                                                    {dataOptions["additional-services"] && dataOptions["additional-services"][0].description}
                                                 </p>
                                             </div>
                                             <div
                                                 className="complementary-box__bloc migr"
                                             >
                                                 <p className="complementary-box__title">
-                                                    Migration
+                                                    {dataOptions["additional-services"] && dataOptions["additional-services"][1].title}
                                                 </p>
                                                 <p className="complementary-box__text">
-                                                    Texte de norme pour l’intégration du
-                                                    modèle Profitez de l’expertise de notre
-                                                    équipe.
+                                                    {dataOptions["additional-services"] && dataOptions["additional-services"][1].description}
                                                 </p>
                                             </div>
                                             <div
                                                 className="complementary-box__bloc redac"
                                             >
                                                 <p className="complementary-box__title">
-                                                    Rédaction
+                                                    {dataOptions["additional-services"] && dataOptions["additional-services"][2].title}
                                                 </p>
                                                 <p className="complementary-box__text">
-                                                    Texte de norme pour l’intégration du
-                                                    modèle Profitez de l’expertise de notre
-                                                    équipe.
+                                                    {dataOptions["additional-services"] && dataOptions["additional-services"][2].description}
                                                 </p>
                                             </div>
                                             <div
                                                 className="complementary-box__bloc trad"
                                             >
                                                 <p className="complementary-box__title">
-                                                    Traduction
+                                                    {dataOptions["additional-services"] && dataOptions["additional-services"][3].title}
                                                 </p>
                                                 <p className="complementary-box__text">
-                                                    Texte de norme pour l’intégration du
-                                                    modèle Profitez de l’expertise de notre
-                                                    équipe.
+                                                    {dataOptions["additional-services"] && dataOptions["additional-services"][3].description}
                                                 </p>
                                             </div>
                                         </div>
