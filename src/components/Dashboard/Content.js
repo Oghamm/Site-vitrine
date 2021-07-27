@@ -34,7 +34,8 @@ const Integration = (props) => {
         setIsSelected(!isSelected);
     }
     return (
-        <div className={isSelected ? "btn-more-inte selected" :"btn-more-inte"} onClick={handleSelected}>
+        <div className={isSelected ? "btn-more-inte selected" :"btn-more-inte"} onClick={handleSelected} onMouseEnter={()=>props.handleHover(props.index)}
+        onMouseLeave={()=>props.handleHover(-1)}>
             <div className="btn-more-inte--img">
                 <img
                     src="/img/with-banner/dashboard/internet.png"
@@ -257,6 +258,7 @@ const Content = (props) => {
     const [isServices, setIsServices] = useState(true);
     const [isDeco, setIsDeco] = useState(false);
     const [applicationHover, setApplicationHover] = useState(-1);
+    const [integrationHover, setIntegrationHover] = useState(-1);
     const [offerSelected, setOfferSelected] = useState("Starter");
     // templateId = "9baf9a1c-4344-48a2-b694-760ded75a7e8"
     // siteId = "4f4fc83d-f3e1-4607-9362-ff70ef5ec07e"
@@ -822,8 +824,8 @@ const Content = (props) => {
                                 isIntegrations &&
                                     <>
                                         <div className="all-btn-more-inte">
-                                            {dataOptions["additional-integrations"] && dataOptions["additional-integrations"].map((item)=>
-                                                <Integration isSelected={false} name={item.title} price={item.price}/>
+                                            {dataOptions["additional-integrations"] && dataOptions["additional-integrations"].map((item, index)=>
+                                                <Integration isSelected={false} index={index} name={item.title} price={item.price} handleHover={setIntegrationHover}/>
                                             )}
                                         </div>
                                         <div className={"information-bloc"}>
@@ -831,8 +833,12 @@ const Content = (props) => {
                                                 <img src={"/img/with-banner/models/info.svg"}/>
                                             </div>
                                             <div className={"info-text"}>
-                                                Bloc information sur le service choisis Bloc information sur le service
-                                                Information sur le service choisis Bloc information
+                                                {dataOptions["additional-integrations"] && dataOptions["additional-integrations"].map((item, index)=>
+
+                                                    <p className={"complementary-box " +item.title} style={{display : (integrationHover=== index ? "block" : "none")}}>
+                                                        {item.description}
+                                                    </p>
+                                                )}
                                             </div>
 
                                         </div>
