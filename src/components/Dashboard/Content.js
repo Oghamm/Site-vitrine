@@ -796,6 +796,7 @@ const Content = (props) => {
                                                 {item.description}
                                             </p>
                                         )}
+                                        <p className={"complementary-box"} style={{display:(applicationHover === -1 ? "block" : "none")}}>Activer une ou plusieurs applications disponibles dans ce modèle.</p>
                                     </div>
 
                                 </div>
@@ -839,6 +840,7 @@ const Content = (props) => {
                                                         {item.description}
                                                     </p>
                                                 )}
+                                                <p className={"complementary-box"} style={{display:(integrationHover === -1 ? "block" : "none")}}>Activer une ou plusieurs integrations disponibles dans ce modèle.</p>
                                             </div>
 
                                         </div>
