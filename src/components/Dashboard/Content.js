@@ -8,8 +8,24 @@ import {validate} from "graphql";
 
 const Application = (props) => {
 
+    const [isActive, setIsActive] = useState(true);
+
+    const handleActive = () => {
+        if (isActive === true)  {
+            props.handleNbApplications(1);
+            setIsActive(false);
+        }
+        else {
+            props.handleNbApplications(-1);
+            setIsActive(true);
+        }
+    }
+
+
+
     return(
-        <div className={"btn-application "+props.title} onMouseEnter={()=>props.handleHover(props.index)} onMouseLeave={()=>props.handleHover(-1)}>
+        <div className={"btn-application "+props.title} onMouseEnter={()=>props.handleHover(props.index)} onMouseLeave={()=>props.handleHover(-1)}
+        >
             <input
                 type="checkbox"
                 className="hidden"
@@ -19,6 +35,7 @@ const Application = (props) => {
             <label
                 className="btn-application--title"
                 htmlFor={"application-"+ props.title}
+                onClick={handleActive}
             >{props.title}</label
             >
             <span className="btn-application--price"
@@ -274,6 +291,11 @@ const Content = (props) => {
 
     const handleOfferSelected = (e) => {
         setOfferSelected(e.target.value);
+    }
+
+    const handleNbApplications = (nb) => {
+        console.log(nb);
+        setNbApplications(nbApplications=> nbApplications + nb);
     }
 
     const handleShut = () => {
@@ -784,7 +806,7 @@ const Content = (props) => {
                                 <div className="all-btn-application">
                                     {dataOptions.applications && dataOptions.applications.content.map((item, index)=>
                                         <Application title={item.title} price={item.price} key={item.key} handleHover={setApplicationHover}
-                                        index={index}/>
+                                        index={index} handleNbApplications={handleNbApplications}/>
 
                                     )}
 
