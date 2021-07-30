@@ -3,6 +3,7 @@ import Link from "gatsby-link";
 import { API_ENDPOINT } from '../../config/index';
 import _ from   "lodash";
 import { useLocation } from "@reach/router";
+import {validate} from "graphql";
 
 
 const Application = (props) => {
@@ -260,6 +261,7 @@ const Content = (props) => {
     const [applicationHover, setApplicationHover] = useState(-1);
     const [integrationHover, setIntegrationHover] = useState(-1);
     const [offerSelected, setOfferSelected] = useState("Starter");
+    const [nbApplications, setNbApplications] = useState(0);
     // templateId = "9baf9a1c-4344-48a2-b694-760ded75a7e8"
     // siteId = "4f4fc83d-f3e1-4607-9362-ff70ef5ec07e"
 
@@ -284,7 +286,7 @@ const Content = (props) => {
 
     const handleOffer = () => {
         setIsOffer(isOffer => ! isOffer);
-        console.log(dataOptions["additional-services"]);
+        console.log(dataOptions);
     }
 
     const handleHosting = () => {
@@ -364,7 +366,7 @@ const Content = (props) => {
     }
 
     const getOptionsData = () => {
-        fetch('https://d2aj77ctwlp2w6.cloudfront.net/FR/dashboard.json')
+        fetch('https://d2aj77ctwlp2w6.cloudfront.net/FR/latest/dashboard.json')
             .then(function (response) {
                 return response.json();
             })
@@ -615,7 +617,7 @@ const Content = (props) => {
                             <div className={"mb-3"}>
                                 <h6 className={"aside__section-title"}>
                                     <i className="fas fa-trophy"></i>
-                                    Mon Offre
+                                    {dataOptions.offers && dataOptions.offers.title}
 
                                     {isOffer ?
                                         <img src={"/img/with-banner/dashboard/tab.svg"} className={"tab"}
@@ -633,15 +635,15 @@ const Content = (props) => {
                                         className="projects-and-models__choice form-group select"
                                     >
                                         <select className="form-control" value={offerSelected} onChange={(e)=>handleOfferSelected(e)}>
-                                            <option selected value={dataOptions.offers && dataOptions.offers[0].title}
-                                            >{dataOptions.offers && dataOptions.offers[0].title}
+                                            <option selected value={dataOptions.offers && dataOptions.offers.content[0].title}
+                                            >{dataOptions.offers && dataOptions.offers.content[0].title}
                                             </option
                                             >
-                                            <option value={dataOptions.offers && dataOptions.offers[1].title}>
-                                                {dataOptions.offers && dataOptions.offers[1].title}
+                                            <option value={dataOptions.offers && dataOptions.offers.content[1].title}>
+                                                {dataOptions.offers && dataOptions.offers.content[1].title}
                                             </option>
-                                            <option value={dataOptions.offers && dataOptions.offers[2].title}>
-                                                {dataOptions.offers && dataOptions.offers[2].title}
+                                            <option value={dataOptions.offers && dataOptions.offers.content[2].title}>
+                                                {dataOptions.offers && dataOptions.offers.content[2].title}
                                             </option>
                                         </select>
                                     </div>
@@ -649,9 +651,10 @@ const Content = (props) => {
                                         <div className={"info-logo"}>
                                             <img src={"/img/with-banner/models/info.svg"}/>
                                         </div>
-                                        {dataOptions.offers &&  offerSelected ===  dataOptions.offers[0].title &&
+                                        {dataOptions.offers &&  offerSelected ===  dataOptions.offers.content[0].title &&
                                         <div className={"info-text"}>
-                                            {dataOptions.offers[0].description.map((item)=>(
+                                            {dataOptions.offers.content[0].price} € <br/>
+                                            {dataOptions.offers.content[0].description.map((item)=>(
                                                 <>
                                                     {item}
                                                     <br/>
@@ -659,18 +662,20 @@ const Content = (props) => {
                                                 )
                                             )}
                                         </div>}
-                                        {dataOptions.offers &&  offerSelected ===  dataOptions.offers[1].title &&
+                                        {dataOptions.offers &&  offerSelected ===  dataOptions.offers.content[1].title &&
                                         <div className={"info-text"}>
-                                            {dataOptions.offers[1].description.map((item)=>(
+                                            {dataOptions.offers.content[1].price}
+                                            {dataOptions.offers.content[1].description.map((item)=>(
                                                 <>
                                                     {item}
                                                     <br/>
                                                 </>
                                             ))}
                                         </div>}
-                                        {dataOptions.offers &&  offerSelected ===  dataOptions.offers[2].title &&
+                                        {dataOptions.offers &&  offerSelected ===  dataOptions.offers.content[2].title &&
                                         <div className={"info-text"}>
-                                            {dataOptions.offers[2].description.map((item)=>(
+                                            {dataOptions.offers.content[2].price}
+                                            {dataOptions.offers.content[2].description.map((item)=>(
                                                 <>
                                                     {item}
                                                     <br/>
@@ -691,7 +696,7 @@ const Content = (props) => {
                                         src="/img/with-banner/dashboard/host.svg"
                                         className="aside__section-img"
                                     />
-                                    Hébergement
+                                    {dataOptions.hosting && dataOptions.hosting.title}
                                     {isHosting ? <img src={"/img/with-banner/dashboard/tab.svg"} className={"tab"}
                                         onClick={handleHosting}/>
                                     :
@@ -703,7 +708,7 @@ const Content = (props) => {
                             {isHosting &&
                             <>
                                 <label className="input-radio"
-                                >Hébergement dans le cloud
+                                >{dataOptions.hosting && dataOptions.hosting.content[0].title}
                                     <input
                                         type="radio"
                                         name="host"
@@ -712,12 +717,12 @@ const Content = (props) => {
                                 </label>
 
                                 <label className="input-radio"
-                                >Enregistrer nom de domaine
+                                >{dataOptions.hosting && dataOptions.hosting.content[1].title}
                                     <input type="radio" name="host"/>
                                     <span className="checkmark"/>
                                 </label>
                                 <label className="input-radio"
-                                >Transférer nom de domaine
+                                >{dataOptions.hosting && dataOptions.hosting.content[2].title}
                                     <input type="radio" name="host"/>
                                     <span className="checkmark"/>
                                 </label>
@@ -732,20 +737,20 @@ const Content = (props) => {
                                                 className="form-control"
                                             />
                                         </div>
-                                        <a href="" className="btn btn-primary ml-3">Valider</a>
+                                        <a href="" className="btn btn-primary ml-3">{dataOptions.hosting && dataOptions.hosting.strings["validate-btn"]}</a>
                                     </div>
 
                                 </form>
                                 <div className={"flex-container"}>
                                     <img src={"/img/with-banner/dashboard/check.svg"}/>
                                     <p className={"check__text"}>
-                                        Disponible pour 39,90€
+                                        {dataOptions.hosting && dataOptions.hosting.strings["available-for"]}
                                     </p>
                                 </div>
                                 <div className={"flex-container false"}>
                                     <i className="fas fa-times"></i>
                                     <p className={"false__text"}>
-                                        Non disponible
+                                        {dataOptions.hosting && dataOptions.hosting.strings.unavailable}
                                     </p>
                                 </div>
                             </>
@@ -761,9 +766,9 @@ const Content = (props) => {
                                         src="/img/with-banner/dashboard/application.svg"
                                         className="aside__section-img"
                                     />
-                                    Applications
+                                    {dataOptions.applications && dataOptions.applications.title}
                                     <p className={"nb-app"}>
-                                        7 actives
+                                        {nbApplications} {dataOptions.applications && dataOptions.applications.strings.enabled}
                                     </p>
                                     {
                                         isApplications ?
@@ -777,7 +782,7 @@ const Content = (props) => {
                             {isApplications &&
                             <>
                                 <div className="all-btn-application">
-                                    {dataOptions.applications && dataOptions.applications.map((item, index)=>
+                                    {dataOptions.applications && dataOptions.applications.content.map((item, index)=>
                                         <Application title={item.title} price={item.price} key={item.key} handleHover={setApplicationHover}
                                         index={index}/>
 
@@ -790,7 +795,7 @@ const Content = (props) => {
                                         <img src={"/img/with-banner/models/info.svg"}/>
                                     </div>
                                     <div className={"info-text"}>
-                                        {dataOptions.applications && dataOptions.applications.map((item, index)=>
+                                        {dataOptions.applications && dataOptions.applications.content.map((item, index)=>
 
                                             <p className={"complementary-box " +item.title} style={{display : (applicationHover=== index ? "block" : "none")}}>
                                                 {item.description}
@@ -813,7 +818,7 @@ const Content = (props) => {
                                         src="/img/with-banner/dashboard/integration.svg"
                                         className="aside__section-img"
                                     />
-                                    Intégrations supplémentaires
+                                    {dataOptions["additional-integrations"] && dataOptions["additional-integrations"].title}
                                     {isIntegrations ?
                                         <img src={"/img/with-banner/dashboard/tab.svg"} className={"tab"} onClick={handleIntegration}/>
                                     :
@@ -825,7 +830,7 @@ const Content = (props) => {
                                 isIntegrations &&
                                     <>
                                         <div className="all-btn-more-inte">
-                                            {dataOptions["additional-integrations"] && dataOptions["additional-integrations"].map((item, index)=>
+                                            {dataOptions["additional-integrations"] && dataOptions["additional-integrations"].content.map((item, index)=>
                                                 <Integration isSelected={false} index={index} name={item.title} price={item.price} handleHover={setIntegrationHover}/>
                                             )}
                                         </div>
@@ -834,13 +839,13 @@ const Content = (props) => {
                                                 <img src={"/img/with-banner/models/info.svg"}/>
                                             </div>
                                             <div className={"info-text"}>
-                                                {dataOptions["additional-integrations"] && dataOptions["additional-integrations"].map((item, index)=>
+                                                {dataOptions["additional-integrations"] && dataOptions["additional-integrations"].content.map((item, index)=>
 
                                                     <p className={"complementary-box " +item.title} style={{display : (integrationHover=== index ? "block" : "none")}}>
                                                         {item.description}
                                                     </p>
                                                 )}
-                                                <p className={"complementary-box"} style={{display:(integrationHover === -1 ? "block" : "none")}}>Activer une ou plusieurs integrations disponibles dans ce modèle.</p>
+                                                <p className={"complementary-box"} style={{display:(integrationHover === -1 ? "block" : "none")}}>{dataOptions["additional-integrations"] && dataOptions["additional-integrations"].strings["info-enable-available-apps"]}.</p>
                                             </div>
 
                                         </div>
@@ -860,7 +865,7 @@ const Content = (props) => {
                                         src="/img/with-banner/dashboard/complementary.svg"
                                         className="aside__section-img"
                                     />
-                                    Services complémentaires
+                                    {dataOptions["additional-services"] && dataOptions["additional-services"].title}
                                     {isServices ?
                                         <img src={"/img/with-banner/dashboard/tab.svg"} className={"tab"} onClick={handleService}/>
                                         :
@@ -1141,40 +1146,40 @@ const Content = (props) => {
                                                 className="complementary-box__bloc graph"
                                             >
                                                 <p className="complementary-box__title">
-                                                    {dataOptions["additional-services"] && dataOptions["additional-services"][0].title}
+                                                    {dataOptions["additional-services"] && dataOptions["additional-services"].content[0].title}
                                                 </p>
                                                 <p className="complementary-box__text">
-                                                    {dataOptions["additional-services"] && dataOptions["additional-services"][0].description}
+                                                    {dataOptions["additional-services"] && dataOptions["additional-services"].content[0].description}
                                                 </p>
                                             </div>
                                             <div
                                                 className="complementary-box__bloc migr"
                                             >
                                                 <p className="complementary-box__title">
-                                                    {dataOptions["additional-services"] && dataOptions["additional-services"][1].title}
+                                                    {dataOptions["additional-services"] && dataOptions["additional-services"].content[1].title}
                                                 </p>
                                                 <p className="complementary-box__text">
-                                                    {dataOptions["additional-services"] && dataOptions["additional-services"][1].description}
+                                                    {dataOptions["additional-services"] && dataOptions["additional-services"].content[1].description}
                                                 </p>
                                             </div>
                                             <div
                                                 className="complementary-box__bloc redac"
                                             >
                                                 <p className="complementary-box__title">
-                                                    {dataOptions["additional-services"] && dataOptions["additional-services"][2].title}
+                                                    {dataOptions["additional-services"] && dataOptions["additional-services"].content[2].title}
                                                 </p>
                                                 <p className="complementary-box__text">
-                                                    {dataOptions["additional-services"] && dataOptions["additional-services"][2].description}
+                                                    {dataOptions["additional-services"] && dataOptions["additional-services"].content[2].description}
                                                 </p>
                                             </div>
                                             <div
                                                 className="complementary-box__bloc trad"
                                             >
                                                 <p className="complementary-box__title">
-                                                    {dataOptions["additional-services"] && dataOptions["additional-services"][3].title}
+                                                    {dataOptions["additional-services"] && dataOptions["additional-services"].content[3].title}
                                                 </p>
                                                 <p className="complementary-box__text">
-                                                    {dataOptions["additional-services"] && dataOptions["additional-services"][3].description}
+                                                    {dataOptions["additional-services"] && dataOptions["additional-services"].content[3].description}
                                                 </p>
                                             </div>
                                         </div>
@@ -1267,7 +1272,7 @@ const Content = (props) => {
                                             <>
                                                 <div className={"little-box"}>
                                                     <div className={"title"}>
-                                                        Multilingue
+                                                        {dataOptions.hosting && dataOptions.hosting.multilingual.title}
                                                         <img src={"/img/with-banner/dashboard/tab-2.svg"}
                                                              className={"tab"}
                                                              onClick={handleMultilangue}
@@ -1279,7 +1284,7 @@ const Content = (props) => {
                                             <>
                                                 <div className={"box"}>
                                                     <div className={"title"}>
-                                                        Multilingue
+                                                        {dataOptions.hosting && dataOptions.hosting.multilingual.title}
                                                         <img src={"/img/with-banner/dashboard/tab.svg"}
                                                              className={"tab"}
                                                              onClick={handleMultilangue}
@@ -1331,7 +1336,7 @@ const Content = (props) => {
                                             <>
                                                 <div className={"little-box"}>
                                                     <div className={"title"}>
-                                                        Thème
+                                                        {dataOptions.hosting && dataOptions.hosting.theme.title}
                                                         <img src={"/img/with-banner/dashboard/tab-2.svg"}
                                                              className={"tab"}
                                                              onClick={handleTheme}
@@ -1343,7 +1348,7 @@ const Content = (props) => {
                                             <>
                                                 <div className={"box"}>
                                                     <div className={"title"}>
-                                                        Thème
+                                                        {dataOptions.hosting && dataOptions.hosting.theme.title}
                                                         <img src={"/img/with-banner/dashboard/tab.svg"}
                                                              className={"tab"}
                                                              onClick={handleTheme}
