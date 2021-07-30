@@ -1272,7 +1272,7 @@ const Content = (props) => {
                                             <>
                                                 <div className={"little-box"}>
                                                     <div className={"title"}>
-                                                        {dataOptions.hosting && dataOptions.hosting.multilingual.title}
+                                                        {dataOptions.multilingual && dataOptions.multilingual.title}
                                                         <img src={"/img/with-banner/dashboard/tab-2.svg"}
                                                              className={"tab"}
                                                              onClick={handleMultilangue}
@@ -1284,7 +1284,7 @@ const Content = (props) => {
                                             <>
                                                 <div className={"box"}>
                                                     <div className={"title"}>
-                                                        {dataOptions.hosting && dataOptions.hosting.multilingual.title}
+                                                        {dataOptions.hosting && dataOptions.multilingual.title}
                                                         <img src={"/img/with-banner/dashboard/tab.svg"}
                                                              className={"tab"}
                                                              onClick={handleMultilangue}
@@ -1336,7 +1336,7 @@ const Content = (props) => {
                                             <>
                                                 <div className={"little-box"}>
                                                     <div className={"title"}>
-                                                        {dataOptions.hosting && dataOptions.hosting.theme.title}
+                                                        {dataOptions.theme && dataOptions.theme.title}
                                                         <img src={"/img/with-banner/dashboard/tab-2.svg"}
                                                              className={"tab"}
                                                              onClick={handleTheme}
@@ -1348,7 +1348,7 @@ const Content = (props) => {
                                             <>
                                                 <div className={"box"}>
                                                     <div className={"title"}>
-                                                        {dataOptions.hosting && dataOptions.hosting.theme.title}
+                                                        {dataOptions.theme && dataOptions.theme.title}
                                                         <img src={"/img/with-banner/dashboard/tab.svg"}
                                                              className={"tab"}
                                                              onClick={handleTheme}
