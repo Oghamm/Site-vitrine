@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React, {useEffect, useRef, useState} from "react";
 import Link from "gatsby-link";
 import { API_ENDPOINT } from '../../config/index';
 import _ from   "lodash";
@@ -111,6 +111,11 @@ const Card = (props) => {
         setName(e.target.value);
     }
 
+    const handleAddPage = () => {
+        props.handleAddPage();
+        props.executeScroll();
+    }
+
 
 
      return (
@@ -149,7 +154,7 @@ const Card = (props) => {
                                  </a>
 
                                  <a className={"add__btn"}>
-                                     <div className="site-item__add" onClick={props.handleAddPage}>
+                                     <div className="site-item__add" onClick={handleAddPage}>
                                          <img
                                              src="/img/with-banner/dashboard/site-item-add.svg"
                                              className="site-item__add--img"
@@ -279,6 +284,13 @@ const Content = (props) => {
     const [integrationHover, setIntegrationHover] = useState(-1);
     const [offerSelected, setOfferSelected] = useState("Starter");
     const [nbApplications, setNbApplications] = useState(0);
+
+    const myRef = useRef(null);
+
+    const executeScroll = () => {
+       !addOpen && setTimeout(()=>myRef.current.scrollIntoView(), 100);
+    };
+
     // templateId = "9baf9a1c-4344-48a2-b694-760ded75a7e8"
     // siteId = "4f4fc83d-f3e1-4607-9362-ff70ef5ec07e"
 
@@ -308,7 +320,6 @@ const Content = (props) => {
 
     const handleOffer = () => {
         setIsOffer(isOffer => ! isOffer);
-        console.log(dataOptions);
     }
 
     const handleHosting = () => {
@@ -1548,7 +1559,7 @@ const Content = (props) => {
                                             <Card key={item.id} id={item.id} name={item.name.en}
                                                    item={item}  putPageData={putPageData}
                                                    add={true} changeName={changeName} handleAddPage={handleAddPage}
-                                            data={data} siteID={siteId}/>
+                                            data={data} siteID={siteId} executeScroll={()=>executeScroll()}/>
 
                                         )}
 
@@ -1569,7 +1580,7 @@ const Content = (props) => {
                                             {
                                                 addOpen &&
                                                 <li>
-                                                    <div className={"site-item"}>
+                                                    <div className={"site-item"} ref={myRef}>
                                                         <div className={"site-content child-level-1"}>
                                                             <div>
                                                                 <form className={"add_children"}>
