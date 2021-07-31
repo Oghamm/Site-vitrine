@@ -686,7 +686,7 @@ const Content = (props) => {
                                         </div>}
                                         {dataOptions.offers &&  offerSelected ===  dataOptions.offers.content[1].title &&
                                         <div className={"info-text"}>
-                                            {dataOptions.offers.content[1].price}
+                                            {dataOptions.offers.content[1].price} <br/>
                                             {dataOptions.offers.content[1].description.map((item)=>(
                                                 <>
                                                     {item}
@@ -696,7 +696,7 @@ const Content = (props) => {
                                         </div>}
                                         {dataOptions.offers &&  offerSelected ===  dataOptions.offers.content[2].title &&
                                         <div className={"info-text"}>
-                                            {dataOptions.offers.content[2].price}
+                                            {dataOptions.offers.content[2].price} <br/>
                                             {dataOptions.offers.content[2].description.map((item)=>(
                                                 <>
                                                     {item}
