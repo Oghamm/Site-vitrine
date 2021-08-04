@@ -96,9 +96,13 @@ const Card = (props) => {
 
     const handleSubmit = (e,item) => {
         e.preventDefault();
-        if (name === "" || name === props.name)
+        if (name === "" || name === props.name){
+            handleEdit();
             return
+        }
+
         if(props.data.filter(item => item.name.en === name).length >= 1) {
+            handleEdit();
             return;
         }
         props.changeName(name, item.id);
@@ -135,9 +139,12 @@ const Card = (props) => {
                                          <input value={name} type="text" name="namepage" onChange={handleChange} placeholder={props.name}/>
                                          <input type="submit" hidden={true}/>
                                      </form>
-                                     <a className={"cross__edit"}>
-                                         <i className="fas fa-times" onClick={handleEdit}></i>
-                                     </a>
+                                     <div className={"flex_btn"}>
+                                         <button type="submit"  onClick={e=>handleSubmit(e, props.item)}>
+                                             <i className="fas fa-check"></i>
+                                         </button>
+
+                                     </div>
                                  </div>
                          }
 
@@ -185,9 +192,12 @@ const Card = (props) => {
                                                  <input value={name} type="text" name="namepage" onChange={handleChange} placeholder={props.name}/>
                                                  <input type="submit" hidden={true}/>
                                              </form>
-                                             <a className={"cross__edit"}>
-                                                 <i className="fas fa-times" onClick={handleEdit}></i>
-                                             </a>
+                                             <div className={"flex_btn"}>
+                                                 <button type="submit"  onClick={e=>handleSubmit(e, props.item)}>
+                                                     <i className="fas fa-check"></i>
+                                                 </button>
+
+                                             </div>
                                          </div>
                                  }
                              </div>
