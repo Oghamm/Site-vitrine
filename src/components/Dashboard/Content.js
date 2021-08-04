@@ -316,7 +316,6 @@ const Content = (props) => {
     }
 
     const handleNbApplications = (nb) => {
-        console.log(nb);
         setNbApplications(nbApplications=> nbApplications + nb);
     }
 
@@ -415,7 +414,6 @@ const Content = (props) => {
             })
             .then(function (myJson) {
                 setDataOptions(myJson);
-                console.log(myJson);
             })
     }
 
