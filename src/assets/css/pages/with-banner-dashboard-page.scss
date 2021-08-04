@@ -1086,6 +1086,7 @@
             .add_children {
               .flex_btn {
                 display: flex;
+                justify-content: space-around;
 
                 .cross {
                   color: #6F93F4;
@@ -1096,11 +1097,7 @@
                   }
                 }
 
-                i {
-                  position: absolute;
-                  left: 92px;
-                  top: 121px;
-                }
+
               }
               .form-group {
                 color: #01164E;
@@ -1128,9 +1125,12 @@
                 margin: 11px 15px 10px 19px;
               }
               button {
-                margin-left: 92px;
+                margin-left: 61px;
                 width: 24px;
                 height: 24px;
+                align-items: center;
+                display: flex;
+                justify-content: center;
               }
 
             }
